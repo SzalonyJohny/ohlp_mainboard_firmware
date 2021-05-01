@@ -1,0 +1,4 @@
+LED_Driver.cpp:26:6:void SMPS::SBC_c::set_current(uint32_t)	0	static
+LED_Driver.cpp:39:6:void SMPS::SBC_c::set_update_pid()	8	static
+LED_Driver.cpp:89:1:SMPS::SBC_c::SBC_c()	0	static
+LED_Driver.cpp:99:6:void SMPS::led_drivers_c::set_all_currents(set_current_item*)	0	static

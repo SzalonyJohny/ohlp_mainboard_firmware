@@ -1,0 +1,2 @@
+Data_form_HB.cpp:11:1:mainboard_form_hb::mainboard_form_hb()	8	static
+Data_form_HB.cpp:19:6:void mainboard_form_hb::update()	0	static

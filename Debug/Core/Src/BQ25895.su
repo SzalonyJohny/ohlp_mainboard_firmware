@@ -1,0 +1,27 @@
+BQ25895.cpp:4:6:void cBQ::set_inputcurrent(uint8_t)	16	static
+BQ25895.cpp:9:6:void cBQ::set_inputvoltagelimitofset(uint8_t)	16	static
+BQ25895.cpp:14:6:void cBQ::set_startADCconv()	16	static
+BQ25895.cpp:19:6:void cBQ::set_battload(bool)	16	static
+BQ25895.cpp:25:6:void cBQ::set_boost_mode(bool)	16	static
+BQ25895.cpp:32:6:void cBQ::set_battcharge(bool)	16	static
+BQ25895.cpp:38:6:void cBQ::set_battsysmin(uint8_t)	16	static
+BQ25895.cpp:44:6:void cBQ::set_chargecurrent(uint8_t)	16	static
+BQ25895.cpp:49:6:void cBQ::set_precharge_current(uint8_t)	16	static
+BQ25895.cpp:55:6:void cBQ::set_termination_current(uint8_t)	16	static
+BQ25895.cpp:62:6:void cBQ::set_chargevoltage(uint8_t)	16	static
+BQ25895.cpp:67:6:void cBQ::set_boost_voltage(uint8_t)	16	static
+BQ25895.cpp:72:9:uint8_t cBQ::read_charge_adapter()	24	static
+BQ25895.cpp:77:6:void cBQ::shipmode()	16	static
+BQ25895.cpp:81:6:void cBQ::set_input_voltage_limit(uint8_t)	16	static
+BQ25895.cpp:85:10:uint16_t cBQ::read_battvoltage()	24	static
+BQ25895.cpp:91:10:uint16_t cBQ::read_sysvoltage()	24	static
+BQ25895.cpp:97:10:uint16_t cBQ::read_vbusvoltage()	24	static
+BQ25895.cpp:104:10:uint16_t cBQ::read_battcurrent()	24	static
+BQ25895.cpp:110:9:uint8_t cBQ::BQRead_VALUE(unsigned char)	40	static
+BQ25895.cpp:116:6:void cBQ::updateREG(uint8_t)	16	static
+BQ25895.cpp:120:1:cBQ::cBQ()	16	static
+BQ25895.cpp:147:6:void cBQ::updateREGs()	16	static
+BQ25895.cpp:155:6:void cBQ::REGset(uint8_t, uint8_t)	40	static
+BQ25895.cpp:163:6:void cBQ::init_BQ(I2C_HandleTypeDef*)	16	static
+BQ25895.cpp:190:6:bool cBQ::update_VBUS(bool, uint16_t)	16	static
+BQ25895.cpp:209:9:uint8_t cBQ::get_statusVBUS()	16	static

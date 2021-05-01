@@ -1,0 +1,10 @@
+freertos.c:175:6:void StartDefaultTask(const void*)	8	static
+freertos.c:193:6:void Start_State_of_Charge_Task(const void*)	8	static
+freertos.c:107:6:void vApplicationGetIdleTaskMemory(StaticTask_t**, StackType_t**, uint32_t*)	4	static
+freertos.c:121:6:void MX_FREERTOS_Init()	88	static
+main.cpp:142:6:void SystemClock_Config()	160	static
+main.cpp:197:6:void Custom_FREERTOS_Init()	128	static
+main.cpp:214:6:void Custom_MainBoard_abstraction_init()	8	static
+main.cpp:84:5:int main()	8	static
+main.cpp:236:6:void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef*)	0	static
+main.cpp:253:6:void Error_Handler()	0	static

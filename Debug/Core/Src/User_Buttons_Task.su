@@ -1,0 +1,4 @@
+User_Buttons_Task.h:26:13:bool sw1()	8	static
+User_Buttons_Task.h:30:13:bool sw2()	8	static
+User_Buttons_Task.cpp:25:6:void Start_User_Buttons_Task(const void*)	24	static
+User_Buttons_Task.cpp:75:6:void User_Buttons_ISR_SW1_handle()	16	static,ignoring_inline_asm
