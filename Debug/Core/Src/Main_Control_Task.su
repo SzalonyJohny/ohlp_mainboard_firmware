@@ -1,8 +1,0 @@
-gthr-default.h:229:1:int __gthread_key_delete(__gthread_key_t)	16	static
-Data_form_HB.h:36:17:constexpr void mainboard_form_hb::init(uint8_t*)	16	static
-Data_form_HB.h:41:22:data_from_hb mainboard_form_hb::get_data()	16	static
-array:126:7:constexpr std::array<_Tp, _Nm>::value_type* std::array<_Tp, _Nm>::begin() [with _Tp = short int; unsigned int _Nm = 3]	16	static
-array:134:7:constexpr std::array<_Tp, _Nm>::value_type* std::array<_Tp, _Nm>::end() [with _Tp = short int; unsigned int _Nm = 3]	16	static
-Main_Control_Task.cpp:26:6:void Start_Main_Control_Task(const void*)	192	static
-array:234:7:constexpr std::array<_Tp, _Nm>::value_type* std::array<_Tp, _Nm>::data() [with _Tp = short int; unsigned int _Nm = 3]	16	static
-array:59:7:static constexpr _Tp* std::__array_traits<_Tp, _Nm>::_S_ptr(const _Tp (&)[_Nm]) [with _Tp = short int; unsigned int _Nm = 3]	16	static
