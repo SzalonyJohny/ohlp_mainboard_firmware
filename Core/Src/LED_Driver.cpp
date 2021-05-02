@@ -31,9 +31,9 @@ void SMPS::SBC_c::set_current(uint32_t current_mA){
 
 
 inline uint32_t SMPS::SBC_c::get_voltage_mV(){
-	// TODO magic number
 	return static_cast<uint32_t>(
-			static_cast<float>(_adc1_data_ptr[_voltage_channel]) * ADC_REFF_mV / ADC_MAX_COUNT * ((15+7.5)/15)
+			static_cast<float>(_adc1_data_ptr[_voltage_channel]) * ADC_REFF_mV / ADC_MAX_COUNT *
+			((FB_VOLTAGE_RESISTOR_DIVIDER_DOWN+FB_VOLTAGE_RESISTOR_DIVIDER_UP)/FB_VOLTAGE_RESISTOR_DIVIDER_DOWN)
 	);
 }
 

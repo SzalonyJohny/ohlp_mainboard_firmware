@@ -21,11 +21,14 @@ namespace SMPS{
 const uint16_t MAX_PWM_TIM1 = 200;
 const uint16_t ADC_REFF_mV = 2810;
 const uint16_t ADC_MAX_COUNT = 16384; // oversampling x4 and 1 bit shift
-const uint16_t MAX_VOLTAGE_mV_DISCONNECT_PROTECTION = 3500;
+const uint16_t MAX_VOLTAGE_mV_DISCONNECT_PROTECTION = 3500; //
 
 
-const uint16_t D1_D2_max_current = 3500;
-const uint16_t D3_max_current = 1200;
+const uint16_t D1_D2_max_current = 3500;	// value in mA
+const uint16_t D3_max_current = 1200; 		// value in mA
+
+const uint32_t FB_VOLTAGE_RESISTOR_DIVIDER_UP = 7500;		// value in Ohms
+const uint32_t FB_VOLTAGE_RESISTOR_DIVIDER_DOWN = 15000;	// value in Ohms
 
 //////////////////////////////////////
 //				PID const			//

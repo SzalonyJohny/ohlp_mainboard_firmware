@@ -236,7 +236,7 @@ typedef enum
 } USBD_StatusTypeDef;
 
 /* USB Device descriptors structure */
-typedef struct
+typedef struct // @suppress("Miss copy constructor or assignment operator")
 {
   uint8_t *(*GetDeviceDescriptor)(USBD_SpeedTypeDef speed, uint16_t *length);
   uint8_t *(*GetLangIDStrDescriptor)(USBD_SpeedTypeDef speed, uint16_t *length);

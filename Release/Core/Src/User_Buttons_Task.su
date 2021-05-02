@@ -1,2 +1,0 @@
-User_Buttons_Task.cpp:26:6:void Start_User_Buttons_Task(const void*)	16	static
-User_Buttons_Task.cpp:77:6:void User_Buttons_ISR_SW1_handle()	16	static,ignoring_inline_asm

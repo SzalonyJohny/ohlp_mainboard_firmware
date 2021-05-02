@@ -191,7 +191,7 @@ float MPU6050_GetTemperatureCelsius(void)
 int16_t MPU6050_GetAccelerationXRAW(void)
 {
 	uint8_t tmp[2];
-	HAL_StatusTypeDef STAT =  HAL_I2C_Mem_Read(i2c, MPU6050_ADDRESS, MPU6050_RA_ACCEL_XOUT_H, 1, tmp, 2, I2C_TIMEOUT);
+	HAL_I2C_Mem_Read(i2c, MPU6050_ADDRESS, MPU6050_RA_ACCEL_XOUT_H, 1, tmp, 2, I2C_TIMEOUT);
 	return (((int16_t)tmp[0]) << 8) | tmp[1];
 }
 
@@ -277,13 +277,13 @@ void MPU6050_GetGyroscopeScaled(float* x, float* y, float* z)
 
 void MPU6050_GetRollPitch(float* Roll, float* Pitch)
 {
-	float acc_x;
-	float acc_y;
-	float acc_z;
-	MPU6050_GetAccelerometerScaled(&acc_x, &acc_y, &acc_z);
+	float acc_x_local;
+	float acc_y_local;
+	float acc_z_local;
+	MPU6050_GetAccelerometerScaled(&acc_x_local, &acc_y_local, &acc_z_local);
 	// FIXME fix math.h M_PI const
-	*Roll = atan2(acc_y, acc_z) * 180.0  / 3.14159265358979323846f;
-	*Pitch = -(atan2(acc_x, sqrt(acc_y*acc_y + acc_z*acc_z))*180.0) / (3.14159265358979323846f);
+	*Roll = atan2(acc_y_local, acc_z_local) * 180.0  / 3.14159265358979323846f;
+	*Pitch = -(atan2(acc_x_local, sqrt(acc_y_local*acc_y_local + acc_z_local*acc_z_local))*180.0) / (3.14159265358979323846f);
 }
 
 //
