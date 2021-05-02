@@ -16,11 +16,12 @@ extern UART_HandleTypeDef huart3;
 extern I2C_HandleTypeDef hi2c1;
 extern IWDG_HandleTypeDef hiwdg;
 
-//	for debug
+//	FIXME only for debugging -> live expression begin:
 data_from_hb HB_data_debug;
 int32_t alc_current_debug;
 uint16_t b_voltage_debug;
 uint8_t profile_debug;
+// end
 
 
 void Start_Main_Control_Task([[maybe_unused]] void const * argument)
