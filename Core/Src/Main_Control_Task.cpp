@@ -134,7 +134,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 			uint16_t als_setpoint = 200;
 
 			float Proportional = 15 * ((float)als_setpoint - (float)als_now);
-			current_als += (uint16_t)(Proportional);
+			current_als += static_cast<uint16_t>(Proportional);
 
 			if(current_als<200)current_als = 200;
 			if(current_als>2000)current_als = 2000;

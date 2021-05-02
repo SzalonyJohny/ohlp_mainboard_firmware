@@ -41,22 +41,27 @@ void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
 	MPU6050_SetFullScaleGyroRange(MPU6050_GYRO_FS_250);
 	MPU6050_SetFullScaleAccelRange(MPU6050_ACCEL_FS_2);
 
-	//MX_USB_DEVICE_Init();
+
+
+	MX_USB_DEVICE_Init();
+	char data[128];
 
 	for(;;){
 
 
-		osDelay(240);
+		osDelay(100);
 		HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
 
-
 		MPU6050_GetAccelerometerScaled(&acc_x, &acc_y, &acc_z);
-		MPU6050_GetGyroscopeScaled(&gyr_x, &gyr_y, &gyr_z);
+		MPU6050_GetGyroscopeScaled(&gyr_x, &gyr_y,	 &gyr_z);
 
-		//
-		//		char data[16];
-		//		sprintf((data), "%u \r\n", 123);
-		//		CDC_Transmit_FS((uint8_t*)data, strlen(data));
+
+		sprintf((data), "a_x =  %f | a_y = %f | a_z = %f | g_x = %f | g_y = %f | g_z = %f \r",
+				acc_x, acc_y, acc_z, gyr_x, gyr_y, gyr_z);
+
+
+		CDC_Transmit_FS((uint8_t*)data, strlen(data));
+
 
 		// USB send data to octave and test algorithm
 

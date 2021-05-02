@@ -78,7 +78,7 @@ main-build: MAINBOARD_MARK8.0.elf secondary-outputs
 
 # Tool invocations
 MAINBOARD_MARK8.0.elf: $(OBJS) $(USER_OBJS) /home/jan/Documents/latarka/FIRMWARE/MAINBOARD-STM32/STM32L412C8TX_FLASH.ld
-	arm-none-eabi-g++ -o "MAINBOARD_MARK8.0.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/jan/Documents/latarka/FIRMWARE/MAINBOARD-STM32/STM32L412C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAINBOARD_MARK8.0.map" -Wl,--gc-sections -static --specs=nano_c_standard_cpp.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
+	arm-none-eabi-g++ -o "MAINBOARD_MARK8.0.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m4 -T"/home/jan/Documents/latarka/FIRMWARE/MAINBOARD-STM32/STM32L412C8TX_FLASH.ld" --specs=nosys.specs -Wl,-Map="MAINBOARD_MARK8.0.map" -Wl,--gc-sections -static --specs=nano_c_standard_cpp.specs -mfpu=fpv4-sp-d16 -mfloat-abi=hard -mthumb -u _printf_float -Wl,--start-group -lc -lm -lstdc++ -lsupc++ -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 
