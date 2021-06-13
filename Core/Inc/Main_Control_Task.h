@@ -20,6 +20,4 @@
 void Start_Main_Control_Task(void const * argument);
 
 
-
-
 #endif /* INC_MAIN_CONTROL_TASK_H_ */

@@ -18,6 +18,7 @@ extern "C" {
 
 #define BQaddress 0x6A<<1
 
+
 enum {
 	inc_50mA   =1,
 	inc_100mA  =2,
@@ -117,7 +118,10 @@ class cBQ{
 
     bool BATLOWV;
 
-    volatile uint8_t statusVBUS;
+    uint8_t statusVBUS;
+
+
+    uint32_t counter_vbus_update = 0;
 
     I2C_HandleTypeDef *hi2c;
 

@@ -189,19 +189,19 @@ void cBQ::init_BQ(I2C_HandleTypeDef *phic){
 
 bool cBQ::update_VBUS(bool bq_int_flag, uint16_t max_count = 500){
 
-    static uint8_t iterator = 0;
 
-    if(bq_int_flag)iterator = 1;
-    if(iterator!=0){
-        iterator++;
-        if(iterator<max_count){
+
+    if(bq_int_flag)counter_vbus_update = 1;
+    if(counter_vbus_update!=0){
+        counter_vbus_update++;
+        if(counter_vbus_update<max_count){
             statusVBUS = static_cast<uint8_t>(BQRead_VALUE(0x0B) >> 5);
         }
         else {
-            iterator=0;
+            counter_vbus_update=0;
         }
     }
-    return iterator;
+    return counter_vbus_update;
 }
 
 

@@ -48,7 +48,4 @@ struct IMU_data{
 
 
 
-
-
-
 #endif /* INC_COMMON_STRUCT_H_ */

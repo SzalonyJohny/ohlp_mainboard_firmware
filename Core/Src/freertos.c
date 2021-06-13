@@ -59,7 +59,7 @@ osThreadId User_ButtonsHandle;
 uint32_t User_Buttons_Task_Buffer[User_Buttons_Task_Buffer_size];
 osStaticThreadDef_t User_ButtonControlBlock;
 
-#define IMU_Gesture_Task_Buffer_size 128
+#define IMU_Gesture_Task_Buffer_size 256
 osThreadId IMU_GestureHandle;
 uint32_t IMU_GestureBuffer[IMU_Gesture_Task_Buffer_size];
 osStaticThreadDef_t IMU_GestureControlBlock;

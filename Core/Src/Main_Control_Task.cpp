@@ -16,11 +16,17 @@ extern UART_HandleTypeDef huart3;
 extern I2C_HandleTypeDef hi2c1;
 extern IWDG_HandleTypeDef hiwdg;
 
-//	for debug
+
+// FIXME temporary solution
+bool BMS_interrrupt_flag = false;
+
+
+//	FIXME only for debugging -> live expression begin:
 data_from_hb HB_data_debug;
 int32_t alc_current_debug;
 uint16_t b_voltage_debug;
 uint8_t profile_debug;
+// end
 
 
 void Start_Main_Control_Task([[maybe_unused]] void const * argument)
@@ -57,7 +63,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	BMS.init_BQ(&hi2c1);
 	BMS.set_boost_mode(true);
 	BMS.set_battcharge(true);
-
+	uint16_t status_charging_iter = 0;
 
 
 	for(;;)
@@ -65,17 +71,30 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 		osDelay(50);
 		HAL_IWDG_Refresh(&hiwdg);  // refresh more frequent than 15.25Hz
 
-		/* Battery Management */
-		BMS.update_VBUS(1,400);
+		/* Battery Management */	// TODO add BQ int flag
+		BMS.update_VBUS(true,500);
+		auto status_charging = BMS.get_statusVBUS();
+		if(status_charging == 7){
+			if(status_charging_iter>=50){
+				HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
+				HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
+				status_charging_iter = 0;
+			}
+			else {
+				status_charging_iter ++;
+			}
+		}
+
+
 		b_voltage_debug =  BMS.read_battvoltage(); //for live expression (debug)
 
 		/* Head Board - over temp protection */
 		hb.update();
-		HB_data_debug = hb.get_data(); //for live expression (debug)
-
 		for(const auto & temperature_in_degC_by_100 : hb.get_data().TEMP){
 			if(temperature_in_degC_by_100 > 8000) profile = 0;
 		}
+
+		HB_data_debug = hb.get_data(); //for live expression (debug)
 
 
 		/* User Interface */
@@ -94,7 +113,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 			}
 		}
 
-
+		/* Main profile management */
 		switch ( profile ){
 		case 0:{
 			set_current_data.set_current[D1] = 0;
@@ -134,7 +153,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 			uint16_t als_setpoint = 200;
 
 			float Proportional = 15 * ((float)als_setpoint - (float)als_now);
-			current_als += (uint16_t)(Proportional);
+			current_als += static_cast<uint16_t>(Proportional);
 
 			if(current_als<200)current_als = 200;
 			if(current_als>2000)current_als = 2000;

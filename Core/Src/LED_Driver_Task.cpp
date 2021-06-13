@@ -8,6 +8,7 @@
 #include <LED_Driver_Task.h>
 #include "Common_struct.h"
 #include "main.h"
+#include <algorithm>
 
 
 extern ADC_HandleTypeDef hadc1;
@@ -62,8 +63,12 @@ void Start_LED_Driver_Task([[maybe_unused]] void const * argument)
 		if (xQueueReceive( Set_Current_QueueHandle, &set_current_data, 0) == pdPASS)
 			led_drivers.set_all_currents(&set_current_data);
 
+//		std::for_each(led_drivers.SBC.begin(),led_drivers.SBC.end(),[](auto el){
+//			el.set_update_pid();
+//		});
 
-		for(auto &el:led_drivers.SBC)el.set_update_pid();
+		for(auto &el:led_drivers.SBC)
+			el.set_update_pid();
 
 		HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
 

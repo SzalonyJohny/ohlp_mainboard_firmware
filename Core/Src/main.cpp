@@ -115,21 +115,11 @@ int main(void)
   MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
 
-  Custom_MainBoard_abstraction_init();
+	Custom_MainBoard_abstraction_init();
 
-  Custom_FREERTOS_Init();
+	Custom_FREERTOS_Init();
 
   /* USER CODE END 2 */
-
-  /* init indicator to prevent unseen reset*/
-  for(int i = 0; i < 4; i++){
-	  HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
-	  HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
-	  HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
-	  HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
-	  HAL_Delay(200);
-  }
-
 
   /* Call init function for freertos objects (in freertos.c) */
   MX_FREERTOS_Init();
@@ -239,6 +229,19 @@ void Custom_MainBoard_abstraction_init(){
 
 	//		SMPS - OFF
 	//HAL_GPIO_WritePin(SMPS_EN_GPIO_Port, SMPS_EN_Pin, (GPIO_PinState)0);
+
+
+	/* Reset indicator to prevent unseen */
+	for(int i = 0; i < 6; i++){
+		HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
+		HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
+		HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
+		HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
+		HAL_Delay(200);
+	}
+
+
+
 }
 
 
