@@ -3,8 +3,8 @@
 #include "MPU6050.h"
 #include "MPU6050.c"
 
-#include "usb_device.h"
-#include "usbd_cdc_if.h"
+//#include "usb_device.h"
+//#include "usbd_cdc_if.h"
 
 extern I2C_HandleTypeDef hi2c1;
 
@@ -25,13 +25,13 @@ void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
 
 
 	/* USB Init */
-	MX_USB_DEVICE_Init();
+	//MX_USB_DEVICE_Init();
 
 	char data_buffer_usb[64];
 
 
 	const float send_rate = 60;
-	const float os_daley_time = floor(1000/send_rate);
+	const float os_daley_time = floor(1000.0f/send_rate);
 
 	for(;;){
 
@@ -47,15 +47,16 @@ void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
 		//float tab_temp_to_send_bytes[] = {acc_x, acc_y, acc_z, gyr_x, gyr_y, gyr_z};
 
 
-		sprintf((data_buffer_usb), "%f,%f,%f,",
-				acc_x, acc_y, acc_z);
-
-		CDC_Transmit_FS((uint8_t*)data_buffer_usb, (uint16_t)strlen(data_buffer_usb));
-
-		sprintf((data_buffer_usb), "%f,%f,%f \r\n",
-				gyr_x, gyr_y, gyr_z);
-
-		CDC_Transmit_FS((uint8_t*)data_buffer_usb, (uint16_t)strlen(data_buffer_usb));
+//		sprintf((data_buffer_usb), "%f,%f,%f,",
+//				acc_x, acc_y, acc_z);
+//
+//		CDC_Transmit_FS((uint8_t*)data_buffer_usb, (uint16_t)strlen(data_buffer_usb));
+//
+//		sprintf((data_buffer_usb), "%f,%f,%f \r\n",
+//				gyr_x, gyr_y, gyr_z);
+//
+//		CDC_Transmit_FS((uint8_t*)data_buffer_usb, (uint16_t)strlen(data_buffer_usb));
+//
 
 //		CDC_Transmit_FS((uint8_t*)data_buffer_usb, (uint16_t)strlen(data_buffer_usb));
 //		CDC_Transmit_FS((uint8_t*)tab_temp_to_send_bytes, 4*6);
