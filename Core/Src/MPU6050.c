@@ -126,16 +126,16 @@ void MPU6050_SetFullScaleGyroRange(uint8_t Range)
 	switch(Range)
 	{
 		case MPU6050_GYRO_FS_250:
-			Gyr_Scale = 0.007633;
+			Gyr_Scale = 0.007633f;
 			break;
 		case MPU6050_GYRO_FS_500:
-			Gyr_Scale = 0.015267;
+			Gyr_Scale = 0.015267f;
 			break;
 		case MPU6050_GYRO_FS_1000:
-			Gyr_Scale = 0.030487;
+			Gyr_Scale = 0.030487f;
 			break;
 		case MPU6050_GYRO_FS_2000:
-			Gyr_Scale = 0.060975;
+			Gyr_Scale = 0.060975f;
 			break;
 		default:
 			break;
@@ -153,16 +153,16 @@ void MPU6050_SetFullScaleAccelRange(uint8_t Range)
 	switch(Range)
 	{
 		case MPU6050_ACCEL_FS_2:
-			Acc_Scale = 0.000061;
+			Acc_Scale = 0.000061f;
 			break;
 		case MPU6050_ACCEL_FS_4:
-			Acc_Scale = 0.000122;
+			Acc_Scale = 0.000122f;
 			break;
 		case MPU6050_ACCEL_FS_8:
-			Acc_Scale = 0.000244;
+			Acc_Scale = 0.000244f;
 			break;
 		case MPU6050_ACCEL_FS_16:
-			Acc_Scale = 0.0004882;
+			Acc_Scale = 0.0004882f;
 			break;
 		default:
 			break;

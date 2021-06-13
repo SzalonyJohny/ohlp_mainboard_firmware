@@ -16,7 +16,7 @@
 namespace SMPS{
 
 
-
+//TODO test __attribute__((flatten)) to hot code section in fast controller loop
 
 const uint16_t MAX_PWM_TIM1 = 200;
 const uint16_t ADC_REFF_mV = 2810;
@@ -35,12 +35,12 @@ const uint32_t FB_VOLTAGE_RESISTOR_DIVIDER_DOWN = 15000;	// value in Ohms
 //////////////////////////////////////
 struct pid_const_s{
 
-	const float Kp = 0.01;
-	const float Ki = 0.005;
-	const float Kd = 0.0;
+	const float Kp = 0.01f;
+	const float Ki = 0.005f;
+	const float Kd = 0.0f;
 
 	/* Derivative low-pass filter time constant */
-	const float tau = 0.05;
+	const float tau = 0.05f;
 
 	/* Output limits */
 	const float out_lim_min = -10;
