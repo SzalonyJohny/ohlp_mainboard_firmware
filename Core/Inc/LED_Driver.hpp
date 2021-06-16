@@ -116,13 +116,13 @@ public:
 		_current_channel = current_channel;
 	};
 
-	inline void set_pwm(uint16_t pwm); //r
+	inline void set_pwm(const uint16_t &pwm); //r
 
 	inline uint32_t get_current_mA();  //r
 
 	inline uint32_t get_voltage_mV();  //r
 
-	void set_current(uint32_t current_mA);
+	void set_current(const uint32_t &current_mA);
 
 	void set_update_pid();
 
@@ -141,9 +141,12 @@ public:
 
 	std::array<SBC_c,NUMBER_OF_LED_CHANNELS> SBC;
 
-	void set_boost_enable(bool enable);
-	void set_smps_enable_pin(bool enable);
-	void set_all_currents(set_current_item *data);
+	// TODO implement
+	void set_boost_enable(const bool &enable);
+	// TODO implement
+	void set_smps_enable_pin(const bool &enable);
+
+	void set_all_currents(const set_current_item *data);
 };
 
 

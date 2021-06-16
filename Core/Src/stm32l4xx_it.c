@@ -25,7 +25,7 @@
 /* USER CODE BEGIN Includes */
 
 #include <cmsis_os.h>
-
+#include <User_Buttons_Task.h>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -258,7 +258,7 @@ void EXTI15_10_IRQHandler(void)
 
 	BaseType_t sHigherPriorityTaskWoken = pdFALSE;
 	xSemaphoreGiveFromISR(xButtonSemaphoreHandle,&sHigherPriorityTaskWoken);
-	portYIELD_FROM_ISR( sHigherPriorityTaskWoken );
+
 
 	/* USER CODE END EXTI15_10_IRQn 1 */
 }

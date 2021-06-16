@@ -12,7 +12,7 @@
 #include "math.h"
 
 
-inline void SMPS::SBC_c::set_pwm(uint16_t pwm){
+inline void SMPS::SBC_c::set_pwm(const uint16_t &pwm){
 	__HAL_TIM_SET_COMPARE(_htim, _tim_channel, pwm);
 }
 
@@ -25,7 +25,7 @@ inline uint32_t SMPS::SBC_c::get_current_mA(){
 }
 
 
-void SMPS::SBC_c::set_current(uint32_t current_mA){
+void SMPS::SBC_c::set_current(const uint32_t &current_mA){
 	_set_current_mA = current_mA;
 }
 
@@ -99,7 +99,7 @@ SMPS::SBC_c::SBC_c(){
 }
 
 
-void SMPS::led_drivers_c::set_all_currents(set_current_item *data){
+void SMPS::led_drivers_c::set_all_currents(const set_current_item *data){
 	if(data->set_current[D1] <= D1_D2_max_current)SBC[D1].set_current(data->set_current[D1]);
 	if(data->set_current[D2] <= D1_D2_max_current)SBC[D2].set_current(data->set_current[D2]);
 	if(data->set_current[D3] <= D3_max_current)SBC[D3].set_current(data->set_current[D3]);

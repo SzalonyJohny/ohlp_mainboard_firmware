@@ -20,6 +20,7 @@ using namespace SMPS;
 
 const uint32_t Set_Current_Queue_size = 3;
 constexpr uint32_t  Set_Current_Queue_Buffer_size =  4*Set_Current_Queue_size*sizeof(set_current_item);
+
 uint8_t Set_Current_QueueBuffer[Set_Current_Queue_Buffer_size];
 osStaticMessageQDef_t Set_Current_QueueControlBlock;
 

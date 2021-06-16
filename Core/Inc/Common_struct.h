@@ -19,7 +19,7 @@ struct set_current_item{
 	uint16_t set_current[3];
 };
 
-
+// TODO make a type in all cases
 enum {
 	D1 = 0,
 	D2 = 1,

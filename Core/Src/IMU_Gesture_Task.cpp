@@ -3,8 +3,8 @@
 #include "MPU6050.h"
 #include "MPU6050.c"
 
-//#include "usb_device.h"
-//#include "usbd_cdc_if.h"
+#include "usb_device.h"
+#include "usbd_cdc_if.h"
 
 extern I2C_HandleTypeDef hi2c1;
 
@@ -25,7 +25,7 @@ void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
 
 
 	/* USB Init */
-	//MX_USB_DEVICE_Init();
+	MX_USB_DEVICE_Init();
 
 	char data_buffer_usb[64];
 
