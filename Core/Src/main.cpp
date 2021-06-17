@@ -18,6 +18,10 @@
  */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
+#include <IMU_Gesture_Task.hpp>
+#include <LED_Driver_Task.hpp>
+#include <Main_Control_Task.hpp>
+#include <User_Buttons_Task.hpp>
 #include "main.h"
 #include "cmsis_os.h"
 #include "adc.h"
@@ -33,10 +37,6 @@
 /* USER CODE BEGIN Includes */
 //#include "usbd_cdc_if.h"
 #include "freertos.c"
-#include "LED_Driver_Task.h"
-#include "Main_Control_Task.h"
-#include "User_Buttons_Task.h"
-#include "IMU_Gesture_Task.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/

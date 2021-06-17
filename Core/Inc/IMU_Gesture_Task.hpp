@@ -5,8 +5,8 @@
  *      Author: jan
  */
 
-#ifndef INC_IMU_GESTURE_TASK_H_
-#define INC_IMU_GESTURE_TASK_H_
+#ifndef INC_IMU_GESTURE_TASK_HPP_
+#define INC_IMU_GESTURE_TASK_HPP_
 
 #include "cmsis_os.h"
 #include "main.h"
@@ -20,4 +20,4 @@ void Start_IMU_Gesture_Task(void const * argument);
 void IMU_Init();
 
 
-#endif /* INC_IMU_GESTURE_TASK_H_ */
+#endif /* INC_IMU_GESTURE_TASK_HPP_ */

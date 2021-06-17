@@ -5,7 +5,7 @@
  *      Author: jan
  */
 
-#include <LED_Driver_Task.h>
+#include <LED_Driver_Task.hpp>
 #include "Common_struct.h"
 #include "main.h"
 #include <algorithm>
@@ -33,11 +33,13 @@ void Start_LED_Driver_Task([[maybe_unused]] void const * argument)
 	uint32_t adc1_data[adc1_number_of_channels];
 
 	HAL_ADC_Start_DMA(&hadc1, adc1_data, 6);
-	SMPS::led_drivers_c led_drivers;
 
-	led_drivers.SBC[0].init(&htim1, TIM_CHANNEL_3, adc1_data, ADC_RANK_0, ADC_RANK_3);
-	led_drivers.SBC[1].init(&htim1, TIM_CHANNEL_2, adc1_data, ADC_RANK_1, ADC_RANK_4);
-	led_drivers.SBC[2].init(&htim1, TIM_CHANNEL_1, adc1_data, ADC_RANK_2, ADC_RANK_5);
+	SMPS::led_drivers_c led_drivers(
+			&htim1, TIM_CHANNEL_3, adc1_data, ADC_RANK_0, ADC_RANK_3,
+			&htim1, TIM_CHANNEL_2, adc1_data, ADC_RANK_1, ADC_RANK_4,
+			&htim1, TIM_CHANNEL_1, adc1_data, ADC_RANK_2, ADC_RANK_5
+	);
+
 
 	led_drivers.SBC[0].set_current(0);
 	led_drivers.SBC[1].set_current(0);

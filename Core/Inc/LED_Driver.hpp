@@ -51,7 +51,7 @@ struct pid_const_s{
 	const float integ_lim_max =  5;
 
 	const float pwm_lim_min = 0;
-	const float pwm_lim_max = 200;
+	const float pwm_lim_max = 201;
 
 	/* Sample time (in seconds) */
 	const float Ts = 1 / 1000;
@@ -86,14 +86,14 @@ struct pid_data_s{
 
 
 
-class SBC_c{		//Synchronous Buck Converter
+class SBC_c{		// Synchronous Buck Converter class
 
 private:
 	const TIM_HandleTypeDef * _htim;
 	const uint32_t *_adc1_data_ptr;
-	uint32_t _tim_channel;
-	uint8_t _voltage_channel;
-	uint8_t _current_channel;
+	const uint32_t _tim_channel;
+	const uint8_t _voltage_channel;
+	const uint8_t _current_channel;
 
 	uint32_t _set_current_mA;
 	pid_data_s<float> _pid_data;
@@ -108,13 +108,15 @@ public:
 	SBC_c(const SBC_c&)= default;
 	SBC_c & operator= ( const SBC_c&) = default;
 
-	constexpr void init(TIM_HandleTypeDef * htim, uint32_t tim_channel ,uint32_t *adc1_data_ptr, ADC_RANK_DMA voltage_channel, ADC_RANK_DMA current_channel){
-		_htim = htim;
-		_adc1_data_ptr = adc1_data_ptr;
-		_tim_channel = tim_channel;
-		_voltage_channel = voltage_channel;
-		_current_channel = current_channel;
-	};
+	constexpr SBC_c(const TIM_HandleTypeDef * htim, uint32_t tim_channel ,const uint32_t *adc1_data_ptr,
+					ADC_RANK_DMA voltage_channel, ADC_RANK_DMA current_channel
+					):
+		_htim{htim}, _adc1_data_ptr{adc1_data_ptr}, _tim_channel{tim_channel}, _voltage_channel  {voltage_channel},
+		_current_channel {current_channel} , _set_current_mA {0}
+		{
+
+		};
+
 
 	inline void set_pwm(const uint16_t &pwm); //r
 
@@ -139,6 +141,20 @@ class led_drivers_c{
 
 public:
 
+	led_drivers_c() = default;
+
+	constexpr led_drivers_c(
+			const TIM_HandleTypeDef * htim1, uint32_t tim_channel1 ,const uint32_t *adc1_data_ptr1, ADC_RANK_DMA voltage_channel1, ADC_RANK_DMA current_channel1,
+			const TIM_HandleTypeDef * htim2, uint32_t tim_channel2 ,const uint32_t *adc1_data_ptr2, ADC_RANK_DMA voltage_channel2, ADC_RANK_DMA current_channel2,
+			const TIM_HandleTypeDef * htim3, uint32_t tim_channel3 ,const uint32_t *adc1_data_ptr3, ADC_RANK_DMA voltage_channel3, ADC_RANK_DMA current_channel3)
+	:SBC{
+			SBC_c(htim1, tim_channel1 ,adc1_data_ptr1, voltage_channel1, current_channel1),
+			SBC_c(htim2, tim_channel2 ,adc1_data_ptr2, voltage_channel2, current_channel2),
+			SBC_c(htim3, tim_channel3 ,adc1_data_ptr3, voltage_channel3, current_channel3)
+	}
+	{
+	}
+
 	std::array<SBC_c,NUMBER_OF_LED_CHANNELS> SBC;
 
 	// TODO implement
@@ -156,15 +172,6 @@ public:
 }
 
 
-
-////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////
-// 					MAIN TASK comunication			///
-////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////
-
-////////////////////////////////////////////////////////
-////////////////////////////////////////////////////////
 
 
 #endif /* INC_LED_DRIVER_HPP_ */

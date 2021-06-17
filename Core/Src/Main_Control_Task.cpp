@@ -5,7 +5,7 @@
  *      Author: jan
  */
 
-#include <Main_Control_Task.h>
+#include <Main_Control_Task.hpp>
 
 
 
@@ -68,11 +68,13 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 	for(;;)
 	{
-		osDelay(50);
+		osDelay(50);			   // update at 50Hz rate
 		HAL_IWDG_Refresh(&hiwdg);  // refresh more frequent than 15.25Hz
 
 		/* Battery Management */	// TODO add BQ int flag
 		BMS.update_VBUS(true,500);
+
+		// TODO pack in mainboard function
 		auto status_charging = BMS.get_statusVBUS();
 		if(status_charging == 7){
 			if(status_charging_iter>=50){
@@ -85,10 +87,9 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 			}
 		}
 
-
 		b_voltage_debug =  BMS.read_battvoltage(); //for live expression (debug)
 
-		/* Head Board - over temp protection */
+		/* Head Board - Over Temperature Protection */
 		hb.update();
 		for(const auto & temperature_in_degC_by_100 : hb.get_data().TEMP){
 			if(temperature_in_degC_by_100 > 8000) profile = 0;
@@ -102,7 +103,6 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 			if(button_state.sw1_press){
 				HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
 				button_state.sw1_press = false;
-
 				if(++profile > 5)profile = 0;
 			}
 			if(button_state.sw2_press){
@@ -156,7 +156,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 			current_als += static_cast<uint16_t>(Proportional);
 
 			if(current_als<200)current_als = 200;
-			if(current_als>2000)current_als = 2000;
+			else if(current_als>2000)current_als = 2000;
 
 			set_current_data.set_current[D1] = 0;
 			set_current_data.set_current[D2] = (uint16_t)current_als;

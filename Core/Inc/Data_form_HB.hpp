@@ -5,8 +5,8 @@
  *      Author: jan
  */
 
-#ifndef INC_DATA_FORM_HB_H_
-#define INC_DATA_FORM_HB_H_
+#ifndef INC_DATA_FORM_HB_HPP_
+#define INC_DATA_FORM_HB_HPP_
 
 #include <array>
 #include "Common_struct.h"
@@ -43,4 +43,4 @@ public:
 };
 
 
-#endif /* INC_DATA_FORM_HB_H_ */
+#endif /* INC_DATA_FORM_HB_HPP_ */
