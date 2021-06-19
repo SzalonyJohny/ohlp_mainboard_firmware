@@ -24,8 +24,7 @@ void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
 
 
 	/* USB Init */
-	MX_USB_DEVICE_Init();
-
+	//MX_USB_DEVICE_Init();
 	char data_buffer_usb[64];
 
 

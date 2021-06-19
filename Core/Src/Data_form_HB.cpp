@@ -8,13 +8,10 @@
 #include <Data_form_HB.hpp>
 #include <algorithm>
 
-mainboard_form_hb::mainboard_form_hb(){
-    _data.ALS = 0;
-    _data.IR = 0;
-    _recive_data_ptr = nullptr;
-    std::fill(_data.TEMP.begin(),_data.TEMP.end(), 0);
-}
 
+[[nodiscard]] data_from_hb mainboard_form_hb::get_data(){
+	return _data;
+}
 
 void mainboard_form_hb::update(){
 	const uint8_t offset = 1;

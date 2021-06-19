@@ -51,7 +51,7 @@ struct pid_const_s{
 	const float integ_lim_max =  5;
 
 	const float pwm_lim_min = 0;
-	const float pwm_lim_max = 201;
+	const float pwm_lim_max = 200;
 
 	/* Sample time (in seconds) */
 	const float Ts = 1 / 1000;

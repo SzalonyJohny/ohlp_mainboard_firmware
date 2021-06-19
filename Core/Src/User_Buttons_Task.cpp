@@ -34,9 +34,6 @@ void Start_User_Buttons_Task( [[maybe_unused]] void const * argument)
 	button_state.sw2_long_press = 0;
 	button_state.both_longpress = 0;
 
-
-
-
 	for(;;)
 	{
 
@@ -46,7 +43,6 @@ void Start_User_Buttons_Task( [[maybe_unused]] void const * argument)
 		if( sw1() ){
 			osDelay(Button_Debounce_delay_SW1);
 			if(sw1()){
-
 				button_state.sw1_press = true;
 				xQueueSend(Button_state_QueueHandle, &button_state, portMAX_DELAY );
 				button_state.sw1_press = false;
@@ -57,7 +53,6 @@ void Start_User_Buttons_Task( [[maybe_unused]] void const * argument)
 		if( sw2() ){
 			osDelay(Button_Debounce_delay_SW2);
 			if(sw2()){
-
 				button_state.sw2_press = true;
 				xQueueSend(Button_state_QueueHandle, &button_state, portMAX_DELAY );
 				button_state.sw2_press = false;

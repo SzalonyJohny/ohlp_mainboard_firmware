@@ -35,13 +35,12 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	/* Infinite loop */
 
 	/* HeadBoard comunication */
-	uint8_t headboard_uart_data[10];
-	mainboard_form_hb hb;
-	hb.init(headboard_uart_data);
-	HAL_UART_Receive_DMA(&huart3, headboard_uart_data, 10);
+	uint8_t headboard_uart_data[headboard_uart_data_length];
+	mainboard_form_hb hb(headboard_uart_data);
+	HAL_UART_Receive_DMA(&huart3, headboard_uart_data, headboard_uart_data_length);
 	HAL_GPIO_WritePin(EN_3V3_GPIO_Port, EN_3V3_Pin, GPIO_PIN_SET);
 
-	/* Button State Queue init*/
+	/* Button State Queue Initialization */
 	button_state_item button_state;
 	osMessageQDef(Button_state_Queue, 3, button_state_item);
 	Button_state_QueueHandle = osMessageCreate(osMessageQ(Button_state_Queue), NULL);
@@ -83,7 +82,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 				status_charging_iter = 0;
 			}
 			else {
-				status_charging_iter ++;
+				++status_charging_iter;
 			}
 		}
 
@@ -102,14 +101,17 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 		/* User Interface */
 		if ( xQueueReceive( Button_state_QueueHandle, &button_state, 0) == pdPASS ){
 			if(button_state.sw1_press){
+				// Code to run after single press SW1
 				HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
 				button_state.sw1_press = false;
 				if(++profile > 5)profile = 0;
 			}
 			if(button_state.sw2_press){
+				// Code to run after single press SW2
 				HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
 				button_state.sw2_press = false;
 				// TODO turn off procedure
+				// save to eeprom and so one
 				BMS.shipmode();
 			}
 		}
