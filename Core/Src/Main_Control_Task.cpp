@@ -53,12 +53,12 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	set_current_data.set_current[D3] = 0;
 	xQueueSend( Set_Current_QueueHandle, &set_current_data, portMAX_DELAY );
 
-	/* Set profile Init */
+	/* Set profile Initialization */
 	uint8_t profile = 0;
 	uint8_t profile_last = 5;
 	uint16_t current_als = 2000;
 
-	/* Battery Management System Init*/
+	/* Battery Management System Initialization*/
 	cBQ BMS;
 	BMS.init_BQ(&hi2c1);
 	BMS.set_boost_mode(true);
@@ -68,7 +68,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 	for(;;)
 	{
-		osDelay(50);			   // update at 50Hz rate
+		osDelay(20);			   // update at 50Hz rate
 		HAL_IWDG_Refresh(&hiwdg);  // refresh more frequent than 15.25Hz
 
 		/* Battery Management */	// TODO add BQ int flag
@@ -87,7 +87,8 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 			}
 		}
 
-		b_voltage_debug =  BMS.read_battvoltage(); //for live expression (debug)
+		//for live expression (debug)
+		b_voltage_debug =  BMS.read_battvoltage();
 
 		/* Head Board - Over Temperature Protection */
 		hb.update();
@@ -113,7 +114,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 			}
 		}
 
-		/* Main profile management */
+		/* Main profile Management */
 		switch ( profile ){
 		case 0:{
 			set_current_data.set_current[D1] = 0;
@@ -173,7 +174,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 		}
 
-		/* to send data to LED_Driver_TAsk if it is needed */
+		/* to send data to LED Driver Task if needed */
 		if(profile != profile_last || profile == 5){
 			xQueueSend( Set_Current_QueueHandle, &set_current_data, 10 );
 		}

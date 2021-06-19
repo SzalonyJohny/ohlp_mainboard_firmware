@@ -50,8 +50,8 @@ void SMPS::SBC_c::set_update_pid(){
 
 	_pid_data.integrator = _pid_data.integrator + 0.5f * pid_const.Ki * pid_const.Ts *(error - _pid_data.prevError);
 
+
 	// Anti-wind-up via integrator clamping
-	// TODO replace with disable integrator action until: abs(error) < I_anit_wind_up_const
 	if(_pid_data.integrator > pid_const.integ_lim_max)_pid_data.integrator = pid_const.integ_lim_max;
 	if(_pid_data.integrator < pid_const.integ_lim_min)_pid_data.integrator = pid_const.integ_lim_min;
 
@@ -73,7 +73,7 @@ void SMPS::SBC_c::set_update_pid(){
 
 	_now_pwm_val += output;
 
-	// LED protection form cable reconection and high inrush current
+	// LED protection from cable reconnection -> high inrush current
 	if( fabs(measurement) < 1 && _set_current_mA != 0 && _now_pwm_val > 100){
 		constexpr float max_pwm_no_load = MAX_PWM_TIM1 * MAX_VOLTAGE_mV_DISCONNECT_PROTECTION / 4200;
 		_now_pwm_val = max_pwm_no_load;
@@ -83,7 +83,7 @@ void SMPS::SBC_c::set_update_pid(){
 	if(_now_pwm_val > pid_const.pwm_lim_max)_now_pwm_val = pid_const.pwm_lim_max;
 	if(_now_pwm_val < pid_const.pwm_lim_min)_now_pwm_val = pid_const.pwm_lim_min;
 
-	// TODO if first than rest PID code
+
 	if(_set_current_mA == 0)set_pwm(0);
 	else set_pwm( static_cast<uint16_t>(_now_pwm_val) );
 
@@ -92,9 +92,9 @@ void SMPS::SBC_c::set_update_pid(){
 
 
 void SMPS::led_drivers_c::set_all_currents(const set_current_item *data){
-	if(data->set_current[D1] <= D1_D2_max_current)SBC[D1].set_current(data->set_current[D1]);
-	if(data->set_current[D2] <= D1_D2_max_current)SBC[D2].set_current(data->set_current[D2]);
-	if(data->set_current[D3] <= D3_max_current)SBC[D3].set_current(data->set_current[D3]);
+	if( data->set_current[D1] <= D1_D2_max_current ) SBC[D1].set_current( data->set_current[D1] );
+	if( data->set_current[D2] <= D1_D2_max_current ) SBC[D2].set_current( data->set_current[D2] );
+	if( data->set_current[D3] <= D3_max_current )	 SBC[D3].set_current( data->set_current[D3] );
 }
 
 

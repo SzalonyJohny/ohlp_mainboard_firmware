@@ -45,7 +45,6 @@ void Start_LED_Driver_Task([[maybe_unused]] void const * argument)
 	led_drivers.SBC[1].set_current(0);
 	led_drivers.SBC[2].set_current(0);
 
-	//osMessageQDef(Set_Current_Queue, 3, set_current_item);
 	osMessageQStaticDef(Set_Current_Queue, 3, set_current_item, Set_Current_QueueBuffer, &Set_Current_QueueControlBlock);
 	Set_Current_QueueHandle = osMessageCreate(osMessageQ(Set_Current_Queue), NULL);
 
@@ -62,16 +61,17 @@ void Start_LED_Driver_Task([[maybe_unused]] void const * argument)
 
 		HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
 
-		// __builtin_expect() test
-		if (xQueueReceive( Set_Current_QueueHandle, &set_current_data, 0) == pdPASS)
+		/* Receive updated set-current form Main Control Task */
+		if (xQueueReceive( Set_Current_QueueHandle, &set_current_data, 0) == pdPASS){
 			led_drivers.set_all_currents(&set_current_data);
+		}
 
-//		std::for_each(led_drivers.SBC.begin(),led_drivers.SBC.end(),[](auto el){
-//			el.set_update_pid();
-//		});
 
-		for(auto &el:led_drivers.SBC)
-			el.set_update_pid();
+
+		for(auto &converter : led_drivers.SBC){
+			converter.set_update_pid();
+		}
+
 
 		HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
 
