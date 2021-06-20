@@ -74,7 +74,8 @@ void SMPS::SBC_c::set_update_pid(){
 
 	// LED protection from cable reconnection -> high inrush current
 	if( fabs(measurement) < 1 && _set_current_mA != 0 && _now_pwm_val > 100){
-		constexpr float max_pwm_no_load = MAX_PWM_TIM1 * MAX_VOLTAGE_mV_DISCONNECT_PROTECTION / 4200;
+		constexpr float max_pwm_no_load = MAX_PWM_TIM1 * MAX_VOLTAGE_mV_DISCONNECT_PROTECTION
+				/ MAX_BATTERY_VOLTAGE_mV_FOR_DISCONNECT_PROTECTION;
 		_now_pwm_val = max_pwm_no_load;
 		_pid_data.integrator = 0;
 	}
@@ -91,9 +92,9 @@ void SMPS::SBC_c::set_update_pid(){
 
 
 void SMPS::led_drivers_c::set_all_currents(const set_current_item *data){
-	if( data->set_current[D1] <= D1_D2_max_current )SBC[D1].set_current( data->set_current[D1] );
-	if( data->set_current[D2] <= D1_D2_max_current )SBC[D2].set_current( data->set_current[D2] );
-	if( data->set_current[D3] <= D3_max_current    )SBC[D3].set_current( data->set_current[D3] );
+	if( data->set_current[D1] <= D1_D2_max_current) SBC.at(D1).set_current( data->set_current[D1] );
+	if( data->set_current[D2] <= D1_D2_max_current) SBC.at(D2).set_current( data->set_current[D2] );
+	if( data->set_current[D3] <= D3_max_current   ) SBC.at(D3).set_current( data->set_current[D3] );
 }
 
 

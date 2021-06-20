@@ -9,9 +9,8 @@
 #define INC_LED_DRIVER_HPP_
 
 #include "BQ25895.hpp"
-#include <array>
 #include "Common_struct.h"
-
+#include <array>
 
 namespace SMPS{
 
@@ -21,13 +20,15 @@ namespace SMPS{
 const uint16_t MAX_PWM_TIM1 = 200;
 const uint16_t ADC_REFF_mV = 2810;
 const uint16_t ADC_MAX_COUNT = 16384; // oversampling x4 and 1 bit shift
-const uint16_t MAX_VOLTAGE_mV_DISCONNECT_PROTECTION = 3500; //
 
-const uint16_t D1_D2_max_current = 3500;	// value in mA
-const uint16_t D3_max_current = 1200; 		// value in mA
+const uint16_t MAX_VOLTAGE_mV_DISCONNECT_PROTECTION = 3500; // [mV]
+const uint16_t MAX_BATTERY_VOLTAGE_mV_FOR_DISCONNECT_PROTECTION = 4200; // [mV]
 
-const uint32_t FB_VOLTAGE_RESISTOR_DIVIDER_UP = 7500;		// value in Ohms
-const uint32_t FB_VOLTAGE_RESISTOR_DIVIDER_DOWN = 15000;	// value in Ohms
+const uint16_t D1_D2_max_current = 3500;	// [mA]
+const uint16_t D3_max_current = 1200; 		// [mA]
+
+const uint32_t FB_VOLTAGE_RESISTOR_DIVIDER_UP = 7500;		// [Ohms]
+const uint32_t FB_VOLTAGE_RESISTOR_DIVIDER_DOWN = 15000;	// [Ohms]
 
 //////////////////////////////////////
 //			  PID Constants 		//
@@ -107,8 +108,8 @@ public:
 					ADC_RANK_DMA voltage_channel, ADC_RANK_DMA current_channel):
 		_htim{htim}, _adc1_data_ptr{adc1_data_ptr}, _tim_channel{tim_channel}, _voltage_channel  {voltage_channel},
 		_current_channel {current_channel} , _set_current_mA {0} , _now_pwm_val{0}
-		{
-		};
+	{
+	};
 
 	~SBC_c() = default;
 	SBC_c(const SBC_c&)= default;
@@ -123,7 +124,7 @@ public:
 
 	void set_current(const uint32_t &current_mA);
 
-	void set_update_pid();
+	void set_update_pid() __attribute__((flatten));
 
 };
 
@@ -133,7 +134,7 @@ public:
 ////////////////////////////////////////////////////////
 
 
-class led_drivers_c{
+class led_drivers_c {
 
 
 public:
@@ -157,7 +158,8 @@ public:
 	// TODO implement
 	void set_smps_enable_pin(const bool &enable);
 
-	void set_all_currents(const set_current_item *data);
+	void set_all_currents(const set_current_item *data)__attribute__((flatten));
+
 };
 
 

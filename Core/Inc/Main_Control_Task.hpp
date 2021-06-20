@@ -14,7 +14,7 @@
 #include "task.h"
 #include "Common_struct.h"
 #include "BQ25895.hpp"
-#include <algorithm>
+
 
 
 void Start_Main_Control_Task(void const * argument);
