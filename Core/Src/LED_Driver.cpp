@@ -18,7 +18,6 @@ inline void SMPS::SBC_c::set_pwm(const uint16_t &pwm){
 
 
 inline uint32_t SMPS::SBC_c::get_current_mA(){
-
 	return static_cast<uint32_t>(
 			static_cast<float>(_adc1_data_ptr[_current_channel]) * 0.2 * 2
 	);
@@ -92,9 +91,9 @@ void SMPS::SBC_c::set_update_pid(){
 
 
 void SMPS::led_drivers_c::set_all_currents(const set_current_item *data){
-	if( data->set_current[D1] <= D1_D2_max_current ) SBC[D1].set_current( data->set_current[D1] );
-	if( data->set_current[D2] <= D1_D2_max_current ) SBC[D2].set_current( data->set_current[D2] );
-	if( data->set_current[D3] <= D3_max_current )	 SBC[D3].set_current( data->set_current[D3] );
+	if( data->set_current[D1] <= D1_D2_max_current )SBC[D1].set_current( data->set_current[D1] );
+	if( data->set_current[D2] <= D1_D2_max_current )SBC[D2].set_current( data->set_current[D2] );
+	if( data->set_current[D3] <= D3_max_current    )SBC[D3].set_current( data->set_current[D3] );
 }
 
 

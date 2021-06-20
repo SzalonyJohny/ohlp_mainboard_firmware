@@ -41,19 +41,17 @@ void Start_LED_Driver_Task([[maybe_unused]] void const * argument)
 	);
 
 
-	led_drivers.SBC[0].set_current(0);
-	led_drivers.SBC[1].set_current(0);
-	led_drivers.SBC[2].set_current(0);
-
-	osMessageQStaticDef(Set_Current_Queue, 3, set_current_item, Set_Current_QueueBuffer, &Set_Current_QueueControlBlock);
+	osMessageQStaticDef(Set_Current_Queue, 5, set_current_item, Set_Current_QueueBuffer, &Set_Current_QueueControlBlock);
 	Set_Current_QueueHandle = osMessageCreate(osMessageQ(Set_Current_Queue), NULL);
 
 
 	set_current_item set_current_data;
 
-	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_2);
-	HAL_TIM_PWM_Start(&htim1,TIM_CHANNEL_3);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_2);
+	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_3);
+
+
 
 	for(;;)
 	{
@@ -62,10 +60,10 @@ void Start_LED_Driver_Task([[maybe_unused]] void const * argument)
 		HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
 
 		/* Receive updated set-current form Main Control Task */
-		if (xQueueReceive( Set_Current_QueueHandle, &set_current_data, 0) == pdPASS){
+
+		if( xQueueReceive( Set_Current_QueueHandle, &set_current_data, 0) == pdPASS){
 			led_drivers.set_all_currents(&set_current_data);
 		}
-
 
 
 		for(auto &converter : led_drivers.SBC){

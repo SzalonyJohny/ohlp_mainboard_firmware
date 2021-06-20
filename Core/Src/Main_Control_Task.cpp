@@ -74,6 +74,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 		BMS.update_VBUS(true,500);
 
 		// TODO pack in mainboard function
+		/*
 		auto status_charging = BMS.get_statusVBUS();
 		if(status_charging == 7){
 			if(status_charging_iter>=50){
@@ -85,6 +86,8 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 				++status_charging_iter;
 			}
 		}
+	*/
+
 
 		//for live expression (debug)
 		b_voltage_debug =  BMS.read_battvoltage();

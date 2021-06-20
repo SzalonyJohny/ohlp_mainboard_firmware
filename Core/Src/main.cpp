@@ -210,7 +210,7 @@ void Custom_FREERTOS_Init(void){
 	osThreadStaticDef(Main_Control, Start_Main_Control_Task, osPriorityNormal, 0, Main_Control_Task_Buffer_size, Main_Control_Task_Buffer, &Main_Control_TaskControlBlock);
 	Main_ControlHandle = osThreadCreate(osThread(Main_Control), NULL);
 
-	osThreadStaticDef(LED_Driver, Start_LED_Driver_Task, osPriorityHigh, 0, LED_Driver_Task_Buffer_size, LED_Driver_Task_Buffer, &LED_DriverControlBlock);
+	osThreadStaticDef(LED_Driver, Start_LED_Driver_Task, osPriorityRealtime, 0, LED_Driver_Task_Buffer_size, LED_Driver_Task_Buffer, &LED_DriverControlBlock);
 	LED_DriverHandle = osThreadCreate(osThread(LED_Driver), NULL);
 
 	osThreadStaticDef(IMU_Gesture, Start_IMU_Gesture_Task, osPriorityBelowNormal, 0,IMU_Gesture_Task_Buffer_size, IMU_GestureBuffer, &IMU_GestureControlBlock);

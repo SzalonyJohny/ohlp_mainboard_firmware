@@ -44,12 +44,12 @@ extern ADC_HandleTypeDef hadc2;
 // TODO verife heap water mark
 
 // all sizes are in Bytes
-#define Main_Control_Task_Buffer_size 128
+#define Main_Control_Task_Buffer_size 256
 osThreadId Main_ControlHandle;
 uint32_t Main_Control_Task_Buffer[Main_Control_Task_Buffer_size];
 osStaticThreadDef_t Main_Control_TaskControlBlock;
 
-#define LED_Driver_Task_Buffer_size 128
+#define LED_Driver_Task_Buffer_size 256
 osThreadId LED_DriverHandle;
 uint32_t LED_Driver_Task_Buffer[LED_Driver_Task_Buffer_size];
 osStaticThreadDef_t LED_DriverControlBlock;
@@ -63,7 +63,6 @@ osStaticThreadDef_t User_ButtonControlBlock;
 osThreadId IMU_GestureHandle;
 uint32_t IMU_GestureBuffer[IMU_Gesture_Task_Buffer_size];
 osStaticThreadDef_t IMU_GestureControlBlock;
-
 
 osMessageQId Button_state_QueueHandle;
 
