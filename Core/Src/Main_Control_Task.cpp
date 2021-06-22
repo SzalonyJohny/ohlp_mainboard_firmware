@@ -34,7 +34,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	/* USER CODE BEGIN Start_Main_Control_Task */
 	/* Infinite loop */
 
-	/* HeadBoard comunication */
+	/* HeadBoard communication */
 	uint8_t headboard_uart_data[headboard_uart_data_length];
 	mainboard_form_hb hb(headboard_uart_data);
 	HAL_UART_Receive_DMA(&huart3, headboard_uart_data, headboard_uart_data_length);
@@ -94,9 +94,10 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 		/* Head Board - Over Temperature Protection */
 		hb.update();
-		for(const auto & temperature_in_degC_by_100 : hb.get_data().TEMP){
-			if(temperature_in_degC_by_100 > 8000) profile = 0;
+		for(const auto & temperature_in_100x_degC : hb.get_data().TEMP){
+			if(temperature_in_100x_degC > 8000) profile = 0;
 		}
+
 
 		HB_data_debug = hb.get_data(); //for live expression (debug)
 

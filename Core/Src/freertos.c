@@ -36,7 +36,7 @@
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
 
-extern ADC_HandleTypeDef hadc2;
+
 
 #define UNUSED_TASK_OS_DELAY 8000
 
@@ -64,7 +64,22 @@ osThreadId IMU_GestureHandle;
 uint32_t IMU_GestureBuffer[IMU_Gesture_Task_Buffer_size];
 osStaticThreadDef_t IMU_GestureControlBlock;
 
+#define SoC_Estimation_Task_Buffer_size 256
+osThreadId SoC_EstimationHandle;
+uint32_t SoC_Estimation_Buffer[IMU_Gesture_Task_Buffer_size];
+osStaticThreadDef_t SoC_Estimation_ControlBlock;
+
 osMessageQId Button_state_QueueHandle;
+
+//void Start_State_of_Charge_Task(void const * argument);
+//osThreadStaticDef(State_of_Charge, Start_State_of_Charge_Task, osPriorityNormal, 0, 64, State_of_ChargeBuffer, &State_of_ChargeControlBlock);
+//State_of_ChargeHandle = osThreadCreate(osThread(State_of_Charge), NULL);
+//const unsigned int adc2_data_length = 16;
+//uint32_t adc2_data[16];
+//HAL_ADC_Start_DMA(&hadc2, adc2_data, adc2_data_length);
+
+
+
 
 /* USER CODE END PD */
 
@@ -79,9 +94,6 @@ osMessageQId Button_state_QueueHandle;
 osThreadId defaultTaskHandle;
 uint32_t defaultTaskBuffer[ 64 ];
 osStaticThreadDef_t defaultTaskControlBlock;
-osThreadId State_of_ChargeHandle;
-uint32_t State_of_ChargeBuffer[ 64 ];
-osStaticThreadDef_t State_of_ChargeControlBlock;
 osSemaphoreId xButtonSemaphoreHandle;
 osStaticSemaphoreDef_t xButtonSemaphoreControlBlock;
 
@@ -92,7 +104,6 @@ osMessageQId Set_Current_QueueHandle;
 /* USER CODE END FunctionPrototypes */
 
 void StartDefaultTask(void const * argument);
-void Start_State_of_Charge_Task(void const * argument);
 
 extern void MX_USB_DEVICE_Init(void);
 void MX_FREERTOS_Init(void); /* (MISRA C 2004 rule 8.1) */
@@ -151,10 +162,6 @@ void MX_FREERTOS_Init(void) {
   osThreadStaticDef(defaultTask, StartDefaultTask, osPriorityIdle, 0, 64, defaultTaskBuffer, &defaultTaskControlBlock);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
-  /* definition and creation of State_of_Charge */
-  osThreadStaticDef(State_of_Charge, Start_State_of_Charge_Task, osPriorityNormal, 0, 64, State_of_ChargeBuffer, &State_of_ChargeControlBlock);
-  State_of_ChargeHandle = osThreadCreate(osThread(State_of_Charge), NULL);
-
   /* USER CODE BEGIN RTOS_THREADS */
 #pragma GCC diagnostic pop
   /* definition and creation of State_of_Charge */
@@ -177,7 +184,7 @@ void MX_FREERTOS_Init(void) {
 void StartDefaultTask(void const * argument)
 {
   /* init code for USB_DEVICE */
-  //MX_USB_DEVICE_Init();
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
   for(;;)
@@ -185,32 +192,6 @@ void StartDefaultTask(void const * argument)
     osDelay(UNUSED_TASK_OS_DELAY);
   }
   /* USER CODE END StartDefaultTask */
-}
-
-/* USER CODE BEGIN Header_Start_State_of_Charge_Task */
-/**
-* @brief Function implementing the State_of_Charge thread.
-* @param argument: Not used
-* @retval None
-*/
-/* USER CODE END Header_Start_State_of_Charge_Task */
-void Start_State_of_Charge_Task(void const * argument)
-{
-  /* USER CODE BEGIN Start_State_of_Charge_Task */
-
-
-	const unsigned int adc2_data_length = 16;
-	uint32_t adc2_data[16];
-	HAL_ADC_Start_DMA(&hadc2, adc2_data, adc2_data_length);
-
-
-
-  /* Infinite loop */
-  for(;;)
-  {
-    osDelay(UNUSED_TASK_OS_DELAY);
-  }
-  /* USER CODE END Start_State_of_Charge_Task */
 }
 
 /* Private application code --------------------------------------------------*/
