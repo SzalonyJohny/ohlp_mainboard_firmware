@@ -11,6 +11,7 @@
 #include "cmsis_os.h"
 #include "main.h"
 #include "Common_struct.h"
+#include <SoC_EKF.hpp>
 
 void Start_SoC_Estimation_Task(void const * argument);
 

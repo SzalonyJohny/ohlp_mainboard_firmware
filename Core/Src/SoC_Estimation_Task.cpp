@@ -8,12 +8,13 @@
 
 
 #include <SoC_Estimation_Task.hpp>
-#include <SoC_EKF.hpp>
+
 
 extern ADC_HandleTypeDef hadc2;
 
 // TOFIX after debug move to SoC_Task
-uint32_t adc2_data[16];
+const unsigned int adc2_data_length = 16;
+uint32_t adc2_data[adc2_data_length];
 
 void Start_SoC_Estimation_Task( [[maybe_unused]] void const * argument){
 
@@ -22,15 +23,13 @@ void Start_SoC_Estimation_Task( [[maybe_unused]] void const * argument){
     const float Time_sampling = 0.100f;
 
 
-    SoC_EKF soc;
-    soc.set_battery_equivalent_model(ICR18650);
-    soc.set_battery_ocv_polinomial(Li_Ion_ocv, SOC_OCV_poli_coeff_lenght);
-    soc.set_battery_configuration(1, 2);
-    soc.set_Time_Sampling(Time_sampling);
-    soc.set_update_matrix();
-    soc.set_Initial_SoC(0.5f);
-
-    const unsigned int adc2_data_length = 16;
+//	  SoC_EKF soc;
+//    soc.set_battery_equivalent_model(ICR18650);
+//    soc.set_battery_ocv_polinomial(Li_Ion_ocv, SOC_OCV_poli_coeff_lenght);
+//    soc.set_battery_configuration(1, 2);
+//    soc.set_Time_Sampling(Time_sampling);
+//    soc.set_update_matrix();
+//    soc.set_Initial_SoC(0.5f);
 
     HAL_ADC_Start_DMA(&hadc2, adc2_data, adc2_data_length);
 
@@ -41,16 +40,12 @@ void Start_SoC_Estimation_Task( [[maybe_unused]] void const * argument){
 	for(;;){
 
 
-		soc.update(current, voltage);
-		// For ready to use
-		//osDelay(Time_sampling*1000);
 
-		// For testing
-		osDelay(1000);
-
+		//soc.update(current, voltage);
+		osDelay(Time_sampling*1000);
 
 	}
 
-	;
+
 }
 

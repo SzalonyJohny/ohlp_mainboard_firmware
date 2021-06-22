@@ -31,7 +31,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-//#include "usbd_cdc_if.h"
+#include "usbd_cdc_if.h"
 #include "freertos.c"
 #include <IMU_Gesture_Task.hpp>
 #include <LED_Driver_Task.hpp>
@@ -116,9 +116,9 @@ int main(void)
   MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
 
-	Custom_MainBoard_abstraction_init();
+  Custom_MainBoard_abstraction_init();
 
-	Custom_FREERTOS_Init();
+  Custom_FREERTOS_Init();
 
   /* USER CODE END 2 */
 
@@ -208,7 +208,7 @@ void Custom_FREERTOS_Init(void){
 
 	// FIXME rewrite thread def to prevent warning ISO c++ tring -> char*
 
-	osThreadStaticDef(Main_Control, Start_Main_Control_Task, osPriorityNormal, 0, Main_Control_Task_Buffer_size, Main_Control_Task_Buffer, &Main_Control_TaskControlBlock);
+	osThreadStaticDef(Main_Control, Start_Main_Control_Task, osPriorityAboveNormal, 0, Main_Control_Task_Buffer_size, Main_Control_Task_Buffer, &Main_Control_TaskControlBlock);
 	Main_ControlHandle = osThreadCreate(osThread(Main_Control), NULL);
 
 	osThreadStaticDef(LED_Driver, Start_LED_Driver_Task, osPriorityRealtime, 0, LED_Driver_Task_Buffer_size, LED_Driver_Task_Buffer, &LED_DriverControlBlock);
@@ -220,7 +220,7 @@ void Custom_FREERTOS_Init(void){
 	osThreadStaticDef(User_Buttons, Start_User_Buttons_Task, osPriorityNormal, 0, User_Buttons_Task_Buffer_size, User_Buttons_Task_Buffer, &User_ButtonControlBlock);
 	User_ButtonsHandle = osThreadCreate(osThread(User_Buttons), NULL);
 
-	osThreadStaticDef(SoC_Estimation, Start_SoC_Estimation_Task, osPriorityNormal, 0, SoC_Estimation_Task_Buffer_size,SoC_Estimation_Buffer, &SoC_Estimation_ControlBlock);
+	osThreadStaticDef(SoC_Estimation, Start_SoC_Estimation_Task, osPriorityBelowNormal, 0, SoC_Estimation_Task_Buffer_size,SoC_Estimation_Buffer, &SoC_Estimation_ControlBlock);
 	SoC_EstimationHandle = osThreadCreate(osThread(SoC_Estimation), NULL);
 
 }

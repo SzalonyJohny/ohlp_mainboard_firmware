@@ -69,14 +69,8 @@ osThreadId SoC_EstimationHandle;
 uint32_t SoC_Estimation_Buffer[IMU_Gesture_Task_Buffer_size];
 osStaticThreadDef_t SoC_Estimation_ControlBlock;
 
-osMessageQId Button_state_QueueHandle;
 
-//void Start_State_of_Charge_Task(void const * argument);
-//osThreadStaticDef(State_of_Charge, Start_State_of_Charge_Task, osPriorityNormal, 0, 64, State_of_ChargeBuffer, &State_of_ChargeControlBlock);
-//State_of_ChargeHandle = osThreadCreate(osThread(State_of_Charge), NULL);
-//const unsigned int adc2_data_length = 16;
-//uint32_t adc2_data[16];
-//HAL_ADC_Start_DMA(&hadc2, adc2_data, adc2_data_length);
+osMessageQId Button_state_QueueHandle;
 
 
 
@@ -184,7 +178,7 @@ void MX_FREERTOS_Init(void) {
 void StartDefaultTask(void const * argument)
 {
   /* init code for USB_DEVICE */
-  MX_USB_DEVICE_Init();
+  //MX_USB_DEVICE_Init();
   /* USER CODE BEGIN StartDefaultTask */
   /* Infinite loop */
   for(;;)
