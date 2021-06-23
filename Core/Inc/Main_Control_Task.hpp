@@ -9,11 +9,12 @@
 #define INC_MAIN_CONTROL_TASK_HPP_
 
 #include <Data_form_HB.hpp>
-#include "cmsis_os.h"
+#include "cmsis_os2.h"
 #include "main.h"
 #include "task.h"
 #include "Common_struct.h"
 #include "BQ25895.hpp"
+#include "FreeRTOS.h"
 
 
 

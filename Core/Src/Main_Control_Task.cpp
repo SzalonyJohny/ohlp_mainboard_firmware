@@ -8,9 +8,8 @@
 #include <Main_Control_Task.hpp>
 
 
-
-extern osMessageQId Button_state_QueueHandle;
-extern osMessageQId Set_Current_QueueHandle;
+extern osMessageQueueId_t Button_StateHandle;
+extern osMessageQueueId_t Set_Current_QueueHandle;
 
 extern UART_HandleTypeDef huart3;
 extern I2C_HandleTypeDef hi2c1;
@@ -42,15 +41,15 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 	/* Button State Queue Initialization */
 	button_state_item button_state;
-	osMessageQDef(Button_state_Queue, 3, button_state_item);
-	Button_state_QueueHandle = osMessageCreate(osMessageQ(Button_state_Queue), NULL);
+
 
 	/* Set initial current  */
 	set_current_item set_current_data;
 	set_current_data.set_current[D1] = 0;
 	set_current_data.set_current[D2] = 0;
 	set_current_data.set_current[D3] = 0;
-	xQueueSend( Set_Current_QueueHandle, &set_current_data, portMAX_DELAY );
+	//xQueueSend( Set_Current_QueueHandle, &set_current_data, portMAX_DELAY );
+	osMessageQueuePut(Set_Current_QueueHandle, &set_current_data, 0U, portMAX_DELAY);
 
 	/* Set profile Initialization */
 	uint8_t profile = 0;
@@ -103,7 +102,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 
 		/* User Interface */
-		if ( xQueueReceive( Button_state_QueueHandle, &button_state, 0) == pdPASS ){
+		if ( osMessageQueueGet(Button_StateHandle, &button_state, NULL, 0U) == pdPASS ){
 			if(button_state.sw1_press){
 				// Code to run after single press SW1
 				HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
@@ -182,7 +181,8 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 		/* to send data to LED Driver Task if needed */
 		if(profile != profile_last || profile == 5){
-			xQueueSend( Set_Current_QueueHandle, &set_current_data, 10 );
+			// TODO rtos2
+			//xQueueSend( Set_Current_QueueHandle, &set_current_data, 10 );
 		}
 
 		profile_last = profile;

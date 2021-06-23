@@ -13,16 +13,10 @@
 
 extern ADC_HandleTypeDef hadc1;
 extern TIM_HandleTypeDef htim1;
-extern osMessageQId Set_Current_QueueHandle;
+
+extern osMessageQueueId_t Set_Current_QueueHandle;
 
 using namespace SMPS;
-
-
-const uint32_t Set_Current_Queue_size = 3;
-constexpr uint32_t  Set_Current_Queue_Buffer_size =  4*Set_Current_Queue_size*sizeof(set_current_item);
-
-uint8_t Set_Current_QueueBuffer[Set_Current_Queue_Buffer_size];
-osStaticMessageQDef_t Set_Current_QueueControlBlock;
 
 
 void Start_LED_Driver_Task([[maybe_unused]] void const * argument)
@@ -41,10 +35,6 @@ void Start_LED_Driver_Task([[maybe_unused]] void const * argument)
 	);
 
 
-	osMessageQStaticDef(Set_Current_Queue, 5, set_current_item, Set_Current_QueueBuffer, &Set_Current_QueueControlBlock);
-	Set_Current_QueueHandle = osMessageCreate(osMessageQ(Set_Current_Queue), NULL);
-
-
 	set_current_item set_current_data;
 
 	HAL_TIM_PWM_Start(&htim1, TIM_CHANNEL_1);
@@ -61,7 +51,7 @@ void Start_LED_Driver_Task([[maybe_unused]] void const * argument)
 
 		/* Receive updated set-current form Main Control Task */
 
-		if( xQueueReceive( Set_Current_QueueHandle, &set_current_data, 0) == pdPASS){
+		if( osMessageQueueGet(Set_Current_QueueHandle, &set_current_data, 0, 0) == pdPASS){
 			led_drivers.set_all_currents(&set_current_data);
 		}
 
