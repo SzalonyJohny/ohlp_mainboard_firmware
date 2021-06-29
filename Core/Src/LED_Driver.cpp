@@ -38,7 +38,6 @@ inline uint32_t SMPS::SBC_c::get_voltage_mV(){
 
 
 
-
 void SMPS::SBC_c::set_update_pid(){
 
 	float measurement = static_cast<float>(get_current_mA());
@@ -58,7 +57,7 @@ void SMPS::SBC_c::set_update_pid(){
 	// - sign -> derative is on measurement + some inertia
 	_pid_data.differentiator = -(2.0f * pid_const.Kd * (measurement - _pid_data.prevMeasurement)
 			+ (2.0f * pid_const.tau - pid_const.Ts) * _pid_data.differentiator)
-            				/ (2.0f * pid_const.tau + pid_const.Ts);
+            						/ (2.0f * pid_const.tau + pid_const.Ts);
 
 
 	float output = proportional + _pid_data.integrator + _pid_data.differentiator;
@@ -90,11 +89,17 @@ void SMPS::SBC_c::set_update_pid(){
 }
 
 
+void SMPS::led_drivers_c::set_update_all_pid(){
+	for(auto &converter : _SBC){
+		converter.set_update_pid();
+	}
+}
+
 
 void SMPS::led_drivers_c::set_all_currents(const set_current_item *data){
-	if( data->set_current[D1] <= D1_D2_max_current) SBC.at(D1).set_current( data->set_current[D1] );
-	if( data->set_current[D2] <= D1_D2_max_current) SBC.at(D2).set_current( data->set_current[D2] );
-	if( data->set_current[D3] <= D3_max_current   ) SBC.at(D3).set_current( data->set_current[D3] );
+	if( data->set_current[D1] <= D1_D2_max_current)_SBC[D1].set_current( data->set_current[D1] );
+	if( data->set_current[D2] <= D1_D2_max_current)_SBC[D2].set_current( data->set_current[D2] );
+	if( data->set_current[D3] <= D3_max_current   )_SBC[D3].set_current( data->set_current[D3] );
 }
 
 

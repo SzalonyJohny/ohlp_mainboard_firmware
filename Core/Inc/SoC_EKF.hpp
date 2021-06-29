@@ -10,6 +10,7 @@
 
 #include <array>
 #include <math.h>
+
 const unsigned int SOC_OCV_poli_coeff_lenght = 9;
 
 enum batt{
@@ -47,7 +48,8 @@ class SoC_EKF
 {
 private:
     Battery_characteristic _battery;
-    float _et1,_et2;
+    float _et1;
+	float _et2;
     float _Ts;
 
     float _A_matrix[3];
@@ -59,7 +61,7 @@ private:
 
 
 public:
-    SoC_EKF()= default;
+    SoC_EKF() = default;
 
     /* Battery model represented in Two Time Constatant model */
     /*  { Rs[Ohms], ttc1[s], ttc2, Rttc1[Ohms], Rttc2, Cttc1[F], Cttc2, Qnominal[Ah]} */
@@ -72,9 +74,10 @@ public:
     /* Define battery configuration in eg. 1s2p -> s = 1, p = 2 */
     void set_battery_configuration(unsigned int &&s, unsigned int &&p);
 
+    /* Constant Time sampling*/
     void set_Time_Sampling(float Ts);
 
-    void set_Initial_SoC(float aSoC);
+    void set_Initial_SoC(const float &aSoC);
 
     void set_update_matrix();
     void update(const float &Current, const float &Voltage);

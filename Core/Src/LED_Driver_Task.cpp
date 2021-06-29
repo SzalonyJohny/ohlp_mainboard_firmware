@@ -65,10 +65,8 @@ void Start_LED_Driver_Task([[maybe_unused]] void const * argument)
 			led_drivers.set_all_currents(&set_current_data);
 		}
 
-
-		for(auto &converter : led_drivers.SBC){
-			converter.set_update_pid();
-		}
+		// Main controller loop
+		led_drivers.set_update_all_pid();
 
 
 		HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);

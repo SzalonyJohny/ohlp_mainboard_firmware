@@ -69,11 +69,8 @@ void Start_User_Buttons_Task( [[maybe_unused]] void const * argument)
 
 
 void User_Buttons_ISR_SW1_handle(){
-
 	BaseType_t sHigherPriorityTaskWoken = pdFALSE;
 	xSemaphoreGiveFromISR(xButtonSemaphoreHandle,&sHigherPriorityTaskWoken);
-	portYIELD_FROM_ISR( sHigherPriorityTaskWoken );
-
 }
 
 

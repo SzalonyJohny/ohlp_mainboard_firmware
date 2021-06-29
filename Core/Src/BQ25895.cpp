@@ -60,8 +60,8 @@ void cBQ::set_termination_current(uint8_t iterm){
 
 
 void cBQ::set_chargevoltage(uint8_t uchg){
-    REG[0x06] = static_cast<uint8_t>(uchg | BATLOWV<<1 | 0<<0);
-    updateREG(0x06);
+	REG[0x06] = static_cast<uint8_t>(uchg | BATLOWV<<1 | 0<<0);
+	updateREG(0x06);
 }
 
 void cBQ:: set_boost_voltage(uint8_t bmvr){
@@ -69,9 +69,9 @@ void cBQ:: set_boost_voltage(uint8_t bmvr){
 	updateREG(0x0A);
 }
 
-uint8_t cBQ::read_charge_adapter(){
-    uint8_t charge_status = BQRead_VALUE(0x0B);
-    return static_cast<uint8_t>(charge_status>>5);
+uint8_t cBQ::get_charge_adapter(){
+	uint8_t charge_status = BQRead_VALUE(0x0B);
+	return static_cast<uint8_t>(charge_status>>5);
 }
 
 void cBQ::shipmode(){
@@ -79,29 +79,29 @@ void cBQ::shipmode(){
 }
 
 void cBQ::set_input_voltage_limit(uint8_t ivdpm){
-    REGset(0x0D,(1<<7) | ivdpm);
+	REGset(0x0D,(1<<7) | ivdpm);
 }
 
-uint16_t cBQ::read_battvoltage(){
+uint16_t cBQ::get_battvoltage(){
 	set_startADCconv();
 	uint16_t reg_value = BQRead_VALUE(0x0E);
 	return static_cast<uint16_t>(reg_value*20+2304);
 }
 
-uint16_t cBQ::read_sysvoltage(){
+uint16_t cBQ::get_sysvoltage(){
 	set_startADCconv();
 	uint16_t reg_value = BQRead_VALUE(0x0F);
 	return static_cast<uint16_t>(reg_value*20+2304);
 }
 
-uint16_t cBQ::read_vbusvoltage(){
+uint16_t cBQ::get_vbusvoltage(){
 	set_startADCconv();
 	uint16_t reg_value = BQRead_VALUE(0x11);
 	return static_cast<uint16_t>((reg_value-(reg_value>>7)*128)*100 + 2600);
 
 }
 
-uint16_t cBQ::read_battcurrent(){
+uint16_t cBQ::get_battcurrent(){
 	set_startADCconv();
 	uint16_t reg_value = BQRead_VALUE(0x12);
 	return static_cast<uint16_t>(reg_value*50);
@@ -127,29 +127,29 @@ cBQ::cBQ(){
 	REG[0x06] = 0b01011110;
 	REG[0x07] = 0b10011101;
 
-    EN_HIZ = 0;
-    EN_ILIM = 0;
+	EN_HIZ = 0;
+	EN_ILIM = 0;
 	BCOLD = 1;
-    BHOT[0]=1;
-    BHOT[1]=1;
+	BHOT[0]=1;
+	BHOT[1]=1;
 	battload=0;
-    battcharge=1;
-    boostmode=1;
+	battcharge=1;
+	boostmode=1;
 	battsysmin=0;
 	EN_PUMPX = 1;
-    statusVBUS = 7;
-    BATLOWV = 1; //Precharge
-    termination_current = 0;
-    precharge_current = 0;
-    hi2c = nullptr;
+	statusVBUS = 7;
+	BATLOWV = 1; //Precharge
+	termination_current = 0;
+	precharge_current = 0;
+	hi2c = nullptr;
 }
 
 void cBQ::updateREGs(){
-//	uint8_t tempbuff[18]={};
-//	tempbuff[0] = 0x00;
-//	for(int i=0;i<7;i++)tempbuff[i+1]=REG[i];
-//	TWI_MasterWriteRead(&twiMaster,BQaddress,&tempbuff[0],2,0);
-//	while (twiMaster.status != TWIM_STATUS_READY) {}
+	//	uint8_t tempbuff[18]={};
+	//	tempbuff[0] = 0x00;
+	//	for(int i=0;i<7;i++)tempbuff[i+1]=REG[i];
+	//	TWI_MasterWriteRead(&twiMaster,BQaddress,&tempbuff[0],2,0);
+	//	while (twiMaster.status != TWIM_STATUS_READY) {}
 }
 
 void cBQ::REGset(uint8_t reg_number, uint8_t value){
@@ -162,28 +162,31 @@ void cBQ::REGset(uint8_t reg_number, uint8_t value){
 
 void cBQ::init_BQ(I2C_HandleTypeDef *phic){
 	hi2c = phic;
-    REGset(0x14,0b10111001);
+	// Reset to default setting
+	REGset(0x14,0b10111001);
 	set_inputcurrent(inc_1600mA | inc_800mA | inc_400mA | inc_200mA | inc_100mA | inc_50mA); //3.25A max input current
 	set_battsysmin(sysmin_3000mV);
-    set_inputvoltagelimitofset(ivlo_1600mV | ivlo_800mV | ivlo_400mV | ivlo_200mV | ivlo_100mV);
+	set_inputvoltagelimitofset(ivlo_1600mV | ivlo_800mV | ivlo_400mV | ivlo_200mV | ivlo_100mV);
 
-    set_chargecurrent(ichg_2048mA | ichg_1024mA);              //charge current safe 2560mA
+	//charge current = 3072mA
+	set_chargecurrent(ichg_2048mA | ichg_1024mA);
+	// charge voltage = 4192mV
+	set_chargevoltage(uchg_3840mV | uchg_256mV | uchg_64mV | uchg_32mV);
+	// mosfet driver supply voltage measured at 4.84V
+	set_boost_voltage(bmvr_4550mV | bmvr_256mV);
 
-	set_chargevoltage(uchg_3840mV | uchg_256mV | uchg_64mV | uchg_32mV); // charge voltage = 4192mV
-    set_boost_voltage(bmvr_4550mV | bmvr_256mV);		// measured at 4.84V
+	set_precharge_current(iprechg_512mA | Iprechg_offset_64mA);
+	set_termination_current(iterm_64mA | iterm_offset_64mA);
 
-    set_precharge_current(iprechg_512mA | Iprechg_offset_64mA);
-    set_termination_current(iterm_64mA | iterm_offset_64mA);
+	set_input_voltage_limit(vinpm_6400mV | vinpm_3200mV | vinpm_1600mV | vinpm_800mV |vinpm_400mV | vinpm_200mV | vinpm_100mV);
 
-    set_input_voltage_limit(vinpm_6400mV | vinpm_3200mV | vinpm_1600mV | vinpm_800mV |vinpm_400mV | vinpm_200mV | vinpm_100mV);
-
-    REGset(0x0D,0b01100000);
+	REGset(0x0D,0b01100000);
 
 	REGset(0x07,0b11000001);
 	REGset(0x08,0b00000011);
-    REGset(0x09,0b01000100);
-    set_startADCconv(); // to setup REG 0x02;
-    update_VBUS(1,400); // update status
+	REGset(0x09,0b01000100);
+	set_startADCconv(); // to setup REG 0x02;
+	update_VBUS(1,400); // update status
 }
 
 
@@ -191,21 +194,21 @@ bool cBQ::update_VBUS(bool bq_int_flag, uint16_t max_count = 500){
 
 
 
-    if(bq_int_flag)counter_vbus_update = 1;
-    if(counter_vbus_update!=0){
-        counter_vbus_update++;
-        if(counter_vbus_update<max_count){
-            statusVBUS = static_cast<uint8_t>(BQRead_VALUE(0x0B) >> 5);
-        }
-        else {
-            counter_vbus_update=0;
-        }
-    }
-    return counter_vbus_update;
+	if(bq_int_flag)counter_vbus_update = 1;
+	if(counter_vbus_update!=0){
+		counter_vbus_update++;
+		if(counter_vbus_update<max_count){
+			statusVBUS = static_cast<uint8_t>(BQRead_VALUE(0x0B) >> 5);
+		}
+		else {
+			counter_vbus_update=0;
+		}
+	}
+	return counter_vbus_update;
 }
 
 
 
 uint8_t cBQ::get_statusVBUS(){
-    return statusVBUS;
+	return statusVBUS;
 }

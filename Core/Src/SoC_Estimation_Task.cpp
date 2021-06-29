@@ -13,8 +13,10 @@
 extern ADC_HandleTypeDef hadc2;
 
 // TOFIX after debug move to SoC_Task
-const unsigned int adc2_data_length = 16;
+const unsigned int adc2_data_length = 128;
 uint32_t adc2_data[adc2_data_length];
+
+float voltage_count;
 
 void Start_SoC_Estimation_Task( [[maybe_unused]] void const * argument){
 
@@ -23,7 +25,7 @@ void Start_SoC_Estimation_Task( [[maybe_unused]] void const * argument){
     const float Time_sampling = 0.100f;
 
 
-//	  SoC_EKF soc;
+//	SoC_EKF soc;
 //    soc.set_battery_equivalent_model(ICR18650);
 //    soc.set_battery_ocv_polinomial(Li_Ion_ocv, SOC_OCV_poli_coeff_lenght);
 //    soc.set_battery_configuration(1, 2);
@@ -34,11 +36,22 @@ void Start_SoC_Estimation_Task( [[maybe_unused]] void const * argument){
     HAL_ADC_Start_DMA(&hadc2, adc2_data, adc2_data_length);
 
 
-    float voltage = 3;
-    float current = 0;
-
 	for(;;){
 
+	    float voltage_adc_count = 0;
+	    float current_adc_count = 0;
+
+	    for(unsigned int i=1; i<adc2_data_length; i+=2){
+	    	voltage_adc_count += (float)adc2_data[i];
+	    	current_adc_count += (float)adc2_data[i-1];
+	    }
+
+	    const float comp_lin_a = 0.000086886006991f;
+	    const float comp_lin_b = 0.089959948751471f;
+
+
+
+	    voltage_count = (voltage_adc_count / (adc2_data_length/2))*comp_lin_a + comp_lin_b;
 
 
 		//soc.update(current, voltage);

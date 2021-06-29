@@ -41,7 +41,7 @@
 #define UNUSED_TASK_OS_DELAY 8000
 
 
-// TODO verife heap water mark
+// TODO verife heap watermark
 
 // all sizes are in Bytes
 #define Main_Control_Task_Buffer_size 256
@@ -66,7 +66,7 @@ osStaticThreadDef_t IMU_GestureControlBlock;
 
 #define SoC_Estimation_Task_Buffer_size 256
 osThreadId SoC_EstimationHandle;
-uint32_t SoC_Estimation_Buffer[IMU_Gesture_Task_Buffer_size];
+uint32_t SoC_Estimation_Buffer[SoC_Estimation_Task_Buffer_size];
 osStaticThreadDef_t SoC_Estimation_ControlBlock;
 
 

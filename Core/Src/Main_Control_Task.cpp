@@ -64,7 +64,6 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	BMS.set_battcharge(true);
 	uint16_t status_charging_iter = 0;
 
-
 	for(;;)
 	{
 		osDelay(20);			   // update at 50Hz rate
@@ -74,9 +73,8 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 		BMS.update_VBUS(true,500);
 
 		// TODO pack in mainboard function
-		/*
-		auto status_charging = BMS.get_statusVBUS();
-		if(status_charging == 7){
+		float charging_voltage = static_cast<float>( BMS.get_vbusvoltage() );
+		if(charging_voltage >= 6.00f){
 			if(status_charging_iter>=50){
 				HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
 				HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
@@ -86,11 +84,10 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 				++status_charging_iter;
 			}
 		}
-	*/
 
 
-		//for live expression (debug)
-		b_voltage_debug =  BMS.read_battvoltage();
+		// FIXME for live expression (debug)
+		b_voltage_debug =  BMS.get_battvoltage();
 
 		/* Head Board - Over Temperature Protection */
 		hb.update();
@@ -115,7 +112,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 				HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
 				button_state.sw2_press = false;
 				// TODO turn off procedure
-				// save to eeprom and so one
+				// save to SOC to eeprom and so one
 				BMS.shipmode();
 			}
 		}

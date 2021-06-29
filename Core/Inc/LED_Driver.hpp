@@ -103,7 +103,6 @@ private:
 
 public:
 
-	//		Rule of 5
 	constexpr SBC_c(const TIM_HandleTypeDef *const htim, uint32_t tim_channel, const uint32_t *const adc1_data_ptr,
 					ADC_RANK_DMA voltage_channel, ADC_RANK_DMA current_channel):
 		_htim{htim}, _adc1_data_ptr{adc1_data_ptr}, _tim_channel{tim_channel}, _voltage_channel  {voltage_channel},
@@ -111,10 +110,9 @@ public:
 	{
 	};
 
-	~SBC_c() = default;
-	SBC_c(const SBC_c&)= default;
-	SBC_c & operator= ( const SBC_c&) = default;
-
+	// non construction-copyable & non copyable
+	SBC_c(const SBC_c&) = delete;
+	SBC_c & operator= ( const SBC_c&) = delete;
 
 	inline void set_pwm(const uint16_t &pwm);
 
@@ -125,7 +123,6 @@ public:
 	void set_current(const uint32_t &current_mA);
 
 	void set_update_pid() __attribute__((flatten));
-
 };
 
 
@@ -136,6 +133,9 @@ public:
 
 class led_drivers_c {
 
+private:
+
+	std::array< SBC_c, NUMBER_OF_LED_CHANNELS > _SBC;
 
 public:
 
@@ -143,7 +143,7 @@ public:
 			const TIM_HandleTypeDef *const htim1, uint32_t tim_channel1, const uint32_t *const adc1_data_ptr1, ADC_RANK_DMA voltage_channel1, ADC_RANK_DMA current_channel1,
 			const TIM_HandleTypeDef *const htim2, uint32_t tim_channel2, const uint32_t *const adc1_data_ptr2, ADC_RANK_DMA voltage_channel2, ADC_RANK_DMA current_channel2,
 			const TIM_HandleTypeDef *const htim3, uint32_t tim_channel3, const uint32_t *const adc1_data_ptr3, ADC_RANK_DMA voltage_channel3, ADC_RANK_DMA current_channel3)
-	:SBC{
+	:_SBC{
 			SBC_c(htim1, tim_channel1, adc1_data_ptr1, voltage_channel1, current_channel1),
 			SBC_c(htim2, tim_channel2, adc1_data_ptr2, voltage_channel2, current_channel2),
 			SBC_c(htim3, tim_channel3, adc1_data_ptr3, voltage_channel3, current_channel3)
@@ -151,7 +151,10 @@ public:
 	{
 	}
 
-	std::array< SBC_c, NUMBER_OF_LED_CHANNELS > SBC;
+	// non construction-copyable & non copyable
+	led_drivers_c(const led_drivers_c&) = delete;
+	led_drivers_c & operator= ( const led_drivers_c&) = delete;
+
 
 	// TODO implement
 	void set_boost_enable(const bool &enable);
@@ -159,6 +162,8 @@ public:
 	void set_smps_enable_pin(const bool &enable);
 
 	void set_all_currents(const set_current_item *data)__attribute__((flatten));
+
+	void set_update_all_pid() __attribute__((flatten));
 
 };
 

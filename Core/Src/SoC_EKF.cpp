@@ -52,9 +52,9 @@ void SoC_EKF::update(const float &Current, const float &Voltage)
     // Predict Opec circiut voltage single call voltage based on SoC
     float Voltage_predict_OCV = horner(_battery.battery_ocv_poli, SOC_OCV_poli_coeff_lenght, &_State_vector[SoC]);
 
-    float Voltage_predict = Voltage_predict_OCV - _State_vector[Vttc1]/_battery.cell_in_parallel
-                                                - _State_vector[Vttc2]/_battery.cell_in_parallel
-                                                - (Current) * _battery.battery_equivalent_model[Rs]*_battery.cell_in_series;
+    float Voltage_predict = Voltage_predict_OCV - _State_vector[Vttc1]/static_cast<float>(_battery.cell_in_parallel)
+                                                - _State_vector[Vttc2]/static_cast<float>(_battery.cell_in_parallel)
+                                                - (Current) * _battery.battery_equivalent_model[Rs]*static_cast<float>(_battery.cell_in_series);
 
     float innovation = (Voltage) - Voltage_predict;
 
@@ -77,7 +77,7 @@ void SoC_EKF::set_battery_equivalent_model(const float *battery_model){
     std::copy(battery_model, battery_model+8, _battery.battery_equivalent_model);
 }
 
-void SoC_EKF::set_Initial_SoC(float aSoC){
+void SoC_EKF::set_Initial_SoC(const float &aSoC){
     _State_vector[SoC] = aSoC;
 }
 
