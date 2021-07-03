@@ -30,9 +30,9 @@ private:
 public:
 
 	constexpr mainboard_form_hb(const uint8_t *uart_data_ptr):_recive_data_ptr{uart_data_ptr},_data{}{}
-	~mainboard_form_hb() = default;
-	mainboard_form_hb(const mainboard_form_hb&)= default;
-	mainboard_form_hb & operator= (const mainboard_form_hb&) = default;
+	// non-copyable
+	mainboard_form_hb(const mainboard_form_hb&)= delete;
+	mainboard_form_hb & operator= (const mainboard_form_hb&) = delete;
 
 
 	void update();
