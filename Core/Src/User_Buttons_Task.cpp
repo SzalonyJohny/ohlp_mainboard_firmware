@@ -39,7 +39,7 @@ void Start_User_Buttons_Task( [[maybe_unused]] void const * argument)
 	{
 
 
-		xSemaphoreTake(xButtonSemaphoreHandle,portMAX_DELAY);
+		xSemaphoreTake(xButtonSemaphoreHandle, portMAX_DELAY);
 
 		if( sw1() ){
 			osDelay(Button_Debounce_delay_SW1);

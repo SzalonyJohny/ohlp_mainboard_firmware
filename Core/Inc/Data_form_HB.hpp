@@ -36,7 +36,7 @@ public:
 
 
 	void update();
-	[[nodiscard]] data_from_hb get_data();
+	[[nodiscard]] data_from_hb get_data() const;
 
 };
 

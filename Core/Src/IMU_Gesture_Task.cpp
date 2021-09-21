@@ -8,13 +8,13 @@
 extern I2C_HandleTypeDef hi2c1;
 
 // TODO remove -> use to debug
-float acc_x;
-float acc_y;
-float acc_z;
+int16_t acc_x;
+int16_t acc_y;
+int16_t acc_z;
 
-float gyr_x;
-float gyr_y;
-float gyr_z;
+int16_t gyr_x;
+int16_t gyr_y;
+int16_t gyr_z;
 
 
 void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
@@ -38,8 +38,8 @@ void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
 
 		HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
 
-		MPU6050_GetAccelerometerScaled(&acc_x, &acc_y, &acc_z);
-		MPU6050_GetGyroscopeScaled(&gyr_x, &gyr_y,	 &gyr_z);
+		MPU6050_GetAccelerometerRAW(&acc_x, &acc_y, &acc_z);
+		MPU6050_GetGyroscopeRAW(&gyr_x, &gyr_y,	 &gyr_z);
 
 
 		//float tab_temp_to_send_bytes[] = {acc_x, acc_y, acc_z, gyr_x, gyr_y, gyr_z};

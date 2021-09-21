@@ -9,7 +9,7 @@
 
 
 
-[[nodiscard]] data_from_hb mainboard_form_hb::get_data(){
+[[nodiscard]] data_from_hb mainboard_form_hb::get_data() const{
 	return _data;
 }
 

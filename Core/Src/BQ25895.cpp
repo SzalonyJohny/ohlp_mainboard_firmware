@@ -82,7 +82,7 @@ void cBQ::set_input_voltage_limit(uint8_t ivdpm){
 	REGset(0x0D,(1<<7) | ivdpm);
 }
 
-uint16_t cBQ::get_battvoltage(){
+uint16_t cBQ::get_battvoltage() {
 	set_startADCconv();
 	uint16_t reg_value = BQRead_VALUE(0x0E);
 	return static_cast<uint16_t>(reg_value*20+2304);

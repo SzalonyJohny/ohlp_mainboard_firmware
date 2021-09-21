@@ -6,7 +6,10 @@
  */
 
 #include <Main_Control_Task.hpp>
+#include <chrono>
 
+using namespace std::chrono_literals;
+using namespace std::chrono;
 
 
 extern osMessageQId Button_state_QueueHandle;
@@ -64,9 +67,17 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	BMS.set_battcharge(true);
 	uint16_t status_charging_iter = 0;
 
+
+
+	const auto os_delay_time = 20ms; // 50Hz
+
 	for(;;)
 	{
-		osDelay(20);			   // update at 50Hz rate
+		const auto milliseconds_to_delay = std::chrono::duration_cast<milliseconds>(os_delay_time);
+		osDelay((uint32_t)milliseconds_to_delay.count());
+
+
+
 		HAL_IWDG_Refresh(&hiwdg);  // refresh more frequent than 15.25Hz
 
 		/* Battery Management */	// TODO add BQ int flag

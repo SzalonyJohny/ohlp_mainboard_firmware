@@ -17,7 +17,7 @@ inline void SMPS::SBC_c::set_pwm(const uint16_t &pwm){
 }
 
 
-inline uint32_t SMPS::SBC_c::get_current_mA(){
+inline uint32_t SMPS::SBC_c::get_current_mA() const{
 	return static_cast<uint32_t>(
 			static_cast<float>(_adc1_data_ptr[_current_channel]) * 0.2f * 2
 	);
@@ -29,7 +29,7 @@ void SMPS::SBC_c::set_current(const uint32_t &current_mA){
 }
 
 
-inline uint32_t SMPS::SBC_c::get_voltage_mV(){
+inline uint32_t SMPS::SBC_c::get_voltage_mV() const{
 	return static_cast<uint32_t>(
 			static_cast<float>(_adc1_data_ptr[_voltage_channel]) * ADC_REFF_mV / ADC_MAX_COUNT *
 			( (FB_VOLTAGE_RESISTOR_DIVIDER_DOWN + FB_VOLTAGE_RESISTOR_DIVIDER_UP) / FB_VOLTAGE_RESISTOR_DIVIDER_DOWN)

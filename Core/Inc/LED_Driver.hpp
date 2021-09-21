@@ -116,9 +116,9 @@ public:
 
 	inline void set_pwm(const uint16_t &pwm);
 
-	inline uint32_t get_current_mA();
+	inline uint32_t get_current_mA() const;
 
-	inline uint32_t get_voltage_mV();
+	inline uint32_t get_voltage_mV() const;
 
 	void set_current(const uint32_t &current_mA);
 
@@ -166,9 +166,6 @@ public:
 	void set_update_all_pid() __attribute__((flatten));
 
 };
-
-
-
 
 
 }

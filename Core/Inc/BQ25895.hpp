@@ -186,7 +186,6 @@ public:
 	uint16_t get_battcurrent();
 
 
-
 	bool update_VBUS(bool bq_int_flag, uint16_t max_count);
 
 

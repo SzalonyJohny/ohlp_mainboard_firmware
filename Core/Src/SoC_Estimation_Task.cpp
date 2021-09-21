@@ -25,7 +25,7 @@ void Start_SoC_Estimation_Task( [[maybe_unused]] void const * argument){
     const float Time_sampling = 0.100f;
 
 
-//	SoC_EKF soc;
+//	  SoC_EKF soc;
 //    soc.set_battery_equivalent_model(ICR18650);
 //    soc.set_battery_ocv_polinomial(Li_Ion_ocv, SOC_OCV_poli_coeff_lenght);
 //    soc.set_battery_configuration(1, 2);
@@ -55,7 +55,7 @@ void Start_SoC_Estimation_Task( [[maybe_unused]] void const * argument){
 
 
 		//soc.update(current, voltage);
-		osDelay(Time_sampling*1000);
+		osDelay( Time_sampling*1000 );
 
 	}
 
