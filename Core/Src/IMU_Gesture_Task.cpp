@@ -25,10 +25,12 @@ void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
 
 	/* USB Init */
 	//MX_USB_DEVICE_Init();
-	char data_buffer_usb[64];
+
+	const uint32_t data_buff_size = 64;
+	char data_buffer_usb[data_buff_size];
 
 
-	const float send_rate = 60;
+	const float send_rate = 240.0f;
 	const float os_daley_time = floor(1000.0f/send_rate);
 
 	for(;;){
@@ -41,26 +43,13 @@ void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
 		MPU6050_GetAccelerometerRAW(&acc_x, &acc_y, &acc_z);
 		MPU6050_GetGyroscopeRAW(&gyr_x, &gyr_y,	 &gyr_z);
 
+		snprintf( data_buffer_usb, data_buff_size, "%d,%d,%d,%d,%d,%d \n", acc_x, acc_y, acc_z, gyr_x, gyr_y, gyr_z);
+		auto status = CDC_Transmit_FS( (uint8_t*)data_buffer_usb, (uint16_t)strlen(data_buffer_usb) );
 
-		//float tab_temp_to_send_bytes[] = {acc_x, acc_y, acc_z, gyr_x, gyr_y, gyr_z};
-
-
-//		sprintf((data_buffer_usb), "%f,%f,%f,",
-//				acc_x, acc_y, acc_z);
-//
-//		CDC_Transmit_FS((uint8_t*)data_buffer_usb, (uint16_t)strlen(data_buffer_usb));
-//
-//		sprintf((data_buffer_usb), "%f,%f,%f \r\n",
-//				gyr_x, gyr_y, gyr_z);
-//
-//		CDC_Transmit_FS((uint8_t*)data_buffer_usb, (uint16_t)strlen(data_buffer_usb));
-//
-
-//		CDC_Transmit_FS((uint8_t*)data_buffer_usb, (uint16_t)strlen(data_buffer_usb));
-//		CDC_Transmit_FS((uint8_t*)tab_temp_to_send_bytes, 4*6);
-//		char end_line_character[] = "\r\n";
-//		CDC_Transmit_FS((uint8_t*)end_line_character,(uint16_t)strlen(end_line_character));
-
+		if(USBD_OK != status){
+			snprintf( data_buffer_usb, data_buff_size, "error");
+			CDC_Transmit_FS( (uint8_t*)data_buffer_usb, (uint16_t)strlen(data_buffer_usb) );
+		}
 	}
 
 

@@ -220,7 +220,7 @@ void Custom_FREERTOS_Init(void){
 	osThreadStaticDef(User_Buttons, Start_User_Buttons_Task, osPriorityNormal, 0, User_Buttons_Task_Buffer_size, User_Buttons_Task_Buffer, &User_ButtonControlBlock);
 	User_ButtonsHandle = osThreadCreate(osThread(User_Buttons), NULL);
 
-	osThreadStaticDef(SoC_Estimation, Start_SoC_Estimation_Task, osPriorityBelowNormal, 0, SoC_Estimation_Task_Buffer_size,SoC_Estimation_Buffer, &SoC_Estimation_ControlBlock);
+	osThreadStaticDef(SoC_Estimation, Start_SoC_Estimation_Task, osPriorityLow, 0, SoC_Estimation_Task_Buffer_size,SoC_Estimation_Buffer, &SoC_Estimation_ControlBlock);
 	SoC_EstimationHandle = osThreadCreate(osThread(SoC_Estimation), NULL);
 
 }

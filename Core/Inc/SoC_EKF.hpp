@@ -61,7 +61,8 @@ private:
 
 
 public:
-    SoC_EKF() = default;
+    // to follow rule of 0
+    //SoC_EKF() = default;
 
     /* Battery model represented in Two Time Constatant model */
     /*  { Rs[Ohms], ttc1[s], ttc2, Rttc1[Ohms], Rttc2, Cttc1[F], Cttc2, Qnominal[Ah]} */

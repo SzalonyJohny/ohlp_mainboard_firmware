@@ -16,7 +16,7 @@
 #pragma GCC diagnostic push
 #pragma GCC diagnostic ignored "-Wconversion"
 
-#define I2C_TIMEOUT 15
+#define I2C_TIMEOUT 5
 
 I2C_HandleTypeDef *i2c;
 float Acc_Scale;

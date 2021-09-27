@@ -70,11 +70,13 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 
 	const auto os_delay_time = 20ms; // 50Hz
+	const unsigned int milliseconds_to_delay = std::chrono::duration_cast<milliseconds>(os_delay_time).count();
+
 
 	for(;;)
 	{
-		const auto milliseconds_to_delay = std::chrono::duration_cast<milliseconds>(os_delay_time);
-		osDelay((uint32_t)milliseconds_to_delay.count());
+
+		osDelay(20);
 
 
 
