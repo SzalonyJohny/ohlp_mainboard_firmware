@@ -12,6 +12,9 @@
 #include "math.h"
 
 
+uint32_t led_current_voltage_look_up[6];
+
+
 inline void SMPS::SBC_c::set_pwm(const uint16_t &pwm){
 	__HAL_TIM_SET_COMPARE(_htim, _tim_channel, pwm);
 }
@@ -93,6 +96,8 @@ void SMPS::led_drivers_c::set_update_all_pid(){
 	for(auto &converter : _SBC){
 		converter.set_update_pid();
 	}
+	// fixme remove for production code
+	get_current_voltage();
 }
 
 
@@ -103,6 +108,14 @@ void SMPS::led_drivers_c::set_all_currents(const set_current_item *data){
 }
 
 
+void SMPS::led_drivers_c::get_current_voltage(){
+	led_current_voltage_look_up[0] = _SBC[D1].get_current_mA();
+	led_current_voltage_look_up[1] = _SBC[D2].get_current_mA();
+	led_current_voltage_look_up[2] = _SBC[D3].get_current_mA();
 
+	led_current_voltage_look_up[3] = _SBC[D1].get_voltage_mV();
+	led_current_voltage_look_up[4] = _SBC[D2].get_voltage_mV();
+	led_current_voltage_look_up[5] = _SBC[D3].get_voltage_mV();
+}
 
 

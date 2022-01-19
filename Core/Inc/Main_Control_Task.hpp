@@ -16,6 +16,10 @@
 #include "BQ25895.hpp"
 
 
+#include "usb_device.h"
+#include "usbd_cdc_if.h"
+
+
 
 void Start_Main_Control_Task(void const * argument);
 

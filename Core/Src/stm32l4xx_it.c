@@ -46,7 +46,6 @@
 /* Private variables ---------------------------------------------------------*/
 /* USER CODE BEGIN PV */
 extern osSemaphoreId xButtonSemaphoreHandle;
-extern BMS_interrrupt_flag;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -180,7 +179,7 @@ void EXTI2_IRQHandler(void)
   /* USER CODE BEGIN EXTI2_IRQn 0 */
 
   /* USER CODE END EXTI2_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_2);
+  HAL_GPIO_EXTI_IRQHandler(ADC_VD3_FB_Pin);
   /* USER CODE BEGIN EXTI2_IRQn 1 */
 	BaseType_t sHigherPriorityTaskWoken = pdFALSE;
 	xSemaphoreGiveFromISR(xButtonSemaphoreHandle,&sHigherPriorityTaskWoken);
@@ -253,7 +252,7 @@ void EXTI15_10_IRQHandler(void)
   /* USER CODE BEGIN EXTI15_10_IRQn 0 */
 
   /* USER CODE END EXTI15_10_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(GPIO_PIN_13);
+  HAL_GPIO_EXTI_IRQHandler(SW2_Pin);
   /* USER CODE BEGIN EXTI15_10_IRQn 1 */
 
 	BaseType_t sHigherPriorityTaskWoken = pdFALSE;
@@ -294,4 +293,4 @@ void USB_IRQHandler(void)
 /* USER CODE BEGIN 1 */
 
 /* USER CODE END 1 */
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/
+

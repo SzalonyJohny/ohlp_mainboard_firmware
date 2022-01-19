@@ -32,6 +32,15 @@ uint8_t profile_debug;
 // end
 
 
+
+// USB CDC communication
+uint8_t data_usb_ready = false;
+uint8_t USB_CDC_RX_BUFFER[64];
+
+// LED current and voltage look up
+extern uint32_t led_current_voltage_look_up[6];
+
+
 void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 {
 	/* USER CODE BEGIN Start_Main_Control_Task */
@@ -70,17 +79,14 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 
 	const auto os_delay_time = 20ms; // 50Hz
-	const unsigned int milliseconds_to_delay = std::chrono::duration_cast<milliseconds>(os_delay_time).count();
-
+	const uint32_t milliseconds_to_delay = (uint32_t)std::chrono::duration_cast<milliseconds>(os_delay_time).count();
 
 	for(;;)
 	{
 
-		osDelay(20);
-
-
-
+		osDelay(milliseconds_to_delay);
 		HAL_IWDG_Refresh(&hiwdg);  // refresh more frequent than 15.25Hz
+
 
 		/* Battery Management */	// TODO add BQ int flag
 		BMS.update_VBUS(true,500);
@@ -105,7 +111,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 		/* Head Board - Over Temperature Protection */
 		hb.update();
 		for(const auto & temperature_in_100x_degC : hb.get_data().TEMP){
-			if(temperature_in_100x_degC > 8000) profile = 0;
+			if(temperature_in_100x_degC > 80'00) profile = 0;
 		}
 
 
@@ -129,6 +135,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 				BMS.shipmode();
 			}
 		}
+
 
 		/* Main profile Management */
 		switch ( profile ){
@@ -165,6 +172,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 		}
 
 		case 5:{	/* testing adaptive mode */
+
 			uint16_t als_now = hb.get_data().ALS;
 
 			uint16_t als_setpoint = 200;
@@ -190,7 +198,13 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 		}
 
-		/* to send data to LED Driver Task if needed */
+
+		// USB command receiver
+
+
+
+
+		/* to send data to LED Driver Task if it is needed */
 		if(profile != profile_last || profile == 5){
 			xQueueSend( Set_Current_QueueHandle, &set_current_data, 10 );
 		}

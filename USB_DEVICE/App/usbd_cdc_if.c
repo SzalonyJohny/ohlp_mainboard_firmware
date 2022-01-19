@@ -95,7 +95,8 @@ uint8_t UserRxBufferFS[APP_RX_DATA_SIZE];
 uint8_t UserTxBufferFS[APP_TX_DATA_SIZE];
 
 /* USER CODE BEGIN PRIVATE_VARIABLES */
-
+extern uint8_t data_usb_ready;
+extern uint8_t USB_CDC_RX_BUFFER[64];
 /* USER CODE END PRIVATE_VARIABLES */
 
 /**
@@ -264,6 +265,11 @@ static int8_t CDC_Receive_FS(uint8_t* Buf, uint32_t *Len)
   /* USER CODE BEGIN 6 */
   USBD_CDC_SetRxBuffer(&hUsbDeviceFS, &Buf[0]);
   USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+  uint8_t len = (uint8_t)(*Len);
+  memset(USB_CDC_RX_BUFFER, '\0', 64);
+  memcpy(USB_CDC_RX_BUFFER, Buf, len);
+  memset(Buf, '\0', len);
+  data_usb_ready = 1;
   return (USBD_OK);
   /* USER CODE END 6 */
 }
@@ -295,7 +301,7 @@ uint8_t CDC_Transmit_FS(uint8_t* Buf, uint16_t Len)
 
 /**
   * @brief  CDC_TransmitCplt_FS
-  *         Data transmited callback
+  *         Data transmitted callback
   *
   *         @note
   *         This function is IN transfer complete callback used to inform user that
@@ -327,5 +333,3 @@ static int8_t CDC_TransmitCplt_FS(uint8_t *Buf, uint32_t *Len, uint8_t epnum)
 /**
   * @}
   */
-
-/************************ (C) COPYRIGHT STMicroelectronics *****END OF FILE****/

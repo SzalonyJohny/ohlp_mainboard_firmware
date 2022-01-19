@@ -101,6 +101,8 @@ private:
 
 	float _now_pwm_val;
 
+	inline void set_pwm(const uint16_t &pwm);
+
 public:
 
 	constexpr SBC_c(const TIM_HandleTypeDef *const htim, uint32_t tim_channel, const uint32_t *const adc1_data_ptr,
@@ -114,8 +116,6 @@ public:
 	SBC_c(const SBC_c&) = delete;
 	SBC_c & operator= ( const SBC_c&) = delete;
 
-	inline void set_pwm(const uint16_t &pwm);
-
 	inline uint32_t get_current_mA() const;
 
 	inline uint32_t get_voltage_mV() const;
@@ -123,6 +123,8 @@ public:
 	void set_current(const uint32_t &current_mA);
 
 	void set_update_pid() __attribute__((flatten));
+
+
 };
 
 
@@ -164,6 +166,8 @@ public:
 	void set_all_currents(const set_current_item *data)__attribute__((flatten));
 
 	void set_update_all_pid() __attribute__((flatten));
+
+	void get_current_voltage(); // -> global variable
 
 };
 
