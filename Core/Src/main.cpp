@@ -26,17 +26,18 @@
 #include "iwdg.h"
 #include "tim.h"
 #include "usart.h"
-//#include "usb_device.h"
+#include "usb_device.h"
 #include "gpio.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-//#include "usbd_cdc_if.h"
+#include "usbd_cdc_if.h"
 #include "freertos.c"
-#include "LED_Driver_Task.h"
-#include "Main_Control_Task.h"
-#include "User_Buttons_Task.h"
-#include "IMU_Gesture_Task.h"
+#include <IMU_Gesture_Task.hpp>
+#include <LED_Driver_Task.hpp>
+#include <Main_Control_Task.hpp>
+#include <User_Buttons_Task.hpp>
+#include <SoC_Estimation_Task.hpp>
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -115,9 +116,9 @@ int main(void)
   MX_IWDG_Init();
   /* USER CODE BEGIN 2 */
 
-	Custom_MainBoard_abstraction_init();
+  Custom_MainBoard_abstraction_init();
 
-	Custom_FREERTOS_Init();
+  Custom_FREERTOS_Init();
 
   /* USER CODE END 2 */
 
@@ -207,10 +208,10 @@ void Custom_FREERTOS_Init(void){
 
 	// FIXME rewrite thread def to prevent warning ISO c++ tring -> char*
 
-	osThreadStaticDef(Main_Control, Start_Main_Control_Task, osPriorityNormal, 0, Main_Control_Task_Buffer_size, Main_Control_Task_Buffer, &Main_Control_TaskControlBlock);
+	osThreadStaticDef(Main_Control, Start_Main_Control_Task, osPriorityAboveNormal, 0, Main_Control_Task_Buffer_size, Main_Control_Task_Buffer, &Main_Control_TaskControlBlock);
 	Main_ControlHandle = osThreadCreate(osThread(Main_Control), NULL);
 
-	osThreadStaticDef(LED_Driver, Start_LED_Driver_Task, osPriorityHigh, 0, LED_Driver_Task_Buffer_size, LED_Driver_Task_Buffer, &LED_DriverControlBlock);
+	osThreadStaticDef(LED_Driver, Start_LED_Driver_Task, osPriorityRealtime, 0, LED_Driver_Task_Buffer_size, LED_Driver_Task_Buffer, &LED_DriverControlBlock);
 	LED_DriverHandle = osThreadCreate(osThread(LED_Driver), NULL);
 
 	osThreadStaticDef(IMU_Gesture, Start_IMU_Gesture_Task, osPriorityBelowNormal, 0,IMU_Gesture_Task_Buffer_size, IMU_GestureBuffer, &IMU_GestureControlBlock);
@@ -218,6 +219,9 @@ void Custom_FREERTOS_Init(void){
 
 	osThreadStaticDef(User_Buttons, Start_User_Buttons_Task, osPriorityNormal, 0, User_Buttons_Task_Buffer_size, User_Buttons_Task_Buffer, &User_ButtonControlBlock);
 	User_ButtonsHandle = osThreadCreate(osThread(User_Buttons), NULL);
+
+	osThreadStaticDef(SoC_Estimation, Start_SoC_Estimation_Task, osPriorityLow, 0, SoC_Estimation_Task_Buffer_size,SoC_Estimation_Buffer, &SoC_Estimation_ControlBlock);
+	SoC_EstimationHandle = osThreadCreate(osThread(SoC_Estimation), NULL);
 
 }
 
@@ -231,13 +235,13 @@ void Custom_MainBoard_abstraction_init(){
 	//HAL_GPIO_WritePin(SMPS_EN_GPIO_Port, SMPS_EN_Pin, (GPIO_PinState)0);
 
 
-	/* Reset indicator to prevent unseen */
+	/* Power-on indicator to prevent unseen reset*/
 	for(int i = 0; i < 6; i++){
 		HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
 		HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
 		HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
 		HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
-		HAL_Delay(200);
+		HAL_Delay(100);
 	}
 
 

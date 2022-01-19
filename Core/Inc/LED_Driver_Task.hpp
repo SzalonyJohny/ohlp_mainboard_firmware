@@ -5,8 +5,8 @@
  *      Author: jan
  */
 
-#ifndef INC_LED_DRIVER_TASK_H_
-#define INC_LED_DRIVER_TASK_H_
+#ifndef INC_LED_DRIVER_TASK_HPP_
+#define INC_LED_DRIVER_TASK_HPP_
 
 
 #include <LED_Driver.hpp>
@@ -19,4 +19,4 @@
 void Start_LED_Driver_Task(void const * argument);
 
 
-#endif /* INC_LED_DRIVER_TASK_H_ */
+#endif /* INC_LED_DRIVER_TASK_HPP_ */

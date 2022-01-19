@@ -9,11 +9,6 @@
 #define	BQ25895_H
 
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
-
 #include "stm32l4xx_hal.h"
 
 #define BQaddress 0x6A<<1
@@ -57,23 +52,23 @@ enum {
 	bmvr_512mV  = 128,
 };
 enum{
-    uchg_3840mV = 0,
-    uchg_512mV   = 128,
-    uchg_256mV   = 64,
-    uchg_128mV   = 32,
-    uchg_64mV    = 16,
-    uchg_32mV    = 8,
-    uchg_16mV    = 4,
+	uchg_3840mV = 0,
+	uchg_512mV   = 128,
+	uchg_256mV   = 64,
+	uchg_128mV   = 32,
+	uchg_64mV    = 16,
+	uchg_32mV    = 8,
+	uchg_16mV    = 4,
 };
 enum{
-    vinpm_6400mV = 1<<6,
-    vinpm_3200mV = 1<<5,
-    vinpm_1600mV = 1<<4,
-    vinpm_800mV = 1<<3,
-    vinpm_400mV = 1<<2,
-    vinpm_200mV = 1<<1,
-    vinpm_100mV = 1<<0,
-    vinpm_offset_2600mV = 0,
+	vinpm_6400mV = 1<<6,
+	vinpm_3200mV = 1<<5,
+	vinpm_1600mV = 1<<4,
+	vinpm_800mV = 1<<3,
+	vinpm_400mV = 1<<2,
+	vinpm_200mV = 1<<1,
+	vinpm_100mV = 1<<0,
+	vinpm_offset_2600mV = 0,
 };
 
 enum{
@@ -97,7 +92,7 @@ enum{
 
 class cBQ{
 
-	private:
+private:
 	uint8_t REG[16];		//od REG-Ox00 do REG-0x0D
 	//REG 0x00
 	bool EN_HIZ;
@@ -116,22 +111,27 @@ class cBQ{
 	uint8_t precharge_current;
 	uint8_t termination_current;
 
-    bool BATLOWV;
+	bool BATLOWV;
 
-    uint8_t statusVBUS;
-
-
-    uint32_t counter_vbus_update = 0;
-
-    I2C_HandleTypeDef *hi2c;
+	uint8_t statusVBUS;
 
 
-	public:
+	uint32_t counter_vbus_update = 0;
+
+	I2C_HandleTypeDef *hi2c;
+
+	void updateREG(uint8_t REGx);
+	void updateREGs();
+	void REGset(uint8_t, uint8_t);
+	uint8_t  BQRead_VALUE(unsigned char Reg);
+
+
+public:
 
 	cBQ();
-	~cBQ() = default;
-	cBQ(const cBQ&)= default;
-	cBQ & operator= ( const cBQ&) = default;
+	~cBQ();
+	cBQ(const cBQ&)= delete;
+	cBQ & operator= ( const cBQ&) = delete;
 
 	uint8_t get_statusVBUS();
 
@@ -158,52 +158,43 @@ class cBQ{
 	void set_precharge_current(uint8_t iprechg);
 	void set_termination_current(uint8_t iterm);
 
-    //REG 0x06
-    void set_chargevoltage(uint8_t uichg);
+	//REG 0x06
+	void set_chargevoltage(uint8_t uichg);
 
 	//REG 0x0A
 	void set_boost_voltage(uint8_t bmvr);
 
-    //REG 0x0B
-    uint8_t read_charge_adapter();
+	//REG 0x0B
+	uint8_t get_charge_adapter();
 
 	//REG 0x09
 	void shipmode();
 
-    //REG 0x0D
-    void set_input_voltage_limit(uint8_t vindpm);
+	//REG 0x0D
+	void set_input_voltage_limit(uint8_t vindpm);
 
 	//REG 0x0E
-	uint16_t read_battvoltage();
+	uint16_t get_battvoltage();
 
 	//REG 0x0F
-	uint16_t read_sysvoltage();
+	uint16_t get_sysvoltage();
 
 	//REG 0x11
-	uint16_t read_vbusvoltage();
+	uint16_t get_vbusvoltage();
 
 	//REG 0x12
-	uint16_t read_battcurrent();
+	uint16_t get_battcurrent();
 
 
+	bool update_VBUS(bool bq_int_flag, uint16_t max_count);
 
-    bool update_VBUS(bool bq_int_flag, uint16_t max_count);
 
-
-	//All REGs
-	void updateREG(uint8_t REGx);
-	void updateREGs();
-	void REGset(uint8_t, uint8_t);
 	void init_BQ(I2C_HandleTypeDef *phic);
-	uint8_t  BQRead_VALUE(unsigned char Reg);
 
 
 };
 
 
-#ifdef __cplusplus
-}
-#endif
 
 
 #endif	/* BQ25895_H */

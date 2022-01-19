@@ -19,7 +19,9 @@ const uint32_t Button_Task_wait_time = (portMAX_DELAY);
 const uint32_t Button_Debounce_delay_SW1 = 125;
 const uint32_t Button_Debounce_delay_SW2 = 60;
 
+
 void User_Buttons_ISR_SW1_handle();
+
 
 void Start_User_Buttons_Task(void const * argument);
 

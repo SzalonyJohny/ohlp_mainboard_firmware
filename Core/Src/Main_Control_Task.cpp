@@ -5,8 +5,11 @@
  *      Author: jan
  */
 
-#include <Main_Control_Task.h>
+#include <Main_Control_Task.hpp>
+#include <chrono>
 
+using namespace std::chrono_literals;
+using namespace std::chrono;
 
 
 extern osMessageQId Button_state_QueueHandle;
@@ -34,14 +37,13 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	/* USER CODE BEGIN Start_Main_Control_Task */
 	/* Infinite loop */
 
-	/* HeadBoard comunication */
-	uint8_t headboard_uart_data[10];
-	mainboard_form_hb hb;
-	hb.init(headboard_uart_data);
-	HAL_UART_Receive_DMA(&huart3, headboard_uart_data, 10);
+	/* HeadBoard communication */
+	uint8_t headboard_uart_data[headboard_uart_data_length];
+	mainboard_form_hb hb(headboard_uart_data);
+	HAL_UART_Receive_DMA(&huart3, headboard_uart_data, headboard_uart_data_length);
 	HAL_GPIO_WritePin(EN_3V3_GPIO_Port, EN_3V3_Pin, GPIO_PIN_SET);
 
-	/* Button State Queue init*/
+	/* Button State Queue Initialization */
 	button_state_item button_state;
 	osMessageQDef(Button_state_Queue, 3, button_state_item);
 	Button_state_QueueHandle = osMessageCreate(osMessageQ(Button_state_Queue), NULL);
@@ -53,12 +55,12 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	set_current_data.set_current[D3] = 0;
 	xQueueSend( Set_Current_QueueHandle, &set_current_data, portMAX_DELAY );
 
-	/* Set profile Init */
+	/* Set profile Initialization */
 	uint8_t profile = 0;
 	uint8_t profile_last = 5;
 	uint16_t current_als = 2000;
 
-	/* Battery Management System Init*/
+	/* Battery Management System Initialization*/
 	cBQ BMS;
 	BMS.init_BQ(&hi2c1);
 	BMS.set_boost_mode(true);
@@ -66,33 +68,46 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	uint16_t status_charging_iter = 0;
 
 
+
+	const auto os_delay_time = 20ms; // 50Hz
+	const unsigned int milliseconds_to_delay = std::chrono::duration_cast<milliseconds>(os_delay_time).count();
+
+
 	for(;;)
 	{
-		osDelay(50);
+
+		osDelay(20);
+
+
+
 		HAL_IWDG_Refresh(&hiwdg);  // refresh more frequent than 15.25Hz
 
 		/* Battery Management */	// TODO add BQ int flag
 		BMS.update_VBUS(true,500);
-		auto status_charging = BMS.get_statusVBUS();
-		if(status_charging == 7){
+
+		// TODO pack in mainboard function
+		float charging_voltage = static_cast<float>( BMS.get_vbusvoltage() );
+		if(charging_voltage >= 6.00f){
 			if(status_charging_iter>=50){
 				HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
 				HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
 				status_charging_iter = 0;
 			}
 			else {
-				status_charging_iter ++;
+				++status_charging_iter;
 			}
 		}
 
 
-		b_voltage_debug =  BMS.read_battvoltage(); //for live expression (debug)
+		// FIXME for live expression (debug)
+		b_voltage_debug =  BMS.get_battvoltage();
 
-		/* Head Board - over temp protection */
+		/* Head Board - Over Temperature Protection */
 		hb.update();
-		for(const auto & temperature_in_degC_by_100 : hb.get_data().TEMP){
-			if(temperature_in_degC_by_100 > 8000) profile = 0;
+		for(const auto & temperature_in_100x_degC : hb.get_data().TEMP){
+			if(temperature_in_100x_degC > 8000) profile = 0;
 		}
+
 
 		HB_data_debug = hb.get_data(); //for live expression (debug)
 
@@ -100,20 +115,22 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 		/* User Interface */
 		if ( xQueueReceive( Button_state_QueueHandle, &button_state, 0) == pdPASS ){
 			if(button_state.sw1_press){
+				// Code to run after single press SW1
 				HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
 				button_state.sw1_press = false;
-
 				if(++profile > 5)profile = 0;
 			}
 			if(button_state.sw2_press){
+				// Code to run after single press SW2
 				HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
 				button_state.sw2_press = false;
 				// TODO turn off procedure
+				// save to SOC to eeprom and so one
 				BMS.shipmode();
 			}
 		}
 
-		/* Main profile management */
+		/* Main profile Management */
 		switch ( profile ){
 		case 0:{
 			set_current_data.set_current[D1] = 0;
@@ -156,7 +173,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 			current_als += static_cast<uint16_t>(Proportional);
 
 			if(current_als<200)current_als = 200;
-			if(current_als>2000)current_als = 2000;
+			else if(current_als>2000)current_als = 2000;
 
 			set_current_data.set_current[D1] = 0;
 			set_current_data.set_current[D2] = (uint16_t)current_als;
@@ -173,7 +190,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 		}
 
-		/* to send data to LED_Driver_TAsk if it is needed */
+		/* to send data to LED Driver Task if needed */
 		if(profile != profile_last || profile == 5){
 			xQueueSend( Set_Current_QueueHandle, &set_current_data, 10 );
 		}
