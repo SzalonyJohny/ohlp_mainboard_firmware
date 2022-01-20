@@ -15,6 +15,7 @@
 #include "Common_struct.h"
 #include "BQ25895.hpp"
 
+#include "command_parser.hpp"
 
 #include "usb_device.h"
 #include "usbd_cdc_if.h"

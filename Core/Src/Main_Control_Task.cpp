@@ -20,8 +20,6 @@ extern I2C_HandleTypeDef hi2c1;
 extern IWDG_HandleTypeDef hiwdg;
 
 
-// FIXME temporary solution
-bool BMS_interrrupt_flag = false;
 
 
 //	FIXME only for debugging -> live expression begin:
@@ -76,10 +74,39 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	BMS.set_battcharge(true);
 	uint16_t status_charging_iter = 0;
 
-
-
 	const auto os_delay_time = 20ms; // 50Hz
 	const uint32_t milliseconds_to_delay = (uint32_t)std::chrono::duration_cast<milliseconds>(os_delay_time).count();
+
+
+	// Serial command interface
+	scp::option o1("-set_profile", [&](const char* x){
+		if(profile >= 0 && profile < 5){
+			profile = (uint8_t)atoi(x);
+		}
+	});
+	scp::option o2("-set_current", [&](const char* x){
+		int D = atoi(x);
+		if(D>0 && D<4){
+			int current = atoi(x+2);
+			if(current >=0 && current < 3000){
+				set_current_data.set_current[D] = (uint16_t)current;
+			}
+		}
+	});
+	scp::option o3("-p", [&](const char *x){
+		const std::size_t buff_size = 64;
+		char buff[buff_size];
+		int s = snprintf( buff, buff_size, "%d,%d,%d,%d,%d,%d \n",
+				led_current_voltage_look_up[0],
+				led_current_voltage_look_up[1],
+				led_current_voltage_look_up[2],
+				led_current_voltage_look_up[3],
+				led_current_voltage_look_up[4],
+				led_current_voltage_look_up[5]);
+		CDC_Transmit_FS( (uint8_t*)buff, s );
+	});
+
+	std::array<scp::option_base*, 3> options = {&o1, &o2, &o3};
 
 	for(;;)
 	{
@@ -91,32 +118,15 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 		/* Battery Management */	// TODO add BQ int flag
 		BMS.update_VBUS(true,500);
 
-		// TODO pack in mainboard function
-		float charging_voltage = static_cast<float>( BMS.get_vbusvoltage() );
-		if(charging_voltage >= 6.00f){
-			if(status_charging_iter>=50){
-				HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
-				HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
-				status_charging_iter = 0;
-			}
-			else {
-				++status_charging_iter;
-			}
-		}
-
-
 		// FIXME for live expression (debug)
 		b_voltage_debug =  BMS.get_battvoltage();
+		HB_data_debug = hb.get_data();
 
 		/* Head Board - Over Temperature Protection */
 		hb.update();
 		for(const auto & temperature_in_100x_degC : hb.get_data().TEMP){
 			if(temperature_in_100x_degC > 80'00) profile = 0;
 		}
-
-
-		HB_data_debug = hb.get_data(); //for live expression (debug)
-
 
 		/* User Interface */
 		if ( xQueueReceive( Button_state_QueueHandle, &button_state, 0) == pdPASS ){
@@ -200,8 +210,19 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 
 		// USB command receiver
-
-
+		if(data_usb_ready){
+			bool no_command = true;
+			for(const auto &option : options){
+				if(option->parse((const char *)USB_CDC_RX_BUFFER)){
+					no_command = false;
+					break;
+				}
+			}
+			if(no_command){
+				CDC_Transmit_FS( (uint8_t*)"Nierozpoznana komenda",24);
+			}
+			data_usb_ready = false;
+		}
 
 
 		/* to send data to LED Driver Task if it is needed */
