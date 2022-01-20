@@ -23,7 +23,7 @@ extern IWDG_HandleTypeDef hiwdg;
 
 
 //	FIXME only for debugging -> live expression begin:
-data_from_hb HB_data_debug;
+HB::data_from_hb HB_data_debug;
 int32_t alc_current_debug;
 uint16_t b_voltage_debug;
 uint8_t profile_debug;
@@ -45,9 +45,9 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	/* Infinite loop */
 
 	/* HeadBoard communication */
-	uint8_t headboard_uart_data[headboard_uart_data_length];
-	mainboard_form_hb hb(headboard_uart_data);
-	HAL_UART_Receive_DMA(&huart3, headboard_uart_data, headboard_uart_data_length);
+	uint8_t headboard_uart_data[HB::headboard_uart_data_length];
+	HB::mainboard_form_hb hb(headboard_uart_data);
+	HAL_UART_Receive_DMA(&huart3, headboard_uart_data, HB::headboard_uart_data_length);
 	HAL_GPIO_WritePin(EN_3V3_GPIO_Port, EN_3V3_Pin, GPIO_PIN_SET);
 
 	/* Button State Queue Initialization */
@@ -68,7 +68,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	uint16_t current_als = 2000;
 
 	/* Battery Management System Initialization*/
-	cBQ BMS;
+	BMS_BQ25895::cBQ BMS;
 	BMS.init_BQ(&hi2c1);
 	BMS.set_boost_mode(true);
 	BMS.set_battcharge(true);
@@ -123,7 +123,6 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 		HB_data_debug = hb.get_data();
 
 		/* Head Board - Over Temperature Protection */
-		hb.update();
 		for(const auto & temperature_in_100x_degC : hb.get_data().TEMP){
 			if(temperature_in_100x_degC > 80'00) profile = 0;
 		}

@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['sbc_5fc_42',['SBC_c',['../classSMPS_1_1SBC__c.html#a18408b2210b72272487a20f81aef03ec',1,'SMPS::SBC_c']]],
-  ['set_5fboost_5fenable_43',['set_boost_enable',['../classSMPS_1_1led__drivers__c.html#aeb949596f94465e158f57c66c6068038',1,'SMPS::led_drivers_c']]],
-  ['set_5fsmps_5fenable_5fpin_44',['set_smps_enable_pin',['../classSMPS_1_1led__drivers__c.html#a8c4adeede46d8893a0e0437c7f37c394',1,'SMPS::led_drivers_c']]]
+  ['mainboard_5fform_5fhb_82',['mainboard_form_hb',['../classHB_1_1mainboard__form__hb.html#a6e6690673cd7fe5b6c0a015e01db39d2',1,'HB::mainboard_form_hb::mainboard_form_hb(const uint8_t *uart_data_ptr)'],['../classHB_1_1mainboard__form__hb.html#ae51e4a65337254ebd905088bdebe3079',1,'HB::mainboard_form_hb::mainboard_form_hb(const mainboard_form_hb &amp;)=delete']]]
 ];

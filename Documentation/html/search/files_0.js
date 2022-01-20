@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['command_5fparser_2ehpp_37',['command_parser.hpp',['../command__parser_8hpp.html',1,'']]]
+  ['bq25895_2ehpp_68',['BQ25895.hpp',['../BQ25895_8hpp.html',1,'']]]
 ];

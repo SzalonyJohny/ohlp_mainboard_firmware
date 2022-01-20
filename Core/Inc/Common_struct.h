@@ -20,7 +20,7 @@ struct set_current_item{
 };
 
 // TODO make a type in all cases
-enum {
+enum diode{
 	D1 = 0,
 	D2 = 1,
 	D3 = 2,

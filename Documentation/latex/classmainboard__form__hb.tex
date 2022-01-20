@@ -1,24 +1,41 @@
 \hypertarget{classmainboard__form__hb}{}\doxysection{mainboard\+\_\+form\+\_\+hb Class Reference}
 \label{classmainboard__form__hb}\index{mainboard\_form\_hb@{mainboard\_form\_hb}}
+
+
+Class for serial communication with headboard.  
+
+
+
+
+{\ttfamily \#include $<$Data\+\_\+form\+\_\+\+HB.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{classmainboard__form__hb_a58eede5e6312495fac0209590c5d7dee}\label{classmainboard__form__hb_a58eede5e6312495fac0209590c5d7dee}} 
-constexpr {\bfseries mainboard\+\_\+form\+\_\+hb} (const uint8\+\_\+t $\ast$uart\+\_\+data\+\_\+ptr)
-\item 
+constexpr \mbox{\hyperlink{classmainboard__form__hb_a58eede5e6312495fac0209590c5d7dee}{mainboard\+\_\+form\+\_\+hb}} (const uint8\+\_\+t $\ast$uart\+\_\+data\+\_\+ptr)
+\begin{DoxyCompactList}\small\item\em Compile time constructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classmainboard__form__hb_a1be682f2282b422f3bd567e1c3b77d5a}\label{classmainboard__form__hb_a1be682f2282b422f3bd567e1c3b77d5a}} 
-{\bfseries mainboard\+\_\+form\+\_\+hb} (const \mbox{\hyperlink{classmainboard__form__hb}{mainboard\+\_\+form\+\_\+hb}} \&)=delete
-\item 
+\mbox{\hyperlink{classmainboard__form__hb_a1be682f2282b422f3bd567e1c3b77d5a}{mainboard\+\_\+form\+\_\+hb}} (const \mbox{\hyperlink{classmainboard__form__hb}{mainboard\+\_\+form\+\_\+hb}} \&)=delete
+\begin{DoxyCompactList}\small\item\em non-\/copyable \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classmainboard__form__hb_ac38bb0b1c3761f6109c040d05ae483f2}\label{classmainboard__form__hb_ac38bb0b1c3761f6109c040d05ae483f2}} 
-\mbox{\hyperlink{classmainboard__form__hb}{mainboard\+\_\+form\+\_\+hb}} \& {\bfseries operator=} (const \mbox{\hyperlink{classmainboard__form__hb}{mainboard\+\_\+form\+\_\+hb}} \&)=delete
-\item 
-\mbox{\Hypertarget{classmainboard__form__hb_a5ac7762e51e32edbb96b025296a20c0f}\label{classmainboard__form__hb_a5ac7762e51e32edbb96b025296a20c0f}} 
-void {\bfseries update} ()
-\item 
-\mbox{\Hypertarget{classmainboard__form__hb_a35bad35b64976842c8851c1edac665c7}\label{classmainboard__form__hb_a35bad35b64976842c8851c1edac665c7}} 
-\mbox{\hyperlink{structdata__from__hb}{data\+\_\+from\+\_\+hb}} {\bfseries get\+\_\+data} () const
+\mbox{\hyperlink{classmainboard__form__hb}{mainboard\+\_\+form\+\_\+hb}} \& \mbox{\hyperlink{classmainboard__form__hb_ac38bb0b1c3761f6109c040d05ae483f2}{operator=}} (const \mbox{\hyperlink{classmainboard__form__hb}{mainboard\+\_\+form\+\_\+hb}} \&)=delete
+\begin{DoxyCompactList}\small\item\em non copy construcable \end{DoxyCompactList}\item 
+\mbox{\hyperlink{structdata__from__hb}{data\+\_\+from\+\_\+hb}} \mbox{\hyperlink{classmainboard__form__hb_ae5d3042c1f27ad8ca7d9181ea0612cce}{get\+\_\+data}} ()
 \end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Class for serial communication with headboard. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classmainboard__form__hb_ae5d3042c1f27ad8ca7d9181ea0612cce}\label{classmainboard__form__hb_ae5d3042c1f27ad8ca7d9181ea0612cce}} 
+\index{mainboard\_form\_hb@{mainboard\_form\_hb}!get\_data@{get\_data}}
+\index{get\_data@{get\_data}!mainboard\_form\_hb@{mainboard\_form\_hb}}
+\doxysubsubsection{\texorpdfstring{get\_data()}{get\_data()}}
+{\footnotesize\ttfamily \mbox{\hyperlink{structdata__from__hb}{data\+\_\+from\+\_\+hb}} mainboard\+\_\+form\+\_\+hb\+::get\+\_\+data (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Geting result form Head\+Board after updating data form DMA array. @ret \mbox{\hyperlink{structdata__from__hb}{data\+\_\+from\+\_\+hb}} struct 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

@@ -1,5 +1,14 @@
 \hypertarget{classcBQ}{}\doxysection{c\+BQ Class Reference}
 \label{classcBQ}\index{cBQ@{cBQ}}
+
+
+Interface class for communication with battery management IC.  
+
+
+
+
+{\ttfamily \#include $<$BQ25895.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
@@ -51,32 +60,43 @@ void {\bfseries set\+\_\+boost\+\_\+voltage} (uint8\+\_\+t bmvr)
 \mbox{\Hypertarget{classcBQ_a6c1b08502de0c7aad5d24ea065d0db0d}\label{classcBQ_a6c1b08502de0c7aad5d24ea065d0db0d}} 
 uint8\+\_\+t {\bfseries get\+\_\+charge\+\_\+adapter} ()
 \item 
-\mbox{\Hypertarget{classcBQ_ae1aeb2e7a80d4048ff4354e710fa9f14}\label{classcBQ_ae1aeb2e7a80d4048ff4354e710fa9f14}} 
-void {\bfseries shipmode} ()
+void \mbox{\hyperlink{classcBQ_ae1aeb2e7a80d4048ff4354e710fa9f14}{shipmode}} ()
 \item 
 \mbox{\Hypertarget{classcBQ_a1ee56c7325808736b3639de5da5dc2c9}\label{classcBQ_a1ee56c7325808736b3639de5da5dc2c9}} 
 void {\bfseries set\+\_\+input\+\_\+voltage\+\_\+limit} (uint8\+\_\+t vindpm)
 \item 
 \mbox{\Hypertarget{classcBQ_a73244df732b002b3da8886b94d4d677c}\label{classcBQ_a73244df732b002b3da8886b94d4d677c}} 
-uint16\+\_\+t {\bfseries get\+\_\+battvoltage} ()
-\item 
+uint16\+\_\+t \mbox{\hyperlink{classcBQ_a73244df732b002b3da8886b94d4d677c}{get\+\_\+battvoltage}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}mV\mbox{]} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classcBQ_a723d94604d88ce4c41648ebffb7eaf07}\label{classcBQ_a723d94604d88ce4c41648ebffb7eaf07}} 
-uint16\+\_\+t {\bfseries get\+\_\+sysvoltage} ()
-\item 
+uint16\+\_\+t \mbox{\hyperlink{classcBQ_a723d94604d88ce4c41648ebffb7eaf07}{get\+\_\+sysvoltage}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}mV\mbox{]} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classcBQ_a1ce63d38f603ed2b73538b609f0676d0}\label{classcBQ_a1ce63d38f603ed2b73538b609f0676d0}} 
-uint16\+\_\+t {\bfseries get\+\_\+vbusvoltage} ()
-\item 
+uint16\+\_\+t \mbox{\hyperlink{classcBQ_a1ce63d38f603ed2b73538b609f0676d0}{get\+\_\+vbusvoltage}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}mV\mbox{]} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classcBQ_a022cdffa0361ab91b134cceecab235c5}\label{classcBQ_a022cdffa0361ab91b134cceecab235c5}} 
-uint16\+\_\+t {\bfseries get\+\_\+battcurrent} ()
-\item 
+uint16\+\_\+t \mbox{\hyperlink{classcBQ_a022cdffa0361ab91b134cceecab235c5}{get\+\_\+battcurrent}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}mA\mbox{]} \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classcBQ_a8675b7904ee717dbc6d1b6ef2952dd68}\label{classcBQ_a8675b7904ee717dbc6d1b6ef2952dd68}} 
 bool {\bfseries update\+\_\+\+VBUS} (bool bq\+\_\+int\+\_\+flag, uint16\+\_\+t max\+\_\+count)
 \item 
 \mbox{\Hypertarget{classcBQ_a383161cf4c377246d230dcf7d504d06d}\label{classcBQ_a383161cf4c377246d230dcf7d504d06d}} 
-void {\bfseries init\+\_\+\+BQ} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$phic)
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classcBQ_a383161cf4c377246d230dcf7d504d06d}{init\+\_\+\+BQ}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$phic)
+\begin{DoxyCompactList}\small\item\em Initialization of BQ25895 device. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+Interface class for communication with battery management IC. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classcBQ_ae1aeb2e7a80d4048ff4354e710fa9f14}\label{classcBQ_ae1aeb2e7a80d4048ff4354e710fa9f14}} 
+\index{cBQ@{cBQ}!shipmode@{shipmode}}
+\index{shipmode@{shipmode}!cBQ@{cBQ}}
+\doxysubsubsection{\texorpdfstring{shipmode()}{shipmode()}}
+{\footnotesize\ttfamily void c\+BQ\+::shipmode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+shutdown function cuts off voltage on Vsys rail. To power on hold for 5s SW1. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-Core/\+Inc/BQ25895.\+hpp\end{DoxyCompactItemize}
+Core/\+Inc/\mbox{\hyperlink{BQ25895_8hpp}{BQ25895.\+hpp}}\end{DoxyCompactItemize}

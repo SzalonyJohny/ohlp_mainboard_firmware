@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['cbq_26',['cBQ',['../classcBQ.html',1,'']]]
+  ['cbq_57',['cBQ',['../classBMS__BQ25895_1_1cBQ.html',1,'BMS_BQ25895']]]
 ];

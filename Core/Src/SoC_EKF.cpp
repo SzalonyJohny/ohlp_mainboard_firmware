@@ -10,6 +10,9 @@
 #include <SoC_EKF.hpp>
 
 #include <math.h>
+
+using namespace SOC_EKF;
+
 void SoC_EKF::set_update_matrix()
 {
     _State_vector[ttc1] = 0;
@@ -98,16 +101,6 @@ void SoC_EKF::set_battery_ocv_polinomial(const float *battery_ocv, unsigned int 
         _battery.battery_d_ocv_poli[ocv_poly_iter] = static_cast<float>(number_of_coef - ocv_poly_iter - 1) * battery_ocv[ocv_poly_iter];
     }
 }
-
-
-//void debug_display(){
-//    std::cout<<"Voltage "<< _battery.cell_in_parallel <<std::endl;
-//    std::cout<<"innowation: "<<innovation<<std::endl;
-//    std::cout<<"H: "<<H<<std::endl;
-//    std::cout<<"S: "<<S<<std::endl;
-//    std::cout<<"Kf: "<<Kf <<std::endl;
-//    std::cout<<"SoC: "<<State_vector[0]<<std::endl;
-//}
 
  [[nodiscard]] float horner(const float *arry, unsigned int n, const float *x)
 {

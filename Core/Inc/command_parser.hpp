@@ -19,9 +19,8 @@ struct option_base {
   virtual ~ option_base() = default;
 };
 
-/** Option structure
- * Using templated structure to avoid std::function and function pointers. 
- */
+
+///  Option structure Using templated structure to avoid std::function and function pointers.
 template <typename Functor>
 struct option : public option_base {
   const Functor _function; ///< Deducted type of function to be executed if command match
@@ -38,6 +37,7 @@ struct option : public option_base {
  * Function must have const char * as argument. \n
  * If command is matched parser will pass pointer to value after command. \n
  * Lambda type functions are suported. 
+ *
  */
   constexpr option(const char *argument, Functor functor)
       : _function{functor}, _arg_size{(strlen(argument))}, _argument{argument} {

@@ -1,0 +1,46 @@
+\hypertarget{classSOC__EKF_1_1SoC__EKF}{}\doxysection{SOC\+\_\+\+EKF\+::So\+C\+\_\+\+EKF Class Reference}
+\label{classSOC__EKF_1_1SoC__EKF}\index{SOC\_EKF::SoC\_EKF@{SOC\_EKF::SoC\_EKF}}
+
+
+State of charge estimation class.  
+
+
+
+
+{\ttfamily \#include $<$So\+C\+\_\+\+EKF.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classSOC__EKF_1_1SoC__EKF_ae97c8a32e9211722e5e77bcde78ace42}\label{classSOC__EKF_1_1SoC__EKF_ae97c8a32e9211722e5e77bcde78ace42}} 
+void {\bfseries set\+\_\+battery\+\_\+equivalent\+\_\+model} (const float $\ast$battery\+\_\+model)
+\item 
+\mbox{\Hypertarget{classSOC__EKF_1_1SoC__EKF_a32e106ed7fdb64004fd2647d97cd45e6}\label{classSOC__EKF_1_1SoC__EKF_a32e106ed7fdb64004fd2647d97cd45e6}} 
+void {\bfseries set\+\_\+battery\+\_\+ocv\+\_\+polinomial} (const float $\ast$battery\+\_\+ocv, unsigned int number\+\_\+of\+\_\+coef)
+\item 
+\mbox{\Hypertarget{classSOC__EKF_1_1SoC__EKF_a4b8ee549243517e3bf0f5a1941540a02}\label{classSOC__EKF_1_1SoC__EKF_a4b8ee549243517e3bf0f5a1941540a02}} 
+void {\bfseries set\+\_\+battery\+\_\+configuration} (unsigned int \&\&s, unsigned int \&\&p)
+\item 
+\mbox{\Hypertarget{classSOC__EKF_1_1SoC__EKF_a99e45e005999640bed1a26a7ed79a7e6}\label{classSOC__EKF_1_1SoC__EKF_a99e45e005999640bed1a26a7ed79a7e6}} 
+void {\bfseries set\+\_\+\+Time\+\_\+\+Sampling} (float Ts)
+\item 
+\mbox{\Hypertarget{classSOC__EKF_1_1SoC__EKF_aa96d77f89c1054b80c4bcca89635ed4d}\label{classSOC__EKF_1_1SoC__EKF_aa96d77f89c1054b80c4bcca89635ed4d}} 
+void {\bfseries set\+\_\+\+Initial\+\_\+\+SoC} (const float \&a\+SoC)
+\item 
+\mbox{\Hypertarget{classSOC__EKF_1_1SoC__EKF_adf05ad8381335fa3b2f637b3a8a6e07c}\label{classSOC__EKF_1_1SoC__EKF_adf05ad8381335fa3b2f637b3a8a6e07c}} 
+void {\bfseries set\+\_\+update\+\_\+matrix} ()
+\item 
+\mbox{\Hypertarget{classSOC__EKF_1_1SoC__EKF_a1f3e6ef67a281990061f5e388cf1c18b}\label{classSOC__EKF_1_1SoC__EKF_a1f3e6ef67a281990061f5e388cf1c18b}} 
+void {\bfseries update} (const float \&Current, const float \&Voltage)
+\item 
+\mbox{\Hypertarget{classSOC__EKF_1_1SoC__EKF_ad165f49e54320a7e670853030d81f07f}\label{classSOC__EKF_1_1SoC__EKF_ad165f49e54320a7e670853030d81f07f}} 
+float {\bfseries get\+\_\+\+SoC} ()
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+State of charge estimation class. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Inc/\mbox{\hyperlink{SoC__EKF_8hpp}{So\+C\+\_\+\+EKF.\+hpp}}\end{DoxyCompactItemize}

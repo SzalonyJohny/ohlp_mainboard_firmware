@@ -1,0 +1,140 @@
+\hypertarget{classBMS__BQ25895_1_1cBQ}{}\doxysection{BMS\+\_\+\+BQ25895\+::c\+BQ Class Reference}
+\label{classBMS__BQ25895_1_1cBQ}\index{BMS\_BQ25895::cBQ@{BMS\_BQ25895::cBQ}}
+
+
+Interface class for communication with battery management IC.  
+
+
+
+
+{\ttfamily \#include $<$BQ25895.\+hpp$>$}
+
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a6916f675395b0c6eec617bcc104cdd99}\label{classBMS__BQ25895_1_1cBQ_a6916f675395b0c6eec617bcc104cdd99}} 
+{\bfseries c\+BQ} (const \mbox{\hyperlink{classBMS__BQ25895_1_1cBQ}{c\+BQ}} \&)=delete
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a0663e6967644d042b59494a1126e9676}\label{classBMS__BQ25895_1_1cBQ_a0663e6967644d042b59494a1126e9676}} 
+\mbox{\hyperlink{classBMS__BQ25895_1_1cBQ}{c\+BQ}} \& {\bfseries operator=} (const \mbox{\hyperlink{classBMS__BQ25895_1_1cBQ}{c\+BQ}} \&)=delete
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a25a30e8e357e69ae195a2a4029644633}\label{classBMS__BQ25895_1_1cBQ_a25a30e8e357e69ae195a2a4029644633}} 
+uint8\+\_\+t {\bfseries get\+\_\+status\+VBUS} ()
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a94210b0282eb8d34c7404f9eeea51473}\label{classBMS__BQ25895_1_1cBQ_a94210b0282eb8d34c7404f9eeea51473}} 
+void {\bfseries set\+\_\+inputcurrent} (uint8\+\_\+t ic\+\_\+mA)
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a3935f9f946fb0e64cdc14f9cd371f853}\label{classBMS__BQ25895_1_1cBQ_a3935f9f946fb0e64cdc14f9cd371f853}} 
+void {\bfseries set\+\_\+inputvoltagelimitofset} (uint8\+\_\+t ivlo\+\_\+mV)
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a54fdf1dd8e84912c685c87275e8da4ef}\label{classBMS__BQ25895_1_1cBQ_a54fdf1dd8e84912c685c87275e8da4ef}} 
+void {\bfseries set\+\_\+start\+ADCconv} ()
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a3c6a9976be7612c3cf95fb9d95f2b53c}\label{classBMS__BQ25895_1_1cBQ_a3c6a9976be7612c3cf95fb9d95f2b53c}} 
+void {\bfseries set\+\_\+battload} (bool on)
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_aa768d487bbee13d1bef3108fa94cc41d}\label{classBMS__BQ25895_1_1cBQ_aa768d487bbee13d1bef3108fa94cc41d}} 
+void {\bfseries set\+\_\+battcharge} (bool on)
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a6a294b476cd63d5acb6abfcf76a2dfeb}\label{classBMS__BQ25895_1_1cBQ_a6a294b476cd63d5acb6abfcf76a2dfeb}} 
+void {\bfseries set\+\_\+boost\+\_\+mode} (bool on)
+\item 
+void \mbox{\hyperlink{classBMS__BQ25895_1_1cBQ_adf46726cba9c8f14ebcb9550b9dd6247}{set\+\_\+battsysmin}} (uint8\+\_\+t sysmin\+\_\+mV)
+\item 
+void \mbox{\hyperlink{classBMS__BQ25895_1_1cBQ_a5098e870a9fc84a29abc1aee5e767328}{set\+\_\+chargecurrent}} (uint8\+\_\+t \mbox{\hyperlink{BQ25895_8hpp_a34d2c0abb7c5b044069a66cb3c24bb15}{ichg}})
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a50c7eebd1afc8b90c0909282c989613d}\label{classBMS__BQ25895_1_1cBQ_a50c7eebd1afc8b90c0909282c989613d}} 
+void {\bfseries set\+\_\+precharge\+\_\+current} (uint8\+\_\+t \mbox{\hyperlink{BQ25895_8hpp_a13b4de93992563cb9cef2be9593e6900}{iprechg}})
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a854043469e1efedacc49e756ffd59674}\label{classBMS__BQ25895_1_1cBQ_a854043469e1efedacc49e756ffd59674}} 
+void {\bfseries set\+\_\+termination\+\_\+current} (uint8\+\_\+t \mbox{\hyperlink{BQ25895_8hpp_a10d7c0566544684eda6ddd32bff1705c}{iterm}})
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_ab6d55b8d2a5768f1c820b3c34903757f}\label{classBMS__BQ25895_1_1cBQ_ab6d55b8d2a5768f1c820b3c34903757f}} 
+void {\bfseries set\+\_\+chargevoltage} (uint8\+\_\+t uichg)
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a4b2f8871f8b2ea12ef1f516dbdcae863}\label{classBMS__BQ25895_1_1cBQ_a4b2f8871f8b2ea12ef1f516dbdcae863}} 
+void {\bfseries set\+\_\+boost\+\_\+voltage} (uint8\+\_\+t \mbox{\hyperlink{BQ25895_8hpp_a8e9cb1a1aa03ab2b75a6c6eb80518a60}{bmvr}})
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_ae65ea2dcc606195564636d850cf4a2cc}\label{classBMS__BQ25895_1_1cBQ_ae65ea2dcc606195564636d850cf4a2cc}} 
+uint8\+\_\+t {\bfseries get\+\_\+charge\+\_\+adapter} ()
+\item 
+void \mbox{\hyperlink{classBMS__BQ25895_1_1cBQ_ab86e68d153e47b6641693ccafbe13d9a}{shipmode}} ()
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a422a31f653ba1067951c972e03e300a2}\label{classBMS__BQ25895_1_1cBQ_a422a31f653ba1067951c972e03e300a2}} 
+void {\bfseries set\+\_\+input\+\_\+voltage\+\_\+limit} (uint8\+\_\+t vindpm)
+\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_aae79ff7b5cb3190236b24e712c34a3ef}\label{classBMS__BQ25895_1_1cBQ_aae79ff7b5cb3190236b24e712c34a3ef}} 
+uint16\+\_\+t \mbox{\hyperlink{classBMS__BQ25895_1_1cBQ_aae79ff7b5cb3190236b24e712c34a3ef}{get\+\_\+battvoltage}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}mV\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_aa3a162acd215c72fce54fbfcb773652e}\label{classBMS__BQ25895_1_1cBQ_aa3a162acd215c72fce54fbfcb773652e}} 
+uint16\+\_\+t \mbox{\hyperlink{classBMS__BQ25895_1_1cBQ_aa3a162acd215c72fce54fbfcb773652e}{get\+\_\+sysvoltage}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}mV\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a730d558de3cf9abf7c88d080e7de31f3}\label{classBMS__BQ25895_1_1cBQ_a730d558de3cf9abf7c88d080e7de31f3}} 
+uint16\+\_\+t \mbox{\hyperlink{classBMS__BQ25895_1_1cBQ_a730d558de3cf9abf7c88d080e7de31f3}{get\+\_\+vbusvoltage}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}mV\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a9b192096523f23866ad4336d43f25e80}\label{classBMS__BQ25895_1_1cBQ_a9b192096523f23866ad4336d43f25e80}} 
+uint16\+\_\+t \mbox{\hyperlink{classBMS__BQ25895_1_1cBQ_a9b192096523f23866ad4336d43f25e80}{get\+\_\+battcurrent}} ()
+\begin{DoxyCompactList}\small\item\em \mbox{[}mA\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a34852062c254ad1bce5728e9bbcb3bb8}\label{classBMS__BQ25895_1_1cBQ_a34852062c254ad1bce5728e9bbcb3bb8}} 
+bool {\bfseries update\+\_\+\+VBUS} (bool bq\+\_\+int\+\_\+flag, uint16\+\_\+t max\+\_\+count)
+\item 
+void \mbox{\hyperlink{classBMS__BQ25895_1_1cBQ_a59ec55b0e528ccdb99001c56d2476cd9}{init\+\_\+\+BQ}} (I2\+C\+\_\+\+Handle\+Type\+Def $\ast$phi2c)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interface class for communication with battery management IC. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a59ec55b0e528ccdb99001c56d2476cd9}\label{classBMS__BQ25895_1_1cBQ_a59ec55b0e528ccdb99001c56d2476cd9}} 
+\index{BMS\_BQ25895::cBQ@{BMS\_BQ25895::cBQ}!init\_BQ@{init\_BQ}}
+\index{init\_BQ@{init\_BQ}!BMS\_BQ25895::cBQ@{BMS\_BQ25895::cBQ}}
+\doxysubsubsection{\texorpdfstring{init\_BQ()}{init\_BQ()}}
+{\footnotesize\ttfamily void BMS\+\_\+\+BQ25895\+::c\+BQ\+::init\+\_\+\+BQ (\begin{DoxyParamCaption}\item[{I2\+C\+\_\+\+Handle\+Type\+Def $\ast$}]{phi2c }\end{DoxyParamCaption})}
+
+Initialization of BQ25895 device default state\+: ~\newline
+ charge current = 3072mA ~\newline
+ charge voltage = 4192mV ~\newline
+ MOSFET driver supply voltage measured = 4806mV ~\newline
+ charge termination current = 128mA ~\newline
+ \begin{DoxyPrecond}{Precondition}
+I2C Diver is after initialization. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}{Parameters}
+{\em \mbox{[}i\mbox{]}} & phi2c \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_adf46726cba9c8f14ebcb9550b9dd6247}\label{classBMS__BQ25895_1_1cBQ_adf46726cba9c8f14ebcb9550b9dd6247}} 
+\index{BMS\_BQ25895::cBQ@{BMS\_BQ25895::cBQ}!set\_battsysmin@{set\_battsysmin}}
+\index{set\_battsysmin@{set\_battsysmin}!BMS\_BQ25895::cBQ@{BMS\_BQ25895::cBQ}}
+\doxysubsubsection{\texorpdfstring{set\_battsysmin()}{set\_battsysmin()}}
+{\footnotesize\ttfamily void BMS\+\_\+\+BQ25895\+::c\+BQ\+::set\+\_\+battsysmin (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{sysmin\+\_\+mV }\end{DoxyParamCaption})}
+
+Function sets shutdown system voltage whith is executed with power cutoff 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em sysmin\+\_\+mV} & should by sum of sysmin enum values. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_a5098e870a9fc84a29abc1aee5e767328}\label{classBMS__BQ25895_1_1cBQ_a5098e870a9fc84a29abc1aee5e767328}} 
+\index{BMS\_BQ25895::cBQ@{BMS\_BQ25895::cBQ}!set\_chargecurrent@{set\_chargecurrent}}
+\index{set\_chargecurrent@{set\_chargecurrent}!BMS\_BQ25895::cBQ@{BMS\_BQ25895::cBQ}}
+\doxysubsubsection{\texorpdfstring{set\_chargecurrent()}{set\_chargecurrent()}}
+{\footnotesize\ttfamily void BMS\+\_\+\+BQ25895\+::c\+BQ\+::set\+\_\+chargecurrent (\begin{DoxyParamCaption}\item[{uint8\+\_\+t}]{ichg }\end{DoxyParamCaption})}
+
+Function to set up maximum charge current. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em } & \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBMS__BQ25895_1_1cBQ_ab86e68d153e47b6641693ccafbe13d9a}\label{classBMS__BQ25895_1_1cBQ_ab86e68d153e47b6641693ccafbe13d9a}} 
+\index{BMS\_BQ25895::cBQ@{BMS\_BQ25895::cBQ}!shipmode@{shipmode}}
+\index{shipmode@{shipmode}!BMS\_BQ25895::cBQ@{BMS\_BQ25895::cBQ}}
+\doxysubsubsection{\texorpdfstring{shipmode()}{shipmode()}}
+{\footnotesize\ttfamily void BMS\+\_\+\+BQ25895\+::c\+BQ\+::shipmode (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+shutdown function cuts off voltage on Vsys rail. To power on hold for 5s SW1. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Inc/\mbox{\hyperlink{BQ25895_8hpp}{BQ25895.\+hpp}}\end{DoxyCompactItemize}

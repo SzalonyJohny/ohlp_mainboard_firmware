@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['option_40',['option',['../structscp_1_1option.html#a794000cbaed8d3667728b871f44f163c',1,'scp::option']]]
+  ['init_5fbq_80',['init_BQ',['../classBMS__BQ25895_1_1cBQ.html#a59ec55b0e528ccdb99001c56d2476cd9',1,'BMS_BQ25895::cBQ']]]
 ];

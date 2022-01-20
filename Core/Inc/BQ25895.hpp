@@ -8,13 +8,20 @@
 #ifndef BQ25895_H
 #define	BQ25895_H
 
+/**
+* @file BQ25895.hpp
+* Simple library to support USB Quick-Charge 12V @ 1.5A
+* and sleep mode with 23uA Iq.
+*/
 
 #include "stm32l4xx_hal.h"
 
 #define BQaddress 0x6A<<1
 
+namespace BMS_BQ25895{
 
-enum {
+/// Input current limiting
+enum inc{
 	inc_50mA   =1,
 	inc_100mA  =2,
 	inc_200mA  =4,
@@ -22,20 +29,25 @@ enum {
 	inc_800mA  =16,
 	inc_1600mA =32,
 };
-enum {
+
+enum ivlo{
 	ivlo_100mV  =1,
 	ivlo_200mV  =2,
 	ivlo_400mV  =4,
 	ivlo_800mV  =8,
 	ivlo_1600mV =16,
 };
-enum {
+
+/// Minimum system voltage threshold
+enum sysmin{
 	sysmin_3000mV =0,
 	sysmin_100mV=2,
 	sysmin_200mV=4,
 	sysmin_400mV=8,
 };
-enum {
+
+/// Constat current charge current
+enum ichg{
 	ichg_64mA	=1,
 	ichg_128mA	=2,
 	ichg_256mA	=4,
@@ -44,14 +56,18 @@ enum {
 	ichg_2048mA	=32,
 	ichg_4096mA =64,
 };
-enum {
+
+/// Boost voltage enum to set MOSFET gate swing voltage.
+enum bmvr{
 	bmvr_4550mV = 0,
 	bmvr_64mV   = 16,
 	bmvr_128mV  = 32,
 	bmvr_256mV  = 64,
 	bmvr_512mV  = 128,
 };
-enum{
+
+/// Constant Voltage charge voltage
+enum uchg{
 	uchg_3840mV = 0,
 	uchg_512mV   = 128,
 	uchg_256mV   = 64,
@@ -60,7 +76,9 @@ enum{
 	uchg_32mV    = 8,
 	uchg_16mV    = 4,
 };
-enum{
+
+/// Enum for use with set_input_voltage_limit function
+enum vinpm{
 	vinpm_6400mV = 1<<6,
 	vinpm_3200mV = 1<<5,
 	vinpm_1600mV = 1<<4,
@@ -71,7 +89,8 @@ enum{
 	vinpm_offset_2600mV = 0,
 };
 
-enum{
+/// Terminaton current - cutoff current
+enum iterm{
 	iterm_512mA = 1<<4,
 	iterm_256mA = 1<<3,
 	iterm_128mA = 1<<2,
@@ -79,7 +98,8 @@ enum{
 	iterm_offset_64mA = 0,
 };
 
-enum{
+/// Precharge current if Vbatt
+enum iprechg{
 	iprechg_512mA = 1<<7,
 	iprechg_256mA = 1<<6,
 	iprechg_128mA = 1<<5,
@@ -89,17 +109,17 @@ enum{
 
 
 
-
+/// Interface class for communication with battery management IC.
 class cBQ{
 
 private:
-	uint8_t REG[16];		//od REG-Ox00 do REG-0x0D
+	uint8_t REG[16]; ///< Keeps internal state: REG-Ox00 to REG-0x0D
 	//REG 0x00
 	bool EN_HIZ;
-	bool EN_ILIM;		//ilim pin & hiz mode
+	bool EN_ILIM; // ilim pin & hiz mode
 	//REG 0x01
 	bool BCOLD;
-	bool BHOT[2];		// boost mode temperature monitor bits
+	bool BHOT[2]; ///< boost mode temperature monitor bits
 	//REG 0x03
 	bool battload;
 	bool battcharge;
@@ -112,16 +132,15 @@ private:
 	uint8_t termination_current;
 
 	bool BATLOWV;
-
 	uint8_t statusVBUS;
-
-
 	uint32_t counter_vbus_update = 0;
 
 	I2C_HandleTypeDef *hi2c;
 
 	void updateREG(uint8_t REGx);
 	void updateREGs();
+
+	/// Function to set address, value
 	void REGset(uint8_t, uint8_t);
 	uint8_t  BQRead_VALUE(unsigned char Reg);
 
@@ -143,15 +162,22 @@ public:
 
 	//REG 0x02
 	void set_startADCconv();
-	//rest default
 
 	//REG 0x03
 	void set_battload(bool on);
 	void set_battcharge(bool on);
 	void set_boost_mode(bool on);
+
+	/**
+	 * Function sets shutdown system voltage whith is executed with power cutoff
+	 * @param[in] sysmin_mV should by sum of sysmin enum values.
+	 */
 	void set_battsysmin(uint8_t sysmin_mV);
 
 	//REG 0x04
+	/** Function to set up maximum charge current.
+	 *  @param[in]
+	 */
 	void set_chargecurrent(uint8_t ichg);
 
 	//REG 0x05
@@ -168,33 +194,41 @@ public:
 	uint8_t get_charge_adapter();
 
 	//REG 0x09
+	/// shutdown function cuts off voltage on Vsys rail.
+	/// To power on hold for 5s SW1.
 	void shipmode();
 
 	//REG 0x0D
 	void set_input_voltage_limit(uint8_t vindpm);
 
 	//REG 0x0E
-	uint16_t get_battvoltage();
+	uint16_t get_battvoltage(); ///< [mV]
 
 	//REG 0x0F
-	uint16_t get_sysvoltage();
+	uint16_t get_sysvoltage(); ///< [mV]
 
 	//REG 0x11
-	uint16_t get_vbusvoltage();
+	uint16_t get_vbusvoltage(); ///< [mV]
 
 	//REG 0x12
-	uint16_t get_battcurrent();
-
+	uint16_t get_battcurrent(); ///< [mA]
 
 	bool update_VBUS(bool bq_int_flag, uint16_t max_count);
 
-
-	void init_BQ(I2C_HandleTypeDef *phic);
-
+	/**  Initialization of BQ25895 device
+	 * default state: <br>
+	 * charge current = 3072mA <br>
+	 * charge voltage = 4192mV <br>
+	 * MOSFET driver supply voltage measured = 4806mV <br>
+	 * charge termination current = 128mA <br>
+	 * @pre I2C Diver is after initialization.
+	 * @param[i] phi2c
+	 */
+	void init_BQ(I2C_HandleTypeDef *phi2c);
 
 };
 
-
+}
 
 
 #endif	/* BQ25895_H */

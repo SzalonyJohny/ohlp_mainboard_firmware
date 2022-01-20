@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['parse_41',['parse',['../structscp_1_1option__base.html#a422bf9f1bd25bf13501e102fa79fb507',1,'scp::option_base::parse()'],['../structscp_1_1option.html#a00d7eb6cfb8de404b179399a4235a81b',1,'scp::option::parse()']]]
+  ['led_5fdrivers_5fc_81',['led_drivers_c',['../classSMPS_1_1led__drivers__c.html#a1e2f7a10267713cedcc2e76c915eabc6',1,'SMPS::led_drivers_c::led_drivers_c(const TIM_HandleTypeDef *const htim1, uint32_t tim_channel1, const uint32_t *const adc1_data_ptr1, ADC_RANK_DMA voltage_channel1, ADC_RANK_DMA current_channel1, const TIM_HandleTypeDef *const htim2, uint32_t tim_channel2, const uint32_t *const adc1_data_ptr2, ADC_RANK_DMA voltage_channel2, ADC_RANK_DMA current_channel2, const TIM_HandleTypeDef *const htim3, uint32_t tim_channel3, const uint32_t *const adc1_data_ptr3, ADC_RANK_DMA voltage_channel3, ADC_RANK_DMA current_channel3)'],['../classSMPS_1_1led__drivers__c.html#abc33280d64107c9dd13b2ebf710b1b4e',1,'SMPS::led_drivers_c::led_drivers_c(const led_drivers_c &amp;)=delete']]]
 ];

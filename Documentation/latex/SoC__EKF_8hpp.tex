@@ -1,0 +1,59 @@
+\hypertarget{SoC__EKF_8hpp}{}\doxysection{Core/\+Inc/\+So\+C\+\_\+\+EKF.hpp File Reference}
+\label{SoC__EKF_8hpp}\index{Core/Inc/SoC\_EKF.hpp@{Core/Inc/SoC\_EKF.hpp}}
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$math.\+h$>$}\newline
+Include dependency graph for So\+C\+\_\+\+EKF.\+hpp\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{SoC__EKF_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=216pt]{SoC__EKF_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSOC__EKF_1_1Battery__characteristic}{SOC\+\_\+\+EKF\+::\+Battery\+\_\+characteristic}}
+\begin{DoxyCompactList}\small\item\em Battery Model. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSOC__EKF_1_1SoC__EKF}{SOC\+\_\+\+EKF\+::\+So\+C\+\_\+\+EKF}}
+\begin{DoxyCompactList}\small\item\em State of charge estimation class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{SoC__EKF_8hpp_afbf1b137dda25d48ec55d07b3693a4b5}\label{SoC__EKF_8hpp_afbf1b137dda25d48ec55d07b3693a4b5}} 
+enum {\bfseries batt} \{ \newline
+{\bfseries Rs}
+, {\bfseries ttc1}
+, {\bfseries ttc2}
+, {\bfseries Rttc1}
+, \newline
+{\bfseries Rttc2}
+, {\bfseries Cttc1}
+, {\bfseries Cttc2}
+, {\bfseries Qnom}
+ \}
+\item 
+\mbox{\Hypertarget{SoC__EKF_8hpp_a932956a90f266d8f6c11724c2b7d8962}\label{SoC__EKF_8hpp_a932956a90f266d8f6c11724c2b7d8962}} 
+enum {\bfseries state\+\_\+vector} \{ {\bfseries SoC}
+, {\bfseries Vttc1}
+, {\bfseries Vttc2}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{SoC__EKF_8hpp_a33c3dd49e236cd745a1b5f0eb289df5c}\label{SoC__EKF_8hpp_a33c3dd49e236cd745a1b5f0eb289df5c}} 
+float {\bfseries SOC\+\_\+\+EKF\+::horner} (const float $\ast$arry, unsigned int n, const float $\ast$x)
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{SoC__EKF_8hpp_a9c4ca1dccfdf1a9b7e4f5994ec1199c4}\label{SoC__EKF_8hpp_a9c4ca1dccfdf1a9b7e4f5994ec1199c4}} 
+const unsigned int {\bfseries SOC\+\_\+\+EKF\+::\+SOC\+\_\+\+OCV\+\_\+poli\+\_\+coeff\+\_\+lenght} = 9
+\end{DoxyCompactItemize}

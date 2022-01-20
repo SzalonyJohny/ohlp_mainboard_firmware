@@ -1,33 +1,66 @@
 \hypertarget{classSMPS_1_1led__drivers__c}{}\doxysection{SMPS\+::led\+\_\+drivers\+\_\+c Class Reference}
 \label{classSMPS_1_1led__drivers__c}\index{SMPS::led\_drivers\_c@{SMPS::led\_drivers\_c}}
+
+
+LED drivers class.  
+
+
+
+
+{\ttfamily \#include $<$LED\+\_\+\+Driver.\+hpp$>$}
+
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{classSMPS_1_1led__drivers__c_a1e2f7a10267713cedcc2e76c915eabc6}\label{classSMPS_1_1led__drivers__c_a1e2f7a10267713cedcc2e76c915eabc6}} 
-constexpr {\bfseries led\+\_\+drivers\+\_\+c} (const TIM\+\_\+\+Handle\+Type\+Def $\ast$const htim1, uint32\+\_\+t tim\+\_\+channel1, const uint32\+\_\+t $\ast$const adc1\+\_\+data\+\_\+ptr1, ADC\+\_\+\+RANK\+\_\+\+DMA voltage\+\_\+channel1, ADC\+\_\+\+RANK\+\_\+\+DMA current\+\_\+channel1, const TIM\+\_\+\+Handle\+Type\+Def $\ast$const htim2, uint32\+\_\+t tim\+\_\+channel2, const uint32\+\_\+t $\ast$const adc1\+\_\+data\+\_\+ptr2, ADC\+\_\+\+RANK\+\_\+\+DMA voltage\+\_\+channel2, ADC\+\_\+\+RANK\+\_\+\+DMA current\+\_\+channel2, const TIM\+\_\+\+Handle\+Type\+Def $\ast$const htim3, uint32\+\_\+t tim\+\_\+channel3, const uint32\+\_\+t $\ast$const adc1\+\_\+data\+\_\+ptr3, ADC\+\_\+\+RANK\+\_\+\+DMA voltage\+\_\+channel3, ADC\+\_\+\+RANK\+\_\+\+DMA current\+\_\+channel3)
+constexpr \mbox{\hyperlink{classSMPS_1_1led__drivers__c_a1e2f7a10267713cedcc2e76c915eabc6}{led\+\_\+drivers\+\_\+c}} (const TIM\+\_\+\+Handle\+Type\+Def $\ast$const htim1, uint32\+\_\+t tim\+\_\+channel1, const uint32\+\_\+t $\ast$const adc1\+\_\+data\+\_\+ptr1, \mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}} voltage\+\_\+channel1, \mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}} current\+\_\+channel1, const TIM\+\_\+\+Handle\+Type\+Def $\ast$const htim2, uint32\+\_\+t tim\+\_\+channel2, const uint32\+\_\+t $\ast$const adc1\+\_\+data\+\_\+ptr2, \mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}} voltage\+\_\+channel2, \mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}} current\+\_\+channel2, const TIM\+\_\+\+Handle\+Type\+Def $\ast$const htim3, uint32\+\_\+t tim\+\_\+channel3, const uint32\+\_\+t $\ast$const adc1\+\_\+data\+\_\+ptr3, \mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}} voltage\+\_\+channel3, \mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}} current\+\_\+channel3)
 \item 
 \mbox{\Hypertarget{classSMPS_1_1led__drivers__c_abc33280d64107c9dd13b2ebf710b1b4e}\label{classSMPS_1_1led__drivers__c_abc33280d64107c9dd13b2ebf710b1b4e}} 
 \mbox{\hyperlink{classSMPS_1_1led__drivers__c_abc33280d64107c9dd13b2ebf710b1b4e}{led\+\_\+drivers\+\_\+c}} (const \mbox{\hyperlink{classSMPS_1_1led__drivers__c}{led\+\_\+drivers\+\_\+c}} \&)=delete
-\begin{DoxyCompactList}\small\item\em non construction-\/copyable \& non copyable \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em non construction-\/copyable \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classSMPS_1_1led__drivers__c_a459a44b8d64992387027c53397a8caa9}\label{classSMPS_1_1led__drivers__c_a459a44b8d64992387027c53397a8caa9}} 
-\mbox{\hyperlink{classSMPS_1_1led__drivers__c}{led\+\_\+drivers\+\_\+c}} \& {\bfseries operator=} (const \mbox{\hyperlink{classSMPS_1_1led__drivers__c}{led\+\_\+drivers\+\_\+c}} \&)=delete
-\item 
+\mbox{\hyperlink{classSMPS_1_1led__drivers__c}{led\+\_\+drivers\+\_\+c}} \& \mbox{\hyperlink{classSMPS_1_1led__drivers__c_a459a44b8d64992387027c53397a8caa9}{operator=}} (const \mbox{\hyperlink{classSMPS_1_1led__drivers__c}{led\+\_\+drivers\+\_\+c}} \&)=delete
+\begin{DoxyCompactList}\small\item\em non copy-\/able \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classSMPS_1_1led__drivers__c_aeb949596f94465e158f57c66c6068038}\label{classSMPS_1_1led__drivers__c_aeb949596f94465e158f57c66c6068038}} 
 void \mbox{\hyperlink{classSMPS_1_1led__drivers__c_aeb949596f94465e158f57c66c6068038}{set\+\_\+boost\+\_\+enable}} (const bool \&enable)
 \begin{DoxyCompactList}\small\item\em TODO implement. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classSMPS_1_1led__drivers__c_a8c4adeede46d8893a0e0437c7f37c394}\label{classSMPS_1_1led__drivers__c_a8c4adeede46d8893a0e0437c7f37c394}} 
 void \mbox{\hyperlink{classSMPS_1_1led__drivers__c_a8c4adeede46d8893a0e0437c7f37c394}{set\+\_\+smps\+\_\+enable\+\_\+pin}} (const bool \&enable)
 \begin{DoxyCompactList}\small\item\em TODO implement. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{classSMPS_1_1led__drivers__c_ac9a27075ed6fe89453e82e493b68ece8}\label{classSMPS_1_1led__drivers__c_ac9a27075ed6fe89453e82e493b68ece8}} 
-void {\bfseries set\+\_\+all\+\_\+currents} (const set\+\_\+current\+\_\+item $\ast$data) \+\_\+\+\_\+attribute\+\_\+\+\_\+((flatten))
+void \mbox{\hyperlink{classSMPS_1_1led__drivers__c_ac9a27075ed6fe89453e82e493b68ece8}{set\+\_\+all\+\_\+currents}} (const set\+\_\+current\+\_\+item $\ast$data) \+\_\+\+\_\+attribute\+\_\+\+\_\+((flatten))
 \item 
 \mbox{\Hypertarget{classSMPS_1_1led__drivers__c_ad5265e702d5b51adfa8d6f0064b833c7}\label{classSMPS_1_1led__drivers__c_ad5265e702d5b51adfa8d6f0064b833c7}} 
-void {\bfseries set\+\_\+update\+\_\+all\+\_\+pid} () \+\_\+\+\_\+attribute\+\_\+\+\_\+((flatten))
-\item 
+void \mbox{\hyperlink{classSMPS_1_1led__drivers__c_ad5265e702d5b51adfa8d6f0064b833c7}{set\+\_\+update\+\_\+all\+\_\+pid}} () \+\_\+\+\_\+attribute\+\_\+\+\_\+((flatten))
+\begin{DoxyCompactList}\small\item\em Running all control loops. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{classSMPS_1_1led__drivers__c_a2e87d6aacea4e6740bf3a4a151dcbe76}\label{classSMPS_1_1led__drivers__c_a2e87d6aacea4e6740bf3a4a151dcbe76}} 
-void {\bfseries get\+\_\+current\+\_\+voltage} ()
-\end{DoxyCompactItemize}
+void \mbox{\hyperlink{classSMPS_1_1led__drivers__c_a2e87d6aacea4e6740bf3a4a151dcbe76}{get\+\_\+current\+\_\+voltage}} ()
+\begin{DoxyCompactList}\small\item\em Function for data visualization. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
+
+\doxysubsection{Detailed Description}
+LED drivers class. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSMPS_1_1led__drivers__c_a1e2f7a10267713cedcc2e76c915eabc6}\label{classSMPS_1_1led__drivers__c_a1e2f7a10267713cedcc2e76c915eabc6}} 
+\index{SMPS::led\_drivers\_c@{SMPS::led\_drivers\_c}!led\_drivers\_c@{led\_drivers\_c}}
+\index{led\_drivers\_c@{led\_drivers\_c}!SMPS::led\_drivers\_c@{SMPS::led\_drivers\_c}}
+\doxysubsubsection{\texorpdfstring{led\_drivers\_c()}{led\_drivers\_c()}}
+{\footnotesize\ttfamily constexpr SMPS\+::led\+\_\+drivers\+\_\+c\+::led\+\_\+drivers\+\_\+c (\begin{DoxyParamCaption}\item[{const TIM\+\_\+\+Handle\+Type\+Def $\ast$const}]{htim1,  }\item[{uint32\+\_\+t}]{tim\+\_\+channel1,  }\item[{const uint32\+\_\+t $\ast$const}]{adc1\+\_\+data\+\_\+ptr1,  }\item[{\mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}}}]{voltage\+\_\+channel1,  }\item[{\mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}}}]{current\+\_\+channel1,  }\item[{const TIM\+\_\+\+Handle\+Type\+Def $\ast$const}]{htim2,  }\item[{uint32\+\_\+t}]{tim\+\_\+channel2,  }\item[{const uint32\+\_\+t $\ast$const}]{adc1\+\_\+data\+\_\+ptr2,  }\item[{\mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}}}]{voltage\+\_\+channel2,  }\item[{\mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}}}]{current\+\_\+channel2,  }\item[{const TIM\+\_\+\+Handle\+Type\+Def $\ast$const}]{htim3,  }\item[{uint32\+\_\+t}]{tim\+\_\+channel3,  }\item[{const uint32\+\_\+t $\ast$const}]{adc1\+\_\+data\+\_\+ptr3,  }\item[{\mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}}}]{voltage\+\_\+channel3,  }\item[{\mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}}}]{current\+\_\+channel3 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+Compile time constructor to save all possible variable in const private member variable with initialization list for no-\/run time cost. 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em All} & like in \mbox{\hyperlink{classSMPS_1_1SBC__c}{SBC\+\_\+c}} constructor \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSMPS_1_1led__drivers__c_ac9a27075ed6fe89453e82e493b68ece8}\label{classSMPS_1_1led__drivers__c_ac9a27075ed6fe89453e82e493b68ece8}} 
+\index{SMPS::led\_drivers\_c@{SMPS::led\_drivers\_c}!set\_all\_currents@{set\_all\_currents}}
+\index{set\_all\_currents@{set\_all\_currents}!SMPS::led\_drivers\_c@{SMPS::led\_drivers\_c}}
+\doxysubsubsection{\texorpdfstring{set\_all\_currents()}{set\_all\_currents()}}
+{\footnotesize\ttfamily void SMPS\+::led\+\_\+drivers\+\_\+c\+::set\+\_\+all\+\_\+currents (\begin{DoxyParamCaption}\item[{const set\+\_\+current\+\_\+item $\ast$}]{data }\end{DoxyParamCaption})}
+
+Setting all 3 current converter All current are clamped to max safe their max current\+: D1\+\_\+\+D2\+\_\+max\+\_\+current and D3\+\_\+max\+\_\+current respectively. 
 
 The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 

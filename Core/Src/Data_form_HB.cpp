@@ -7,9 +7,10 @@
 
 #include <Data_form_HB.hpp>
 
+using namespace HB;
 
-
-[[nodiscard]] data_from_hb mainboard_form_hb::get_data() const{
+[[nodiscard]] data_from_hb mainboard_form_hb::get_data(){
+	mainboard_form_hb::update();
 	return _data;
 }
 

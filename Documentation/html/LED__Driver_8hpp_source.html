@@ -81,7 +81,7 @@ $(function() {
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#define INC_LED_DRIVER_HPP_</span></div>
 <div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160; </div>
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160; </div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;BQ25895.hpp&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="BQ25895_8hpp.html">BQ25895.hpp</a>&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#include &quot;Common_struct.h&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
@@ -130,8 +130,7 @@ $(function() {
 <div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;<span class="keyword">const</span> <a class="code" href="structSMPS_1_1pid__const__s.html">pid_const_s</a> pid_const;</div>
 <div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160; </div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160; </div>
-<div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160; </div>
-<div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;<span class="keyword">enum</span> ADC_RANK_DMA: uint8_t{</div>
+<div class="line"><a name="l00073"></a><span class="lineno"><a class="line" href="LED__Driver_8hpp.html#a0f84e175294eb97b8a9297a67e401ed1">   73</a></span>&#160;<span class="keyword">enum</span> <a class="code" href="LED__Driver_8hpp.html#a0f84e175294eb97b8a9297a67e401ed1">ADC_RANK_DMA</a>: uint8_t{</div>
 <div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    ADC_RANK_0,</div>
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    ADC_RANK_1,</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    ADC_RANK_2,</div>
@@ -152,104 +151,114 @@ $(function() {
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;};</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160; </div>
 <div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160; </div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;<span class="comment">/* Synchronous Buck Converter Controller Class */</span></div>
-<div class="line"><a name="l00096"></a><span class="lineno"><a class="line" href="classSMPS_1_1SBC__c.html">   96</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>{</div>
-<div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160; </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;    <span class="keyword">const</span> TIM_HandleTypeDef *<span class="keyword">const</span> _htim;</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">const</span> uint32_t *<span class="keyword">const</span> _adc1_data_ptr;</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> uint32_t _tim_channel;</div>
-<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">const</span> uint8_t _voltage_channel;</div>
-<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">const</span> uint8_t _current_channel;</div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160; </div>
-<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;    uint32_t _set_current_mA;</div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    <a class="code" href="structSMPS_1_1pid__data__s.html">pid_data_s&lt;float&gt;</a> _pid_data;</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160; </div>
-<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;    <span class="keywordtype">float</span> _now_pwm_val;</div>
-<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
-<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set_pwm(<span class="keyword">const</span> uint16_t &amp;pwm);</div>
-<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160; </div>
-<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160; </div>
+<div class="line"><a name="l00097"></a><span class="lineno"><a class="line" href="classSMPS_1_1SBC__c.html">   97</a></span>&#160;<span class="keyword">class </span><a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>{</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160; </div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;    <span class="keyword">const</span> TIM_HandleTypeDef *<span class="keyword">const</span> _htim;</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;    <span class="keyword">const</span> uint32_t * _adc1_data_ptr;</div>
+<div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;    <span class="keyword">const</span> uint32_t _tim_channel;</div>
+<div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;    <span class="keyword">const</span> uint8_t _voltage_channel;</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;    <span class="keyword">const</span> uint8_t _current_channel;</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;    uint32_t _set_current_mA;</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;    <a class="code" href="structSMPS_1_1pid__data__s.html">pid_data_s&lt;float&gt;</a> _pid_data;</div>
+<div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160; </div>
+<div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;    <span class="keywordtype">float</span> _now_pwm_val;</div>
+<div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160; </div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    <span class="keyword">inline</span> <span class="keywordtype">void</span> set_pwm(<span class="keyword">const</span> uint16_t &amp;pwm);</div>
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
-<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;    constexpr <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>(<span class="keyword">const</span> TIM_HandleTypeDef *<span class="keyword">const</span> htim, uint32_t tim_channel, <span class="keyword">const</span> uint32_t *<span class="keyword">const</span> adc1_data_ptr,</div>
-<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;                    ADC_RANK_DMA voltage_channel, ADC_RANK_DMA current_channel):</div>
-<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;        _htim{htim}, _adc1_data_ptr{adc1_data_ptr}, _tim_channel{tim_channel}, _voltage_channel  {voltage_channel},</div>
-<div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;        _current_channel {current_channel} , _set_current_mA {0} , _now_pwm_val{0}</div>
-<div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    {</div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    };</div>
-<div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160; </div>
-<div class="line"><a name="l00122"></a><span class="lineno"><a class="line" href="classSMPS_1_1SBC__c.html#a18408b2210b72272487a20f81aef03ec">  122</a></span>&#160;    <a class="code" href="classSMPS_1_1SBC__c.html#a18408b2210b72272487a20f81aef03ec">SBC_c</a>(<span class="keyword">const</span> <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a> &amp; operator= ( <span class="keyword">const</span> <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160; </div>
-<div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    <span class="keyword">inline</span> uint32_t get_current_mA() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160; </div>
-<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    <span class="keyword">inline</span> uint32_t get_voltage_mV() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160; </div>
-<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="keywordtype">void</span> set_current(<span class="keyword">const</span> uint32_t &amp;current_mA);</div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160; </div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">void</span> set_update_pid() __attribute__((flatten));</div>
-<div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160; </div>
-<div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160; </div>
-<div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;};</div>
-<div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160; </div>
+<div class="line"><a name="l00125"></a><span class="lineno"><a class="line" href="classSMPS_1_1SBC__c.html#a3852f345d3f5fbfbdb1cfe6399d65fa0">  125</a></span>&#160;    constexpr <a class="code" href="classSMPS_1_1SBC__c.html#a3852f345d3f5fbfbdb1cfe6399d65fa0">SBC_c</a>(<span class="keyword">const</span> TIM_HandleTypeDef *<span class="keyword">const</span> htim, uint32_t tim_channel, <span class="keyword">const</span> uint32_t * adc1_data_ptr,</div>
+<div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;            <a class="code" href="LED__Driver_8hpp.html#a0f84e175294eb97b8a9297a67e401ed1">ADC_RANK_DMA</a> voltage_channel, <a class="code" href="LED__Driver_8hpp.html#a0f84e175294eb97b8a9297a67e401ed1">ADC_RANK_DMA</a> current_channel):</div>
+<div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;            _htim{htim}, _adc1_data_ptr{adc1_data_ptr}, _tim_channel{tim_channel}, _voltage_channel  {voltage_channel},</div>
+<div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;            _current_channel {current_channel} , _set_current_mA {0} , _now_pwm_val{0}</div>
+<div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;            {</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;            };</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160; </div>
+<div class="line"><a name="l00133"></a><span class="lineno"><a class="line" href="classSMPS_1_1SBC__c.html#a18408b2210b72272487a20f81aef03ec">  133</a></span>&#160;            <a class="code" href="classSMPS_1_1SBC__c.html#a18408b2210b72272487a20f81aef03ec">SBC_c</a>(<span class="keyword">const</span> <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00135"></a><span class="lineno"><a class="line" href="classSMPS_1_1SBC__c.html#ad54a6cbef11ab9629fa8d196f38f5c07">  135</a></span>&#160;            <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a> &amp; <a class="code" href="classSMPS_1_1SBC__c.html#ad54a6cbef11ab9629fa8d196f38f5c07">operator= </a>( <span class="keyword">const</span> <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160; </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160; </div>
-<div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160; </div>
+<div class="line"><a name="l00140"></a><span class="lineno"><a class="line" href="classSMPS_1_1SBC__c.html#a63b06958efb01853543d0a05b6905d93">  140</a></span>&#160;            <span class="keyword">inline</span> uint32_t <a class="code" href="classSMPS_1_1SBC__c.html#a63b06958efb01853543d0a05b6905d93">get_current_mA</a>() <span class="keyword">const</span>;</div>
 <div class="line"><a name="l00141"></a><span class="lineno">  141</span>&#160; </div>
-<div class="line"><a name="l00142"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html">  142</a></span>&#160;class <a class="code" href="classSMPS_1_1led__drivers__c.html">led_drivers_c</a> {</div>
-<div class="line"><a name="l00143"></a><span class="lineno">  143</span>&#160; </div>
-<div class="line"><a name="l00144"></a><span class="lineno">  144</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00145"></a><span class="lineno">  145</span>&#160; </div>
-<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160;    std::array&lt; SBC_c, NUMBER_OF_LED_CHANNELS &gt; _SBC;</div>
-<div class="line"><a name="l00147"></a><span class="lineno">  147</span>&#160; </div>
-<div class="line"><a name="l00148"></a><span class="lineno">  148</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00149"></a><span class="lineno">  149</span>&#160; </div>
-<div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    constexpr <a class="code" href="classSMPS_1_1led__drivers__c.html">led_drivers_c</a>(</div>
-<div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;            <span class="keyword">const</span> TIM_HandleTypeDef *<span class="keyword">const</span> htim1, uint32_t tim_channel1, <span class="keyword">const</span> uint32_t *<span class="keyword">const</span> adc1_data_ptr1, ADC_RANK_DMA voltage_channel1, ADC_RANK_DMA current_channel1,</div>
-<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;            <span class="keyword">const</span> TIM_HandleTypeDef *<span class="keyword">const</span> htim2, uint32_t tim_channel2, <span class="keyword">const</span> uint32_t *<span class="keyword">const</span> adc1_data_ptr2, ADC_RANK_DMA voltage_channel2, ADC_RANK_DMA current_channel2,</div>
-<div class="line"><a name="l00153"></a><span class="lineno">  153</span>&#160;            <span class="keyword">const</span> TIM_HandleTypeDef *<span class="keyword">const</span> htim3, uint32_t tim_channel3, <span class="keyword">const</span> uint32_t *<span class="keyword">const</span> adc1_data_ptr3, ADC_RANK_DMA voltage_channel3, ADC_RANK_DMA current_channel3)</div>
-<div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;    :_SBC{</div>
-<div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;            <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>(htim1, tim_channel1, adc1_data_ptr1, voltage_channel1, current_channel1),</div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;            <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>(htim2, tim_channel2, adc1_data_ptr2, voltage_channel2, current_channel2),</div>
-<div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;            <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>(htim3, tim_channel3, adc1_data_ptr3, voltage_channel3, current_channel3)</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        }</div>
-<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    {</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    }</div>
+<div class="line"><a name="l00145"></a><span class="lineno"><a class="line" href="classSMPS_1_1SBC__c.html#adf7156ba8f7b12547bfb890ce2370f11">  145</a></span>&#160;            <span class="keyword">inline</span> uint32_t <a class="code" href="classSMPS_1_1SBC__c.html#adf7156ba8f7b12547bfb890ce2370f11">get_voltage_mV</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a name="l00146"></a><span class="lineno">  146</span>&#160; </div>
+<div class="line"><a name="l00151"></a><span class="lineno"><a class="line" href="classSMPS_1_1SBC__c.html#aa9550a5529a721576c00f437532da912">  151</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classSMPS_1_1SBC__c.html#aa9550a5529a721576c00f437532da912">set_current</a>(<span class="keyword">const</span> uint32_t &amp;current_mA);</div>
+<div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160; </div>
+<div class="line"><a name="l00157"></a><span class="lineno"><a class="line" href="classSMPS_1_1SBC__c.html#ab92c0d696792f919f08e2e120cc108ec">  157</a></span>&#160;            <span class="keywordtype">void</span> <a class="code" href="classSMPS_1_1SBC__c.html#ab92c0d696792f919f08e2e120cc108ec">set_update_pid</a>() __attribute__((flatten));</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160; </div>
+<div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;};</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160; </div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160; </div>
-<div class="line"><a name="l00163"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html#abc33280d64107c9dd13b2ebf710b1b4e">  163</a></span>&#160;    <a class="code" href="classSMPS_1_1led__drivers__c.html#abc33280d64107c9dd13b2ebf710b1b4e">led_drivers_c</a>(<span class="keyword">const</span> <a class="code" href="classSMPS_1_1led__drivers__c.html">led_drivers_c</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <a class="code" href="classSMPS_1_1led__drivers__c.html">led_drivers_c</a> &amp; operator= ( <span class="keyword">const</span> <a class="code" href="classSMPS_1_1led__drivers__c.html">led_drivers_c</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160; </div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160; </div>
+<div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160; </div>
+<div class="line"><a name="l00165"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html">  165</a></span>&#160;class <a class="code" href="classSMPS_1_1led__drivers__c.html">led_drivers_c</a> {</div>
 <div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160; </div>
-<div class="line"><a name="l00168"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html#aeb949596f94465e158f57c66c6068038">  168</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSMPS_1_1led__drivers__c.html#aeb949596f94465e158f57c66c6068038">set_boost_enable</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;enable);</div>
-<div class="line"><a name="l00170"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html#a8c4adeede46d8893a0e0437c7f37c394">  170</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSMPS_1_1led__drivers__c.html#a8c4adeede46d8893a0e0437c7f37c394">set_smps_enable_pin</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;enable);</div>
-<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160; </div>
-<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;    <span class="keywordtype">void</span> set_all_currents(<span class="keyword">const</span> set_current_item *data)__attribute__((flatten));</div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160; </div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;    <span class="keywordtype">void</span> set_update_all_pid() __attribute__((flatten));</div>
-<div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160; </div>
-<div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;    <span class="keywordtype">void</span> get_current_voltage(); <span class="comment">// -&gt; global variable</span></div>
-<div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160; </div>
-<div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;};</div>
-<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160; </div>
-<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160; </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;}</div>
-<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160; </div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160; </div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160; </div>
-<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160; </div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INC_LED_DRIVER_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160; </div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    std::array&lt; SBC_c, NUMBER_OF_LED_CHANNELS &gt; _SBC;</div>
+<div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160; </div>
+<div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160; </div>
+<div class="line"><a name="l00178"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html#a1e2f7a10267713cedcc2e76c915eabc6">  178</a></span>&#160;    constexpr <a class="code" href="classSMPS_1_1led__drivers__c.html#a1e2f7a10267713cedcc2e76c915eabc6">led_drivers_c</a>(</div>
+<div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <span class="keyword">const</span> TIM_HandleTypeDef *<span class="keyword">const</span> htim1, uint32_t tim_channel1, <span class="keyword">const</span> uint32_t *<span class="keyword">const</span> adc1_data_ptr1, <a class="code" href="LED__Driver_8hpp.html#a0f84e175294eb97b8a9297a67e401ed1">ADC_RANK_DMA</a> voltage_channel1, <a class="code" href="LED__Driver_8hpp.html#a0f84e175294eb97b8a9297a67e401ed1">ADC_RANK_DMA</a> current_channel1,</div>
+<div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            <span class="keyword">const</span> TIM_HandleTypeDef *<span class="keyword">const</span> htim2, uint32_t tim_channel2, <span class="keyword">const</span> uint32_t *<span class="keyword">const</span> adc1_data_ptr2, <a class="code" href="LED__Driver_8hpp.html#a0f84e175294eb97b8a9297a67e401ed1">ADC_RANK_DMA</a> voltage_channel2, <a class="code" href="LED__Driver_8hpp.html#a0f84e175294eb97b8a9297a67e401ed1">ADC_RANK_DMA</a> current_channel2,</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keyword">const</span> TIM_HandleTypeDef *<span class="keyword">const</span> htim3, uint32_t tim_channel3, <span class="keyword">const</span> uint32_t *<span class="keyword">const</span> adc1_data_ptr3, <a class="code" href="LED__Driver_8hpp.html#a0f84e175294eb97b8a9297a67e401ed1">ADC_RANK_DMA</a> voltage_channel3, <a class="code" href="LED__Driver_8hpp.html#a0f84e175294eb97b8a9297a67e401ed1">ADC_RANK_DMA</a> current_channel3)</div>
+<div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;    :_SBC{</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;        <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>(htim1, tim_channel1, adc1_data_ptr1, voltage_channel1, current_channel1),</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;        <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>(htim2, tim_channel2, adc1_data_ptr2, voltage_channel2, current_channel2),</div>
+<div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;        <a class="code" href="classSMPS_1_1SBC__c.html">SBC_c</a>(htim3, tim_channel3, adc1_data_ptr3, voltage_channel3, current_channel3)</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;    }</div>
+<div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;    {</div>
+<div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;    }</div>
+<div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160; </div>
+<div class="line"><a name="l00191"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html#abc33280d64107c9dd13b2ebf710b1b4e">  191</a></span>&#160;    <a class="code" href="classSMPS_1_1led__drivers__c.html#abc33280d64107c9dd13b2ebf710b1b4e">led_drivers_c</a>(<span class="keyword">const</span> <a class="code" href="classSMPS_1_1led__drivers__c.html">led_drivers_c</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00193"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html#a459a44b8d64992387027c53397a8caa9">  193</a></span>&#160;    <a class="code" href="classSMPS_1_1led__drivers__c.html">led_drivers_c</a> &amp; <a class="code" href="classSMPS_1_1SBC__c.html#ad54a6cbef11ab9629fa8d196f38f5c07">operator= </a>( <span class="keyword">const</span> <a class="code" href="classSMPS_1_1led__drivers__c.html">led_drivers_c</a>&amp;) = <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160; </div>
+<div class="line"><a name="l00195"></a><span class="lineno">  195</span>&#160; </div>
+<div class="line"><a name="l00197"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html#aeb949596f94465e158f57c66c6068038">  197</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSMPS_1_1led__drivers__c.html#aeb949596f94465e158f57c66c6068038">set_boost_enable</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;enable);</div>
+<div class="line"><a name="l00199"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html#a8c4adeede46d8893a0e0437c7f37c394">  199</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSMPS_1_1led__drivers__c.html#a8c4adeede46d8893a0e0437c7f37c394">set_smps_enable_pin</a>(<span class="keyword">const</span> <span class="keywordtype">bool</span> &amp;enable);</div>
+<div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160; </div>
+<div class="line"><a name="l00205"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html#ac9a27075ed6fe89453e82e493b68ece8">  205</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSMPS_1_1led__drivers__c.html#ac9a27075ed6fe89453e82e493b68ece8">set_all_currents</a>(<span class="keyword">const</span> set_current_item *data)__attribute__((flatten));</div>
+<div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160; </div>
+<div class="line"><a name="l00208"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html#ad5265e702d5b51adfa8d6f0064b833c7">  208</a></span>&#160;    <span class="keywordtype">void</span> <a class="code" href="classSMPS_1_1led__drivers__c.html#ad5265e702d5b51adfa8d6f0064b833c7">set_update_all_pid</a>() __attribute__((flatten));</div>
+<div class="line"><a name="l00209"></a><span class="lineno">  209</span>&#160; </div>
+<div class="line"><a name="l00211"></a><span class="lineno"><a class="line" href="classSMPS_1_1led__drivers__c.html#a2e87d6aacea4e6740bf3a4a151dcbe76">  211</a></span>&#160;    <span class="keywordtype">void</span> get_current_voltage();</div>
+<div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160; </div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;};</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160; </div>
+<div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160; </div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;}</div>
+<div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160; </div>
+<div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160; </div>
+<div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160; </div>
+<div class="line"><a name="l00220"></a><span class="lineno">  220</span>&#160; </div>
+<div class="line"><a name="l00221"></a><span class="lineno">  221</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INC_LED_DRIVER_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aBQ25895_8hpp_html"><div class="ttname"><a href="BQ25895_8hpp.html">BQ25895.hpp</a></div></div>
+<div class="ttc" id="aLED__Driver_8hpp_html_a0f84e175294eb97b8a9297a67e401ed1"><div class="ttname"><a href="LED__Driver_8hpp.html#a0f84e175294eb97b8a9297a67e401ed1">SMPS::ADC_RANK_DMA</a></div><div class="ttdeci">ADC_RANK_DMA</div><div class="ttdoc">Enum for ADC data form DMA.</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:73</div></div>
 <div class="ttc" id="aLED__Driver_8hpp_html_a2c3ef48de9a7e69185b956ba48ce0d15"><div class="ttname"><a href="LED__Driver_8hpp.html#a2c3ef48de9a7e69185b956ba48ce0d15">SMPS::MAX_VOLTAGE_mV_DISCONNECT_PROTECTION</a></div><div class="ttdeci">const uint16_t MAX_VOLTAGE_mV_DISCONNECT_PROTECTION</div><div class="ttdoc">[mV]</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:32</div></div>
 <div class="ttc" id="aLED__Driver_8hpp_html_a419b28db1331b1838f24911f238b4e9c"><div class="ttname"><a href="LED__Driver_8hpp.html#a419b28db1331b1838f24911f238b4e9c">SMPS::D1_D2_max_current</a></div><div class="ttdeci">const uint16_t D1_D2_max_current</div><div class="ttdoc">[mA]</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:35</div></div>
 <div class="ttc" id="aLED__Driver_8hpp_html_a983aaae9ad9df605b409d5e7d85e1af8"><div class="ttname"><a href="LED__Driver_8hpp.html#a983aaae9ad9df605b409d5e7d85e1af8">SMPS::MAX_BATTERY_VOLTAGE_mV_FOR_DISCONNECT_PROTECTION</a></div><div class="ttdeci">const uint16_t MAX_BATTERY_VOLTAGE_mV_FOR_DISCONNECT_PROTECTION</div><div class="ttdoc">[mV]</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:33</div></div>
 <div class="ttc" id="aLED__Driver_8hpp_html_ae4081ef1726c27d9852212fe031634ba"><div class="ttname"><a href="LED__Driver_8hpp.html#ae4081ef1726c27d9852212fe031634ba">SMPS::ADC_MAX_COUNT</a></div><div class="ttdeci">const uint16_t ADC_MAX_COUNT</div><div class="ttdoc">oversampling x4 and 1 bit shift</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:30</div></div>
 <div class="ttc" id="aLED__Driver_8hpp_html_ae76c2acd61bfbb1385b86bb04e67259e"><div class="ttname"><a href="LED__Driver_8hpp.html#ae76c2acd61bfbb1385b86bb04e67259e">SMPS::D3_max_current</a></div><div class="ttdeci">const uint16_t D3_max_current</div><div class="ttdoc">[mA]</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:36</div></div>
-<div class="ttc" id="aclassSMPS_1_1SBC__c_html"><div class="ttname"><a href="classSMPS_1_1SBC__c.html">SMPS::SBC_c</a></div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:96</div></div>
-<div class="ttc" id="aclassSMPS_1_1SBC__c_html_a18408b2210b72272487a20f81aef03ec"><div class="ttname"><a href="classSMPS_1_1SBC__c.html#a18408b2210b72272487a20f81aef03ec">SMPS::SBC_c::SBC_c</a></div><div class="ttdeci">SBC_c(const SBC_c &amp;)=delete</div><div class="ttdoc">non construction-copyable &amp; non copyable</div></div>
-<div class="ttc" id="aclassSMPS_1_1led__drivers__c_html"><div class="ttname"><a href="classSMPS_1_1led__drivers__c.html">SMPS::led_drivers_c</a></div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:142</div></div>
+<div class="ttc" id="aclassSMPS_1_1SBC__c_html"><div class="ttname"><a href="classSMPS_1_1SBC__c.html">SMPS::SBC_c</a></div><div class="ttdoc">Synchronous Buck Converter Controller Class.</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:97</div></div>
+<div class="ttc" id="aclassSMPS_1_1SBC__c_html_a18408b2210b72272487a20f81aef03ec"><div class="ttname"><a href="classSMPS_1_1SBC__c.html#a18408b2210b72272487a20f81aef03ec">SMPS::SBC_c::SBC_c</a></div><div class="ttdeci">SBC_c(const SBC_c &amp;)=delete</div><div class="ttdoc">non construction-copyable</div></div>
+<div class="ttc" id="aclassSMPS_1_1SBC__c_html_a3852f345d3f5fbfbdb1cfe6399d65fa0"><div class="ttname"><a href="classSMPS_1_1SBC__c.html#a3852f345d3f5fbfbdb1cfe6399d65fa0">SMPS::SBC_c::SBC_c</a></div><div class="ttdeci">constexpr SBC_c(const TIM_HandleTypeDef *const htim, uint32_t tim_channel, const uint32_t *adc1_data_ptr, ADC_RANK_DMA voltage_channel, ADC_RANK_DMA current_channel)</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:125</div></div>
+<div class="ttc" id="aclassSMPS_1_1SBC__c_html_a63b06958efb01853543d0a05b6905d93"><div class="ttname"><a href="classSMPS_1_1SBC__c.html#a63b06958efb01853543d0a05b6905d93">SMPS::SBC_c::get_current_mA</a></div><div class="ttdeci">uint32_t get_current_mA() const</div></div>
+<div class="ttc" id="aclassSMPS_1_1SBC__c_html_aa9550a5529a721576c00f437532da912"><div class="ttname"><a href="classSMPS_1_1SBC__c.html#aa9550a5529a721576c00f437532da912">SMPS::SBC_c::set_current</a></div><div class="ttdeci">void set_current(const uint32_t &amp;current_mA)</div></div>
+<div class="ttc" id="aclassSMPS_1_1SBC__c_html_ab92c0d696792f919f08e2e120cc108ec"><div class="ttname"><a href="classSMPS_1_1SBC__c.html#ab92c0d696792f919f08e2e120cc108ec">SMPS::SBC_c::set_update_pid</a></div><div class="ttdeci">void set_update_pid() __attribute__((flatten))</div></div>
+<div class="ttc" id="aclassSMPS_1_1SBC__c_html_ad54a6cbef11ab9629fa8d196f38f5c07"><div class="ttname"><a href="classSMPS_1_1SBC__c.html#ad54a6cbef11ab9629fa8d196f38f5c07">SMPS::SBC_c::operator=</a></div><div class="ttdeci">SBC_c &amp; operator=(const SBC_c &amp;)=delete</div><div class="ttdoc">non copy-able</div></div>
+<div class="ttc" id="aclassSMPS_1_1SBC__c_html_adf7156ba8f7b12547bfb890ce2370f11"><div class="ttname"><a href="classSMPS_1_1SBC__c.html#adf7156ba8f7b12547bfb890ce2370f11">SMPS::SBC_c::get_voltage_mV</a></div><div class="ttdeci">uint32_t get_voltage_mV() const</div></div>
+<div class="ttc" id="aclassSMPS_1_1led__drivers__c_html"><div class="ttname"><a href="classSMPS_1_1led__drivers__c.html">SMPS::led_drivers_c</a></div><div class="ttdoc">LED drivers class.</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:165</div></div>
+<div class="ttc" id="aclassSMPS_1_1led__drivers__c_html_a1e2f7a10267713cedcc2e76c915eabc6"><div class="ttname"><a href="classSMPS_1_1led__drivers__c.html#a1e2f7a10267713cedcc2e76c915eabc6">SMPS::led_drivers_c::led_drivers_c</a></div><div class="ttdeci">constexpr led_drivers_c(const TIM_HandleTypeDef *const htim1, uint32_t tim_channel1, const uint32_t *const adc1_data_ptr1, ADC_RANK_DMA voltage_channel1, ADC_RANK_DMA current_channel1, const TIM_HandleTypeDef *const htim2, uint32_t tim_channel2, const uint32_t *const adc1_data_ptr2, ADC_RANK_DMA voltage_channel2, ADC_RANK_DMA current_channel2, const TIM_HandleTypeDef *const htim3, uint32_t tim_channel3, const uint32_t *const adc1_data_ptr3, ADC_RANK_DMA voltage_channel3, ADC_RANK_DMA current_channel3)</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:178</div></div>
 <div class="ttc" id="aclassSMPS_1_1led__drivers__c_html_a8c4adeede46d8893a0e0437c7f37c394"><div class="ttname"><a href="classSMPS_1_1led__drivers__c.html#a8c4adeede46d8893a0e0437c7f37c394">SMPS::led_drivers_c::set_smps_enable_pin</a></div><div class="ttdeci">void set_smps_enable_pin(const bool &amp;enable)</div><div class="ttdoc">TODO implement.</div></div>
-<div class="ttc" id="aclassSMPS_1_1led__drivers__c_html_abc33280d64107c9dd13b2ebf710b1b4e"><div class="ttname"><a href="classSMPS_1_1led__drivers__c.html#abc33280d64107c9dd13b2ebf710b1b4e">SMPS::led_drivers_c::led_drivers_c</a></div><div class="ttdeci">led_drivers_c(const led_drivers_c &amp;)=delete</div><div class="ttdoc">non construction-copyable &amp; non copyable</div></div>
+<div class="ttc" id="aclassSMPS_1_1led__drivers__c_html_abc33280d64107c9dd13b2ebf710b1b4e"><div class="ttname"><a href="classSMPS_1_1led__drivers__c.html#abc33280d64107c9dd13b2ebf710b1b4e">SMPS::led_drivers_c::led_drivers_c</a></div><div class="ttdeci">led_drivers_c(const led_drivers_c &amp;)=delete</div><div class="ttdoc">non construction-copyable</div></div>
+<div class="ttc" id="aclassSMPS_1_1led__drivers__c_html_ac9a27075ed6fe89453e82e493b68ece8"><div class="ttname"><a href="classSMPS_1_1led__drivers__c.html#ac9a27075ed6fe89453e82e493b68ece8">SMPS::led_drivers_c::set_all_currents</a></div><div class="ttdeci">void set_all_currents(const set_current_item *data) __attribute__((flatten))</div></div>
+<div class="ttc" id="aclassSMPS_1_1led__drivers__c_html_ad5265e702d5b51adfa8d6f0064b833c7"><div class="ttname"><a href="classSMPS_1_1led__drivers__c.html#ad5265e702d5b51adfa8d6f0064b833c7">SMPS::led_drivers_c::set_update_all_pid</a></div><div class="ttdeci">void set_update_all_pid() __attribute__((flatten))</div><div class="ttdoc">Running all control loops.</div></div>
 <div class="ttc" id="aclassSMPS_1_1led__drivers__c_html_aeb949596f94465e158f57c66c6068038"><div class="ttname"><a href="classSMPS_1_1led__drivers__c.html#aeb949596f94465e158f57c66c6068038">SMPS::led_drivers_c::set_boost_enable</a></div><div class="ttdeci">void set_boost_enable(const bool &amp;enable)</div><div class="ttdoc">TODO implement.</div></div>
-<div class="ttc" id="astructSMPS_1_1pid__const__s_html"><div class="ttname"><a href="structSMPS_1_1pid__const__s.html">SMPS::pid_const_s</a></div><div class="ttdoc">PID CONST struct.</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:42</div></div>
+<div class="ttc" id="astructSMPS_1_1pid__const__s_html"><div class="ttname"><a href="structSMPS_1_1pid__const__s.html">SMPS::pid_const_s</a></div><div class="ttdoc">Struct with all constants for PID regulator.</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:42</div></div>
 <div class="ttc" id="astructSMPS_1_1pid__data__s_html"><div class="ttname"><a href="structSMPS_1_1pid__data__s.html">SMPS::pid_data_s</a></div><div class="ttdoc">template for testing with volatile.</div><div class="ttdef"><b>Definition:</b> LED_Driver.hpp:87</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->

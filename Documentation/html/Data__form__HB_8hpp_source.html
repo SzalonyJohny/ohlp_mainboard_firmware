@@ -83,39 +83,46 @@ $(function() {
 <div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &lt;array&gt;</span></div>
 <div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;Common_struct.h&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160; </div>
-<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160; </div>
-<div class="line"><a name="l00015"></a><span class="lineno"><a class="line" href="structdata__from__hb.html">   15</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structdata__from__hb.html">data_from_hb</a>{</div>
-<div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160;    uint16_t ALS;</div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    uint16_t IR;</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    std::array&lt; int16_t, NUMBER_OF_LED_CHANNELS &gt; TEMP;</div>
-<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;};</div>
-<div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160; </div>
-<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;<span class="keyword">const</span> <span class="keyword">auto</span> headboard_uart_data_length = 10;</div>
+<div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="keyword">namespace </span>HB{</div>
+<div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160; </div>
+<div class="line"><a name="l00017"></a><span class="lineno"><a class="line" href="structHB_1_1data__from__hb.html">   17</a></span>&#160;<span class="keyword">struct </span><a class="code" href="structHB_1_1data__from__hb.html">data_from_hb</a>{</div>
+<div class="line"><a name="l00018"></a><span class="lineno"><a class="line" href="structHB_1_1data__from__hb.html#aad0552df0a32581868de214d70bb6f8b">   18</a></span>&#160;    uint16_t <a class="code" href="structHB_1_1data__from__hb.html#aad0552df0a32581868de214d70bb6f8b">ALS</a>; </div>
+<div class="line"><a name="l00019"></a><span class="lineno"><a class="line" href="structHB_1_1data__from__hb.html#a1101e0bf8fc2f51e90bdca122a823ef1">   19</a></span>&#160;    uint16_t <a class="code" href="structHB_1_1data__from__hb.html#a1101e0bf8fc2f51e90bdca122a823ef1">IR</a>; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="structHB_1_1data__from__hb.html#add636e4f42b6bde9735b9d7b63f9eded">   20</a></span>&#160;    std::array&lt; int16_t, NUMBER_OF_LED_CHANNELS &gt; <a class="code" href="structHB_1_1data__from__hb.html#add636e4f42b6bde9735b9d7b63f9eded">TEMP</a>; </div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;};</div>
 <div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160; </div>
-<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160; </div>
-<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="classmainboard__form__hb.html">   24</a></span>&#160;<span class="keyword">class </span><a class="code" href="classmainboard__form__hb.html">mainboard_form_hb</a>{</div>
-<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160; </div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    <span class="keyword">const</span> uint8_t *_recive_data_ptr;</div>
-<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;    <a class="code" href="structdata__from__hb.html">data_from_hb</a> _data;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160; </div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;<span class="keyword">const</span> std::size_t headboard_uart_data_length = 10;</div>
+<div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160; </div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="classHB_1_1mainboard__form__hb.html">   26</a></span>&#160;<span class="keyword">class </span><a class="code" href="classHB_1_1mainboard__form__hb.html">mainboard_form_hb</a>{</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;<span class="keyword">private</span>:</div>
+<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;    <span class="keyword">const</span> uint8_t *_recive_data_ptr;</div>
+<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    <a class="code" href="structHB_1_1data__from__hb.html">data_from_hb</a> _data;</div>
 <div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160; </div>
-<div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    constexpr <a class="code" href="classmainboard__form__hb.html">mainboard_form_hb</a>(<span class="keyword">const</span> uint8_t *uart_data_ptr):_recive_data_ptr{uart_data_ptr},_data{}{}</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="comment">// non-copyable</span></div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <a class="code" href="classmainboard__form__hb.html">mainboard_form_hb</a>(<span class="keyword">const</span> <a class="code" href="classmainboard__form__hb.html">mainboard_form_hb</a>&amp;)= <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <a class="code" href="classmainboard__form__hb.html">mainboard_form_hb</a> &amp; operator= (<span class="keyword">const</span> <a class="code" href="classmainboard__form__hb.html">mainboard_form_hb</a>&amp;) = <span class="keyword">delete</span>;</div>
-<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160; </div>
-<div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160; </div>
-<div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;    <span class="keywordtype">void</span> update();</div>
-<div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    [[nodiscard]] <a class="code" href="structdata__from__hb.html">data_from_hb</a> get_data() <span class="keyword">const</span>;</div>
-<div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;};</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
+<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <span class="keywordtype">void</span> update();</div>
+<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160; </div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;<span class="keyword">public</span>:</div>
+<div class="line"><a name="l00038"></a><span class="lineno"><a class="line" href="classHB_1_1mainboard__form__hb.html#a6e6690673cd7fe5b6c0a015e01db39d2">   38</a></span>&#160;    constexpr <a class="code" href="classHB_1_1mainboard__form__hb.html#a6e6690673cd7fe5b6c0a015e01db39d2">mainboard_form_hb</a>(<span class="keyword">const</span> uint8_t *uart_data_ptr):_recive_data_ptr{uart_data_ptr},_data{}{}</div>
+<div class="line"><a name="l00040"></a><span class="lineno"><a class="line" href="classHB_1_1mainboard__form__hb.html#ae51e4a65337254ebd905088bdebe3079">   40</a></span>&#160;    <a class="code" href="classHB_1_1mainboard__form__hb.html#ae51e4a65337254ebd905088bdebe3079">mainboard_form_hb</a>(<span class="keyword">const</span> <a class="code" href="classHB_1_1mainboard__form__hb.html">mainboard_form_hb</a>&amp;)= <span class="keyword">delete</span>;</div>
+<div class="line"><a name="l00042"></a><span class="lineno"><a class="line" href="classHB_1_1mainboard__form__hb.html#ab84f512f3f07a8a0c1842d5f7ef30a51">   42</a></span>&#160;    <a class="code" href="classHB_1_1mainboard__form__hb.html">mainboard_form_hb</a> &amp; <a class="code" href="classHB_1_1mainboard__form__hb.html#ab84f512f3f07a8a0c1842d5f7ef30a51">operator= </a>(<span class="keyword">const</span> <a class="code" href="classHB_1_1mainboard__form__hb.html">mainboard_form_hb</a>&amp;) = <span class="keyword">delete</span>;</div>
 <div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
-<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INC_DATA_FORM_HB_HPP_ */</span><span class="preprocessor"></span></div>
-<div class="ttc" id="aclassmainboard__form__hb_html"><div class="ttname"><a href="classmainboard__form__hb.html">mainboard_form_hb</a></div><div class="ttdef"><b>Definition:</b> Data_form_HB.hpp:24</div></div>
-<div class="ttc" id="astructdata__from__hb_html"><div class="ttname"><a href="structdata__from__hb.html">data_from_hb</a></div><div class="ttdef"><b>Definition:</b> Data_form_HB.hpp:15</div></div>
+<div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160; </div>
+<div class="line"><a name="l00049"></a><span class="lineno"><a class="line" href="classHB_1_1mainboard__form__hb.html#abf5146e148b545e786148c93b20e08b3">   49</a></span>&#160;    [[nodiscard]] <a class="code" href="structHB_1_1data__from__hb.html">data_from_hb</a> <a class="code" href="classHB_1_1mainboard__form__hb.html#abf5146e148b545e786148c93b20e08b3">get_data</a>();</div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160; </div>
+<div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;};</div>
+<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;}</div>
+<div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160; </div>
+<div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;<span class="preprocessor">#endif </span><span class="comment">/* INC_DATA_FORM_HB_HPP_ */</span><span class="preprocessor"></span></div>
+<div class="ttc" id="aclassHB_1_1mainboard__form__hb_html"><div class="ttname"><a href="classHB_1_1mainboard__form__hb.html">HB::mainboard_form_hb</a></div><div class="ttdoc">Class for serial communication with headboard.</div><div class="ttdef"><b>Definition:</b> Data_form_HB.hpp:26</div></div>
+<div class="ttc" id="aclassHB_1_1mainboard__form__hb_html_a6e6690673cd7fe5b6c0a015e01db39d2"><div class="ttname"><a href="classHB_1_1mainboard__form__hb.html#a6e6690673cd7fe5b6c0a015e01db39d2">HB::mainboard_form_hb::mainboard_form_hb</a></div><div class="ttdeci">constexpr mainboard_form_hb(const uint8_t *uart_data_ptr)</div><div class="ttdoc">Compile time constructor.</div><div class="ttdef"><b>Definition:</b> Data_form_HB.hpp:38</div></div>
+<div class="ttc" id="aclassHB_1_1mainboard__form__hb_html_ab84f512f3f07a8a0c1842d5f7ef30a51"><div class="ttname"><a href="classHB_1_1mainboard__form__hb.html#ab84f512f3f07a8a0c1842d5f7ef30a51">HB::mainboard_form_hb::operator=</a></div><div class="ttdeci">mainboard_form_hb &amp; operator=(const mainboard_form_hb &amp;)=delete</div><div class="ttdoc">non copy construcable</div></div>
+<div class="ttc" id="aclassHB_1_1mainboard__form__hb_html_abf5146e148b545e786148c93b20e08b3"><div class="ttname"><a href="classHB_1_1mainboard__form__hb.html#abf5146e148b545e786148c93b20e08b3">HB::mainboard_form_hb::get_data</a></div><div class="ttdeci">data_from_hb get_data()</div></div>
+<div class="ttc" id="aclassHB_1_1mainboard__form__hb_html_ae51e4a65337254ebd905088bdebe3079"><div class="ttname"><a href="classHB_1_1mainboard__form__hb.html#ae51e4a65337254ebd905088bdebe3079">HB::mainboard_form_hb::mainboard_form_hb</a></div><div class="ttdeci">mainboard_form_hb(const mainboard_form_hb &amp;)=delete</div><div class="ttdoc">non-copyable</div></div>
+<div class="ttc" id="astructHB_1_1data__from__hb_html"><div class="ttname"><a href="structHB_1_1data__from__hb.html">HB::data_from_hb</a></div><div class="ttdoc">Data received from Headboard.</div><div class="ttdef"><b>Definition:</b> Data_form_HB.hpp:17</div></div>
+<div class="ttc" id="astructHB_1_1data__from__hb_html_a1101e0bf8fc2f51e90bdca122a823ef1"><div class="ttname"><a href="structHB_1_1data__from__hb.html#a1101e0bf8fc2f51e90bdca122a823ef1">HB::data_from_hb::IR</a></div><div class="ttdeci">uint16_t IR</div><div class="ttdoc">IR light sensor for Face2Face mode.</div><div class="ttdef"><b>Definition:</b> Data_form_HB.hpp:19</div></div>
+<div class="ttc" id="astructHB_1_1data__from__hb_html_aad0552df0a32581868de214d70bb6f8b"><div class="ttname"><a href="structHB_1_1data__from__hb.html#aad0552df0a32581868de214d70bb6f8b">HB::data_from_hb::ALS</a></div><div class="ttdeci">uint16_t ALS</div><div class="ttdoc">Ambient Light Sensor.</div><div class="ttdef"><b>Definition:</b> Data_form_HB.hpp:18</div></div>
+<div class="ttc" id="astructHB_1_1data__from__hb_html_add636e4f42b6bde9735b9d7b63f9eded"><div class="ttname"><a href="structHB_1_1data__from__hb.html#add636e4f42b6bde9735b9d7b63f9eded">HB::data_from_hb::TEMP</a></div><div class="ttdeci">std::array&lt; int16_t, NUMBER_OF_LED_CHANNELS &gt; TEMP</div><div class="ttdoc">Temperature of all LEDs in 100*degC.</div><div class="ttdef"><b>Definition:</b> Data_form_HB.hpp:20</div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>

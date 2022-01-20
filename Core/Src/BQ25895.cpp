@@ -1,5 +1,6 @@
 #include <BQ25895.hpp>
 
+using namespace BMS_BQ25895;
 
 void cBQ::set_inputcurrent(uint8_t icn_mA){
 	REG[0x00] = static_cast<uint8_t>(icn_mA | (EN_HIZ<<7) | (EN_ILIM<<6));

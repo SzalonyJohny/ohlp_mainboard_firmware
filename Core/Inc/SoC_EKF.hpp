@@ -11,6 +11,13 @@
 #include <array>
 #include <math.h>
 
+
+/**
+ * @file SoC_EKF.hpp
+ */
+
+namespace SOC_EKF{
+
 const unsigned int SOC_OCV_poli_coeff_lenght = 9;
 
 enum batt{
@@ -33,6 +40,7 @@ enum state_vector{
 
 float horner(const float *arry,unsigned int n, const float *x);
 
+/// Battery Model
 struct Battery_characteristic{
     unsigned int cell_in_parallel = 1;
     unsigned int cell_in_series = 1;
@@ -43,7 +51,7 @@ struct Battery_characteristic{
 
 
 
-
+/// State of charge estimation class
 class SoC_EKF
 {
 private:
@@ -86,7 +94,7 @@ public:
     [[nodiscard]] float get_SoC(){return _State_vector[SoC];};
 };
 
-
+}
 
 
 #endif /* SOC_EKF_HPP_ */
