@@ -1,0 +1,837 @@
+\hypertarget{group__USBD__CORE__Exported__FunctionsPrototype}{}\doxysection{USBD\+\_\+\+CORE\+\_\+\+Exported\+\_\+\+Functions\+Prototype}
+\label{group__USBD__CORE__Exported__FunctionsPrototype}\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+Collaboration diagram for USBD\+\_\+\+CORE\+\_\+\+Exported\+\_\+\+Functions\+Prototype\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{group__USBD__CORE__Exported__FunctionsPrototype}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gad35f19488381872e83fa7b23d96589e7}{USBD\+\_\+\+Init}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, \mbox{\hyperlink{structUSBD__DescriptorsTypeDef}{USBD\+\_\+\+Descriptors\+Type\+Def}} $\ast$pdesc, uint8\+\_\+t id)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Init Initializes the device stack and load the class driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga9d0ee86f2309eef71d3233080752dea2}{USBD\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+De\+Init Re-\/\+Initialize the device library. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga47396105b10467da14d07d21b60cc5f9}{USBD\+\_\+\+Start}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Start Start the USB Device Core. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga589cc62baf6dcff5612ec1f51422d28e}{USBD\+\_\+\+Stop}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Stop Stop the USB Device Core. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga392f73829f6127b9f42f03dd1401a1ef}{USBD\+\_\+\+Register\+Class}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, \mbox{\hyperlink{struct__Device__cb}{USBD\+\_\+\+Class\+Type\+Def}} $\ast$pclass)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Register\+Class Link class driver to Device Core. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga35f08f4623530af369ab0c326a814512}{USBD\+\_\+\+Run\+Test\+Mode}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Run\+Test\+Mode Launch test mode process. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga0b525aaf2f49fd59eadfb62ceaf4c65c}{USBD\+\_\+\+Set\+Class\+Config}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t cfgidx)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Set\+Class\+Config Configure device and start the interface. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga0a67d4cc64a52a0562f601e7d8467bd1}{USBD\+\_\+\+Clr\+Class\+Config}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t cfgidx)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Clr\+Class\+Config Clear current configuration. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gabdcdfefaffa1651c77a38d08eb3a82ce}{USBD\+\_\+\+LL\+\_\+\+Setup\+Stage}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t $\ast$psetup)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+LL\+\_\+\+Setup\+Stage Handle the setup stage. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga1ab0439714328647692719a2b1c9e689}{USBD\+\_\+\+LL\+\_\+\+Data\+Out\+Stage}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t epnum, uint8\+\_\+t $\ast$pdata)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+LL\+\_\+\+Data\+Out\+Stage Handle data OUT stage. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga09597f0a303e0148d9f291477f7c4439}{USBD\+\_\+\+LL\+\_\+\+Data\+In\+Stage}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t epnum, uint8\+\_\+t $\ast$pdata)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+LL\+\_\+\+Data\+In\+Stage Handle data in stage. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga9cd02ae070a18ea3395346c56639412b}{USBD\+\_\+\+LL\+\_\+\+Reset}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+LL\+\_\+\+Reset Handle Reset event. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gaaf2f9695af26bad9d0f66746fcca3243}{USBD\+\_\+\+LL\+\_\+\+Set\+Speed}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, USBD\+\_\+\+Speed\+Type\+Def speed)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+LL\+\_\+\+Set\+Speed Handle Reset event. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga907b2335773fcc0856e4ab6972c04020}{USBD\+\_\+\+LL\+\_\+\+Suspend}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+LL\+\_\+\+Suspend Handle Suspend event. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gacfd270cf295f13943dd6a591b366246c}{USBD\+\_\+\+LL\+\_\+\+Resume}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+LL\+\_\+\+Resume Handle Resume event. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gacf5d847096b6b8d9b1880dab9cd1726d}{USBD\+\_\+\+LL\+\_\+\+SOF}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+LL\+\_\+\+SOF Handle SOF event. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga8f70c097aa7377ec6841d2581bccfa7e}{USBD\+\_\+\+LL\+\_\+\+Iso\+INIncomplete}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t epnum)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+LL\+\_\+\+Iso\+INIncomplete Handle iso in incomplete event. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga1b6905ac966d81f6a2ce165e57dacd80}{USBD\+\_\+\+LL\+\_\+\+Iso\+OUTIncomplete}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t epnum)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+LL\+\_\+\+Iso\+OUTIncomplete Handle iso out incomplete event. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gaaf76b06413044241868c6828ec7fc51c}{USBD\+\_\+\+LL\+\_\+\+Dev\+Connected}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+LL\+\_\+\+Dev\+Connected Handle device connection event. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga07b5fe60c6f1cf9f485e0191a605b9a1}{USBD\+\_\+\+LL\+\_\+\+Dev\+Disconnected}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+LL\+\_\+\+Dev\+Disconnected Handle device disconnection event. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga24b61e95db7e4c7ad30a835e8d905943}{USBD\+\_\+\+LL\+\_\+\+Init}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em Initializes the low level portion of the device driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gaae9bfb6a27b11f232fc55a1d1b28be24}{USBD\+\_\+\+LL\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em De-\/\+Initializes the low level portion of the device driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga43e53e424e9850d8261e1f9a1be53348}{USBD\+\_\+\+LL\+\_\+\+Start}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em Starts the low level portion of the device driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gac522b28139c1868a2e24d044fc8288fd}{USBD\+\_\+\+LL\+\_\+\+Stop}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em Stops the low level portion of the device driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gad96254d74d95496ffb5f6f2248585cb0}{USBD\+\_\+\+LL\+\_\+\+Open\+EP}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr, uint8\+\_\+t ep\+\_\+type, uint16\+\_\+t ep\+\_\+mps)
+\begin{DoxyCompactList}\small\item\em Opens an endpoint of the low level driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gae12e7de3c398d5663976bf11faa63572}{USBD\+\_\+\+LL\+\_\+\+Close\+EP}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Closes an endpoint of the low level driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga10080ed9555110afba809de968314985}{USBD\+\_\+\+LL\+\_\+\+Flush\+EP}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Flushes an endpoint of the Low Level Driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gabc2b4a7c8307e04955b015fd32057ec7}{USBD\+\_\+\+LL\+\_\+\+Stall\+EP}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Sets a Stall condition on an endpoint of the Low Level Driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gad4fa6f2eeefe95d07148c6c53d111eae}{USBD\+\_\+\+LL\+\_\+\+Clear\+Stall\+EP}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Clears a Stall condition on an endpoint of the Low Level Driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gad3674ea3c4a9c4bbe7c73192727f922f}{USBD\+\_\+\+LL\+\_\+\+Set\+USBAddress}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t dev\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Assigns a USB address to the device. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga0388dbff915f441dd990896e28509dd9}{USBD\+\_\+\+LL\+\_\+\+Transmit}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr, uint8\+\_\+t $\ast$pbuf, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Transmits data over an endpoint. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga7018483ecc085a931fd7bf5353030b99}{USBD\+\_\+\+LL\+\_\+\+Prepare\+Receive}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr, uint8\+\_\+t $\ast$pbuf, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Prepares an endpoint for reception. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga2a0f10f93cc4246272b63661051a64b7}{USBD\+\_\+\+LL\+\_\+\+Is\+Stall\+EP}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Returns Stall condition. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gaeb80f50482e04c046ba41f5ea58a1b2b}{USBD\+\_\+\+LL\+\_\+\+Get\+Rx\+Data\+Size}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Returns the last transferred packet size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga383d9a41089cf426cdc61b5b24e2ca0a}{USBD\+\_\+\+LL\+\_\+\+Delay}} (uint32\+\_\+t Delay)
+\begin{DoxyCompactList}\small\item\em Delays routine for the USB Device Library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga0a67d4cc64a52a0562f601e7d8467bd1}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga0a67d4cc64a52a0562f601e7d8467bd1}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_ClrClassConfig@{USBD\_ClrClassConfig}}
+\index{USBD\_ClrClassConfig@{USBD\_ClrClassConfig}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_ClrClassConfig()}{USBD\_ClrClassConfig()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+Clr\+Class\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{cfgidx }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+Clr\+Class\+Config Clear current configuration. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+{\em cfgidx} & configuration index \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & USBD\+\_\+\+Status\+Type\+Def \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga9d0ee86f2309eef71d3233080752dea2}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga9d0ee86f2309eef71d3233080752dea2}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_DeInit@{USBD\_DeInit}}
+\index{USBD\_DeInit@{USBD\_DeInit}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_DeInit()}{USBD\_DeInit()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+De\+Init Re-\/\+Initialize the device library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gad35f19488381872e83fa7b23d96589e7}\label{group__USBD__CORE__Exported__FunctionsPrototype_gad35f19488381872e83fa7b23d96589e7}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_Init@{USBD\_Init}}
+\index{USBD\_Init@{USBD\_Init}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_Init()}{USBD\_Init()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{\mbox{\hyperlink{structUSBD__DescriptorsTypeDef}{USBD\+\_\+\+Descriptors\+Type\+Def}} $\ast$}]{pdesc,  }\item[{uint8\+\_\+t}]{id }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+Init Initializes the device stack and load the class driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+{\em pdesc} & Descriptor structure address \\
+\hline
+{\em id} & Low level core index \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gad4fa6f2eeefe95d07148c6c53d111eae}\label{group__USBD__CORE__Exported__FunctionsPrototype_gad4fa6f2eeefe95d07148c6c53d111eae}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_ClearStallEP@{USBD\_LL\_ClearStallEP}}
+\index{USBD\_LL\_ClearStallEP@{USBD\_LL\_ClearStallEP}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_ClearStallEP()}{USBD\_LL\_ClearStallEP()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Clear\+Stall\+EP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{ep\+\_\+addr }\end{DoxyParamCaption})}
+
+
+
+Clears a Stall condition on an endpoint of the Low Level Driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+{\em ep\+\_\+addr} & Endpoint number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gae12e7de3c398d5663976bf11faa63572}\label{group__USBD__CORE__Exported__FunctionsPrototype_gae12e7de3c398d5663976bf11faa63572}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_CloseEP@{USBD\_LL\_CloseEP}}
+\index{USBD\_LL\_CloseEP@{USBD\_LL\_CloseEP}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_CloseEP()}{USBD\_LL\_CloseEP()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Close\+EP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{ep\+\_\+addr }\end{DoxyParamCaption})}
+
+
+
+Closes an endpoint of the low level driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+{\em ep\+\_\+addr} & Endpoint number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga09597f0a303e0148d9f291477f7c4439}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga09597f0a303e0148d9f291477f7c4439}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_DataInStage@{USBD\_LL\_DataInStage}}
+\index{USBD\_LL\_DataInStage@{USBD\_LL\_DataInStage}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_DataInStage()}{USBD\_LL\_DataInStage()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Data\+In\+Stage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{epnum,  }\item[{uint8\+\_\+t $\ast$}]{pdata }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+LL\+\_\+\+Data\+In\+Stage Handle data in stage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+{\em epnum} & endpoint index \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga1ab0439714328647692719a2b1c9e689}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga1ab0439714328647692719a2b1c9e689}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_DataOutStage@{USBD\_LL\_DataOutStage}}
+\index{USBD\_LL\_DataOutStage@{USBD\_LL\_DataOutStage}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_DataOutStage()}{USBD\_LL\_DataOutStage()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Data\+Out\+Stage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{epnum,  }\item[{uint8\+\_\+t $\ast$}]{pdata }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+LL\+\_\+\+Data\+Out\+Stage Handle data OUT stage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+{\em epnum} & endpoint index \\
+\hline
+{\em pdata} & data pointer \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gaae9bfb6a27b11f232fc55a1d1b28be24}\label{group__USBD__CORE__Exported__FunctionsPrototype_gaae9bfb6a27b11f232fc55a1d1b28be24}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_DeInit@{USBD\_LL\_DeInit}}
+\index{USBD\_LL\_DeInit@{USBD\_LL\_DeInit}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_DeInit()}{USBD\_LL\_DeInit()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+De\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+De-\/\+Initializes the low level portion of the device driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga383d9a41089cf426cdc61b5b24e2ca0a}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga383d9a41089cf426cdc61b5b24e2ca0a}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_Delay@{USBD\_LL\_Delay}}
+\index{USBD\_LL\_Delay@{USBD\_LL\_Delay}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_Delay()}{USBD\_LL\_Delay()}}
+{\footnotesize\ttfamily void USBD\+\_\+\+LL\+\_\+\+Delay (\begin{DoxyParamCaption}\item[{uint32\+\_\+t}]{Delay }\end{DoxyParamCaption})}
+
+
+
+Delays routine for the USB Device Library. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em Delay} & Delay in ms \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gaaf76b06413044241868c6828ec7fc51c}\label{group__USBD__CORE__Exported__FunctionsPrototype_gaaf76b06413044241868c6828ec7fc51c}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_DevConnected@{USBD\_LL\_DevConnected}}
+\index{USBD\_LL\_DevConnected@{USBD\_LL\_DevConnected}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_DevConnected()}{USBD\_LL\_DevConnected()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Dev\+Connected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+LL\+\_\+\+Dev\+Connected Handle device connection event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga07b5fe60c6f1cf9f485e0191a605b9a1}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga07b5fe60c6f1cf9f485e0191a605b9a1}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_DevDisconnected@{USBD\_LL\_DevDisconnected}}
+\index{USBD\_LL\_DevDisconnected@{USBD\_LL\_DevDisconnected}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_DevDisconnected()}{USBD\_LL\_DevDisconnected()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Dev\+Disconnected (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+LL\+\_\+\+Dev\+Disconnected Handle device disconnection event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga10080ed9555110afba809de968314985}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga10080ed9555110afba809de968314985}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_FlushEP@{USBD\_LL\_FlushEP}}
+\index{USBD\_LL\_FlushEP@{USBD\_LL\_FlushEP}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_FlushEP()}{USBD\_LL\_FlushEP()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Flush\+EP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{ep\+\_\+addr }\end{DoxyParamCaption})}
+
+
+
+Flushes an endpoint of the Low Level Driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+{\em ep\+\_\+addr} & Endpoint number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gaeb80f50482e04c046ba41f5ea58a1b2b}\label{group__USBD__CORE__Exported__FunctionsPrototype_gaeb80f50482e04c046ba41f5ea58a1b2b}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_GetRxDataSize@{USBD\_LL\_GetRxDataSize}}
+\index{USBD\_LL\_GetRxDataSize@{USBD\_LL\_GetRxDataSize}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_GetRxDataSize()}{USBD\_LL\_GetRxDataSize()}}
+{\footnotesize\ttfamily uint32\+\_\+t USBD\+\_\+\+LL\+\_\+\+Get\+Rx\+Data\+Size (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{ep\+\_\+addr }\end{DoxyParamCaption})}
+
+
+
+Returns the last transferred packet size. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+{\em ep\+\_\+addr} & Endpoint number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Received} & Data Size \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga24b61e95db7e4c7ad30a835e8d905943}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga24b61e95db7e4c7ad30a835e8d905943}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_Init@{USBD\_LL\_Init}}
+\index{USBD\_LL\_Init@{USBD\_LL\_Init}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_Init()}{USBD\_LL\_Init()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Init (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+Initializes the low level portion of the device driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga8f70c097aa7377ec6841d2581bccfa7e}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga8f70c097aa7377ec6841d2581bccfa7e}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_IsoINIncomplete@{USBD\_LL\_IsoINIncomplete}}
+\index{USBD\_LL\_IsoINIncomplete@{USBD\_LL\_IsoINIncomplete}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_IsoINIncomplete()}{USBD\_LL\_IsoINIncomplete()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Iso\+INIncomplete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{epnum }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+LL\+\_\+\+Iso\+INIncomplete Handle iso in incomplete event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga1b6905ac966d81f6a2ce165e57dacd80}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga1b6905ac966d81f6a2ce165e57dacd80}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_IsoOUTIncomplete@{USBD\_LL\_IsoOUTIncomplete}}
+\index{USBD\_LL\_IsoOUTIncomplete@{USBD\_LL\_IsoOUTIncomplete}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_IsoOUTIncomplete()}{USBD\_LL\_IsoOUTIncomplete()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Iso\+OUTIncomplete (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{epnum }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+LL\+\_\+\+Iso\+OUTIncomplete Handle iso out incomplete event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga2a0f10f93cc4246272b63661051a64b7}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga2a0f10f93cc4246272b63661051a64b7}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_IsStallEP@{USBD\_LL\_IsStallEP}}
+\index{USBD\_LL\_IsStallEP@{USBD\_LL\_IsStallEP}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_IsStallEP()}{USBD\_LL\_IsStallEP()}}
+{\footnotesize\ttfamily uint8\+\_\+t USBD\+\_\+\+LL\+\_\+\+Is\+Stall\+EP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{ep\+\_\+addr }\end{DoxyParamCaption})}
+
+
+
+Returns Stall condition. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+{\em ep\+\_\+addr} & Endpoint number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em Stall} & (1\+: Yes, 0\+: No) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gad96254d74d95496ffb5f6f2248585cb0}\label{group__USBD__CORE__Exported__FunctionsPrototype_gad96254d74d95496ffb5f6f2248585cb0}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_OpenEP@{USBD\_LL\_OpenEP}}
+\index{USBD\_LL\_OpenEP@{USBD\_LL\_OpenEP}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_OpenEP()}{USBD\_LL\_OpenEP()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Open\+EP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{ep\+\_\+addr,  }\item[{uint8\+\_\+t}]{ep\+\_\+type,  }\item[{uint16\+\_\+t}]{ep\+\_\+mps }\end{DoxyParamCaption})}
+
+
+
+Opens an endpoint of the low level driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+{\em ep\+\_\+addr} & Endpoint number \\
+\hline
+{\em ep\+\_\+type} & Endpoint type \\
+\hline
+{\em ep\+\_\+mps} & Endpoint max packet size \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga7018483ecc085a931fd7bf5353030b99}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga7018483ecc085a931fd7bf5353030b99}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_PrepareReceive@{USBD\_LL\_PrepareReceive}}
+\index{USBD\_LL\_PrepareReceive@{USBD\_LL\_PrepareReceive}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_PrepareReceive()}{USBD\_LL\_PrepareReceive()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Prepare\+Receive (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{ep\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{pbuf,  }\item[{uint32\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Prepares an endpoint for reception. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+{\em ep\+\_\+addr} & Endpoint number \\
+\hline
+{\em pbuf} & Pointer to data to be received \\
+\hline
+{\em size} & Data size \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga9cd02ae070a18ea3395346c56639412b}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga9cd02ae070a18ea3395346c56639412b}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_Reset@{USBD\_LL\_Reset}}
+\index{USBD\_LL\_Reset@{USBD\_LL\_Reset}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_Reset()}{USBD\_LL\_Reset()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Reset (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+LL\+\_\+\+Reset Handle Reset event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gacfd270cf295f13943dd6a591b366246c}\label{group__USBD__CORE__Exported__FunctionsPrototype_gacfd270cf295f13943dd6a591b366246c}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_Resume@{USBD\_LL\_Resume}}
+\index{USBD\_LL\_Resume@{USBD\_LL\_Resume}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_Resume()}{USBD\_LL\_Resume()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Resume (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+LL\+\_\+\+Resume Handle Resume event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gaaf2f9695af26bad9d0f66746fcca3243}\label{group__USBD__CORE__Exported__FunctionsPrototype_gaaf2f9695af26bad9d0f66746fcca3243}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_SetSpeed@{USBD\_LL\_SetSpeed}}
+\index{USBD\_LL\_SetSpeed@{USBD\_LL\_SetSpeed}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_SetSpeed()}{USBD\_LL\_SetSpeed()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Set\+Speed (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{USBD\+\_\+\+Speed\+Type\+Def}]{speed }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+LL\+\_\+\+Set\+Speed Handle Reset event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gabdcdfefaffa1651c77a38d08eb3a82ce}\label{group__USBD__CORE__Exported__FunctionsPrototype_gabdcdfefaffa1651c77a38d08eb3a82ce}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_SetupStage@{USBD\_LL\_SetupStage}}
+\index{USBD\_LL\_SetupStage@{USBD\_LL\_SetupStage}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_SetupStage()}{USBD\_LL\_SetupStage()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Setup\+Stage (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t $\ast$}]{psetup }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+LL\+\_\+\+Setup\+Stage Handle the setup stage. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gad3674ea3c4a9c4bbe7c73192727f922f}\label{group__USBD__CORE__Exported__FunctionsPrototype_gad3674ea3c4a9c4bbe7c73192727f922f}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_SetUSBAddress@{USBD\_LL\_SetUSBAddress}}
+\index{USBD\_LL\_SetUSBAddress@{USBD\_LL\_SetUSBAddress}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_SetUSBAddress()}{USBD\_LL\_SetUSBAddress()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Set\+USBAddress (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{dev\+\_\+addr }\end{DoxyParamCaption})}
+
+
+
+Assigns a USB address to the device. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+{\em dev\+\_\+addr} & Device address \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gacf5d847096b6b8d9b1880dab9cd1726d}\label{group__USBD__CORE__Exported__FunctionsPrototype_gacf5d847096b6b8d9b1880dab9cd1726d}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_SOF@{USBD\_LL\_SOF}}
+\index{USBD\_LL\_SOF@{USBD\_LL\_SOF}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_SOF()}{USBD\_LL\_SOF()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+SOF (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+LL\+\_\+\+SOF Handle SOF event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gabc2b4a7c8307e04955b015fd32057ec7}\label{group__USBD__CORE__Exported__FunctionsPrototype_gabc2b4a7c8307e04955b015fd32057ec7}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_StallEP@{USBD\_LL\_StallEP}}
+\index{USBD\_LL\_StallEP@{USBD\_LL\_StallEP}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_StallEP()}{USBD\_LL\_StallEP()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Stall\+EP (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{ep\+\_\+addr }\end{DoxyParamCaption})}
+
+
+
+Sets a Stall condition on an endpoint of the Low Level Driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+{\em ep\+\_\+addr} & Endpoint number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga43e53e424e9850d8261e1f9a1be53348}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga43e53e424e9850d8261e1f9a1be53348}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_Start@{USBD\_LL\_Start}}
+\index{USBD\_LL\_Start@{USBD\_LL\_Start}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_Start()}{USBD\_LL\_Start()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+Starts the low level portion of the device driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_gac522b28139c1868a2e24d044fc8288fd}\label{group__USBD__CORE__Exported__FunctionsPrototype_gac522b28139c1868a2e24d044fc8288fd}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_Stop@{USBD\_LL\_Stop}}
+\index{USBD\_LL\_Stop@{USBD\_LL\_Stop}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_Stop()}{USBD\_LL\_Stop()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+Stops the low level portion of the device driver. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga907b2335773fcc0856e4ab6972c04020}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga907b2335773fcc0856e4ab6972c04020}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_Suspend@{USBD\_LL\_Suspend}}
+\index{USBD\_LL\_Suspend@{USBD\_LL\_Suspend}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_Suspend()}{USBD\_LL\_Suspend()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Suspend (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+LL\+\_\+\+Suspend Handle Suspend event. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga0388dbff915f441dd990896e28509dd9}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga0388dbff915f441dd990896e28509dd9}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_LL\_Transmit@{USBD\_LL\_Transmit}}
+\index{USBD\_LL\_Transmit@{USBD\_LL\_Transmit}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_LL\_Transmit()}{USBD\_LL\_Transmit()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+LL\+\_\+\+Transmit (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{ep\+\_\+addr,  }\item[{uint8\+\_\+t $\ast$}]{pbuf,  }\item[{uint32\+\_\+t}]{size }\end{DoxyParamCaption})}
+
+
+
+Transmits data over an endpoint. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device handle \\
+\hline
+{\em ep\+\_\+addr} & Endpoint number \\
+\hline
+{\em pbuf} & Pointer to data to be sent \\
+\hline
+{\em size} & Data size \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga392f73829f6127b9f42f03dd1401a1ef}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga392f73829f6127b9f42f03dd1401a1ef}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_RegisterClass@{USBD\_RegisterClass}}
+\index{USBD\_RegisterClass@{USBD\_RegisterClass}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_RegisterClass()}{USBD\_RegisterClass()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+Register\+Class (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{\mbox{\hyperlink{struct__Device__cb}{USBD\+\_\+\+Class\+Type\+Def}} $\ast$}]{pclass }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+Register\+Class Link class driver to Device Core. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em p\+Device} & \+: Device Handle \\
+\hline
+{\em pclass} & Class handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & Status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga35f08f4623530af369ab0c326a814512}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga35f08f4623530af369ab0c326a814512}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_RunTestMode@{USBD\_RunTestMode}}
+\index{USBD\_RunTestMode@{USBD\_RunTestMode}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_RunTestMode()}{USBD\_RunTestMode()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+Run\+Test\+Mode (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+Run\+Test\+Mode Launch test mode process. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga0b525aaf2f49fd59eadfb62ceaf4c65c}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga0b525aaf2f49fd59eadfb62ceaf4c65c}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_SetClassConfig@{USBD\_SetClassConfig}}
+\index{USBD\_SetClassConfig@{USBD\_SetClassConfig}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_SetClassConfig()}{USBD\_SetClassConfig()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+Set\+Class\+Config (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev,  }\item[{uint8\+\_\+t}]{cfgidx }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+Set\+Class\+Config Configure device and start the interface. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & device instance \\
+\hline
+{\em cfgidx} & configuration index \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em status} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga47396105b10467da14d07d21b60cc5f9}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga47396105b10467da14d07d21b60cc5f9}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_Start@{USBD\_Start}}
+\index{USBD\_Start@{USBD\_Start}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_Start()}{USBD\_Start()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+Start (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+Start Start the USB Device Core. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device Handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & Status \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__USBD__CORE__Exported__FunctionsPrototype_ga589cc62baf6dcff5612ec1f51422d28e}\label{group__USBD__CORE__Exported__FunctionsPrototype_ga589cc62baf6dcff5612ec1f51422d28e}} 
+\index{USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}!USBD\_Stop@{USBD\_Stop}}
+\index{USBD\_Stop@{USBD\_Stop}!USBD\_CORE\_Exported\_FunctionsPrototype@{USBD\_CORE\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{USBD\_Stop()}{USBD\_Stop()}}
+{\footnotesize\ttfamily USBD\+\_\+\+Status\+Type\+Def USBD\+\_\+\+Stop (\begin{DoxyParamCaption}\item[{\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$}]{pdev }\end{DoxyParamCaption})}
+
+
+
+USBD\+\_\+\+Stop Stop the USB Device Core. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pdev} & Device Handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD} & Status \\
+\hline
+\end{DoxyRetVals}

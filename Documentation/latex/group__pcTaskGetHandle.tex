@@ -1,0 +1,11 @@
+\hypertarget{group__pcTaskGetHandle}{}\doxysection{pc\+Task\+Get\+Handle}
+\label{group__pcTaskGetHandle}\index{pcTaskGetHandle@{pcTaskGetHandle}}
+task. h 
+\begin{DoxyPre}TaskHandle\_t xTaskGetHandle( const char *pcNameToQuery );\end{DoxyPre}
+
+
+NOTE\+: This function takes a relatively long time to complete and should be used sparingly.
+
+\begin{DoxyReturn}{Returns}
+The handle of the task that has the human readable name pc\+Name\+To\+Query. NULL is returned if no matching name is found. INCLUDE\+\_\+x\+Task\+Get\+Handle must be set to 1 in \mbox{\hyperlink{FreeRTOSConfig_8h_source}{Free\+RTOSConfig.\+h}} for pc\+Task\+Get\+Handle() to be available. 
+\end{DoxyReturn}

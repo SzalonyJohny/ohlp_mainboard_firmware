@@ -1,0 +1,13 @@
+\hypertarget{group__ulTaskGetIdleRunTimeCounter}{}\doxysection{ul\+Task\+Get\+Idle\+Run\+Time\+Counter}
+\label{group__ulTaskGetIdleRunTimeCounter}\index{ulTaskGetIdleRunTimeCounter@{ulTaskGetIdleRunTimeCounter}}
+task. h 
+\begin{DoxyPre}uint32\_t ulTaskGetIdleRunTimeCounter( void );\end{DoxyPre}
+
+
+config\+GENERATE\+\_\+\+RUN\+\_\+\+TIME\+\_\+\+STATS and config\+USE\+\_\+\+STATS\+\_\+\+FORMATTING\+\_\+\+FUNCTIONS must both be defined as 1 for this function to be available. The application must also then provide definitions for port\+CONFIGURE\+\_\+\+TIMER\+\_\+\+FOR\+\_\+\+RUN\+\_\+\+TIME\+\_\+\+STATS() and port\+GET\+\_\+\+RUN\+\_\+\+TIME\+\_\+\+COUNTER\+\_\+\+VALUE() to configure a peripheral timer/counter and return the timers current count value respectively. The counter should be at least 10 times the frequency of the tick count.
+
+Setting config\+GENERATE\+\_\+\+RUN\+\_\+\+TIME\+\_\+\+STATS to 1 will result in a total accumulated execution time being stored for each task. The resolution of the accumulated time value depends on the frequency of the timer configured by the port\+CONFIGURE\+\_\+\+TIMER\+\_\+\+FOR\+\_\+\+RUN\+\_\+\+TIME\+\_\+\+STATS() macro. While ux\+Task\+Get\+System\+State() and v\+Task\+Get\+Run\+Time\+Stats() writes the total execution time of each task into a buffer, ul\+Task\+Get\+Idle\+Run\+Time\+Counter() returns the total execution time of just the idle task.
+
+\begin{DoxyReturn}{Returns}
+The total run time of the idle task. This is the amount of time the idle task has actually been executing. The unit of time is dependent on the frequency configured using the port\+CONFIGURE\+\_\+\+TIMER\+\_\+\+FOR\+\_\+\+RUN\+\_\+\+TIME\+\_\+\+STATS() and port\+GET\+\_\+\+RUN\+\_\+\+TIME\+\_\+\+COUNTER\+\_\+\+VALUE() macros. 
+\end{DoxyReturn}

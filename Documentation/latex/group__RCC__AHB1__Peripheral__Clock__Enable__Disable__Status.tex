@@ -1,0 +1,56 @@
+\hypertarget{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status}{}\doxysection{AHB1 Peripheral Clock Enabled or Disabled Status}
+\label{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status}\index{AHB1 Peripheral Clock Enabled or Disabled Status@{AHB1 Peripheral Clock Enabled or Disabled Status}}
+
+
+Check whether the AHB1 peripheral clock is enabled or not.  
+
+
+Collaboration diagram for AHB1 Peripheral Clock Enabled or Disabled Status\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_gaab05e603c9cadd72e4b6397837b46cef}\label{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_gaab05e603c9cadd72e4b6397837b46cef}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB1\+ENR, RCC\+\_\+\+AHB1\+ENR\+\_\+\+DMA1\+EN) != 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_gad0ccdaf669ea327e80c455db4dc36177}\label{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_gad0ccdaf669ea327e80c455db4dc36177}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB1\+ENR, RCC\+\_\+\+AHB1\+ENR\+\_\+\+DMA2\+EN) != 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_gacc14db2565af722699ef4b29221d2acd}\label{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_gacc14db2565af722699ef4b29221d2acd}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+FLASH\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB1\+ENR, RCC\+\_\+\+AHB1\+ENR\+\_\+\+FLASHEN) != 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_ga0e1b25cbf589c1c47c1d069e4c803d56}\label{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_ga0e1b25cbf589c1c47c1d069e4c803d56}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CRC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB1\+ENR, RCC\+\_\+\+AHB1\+ENR\+\_\+\+CRCEN) != 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_ga134d0edbb0b67d1c6276ba2edb4b336a}\label{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_ga134d0edbb0b67d1c6276ba2edb4b336a}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TSC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+ENABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB1\+ENR, RCC\+\_\+\+AHB1\+ENR\+\_\+\+TSCEN) != 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_gae89d94d6252c79e450623f69eb939ed6}\label{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_gae89d94d6252c79e450623f69eb939ed6}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA1\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB1\+ENR, RCC\+\_\+\+AHB1\+ENR\+\_\+\+DMA1\+EN) == 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_ga725d2a38d8519867922438d48a5885cf}\label{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_ga725d2a38d8519867922438d48a5885cf}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+DMA2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB1\+ENR, RCC\+\_\+\+AHB1\+ENR\+\_\+\+DMA2\+EN) == 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_ga2a09cde9411c951a02b82ef8b5129d6d}\label{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_ga2a09cde9411c951a02b82ef8b5129d6d}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+FLASH\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB1\+ENR, RCC\+\_\+\+AHB1\+ENR\+\_\+\+FLASHEN) == 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_ga3d2645916b9ee9bad8c724a719c621d9}\label{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_ga3d2645916b9ee9bad8c724a719c621d9}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+CRC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB1\+ENR, RCC\+\_\+\+AHB1\+ENR\+\_\+\+CRCEN) == 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_ga9e8d629b7d0faf7a9a257a5a2f2c31a1}\label{group__RCC__AHB1__Peripheral__Clock__Enable__Disable__Status_ga9e8d629b7d0faf7a9a257a5a2f2c31a1}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+TSC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+DISABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB1\+ENR, RCC\+\_\+\+AHB1\+ENR\+\_\+\+TSCEN) == 0U)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Check whether the AHB1 peripheral clock is enabled or not. 
+
+\begin{DoxyNote}{Note}
+After reset, the peripheral clock (used for registers read/write access) is disabled and the application software has to enable this clock before using it. 
+\end{DoxyNote}

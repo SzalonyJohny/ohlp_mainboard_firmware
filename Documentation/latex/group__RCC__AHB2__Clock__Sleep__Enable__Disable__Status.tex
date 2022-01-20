@@ -1,0 +1,72 @@
+\hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status}{}\doxysection{AHB2 Peripheral Clock Sleep Enabled or Disabled Status}
+\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status}\index{AHB2 Peripheral Clock Sleep Enabled or Disabled Status@{AHB2 Peripheral Clock Sleep Enabled or Disabled Status}}
+
+
+Check whether the AHB2 peripheral clock during Low Power (Sleep) mode is enabled or not.  
+
+
+Collaboration diagram for AHB2 Peripheral Clock Sleep Enabled or Disabled Status\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_gabfca340e2266b35f9eb8bda9f24fb272}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_gabfca340e2266b35f9eb8bda9f24fb272}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOA\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+GPIOASMEN) != 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_gae5f9c8d570ca5ce52bd3d1766ad96265}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_gae5f9c8d570ca5ce52bd3d1766ad96265}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+GPIOBSMEN) != 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga91d9bb261e4eb51ae5c83276ca94ba9e}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga91d9bb261e4eb51ae5c83276ca94ba9e}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+GPIOCSMEN) != 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_gac60e430f28a40aecfc376ad9c00e94f5}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_gac60e430f28a40aecfc376ad9c00e94f5}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOH\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+GPIOHSMEN) != 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga39511ffeafa47299604652cb2603e519}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga39511ffeafa47299604652cb2603e519}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SRAM2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+SRAM2\+SMEN) != 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga126e8386d8fd2c08f3d55459aa36df66}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga126e8386d8fd2c08f3d55459aa36df66}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+ADCSMEN) != 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga536dc31ed0e24ad8b82f5b8c2a920b42}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga536dc31ed0e24ad8b82f5b8c2a920b42}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+RNG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+ENABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+RNGSMEN) != 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_gafb90a4c788e0b1e1dee61e462ada7f17}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_gafb90a4c788e0b1e1dee61e462ada7f17}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOA\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+GPIOASMEN) == 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga2eac033c5d40d9e6eda85985322ece6f}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga2eac033c5d40d9e6eda85985322ece6f}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOB\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+GPIOBSMEN) == 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga4dd6a13690da372d5ea52476d0f972c8}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga4dd6a13690da372d5ea52476d0f972c8}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+GPIOCSMEN) == 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_gae53e66bfd35d315af80f7d33a811de7c}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_gae53e66bfd35d315af80f7d33a811de7c}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+GPIOH\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+GPIOHSMEN) == 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga78941ee33c71aa732c6e865048574d37}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga78941ee33c71aa732c6e865048574d37}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+SRAM2\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+SRAM2\+SMEN) == 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga5379dde2a5d532588ff930fab2c9ade2}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_ga5379dde2a5d532588ff930fab2c9ade2}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+ADC\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+ADCSMEN) == 0U)
+\item 
+\mbox{\Hypertarget{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_gac7b5c1c60774ca2af36591d897eb352b}\label{group__RCC__AHB2__Clock__Sleep__Enable__Disable__Status_gac7b5c1c60774ca2af36591d897eb352b}} 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+RNG\+\_\+\+IS\+\_\+\+CLK\+\_\+\+SLEEP\+\_\+\+DISABLED}()~(READ\+\_\+\+BIT(RCC-\/$>$AHB2\+SMENR, RCC\+\_\+\+AHB2\+SMENR\+\_\+\+RNGSMEN) == 0U)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Check whether the AHB2 peripheral clock during Low Power (Sleep) mode is enabled or not. 
+
+\begin{DoxyNote}{Note}
+Peripheral clock gating in SLEEP mode can be used to further reduce power consumption. 
+
+After wakeup from SLEEP mode, the peripheral clock is enabled again. 
+
+By default, all peripheral clocks are enabled during SLEEP mode. 
+\end{DoxyNote}

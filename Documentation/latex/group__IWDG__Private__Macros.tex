@@ -1,0 +1,140 @@
+\hypertarget{group__IWDG__Private__Macros}{}\doxysection{IWDG Private Macros}
+\label{group__IWDG__Private__Macros}\index{IWDG Private Macros@{IWDG Private Macros}}
+Collaboration diagram for IWDG Private Macros\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=280pt]{group__IWDG__Private__Macros}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Macros_ga65cf77f3cfd45d3fd66c0cf33d23d7ab}{IWDG\+\_\+\+ENABLE\+\_\+\+WRITE\+\_\+\+ACCESS}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR, \mbox{\hyperlink{group__IWDG__Private__Constants_ga90fbb0a5e42ed25b44c0330ad75724e6}{IWDG\+\_\+\+KEY\+\_\+\+WRITE\+\_\+\+ACCESS\+\_\+\+ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enable write access to IWDG\+\_\+\+PR, IWDG\+\_\+\+RLR and IWDG\+\_\+\+WINR registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Macros_ga31636a55162fc73caf03c2d2808ea9dd}{IWDG\+\_\+\+DISABLE\+\_\+\+WRITE\+\_\+\+ACCESS}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR, \mbox{\hyperlink{group__IWDG__Private__Constants_ga9e63bed9af448ad96c4621e74230a415}{IWDG\+\_\+\+KEY\+\_\+\+WRITE\+\_\+\+ACCESS\+\_\+\+DISABLE}})
+\begin{DoxyCompactList}\small\item\em Disable write access to IWDG\+\_\+\+PR, IWDG\+\_\+\+RLR and IWDG\+\_\+\+WINR registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Macros_ga2b1af237dca5c067fbc9088185cb8185}{IS\+\_\+\+IWDG\+\_\+\+PRESCALER}}(\+\_\+\+\_\+\+PRESCALER\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Check IWDG prescaler value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Macros_gad7ade0982243f56ba89ff764534f553c}{IS\+\_\+\+IWDG\+\_\+\+RELOAD}}(\+\_\+\+\_\+\+RELOAD\+\_\+\+\_\+)~((\+\_\+\+\_\+\+RELOAD\+\_\+\+\_\+) $<$= \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga87024bbb19f26def4c4c1510b22d3033}{IWDG\+\_\+\+RLR\+\_\+\+RL}})
+\begin{DoxyCompactList}\small\item\em Check IWDG reload value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Macros_ga4ef7fac65e2c0d6a9c66c9899b9eb195}{IS\+\_\+\+IWDG\+\_\+\+WINDOW}}(\+\_\+\+\_\+\+WINDOW\+\_\+\+\_\+)~((\+\_\+\+\_\+\+WINDOW\+\_\+\+\_\+) $<$= \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga9a609548fc74e1d2214de4413081e03d}{IWDG\+\_\+\+WINR\+\_\+\+WIN}})
+\begin{DoxyCompactList}\small\item\em Check IWDG window value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__IWDG__Private__Macros_ga2b1af237dca5c067fbc9088185cb8185}\label{group__IWDG__Private__Macros_ga2b1af237dca5c067fbc9088185cb8185}} 
+\index{IWDG Private Macros@{IWDG Private Macros}!IS\_IWDG\_PRESCALER@{IS\_IWDG\_PRESCALER}}
+\index{IS\_IWDG\_PRESCALER@{IS\_IWDG\_PRESCALER}!IWDG Private Macros@{IWDG Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_IWDG\_PRESCALER}{IS\_IWDG\_PRESCALER}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+IWDG\+\_\+\+PRESCALER(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+PRESCALER\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                               (((\_\_PRESCALER\_\_) == \mbox{\hyperlink{group__IWDG__Prescaler_ga470bb195d35ef7a0b75164c228b4ee69}{IWDG\_PRESCALER\_4}})  || \(\backslash\)}
+\DoxyCodeLine{                                               ((\_\_PRESCALER\_\_) == \mbox{\hyperlink{group__IWDG__Prescaler_ga5f00866f823ee700005e8a753b28ad75}{IWDG\_PRESCALER\_8}})  || \(\backslash\)}
+\DoxyCodeLine{                                               ((\_\_PRESCALER\_\_) == \mbox{\hyperlink{group__IWDG__Prescaler_gab3eb3c6a10facc8b0dc7c33608f6e129}{IWDG\_PRESCALER\_16}}) || \(\backslash\)}
+\DoxyCodeLine{                                               ((\_\_PRESCALER\_\_) == \mbox{\hyperlink{group__IWDG__Prescaler_gac3f33494fb7aaa2845ac106858394e03}{IWDG\_PRESCALER\_32}}) || \(\backslash\)}
+\DoxyCodeLine{                                               ((\_\_PRESCALER\_\_) == \mbox{\hyperlink{group__IWDG__Prescaler_ga52a956c645ce59312c84cbe37b2b20e4}{IWDG\_PRESCALER\_64}}) || \(\backslash\)}
+\DoxyCodeLine{                                               ((\_\_PRESCALER\_\_) == \mbox{\hyperlink{group__IWDG__Prescaler_ga17901d4e3e52af620acbbb146fd79264}{IWDG\_PRESCALER\_128}})|| \(\backslash\)}
+\DoxyCodeLine{                                               ((\_\_PRESCALER\_\_) == \mbox{\hyperlink{group__IWDG__Prescaler_ga885221d5bb09157c9e953a1be38556f0}{IWDG\_PRESCALER\_256}}))}
+
+\end{DoxyCode}
+
+
+Check IWDG prescaler value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+PRESCALER$<$/strong$>$} & IWDG prescaler value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__IWDG__Private__Macros_gad7ade0982243f56ba89ff764534f553c}\label{group__IWDG__Private__Macros_gad7ade0982243f56ba89ff764534f553c}} 
+\index{IWDG Private Macros@{IWDG Private Macros}!IS\_IWDG\_RELOAD@{IS\_IWDG\_RELOAD}}
+\index{IS\_IWDG\_RELOAD@{IS\_IWDG\_RELOAD}!IWDG Private Macros@{IWDG Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_IWDG\_RELOAD}{IS\_IWDG\_RELOAD}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+IWDG\+\_\+\+RELOAD(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+RELOAD\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+RELOAD\+\_\+\+\_\+) $<$= \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga87024bbb19f26def4c4c1510b22d3033}{IWDG\+\_\+\+RLR\+\_\+\+RL}})}
+
+
+
+Check IWDG reload value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+RELOAD$<$/strong$>$} & IWDG reload value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__IWDG__Private__Macros_ga4ef7fac65e2c0d6a9c66c9899b9eb195}\label{group__IWDG__Private__Macros_ga4ef7fac65e2c0d6a9c66c9899b9eb195}} 
+\index{IWDG Private Macros@{IWDG Private Macros}!IS\_IWDG\_WINDOW@{IS\_IWDG\_WINDOW}}
+\index{IS\_IWDG\_WINDOW@{IS\_IWDG\_WINDOW}!IWDG Private Macros@{IWDG Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_IWDG\_WINDOW}{IS\_IWDG\_WINDOW}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+IWDG\+\_\+\+WINDOW(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+WINDOW\+\_\+\+\_\+ }\end{DoxyParamCaption})~((\+\_\+\+\_\+\+WINDOW\+\_\+\+\_\+) $<$= \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga9a609548fc74e1d2214de4413081e03d}{IWDG\+\_\+\+WINR\+\_\+\+WIN}})}
+
+
+
+Check IWDG window value. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+WINDOW$<$/strong$>$} & IWDG window value \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__IWDG__Private__Macros_ga31636a55162fc73caf03c2d2808ea9dd}\label{group__IWDG__Private__Macros_ga31636a55162fc73caf03c2d2808ea9dd}} 
+\index{IWDG Private Macros@{IWDG Private Macros}!IWDG\_DISABLE\_WRITE\_ACCESS@{IWDG\_DISABLE\_WRITE\_ACCESS}}
+\index{IWDG\_DISABLE\_WRITE\_ACCESS@{IWDG\_DISABLE\_WRITE\_ACCESS}!IWDG Private Macros@{IWDG Private Macros}}
+\doxysubsubsection{\texorpdfstring{IWDG\_DISABLE\_WRITE\_ACCESS}{IWDG\_DISABLE\_WRITE\_ACCESS}}
+{\footnotesize\ttfamily \#define IWDG\+\_\+\+DISABLE\+\_\+\+WRITE\+\_\+\+ACCESS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR, \mbox{\hyperlink{group__IWDG__Private__Constants_ga9e63bed9af448ad96c4621e74230a415}{IWDG\+\_\+\+KEY\+\_\+\+WRITE\+\_\+\+ACCESS\+\_\+\+DISABLE}})}
+
+
+
+Disable write access to IWDG\+\_\+\+PR, IWDG\+\_\+\+RLR and IWDG\+\_\+\+WINR registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & IWDG handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__IWDG__Private__Macros_ga65cf77f3cfd45d3fd66c0cf33d23d7ab}\label{group__IWDG__Private__Macros_ga65cf77f3cfd45d3fd66c0cf33d23d7ab}} 
+\index{IWDG Private Macros@{IWDG Private Macros}!IWDG\_ENABLE\_WRITE\_ACCESS@{IWDG\_ENABLE\_WRITE\_ACCESS}}
+\index{IWDG\_ENABLE\_WRITE\_ACCESS@{IWDG\_ENABLE\_WRITE\_ACCESS}!IWDG Private Macros@{IWDG Private Macros}}
+\doxysubsubsection{\texorpdfstring{IWDG\_ENABLE\_WRITE\_ACCESS}{IWDG\_ENABLE\_WRITE\_ACCESS}}
+{\footnotesize\ttfamily \#define IWDG\+\_\+\+ENABLE\+\_\+\+WRITE\+\_\+\+ACCESS(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR, \mbox{\hyperlink{group__IWDG__Private__Constants_ga90fbb0a5e42ed25b44c0330ad75724e6}{IWDG\+\_\+\+KEY\+\_\+\+WRITE\+\_\+\+ACCESS\+\_\+\+ENABLE}})}
+
+
+
+Enable write access to IWDG\+\_\+\+PR, IWDG\+\_\+\+RLR and IWDG\+\_\+\+WINR registers. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & IWDG handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

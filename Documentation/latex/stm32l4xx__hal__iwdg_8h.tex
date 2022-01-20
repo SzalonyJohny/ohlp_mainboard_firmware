@@ -1,0 +1,93 @@
+\hypertarget{stm32l4xx__hal__iwdg_8h}{}\doxysection{Drivers/\+STM32\+L4xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32l4xx\+\_\+hal\+\_\+iwdg.h File Reference}
+\label{stm32l4xx__hal__iwdg_8h}\index{Drivers/STM32L4xx\_HAL\_Driver/Inc/stm32l4xx\_hal\_iwdg.h@{Drivers/STM32L4xx\_HAL\_Driver/Inc/stm32l4xx\_hal\_iwdg.h}}
+
+
+Header file of IWDG HAL module.  
+
+
+{\ttfamily \#include \char`\"{}stm32l4xx\+\_\+hal\+\_\+def.\+h\char`\"{}}\newline
+Include dependency graph for stm32l4xx\+\_\+hal\+\_\+iwdg.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32l4xx__hal__iwdg_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32l4xx__hal__iwdg_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structIWDG__InitTypeDef}{IWDG\+\_\+\+Init\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em IWDG Init structure definition. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structIWDG__HandleTypeDef}{IWDG\+\_\+\+Handle\+Type\+Def}}
+\begin{DoxyCompactList}\small\item\em IWDG Handle Structure definition. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Prescaler_ga470bb195d35ef7a0b75164c228b4ee69}{IWDG\+\_\+\+PRESCALER\+\_\+4}}~0x00000000u
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Prescaler_ga5f00866f823ee700005e8a753b28ad75}{IWDG\+\_\+\+PRESCALER\+\_\+8}}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga9b727e7882603df1684cbf230520ca76}{IWDG\+\_\+\+PR\+\_\+\+PR\+\_\+0}}
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Prescaler_gab3eb3c6a10facc8b0dc7c33608f6e129}{IWDG\+\_\+\+PRESCALER\+\_\+16}}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gafba2551b90c68d95c736a116224b473e}{IWDG\+\_\+\+PR\+\_\+\+PR\+\_\+1}}
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Prescaler_gac3f33494fb7aaa2845ac106858394e03}{IWDG\+\_\+\+PRESCALER\+\_\+32}}~(\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gafba2551b90c68d95c736a116224b473e}{IWDG\+\_\+\+PR\+\_\+\+PR\+\_\+1}} $\vert$ \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga9b727e7882603df1684cbf230520ca76}{IWDG\+\_\+\+PR\+\_\+\+PR\+\_\+0}})
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Prescaler_ga52a956c645ce59312c84cbe37b2b20e4}{IWDG\+\_\+\+PRESCALER\+\_\+64}}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga55a1d7fde4e3e724a8644652ba9bb2b9}{IWDG\+\_\+\+PR\+\_\+\+PR\+\_\+2}}
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Prescaler_ga17901d4e3e52af620acbbb146fd79264}{IWDG\+\_\+\+PRESCALER\+\_\+128}}~(\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga55a1d7fde4e3e724a8644652ba9bb2b9}{IWDG\+\_\+\+PR\+\_\+\+PR\+\_\+2}} $\vert$ \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga9b727e7882603df1684cbf230520ca76}{IWDG\+\_\+\+PR\+\_\+\+PR\+\_\+0}})
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Prescaler_ga885221d5bb09157c9e953a1be38556f0}{IWDG\+\_\+\+PRESCALER\+\_\+256}}~(\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga55a1d7fde4e3e724a8644652ba9bb2b9}{IWDG\+\_\+\+PR\+\_\+\+PR\+\_\+2}} $\vert$ \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gafba2551b90c68d95c736a116224b473e}{IWDG\+\_\+\+PR\+\_\+\+PR\+\_\+1}})
+\item 
+\#define {\bfseries IWDG\+\_\+\+WINDOW\+\_\+\+DISABLE}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga9a609548fc74e1d2214de4413081e03d}{IWDG\+\_\+\+WINR\+\_\+\+WIN}}
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Exported__Macros_ga5914aff5b85e3151bb75377a32d83d6a}{\+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+START}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR, \mbox{\hyperlink{group__IWDG__Private__Constants_ga493295d56bb62752982234755612386f}{IWDG\+\_\+\+KEY\+\_\+\+ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enable the IWDG peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__IWDG__Exported__Macros_gac0eaf381e60a654d6b51c43f645e088f}{\+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+RELOAD\+\_\+\+COUNTER}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR, \mbox{\hyperlink{group__IWDG__Private__Constants_ga33abf7b7c76dfda6b6380448a1d28966}{IWDG\+\_\+\+KEY\+\_\+\+RELOAD}})
+\begin{DoxyCompactList}\small\item\em Reload IWDG counter with value defined in the reload register (write access to IWDG\+\_\+\+PR, IWDG\+\_\+\+RLR and IWDG\+\_\+\+WINR registers disabled). \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Constants_ga33abf7b7c76dfda6b6380448a1d28966}{IWDG\+\_\+\+KEY\+\_\+\+RELOAD}}~0x0000\+AAAAu
+\begin{DoxyCompactList}\small\item\em IWDG Key Register Bit\+Mask. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Constants_ga493295d56bb62752982234755612386f}{IWDG\+\_\+\+KEY\+\_\+\+ENABLE}}~0x0000\+CCCCu
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Constants_ga90fbb0a5e42ed25b44c0330ad75724e6}{IWDG\+\_\+\+KEY\+\_\+\+WRITE\+\_\+\+ACCESS\+\_\+\+ENABLE}}~0x00005555u
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Constants_ga9e63bed9af448ad96c4621e74230a415}{IWDG\+\_\+\+KEY\+\_\+\+WRITE\+\_\+\+ACCESS\+\_\+\+DISABLE}}~0x00000000u
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Macros_ga65cf77f3cfd45d3fd66c0cf33d23d7ab}{IWDG\+\_\+\+ENABLE\+\_\+\+WRITE\+\_\+\+ACCESS}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR, \mbox{\hyperlink{group__IWDG__Private__Constants_ga90fbb0a5e42ed25b44c0330ad75724e6}{IWDG\+\_\+\+KEY\+\_\+\+WRITE\+\_\+\+ACCESS\+\_\+\+ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enable write access to IWDG\+\_\+\+PR, IWDG\+\_\+\+RLR and IWDG\+\_\+\+WINR registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Macros_ga31636a55162fc73caf03c2d2808ea9dd}{IWDG\+\_\+\+DISABLE\+\_\+\+WRITE\+\_\+\+ACCESS}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR, \mbox{\hyperlink{group__IWDG__Private__Constants_ga9e63bed9af448ad96c4621e74230a415}{IWDG\+\_\+\+KEY\+\_\+\+WRITE\+\_\+\+ACCESS\+\_\+\+DISABLE}})
+\begin{DoxyCompactList}\small\item\em Disable write access to IWDG\+\_\+\+PR, IWDG\+\_\+\+RLR and IWDG\+\_\+\+WINR registers. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Macros_ga2b1af237dca5c067fbc9088185cb8185}{IS\+\_\+\+IWDG\+\_\+\+PRESCALER}}(\+\_\+\+\_\+\+PRESCALER\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Check IWDG prescaler value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Macros_gad7ade0982243f56ba89ff764534f553c}{IS\+\_\+\+IWDG\+\_\+\+RELOAD}}(\+\_\+\+\_\+\+RELOAD\+\_\+\+\_\+)~((\+\_\+\+\_\+\+RELOAD\+\_\+\+\_\+) $<$= \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga87024bbb19f26def4c4c1510b22d3033}{IWDG\+\_\+\+RLR\+\_\+\+RL}})
+\begin{DoxyCompactList}\small\item\em Check IWDG reload value. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__IWDG__Private__Macros_ga4ef7fac65e2c0d6a9c66c9899b9eb195}{IS\+\_\+\+IWDG\+\_\+\+WINDOW}}(\+\_\+\+\_\+\+WINDOW\+\_\+\+\_\+)~((\+\_\+\+\_\+\+WINDOW\+\_\+\+\_\+) $<$= \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga9a609548fc74e1d2214de4413081e03d}{IWDG\+\_\+\+WINR\+\_\+\+WIN}})
+\begin{DoxyCompactList}\small\item\em Check IWDG window value. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32l4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IWDG\+\_\+\+Init} (\mbox{\hyperlink{structIWDG__HandleTypeDef}{IWDG\+\_\+\+Handle\+Type\+Def}} $\ast$hiwdg)
+\item 
+\mbox{\hyperlink{stm32l4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+IWDG\+\_\+\+Refresh} (\mbox{\hyperlink{structIWDG__HandleTypeDef}{IWDG\+\_\+\+Handle\+Type\+Def}} $\ast$hiwdg)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of IWDG HAL module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2017 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 

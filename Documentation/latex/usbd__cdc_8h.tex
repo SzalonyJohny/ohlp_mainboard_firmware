@@ -1,0 +1,121 @@
+\hypertarget{usbd__cdc_8h}{}\doxysection{Middlewares/\+ST/\+STM32\+\_\+\+USB\+\_\+\+Device\+\_\+\+Library/\+Class/\+CDC/\+Inc/usbd\+\_\+cdc.h File Reference}
+\label{usbd__cdc_8h}\index{Middlewares/ST/STM32\_USB\_Device\_Library/Class/CDC/Inc/usbd\_cdc.h@{Middlewares/ST/STM32\_USB\_Device\_Library/Class/CDC/Inc/usbd\_cdc.h}}
+
+
+header file for the \mbox{\hyperlink{usbd__cdc_8c}{usbd\+\_\+cdc.\+c}} file.  
+
+
+{\ttfamily \#include \char`\"{}usbd\+\_\+ioreq.\+h\char`\"{}}\newline
+Include dependency graph for usbd\+\_\+cdc.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usbd__cdc_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usbd__cdc_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structUSBD__CDC__LineCodingTypeDef}{USBD\+\_\+\+CDC\+\_\+\+Line\+Coding\+Type\+Def}}
+\item 
+struct \mbox{\hyperlink{struct__USBD__CDC__Itf}{\+\_\+\+USBD\+\_\+\+CDC\+\_\+\+Itf}}
+\item 
+struct \mbox{\hyperlink{structUSBD__CDC__HandleTypeDef}{USBD\+\_\+\+CDC\+\_\+\+Handle\+Type\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries CDC\+\_\+\+IN\+\_\+\+EP}~0x81U  /$\ast$ EP1 for data IN $\ast$/
+\item 
+\#define {\bfseries CDC\+\_\+\+OUT\+\_\+\+EP}~0x01U  /$\ast$ EP1 for data OUT $\ast$/
+\item 
+\#define {\bfseries CDC\+\_\+\+CMD\+\_\+\+EP}~0x82U  /$\ast$ EP2 for CDC commands $\ast$/
+\item 
+\#define {\bfseries CDC\+\_\+\+HS\+\_\+\+BINTERVAL}~0x10U
+\item 
+\#define {\bfseries CDC\+\_\+\+FS\+\_\+\+BINTERVAL}~0x10U
+\item 
+\#define {\bfseries CDC\+\_\+\+DATA\+\_\+\+HS\+\_\+\+MAX\+\_\+\+PACKET\+\_\+\+SIZE}~512U  /$\ast$ Endpoint IN \& OUT Packet size $\ast$/
+\item 
+\#define {\bfseries CDC\+\_\+\+DATA\+\_\+\+FS\+\_\+\+MAX\+\_\+\+PACKET\+\_\+\+SIZE}~64U  /$\ast$ Endpoint IN \& OUT Packet size $\ast$/
+\item 
+\#define {\bfseries CDC\+\_\+\+CMD\+\_\+\+PACKET\+\_\+\+SIZE}~8U  /$\ast$ Control Endpoint Packet size $\ast$/
+\item 
+\#define {\bfseries USB\+\_\+\+CDC\+\_\+\+CONFIG\+\_\+\+DESC\+\_\+\+SIZ}~67U
+\item 
+\#define {\bfseries CDC\+\_\+\+DATA\+\_\+\+HS\+\_\+\+IN\+\_\+\+PACKET\+\_\+\+SIZE}~CDC\+\_\+\+DATA\+\_\+\+HS\+\_\+\+MAX\+\_\+\+PACKET\+\_\+\+SIZE
+\item 
+\#define {\bfseries CDC\+\_\+\+DATA\+\_\+\+HS\+\_\+\+OUT\+\_\+\+PACKET\+\_\+\+SIZE}~CDC\+\_\+\+DATA\+\_\+\+HS\+\_\+\+MAX\+\_\+\+PACKET\+\_\+\+SIZE
+\item 
+\#define {\bfseries CDC\+\_\+\+DATA\+\_\+\+FS\+\_\+\+IN\+\_\+\+PACKET\+\_\+\+SIZE}~CDC\+\_\+\+DATA\+\_\+\+FS\+\_\+\+MAX\+\_\+\+PACKET\+\_\+\+SIZE
+\item 
+\#define {\bfseries CDC\+\_\+\+DATA\+\_\+\+FS\+\_\+\+OUT\+\_\+\+PACKET\+\_\+\+SIZE}~CDC\+\_\+\+DATA\+\_\+\+FS\+\_\+\+MAX\+\_\+\+PACKET\+\_\+\+SIZE
+\item 
+\#define {\bfseries CDC\+\_\+\+REQ\+\_\+\+MAX\+\_\+\+DATA\+\_\+\+SIZE}~0x7U
+\item 
+\#define {\bfseries CDC\+\_\+\+SEND\+\_\+\+ENCAPSULATED\+\_\+\+COMMAND}~0x00U
+\item 
+\#define {\bfseries CDC\+\_\+\+GET\+\_\+\+ENCAPSULATED\+\_\+\+RESPONSE}~0x01U
+\item 
+\#define {\bfseries CDC\+\_\+\+SET\+\_\+\+COMM\+\_\+\+FEATURE}~0x02U
+\item 
+\#define {\bfseries CDC\+\_\+\+GET\+\_\+\+COMM\+\_\+\+FEATURE}~0x03U
+\item 
+\#define {\bfseries CDC\+\_\+\+CLEAR\+\_\+\+COMM\+\_\+\+FEATURE}~0x04U
+\item 
+\#define {\bfseries CDC\+\_\+\+SET\+\_\+\+LINE\+\_\+\+CODING}~0x20U
+\item 
+\#define {\bfseries CDC\+\_\+\+GET\+\_\+\+LINE\+\_\+\+CODING}~0x21U
+\item 
+\#define {\bfseries CDC\+\_\+\+SET\+\_\+\+CONTROL\+\_\+\+LINE\+\_\+\+STATE}~0x22U
+\item 
+\#define {\bfseries CDC\+\_\+\+SEND\+\_\+\+BREAK}~0x23U
+\item 
+\#define {\bfseries USBD\+\_\+\+CDC\+\_\+\+CLASS}~\&USBD\+\_\+\+CDC
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{struct__USBD__CDC__Itf}{\+\_\+\+USBD\+\_\+\+CDC\+\_\+\+Itf}} {\bfseries USBD\+\_\+\+CDC\+\_\+\+Itf\+Type\+Def}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USB__CORE__Exported__Functions_ga41e2c9c5138449916310eb508a500752}{USBD\+\_\+\+CDC\+\_\+\+Register\+Interface}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, \mbox{\hyperlink{struct__USBD__CDC__Itf}{USBD\+\_\+\+CDC\+\_\+\+Itf\+Type\+Def}} $\ast$fops)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+CDC\+\_\+\+Register\+Interface. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USB__CORE__Exported__Functions_gaf46c49badb29233fb92d3ebd5bb618f4}{USBD\+\_\+\+CDC\+\_\+\+Set\+Tx\+Buffer}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t $\ast$pbuff, uint32\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+CDC\+\_\+\+Set\+Tx\+Buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USB__CORE__Exported__Functions_gaa8539af2ff78ce9a464def5de05726c3}{USBD\+\_\+\+CDC\+\_\+\+Set\+Rx\+Buffer}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t $\ast$pbuff)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+CDC\+\_\+\+Set\+Rx\+Buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USB__CORE__Exported__Functions_ga55dff87863e1c76fd1139016da75903c}{USBD\+\_\+\+CDC\+\_\+\+Receive\+Packet}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+CDC\+\_\+\+Receive\+Packet prepare OUT Endpoint for reception. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USB__CORE__Exported__Functions_gac6132b25e4ac00c4d918d3d73a3be5c7}{USBD\+\_\+\+CDC\+\_\+\+Transmit\+Packet}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+CDC\+\_\+\+Transmit\+Packet Transmit packet on IN endpoint. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct__Device__cb}{USBD\+\_\+\+Class\+Type\+Def}} {\bfseries USBD\+\_\+\+CDC}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+header file for the \mbox{\hyperlink{usbd__cdc_8c}{usbd\+\_\+cdc.\+c}} file. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2015 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under Ultimate Liberty license SLA0044, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: www.\+st.\+com/\+SLA0044 

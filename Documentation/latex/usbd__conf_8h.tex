@@ -1,0 +1,83 @@
+\hypertarget{usbd__conf_8h}{}\doxysection{USB\+\_\+\+DEVICE/\+Target/usbd\+\_\+conf.h File Reference}
+\label{usbd__conf_8h}\index{USB\_DEVICE/Target/usbd\_conf.h@{USB\_DEVICE/Target/usbd\_conf.h}}
+
+
+\+: Header for \mbox{\hyperlink{usbd__conf_8c}{usbd\+\_\+conf.\+c}} file.  
+
+
+{\ttfamily \#include $<$stdio.\+h$>$}\newline
+{\ttfamily \#include $<$stdlib.\+h$>$}\newline
+{\ttfamily \#include $<$string.\+h$>$}\newline
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32l4xx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32l4xx\+\_\+hal.\+h\char`\"{}}\newline
+Include dependency graph for usbd\+\_\+conf.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usbd__conf_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usbd__conf_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries USBD\+\_\+\+MAX\+\_\+\+NUM\+\_\+\+INTERFACES}~1U
+\item 
+\#define {\bfseries USBD\+\_\+\+MAX\+\_\+\+NUM\+\_\+\+CONFIGURATION}~1U
+\item 
+\#define {\bfseries USBD\+\_\+\+MAX\+\_\+\+STR\+\_\+\+DESC\+\_\+\+SIZ}~512U
+\item 
+\#define {\bfseries USBD\+\_\+\+DEBUG\+\_\+\+LEVEL}~0U
+\item 
+\#define {\bfseries USBD\+\_\+\+LPM\+\_\+\+ENABLED}~1U
+\item 
+\#define {\bfseries USBD\+\_\+\+SELF\+\_\+\+POWERED}~1U
+\item 
+\#define {\bfseries DEVICE\+\_\+\+FS}~0
+\item 
+\#define \mbox{\hyperlink{group__USBD__CONF__Exported__Macros_ga35ff353194f56823357f503e546ccf4b}{USBD\+\_\+malloc}}~(void $\ast$)\mbox{\hyperlink{group__USBD__CONF__Exported__FunctionsPrototype_ga2df01b9aae6026e9f6b55da3b1e72aee}{USBD\+\_\+static\+\_\+malloc}}
+\item 
+\#define \mbox{\hyperlink{group__USBD__CONF__Exported__Macros_gab44fcf9b4d7bfbe8b1308eca76975fe5}{USBD\+\_\+free}}~\mbox{\hyperlink{group__USBD__CONF__Exported__FunctionsPrototype_ga92ed1214efe53f54b3586a6233cfa5a6}{USBD\+\_\+static\+\_\+free}}
+\item 
+\#define \mbox{\hyperlink{group__USBD__CONF__Exported__Macros_gaf7b31857d15ef0abbd84e0e70a2b903f}{USBD\+\_\+memset}}~memset
+\item 
+\#define \mbox{\hyperlink{group__USBD__CONF__Exported__Macros_ga18d9c17ef2afe7244b559ed428ca1e81}{USBD\+\_\+memcpy}}~memcpy
+\item 
+\#define \mbox{\hyperlink{group__USBD__CONF__Exported__Macros_ga78993b66136329032c26d0c13a78e963}{USBD\+\_\+\+Delay}}~HAL\+\_\+\+Delay
+\item 
+\#define {\bfseries USBD\+\_\+\+Usr\+Log}(...)
+\item 
+\#define {\bfseries USBD\+\_\+\+Err\+Log}(...)
+\item 
+\#define {\bfseries USBD\+\_\+\+Dbg\+Log}(...)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void $\ast$ \mbox{\hyperlink{group__USBD__CONF__Exported__FunctionsPrototype_ga2df01b9aae6026e9f6b55da3b1e72aee}{USBD\+\_\+static\+\_\+malloc}} (uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Static single allocation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__USBD__CONF__Exported__FunctionsPrototype_ga92ed1214efe53f54b3586a6233cfa5a6}{USBD\+\_\+static\+\_\+free}} (void $\ast$p)
+\begin{DoxyCompactList}\small\item\em Dummy memory free. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Header for \mbox{\hyperlink{usbd__conf_8c}{usbd\+\_\+conf.\+c}} file. 
+
+\begin{DoxyVersion}{Version}
+\+: v2.\+0\+\_\+\+Cube
+\end{DoxyVersion}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2021 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under Ultimate Liberty license SLA0044, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: www.\+st.\+com/\+SLA0044 

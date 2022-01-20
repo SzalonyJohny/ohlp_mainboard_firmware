@@ -1,0 +1,84 @@
+\hypertarget{stm32l4xx__hal__i2c__ex_8h}{}\doxysection{Drivers/\+STM32\+L4xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/stm32l4xx\+\_\+hal\+\_\+i2c\+\_\+ex.h File Reference}
+\label{stm32l4xx__hal__i2c__ex_8h}\index{Drivers/STM32L4xx\_HAL\_Driver/Inc/stm32l4xx\_hal\_i2c\_ex.h@{Drivers/STM32L4xx\_HAL\_Driver/Inc/stm32l4xx\_hal\_i2c\_ex.h}}
+
+
+Header file of I2C HAL Extended module.  
+
+
+{\ttfamily \#include \char`\"{}stm32l4xx\+\_\+hal\+\_\+def.\+h\char`\"{}}\newline
+Include dependency graph for stm32l4xx\+\_\+hal\+\_\+i2c\+\_\+ex.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32l4xx__hal__i2c__ex_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32l4xx__hal__i2c__ex_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries I2\+C\+\_\+\+ANALOGFILTER\+\_\+\+ENABLE}~0x00000000U
+\item 
+\#define {\bfseries I2\+C\+\_\+\+ANALOGFILTER\+\_\+\+DISABLE}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga4b33b8e33fa18fd49d6d1d8a69777289}{I2\+C\+\_\+\+CR1\+\_\+\+ANFOFF}}
+\item 
+\#define \mbox{\hyperlink{group__I2CEx__FastModePlus_ga3a3da061fa78faa209f0feb39e20ef43}{I2\+C\+\_\+\+FMP\+\_\+\+NOT\+\_\+\+SUPPORTED}}~0x\+AAAA0000U
+\item 
+\#define \mbox{\hyperlink{group__I2CEx__FastModePlus_ga9b3b77b0f00f09ee6d272d70dd5663f5}{I2\+C\+\_\+\+FASTMODEPLUS\+\_\+\+PB6}}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gaee5a1ca3b0408d359907fdc8ae1e44ae}{SYSCFG\+\_\+\+CFGR1\+\_\+\+I2\+C\+\_\+\+PB6\+\_\+\+FMP}}
+\item 
+\#define \mbox{\hyperlink{group__I2CEx__FastModePlus_gaaa6d3f6c1d635a2f5e4dbe2ef66ce1c3}{I2\+C\+\_\+\+FASTMODEPLUS\+\_\+\+PB7}}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga218ec7f8116e53121ba41a9a57f2ab9c}{SYSCFG\+\_\+\+CFGR1\+\_\+\+I2\+C\+\_\+\+PB7\+\_\+\+FMP}}
+\item 
+\#define \mbox{\hyperlink{group__I2CEx__FastModePlus_gaf8d6aa219f041b552b3d3cd53cb78a26}{I2\+C\+\_\+\+FASTMODEPLUS\+\_\+\+PB8}}~(uint32\+\_\+t)(0x00000010U $\vert$ \mbox{\hyperlink{group__I2CEx__FastModePlus_ga3a3da061fa78faa209f0feb39e20ef43}{I2\+C\+\_\+\+FMP\+\_\+\+NOT\+\_\+\+SUPPORTED}})
+\item 
+\#define \mbox{\hyperlink{group__I2CEx__FastModePlus_gafab6e63d100bf337bf9f0bf6a607636d}{I2\+C\+\_\+\+FASTMODEPLUS\+\_\+\+PB9}}~(uint32\+\_\+t)(0x00000012U $\vert$ \mbox{\hyperlink{group__I2CEx__FastModePlus_ga3a3da061fa78faa209f0feb39e20ef43}{I2\+C\+\_\+\+FMP\+\_\+\+NOT\+\_\+\+SUPPORTED}})
+\item 
+\#define \mbox{\hyperlink{group__I2CEx__FastModePlus_ga3a8064ecfa3b33115f62123f7162770e}{I2\+C\+\_\+\+FASTMODEPLUS\+\_\+\+I2\+C1}}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga97e28a2c5e89597d5d447b3d206a3fd6}{SYSCFG\+\_\+\+CFGR1\+\_\+\+I2\+C1\+\_\+\+FMP}}
+\item 
+\#define \mbox{\hyperlink{group__I2CEx__FastModePlus_gaa5c33513afa036a6f97e9cbf2d61f4b2}{I2\+C\+\_\+\+FASTMODEPLUS\+\_\+\+I2\+C2}}~(uint32\+\_\+t)(0x00000200U $\vert$ \mbox{\hyperlink{group__I2CEx__FastModePlus_ga3a3da061fa78faa209f0feb39e20ef43}{I2\+C\+\_\+\+FMP\+\_\+\+NOT\+\_\+\+SUPPORTED}})
+\item 
+\#define \mbox{\hyperlink{group__I2CEx__FastModePlus_gafeb5c46154f31ecf6ff77d4ab1d2ee7b}{I2\+C\+\_\+\+FASTMODEPLUS\+\_\+\+I2\+C3}}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gaf6d532c7b92bc3454f375f1792062a7a}{SYSCFG\+\_\+\+CFGR1\+\_\+\+I2\+C3\+\_\+\+FMP}}
+\item 
+\#define \mbox{\hyperlink{group__I2CEx__FastModePlus_ga120ddd3c120c96e72580b7eb7e6870c8}{I2\+C\+\_\+\+FASTMODEPLUS\+\_\+\+I2\+C4}}~(uint32\+\_\+t)(0x00000800U $\vert$ \mbox{\hyperlink{group__I2CEx__FastModePlus_ga3a3da061fa78faa209f0feb39e20ef43}{I2\+C\+\_\+\+FMP\+\_\+\+NOT\+\_\+\+SUPPORTED}})
+\item 
+\#define {\bfseries IS\+\_\+\+I2\+C\+\_\+\+ANALOG\+\_\+\+FILTER}(FILTER)
+\item 
+\#define {\bfseries IS\+\_\+\+I2\+C\+\_\+\+DIGITAL\+\_\+\+FILTER}(FILTER)~((FILTER) $<$= 0x0000000\+FU)
+\item 
+\#define {\bfseries IS\+\_\+\+I2\+C\+\_\+\+FASTMODEPLUS}(\+\_\+\+\_\+\+CONFIG\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{stm32l4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+I2\+CEx\+\_\+\+Config\+Analog\+Filter} (\mbox{\hyperlink{struct____I2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} $\ast$hi2c, uint32\+\_\+t Analog\+Filter)
+\item 
+\mbox{\hyperlink{stm32l4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+I2\+CEx\+\_\+\+Config\+Digital\+Filter} (\mbox{\hyperlink{struct____I2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} $\ast$hi2c, uint32\+\_\+t Digital\+Filter)
+\item 
+\mbox{\hyperlink{stm32l4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+I2\+CEx\+\_\+\+Enable\+Wake\+Up} (\mbox{\hyperlink{struct____I2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} $\ast$hi2c)
+\item 
+\mbox{\hyperlink{stm32l4xx__hal__def_8h_a63c0679d1cb8b8c684fbb0632743478f}{HAL\+\_\+\+Status\+Type\+Def}} {\bfseries HAL\+\_\+\+I2\+CEx\+\_\+\+Disable\+Wake\+Up} (\mbox{\hyperlink{struct____I2C__HandleTypeDef}{I2\+C\+\_\+\+Handle\+Type\+Def}} $\ast$hi2c)
+\item 
+void {\bfseries HAL\+\_\+\+I2\+CEx\+\_\+\+Enable\+Fast\+Mode\+Plus} (uint32\+\_\+t Config\+Fast\+Mode\+Plus)
+\item 
+void {\bfseries HAL\+\_\+\+I2\+CEx\+\_\+\+Disable\+Fast\+Mode\+Plus} (uint32\+\_\+t Config\+Fast\+Mode\+Plus)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file of I2C HAL Extended module. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2017 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS. 

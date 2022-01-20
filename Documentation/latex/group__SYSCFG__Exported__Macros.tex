@@ -1,0 +1,281 @@
+\hypertarget{group__SYSCFG__Exported__Macros}{}\doxysection{SYSCFG Exported Macros}
+\label{group__SYSCFG__Exported__Macros}\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+Collaboration diagram for SYSCFG Exported Macros\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__SYSCFG__Exported__Macros}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga9500619e1ec21659bd32b1dfecd5afc1}\label{group__SYSCFG__Exported__Macros_ga9500619e1ec21659bd32b1dfecd5afc1}} 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_ga9500619e1ec21659bd32b1dfecd5afc1}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+FLASH}}()~CLEAR\+\_\+\+BIT(SYSCFG-\/$>$MEMRMP, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga3c05039ec67573c00da29f58b914f258}{SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE}})
+\begin{DoxyCompactList}\small\item\em Main Flash memory mapped at 0x00000000. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga59782d94690fd538b25def536c81c3ed}\label{group__SYSCFG__Exported__Macros_ga59782d94690fd538b25def536c81c3ed}} 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_ga59782d94690fd538b25def536c81c3ed}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+SYSTEMFLASH}}()~MODIFY\+\_\+\+REG(SYSCFG-\/$>$MEMRMP, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga3c05039ec67573c00da29f58b914f258}{SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE}}, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga30d5f406535f94faea2e7f924d50201b}{SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+0}})
+\begin{DoxyCompactList}\small\item\em System Flash memory mapped at 0x00000000. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga86d36fdb1571fd56ffeecfaed80c6805}\label{group__SYSCFG__Exported__Macros_ga86d36fdb1571fd56ffeecfaed80c6805}} 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_ga86d36fdb1571fd56ffeecfaed80c6805}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+SRAM}}()~MODIFY\+\_\+\+REG(SYSCFG-\/$>$MEMRMP, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga3c05039ec67573c00da29f58b914f258}{SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE}}, (\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gab5d76e8b4d801b35c31ef352b33407be}{SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+1}}$\vert$\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga30d5f406535f94faea2e7f924d50201b}{SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+0}}))
+\begin{DoxyCompactList}\small\item\em Embedded SRAM mapped at 0x00000000. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga0a96bfcb32921f2819cd40b2acd8c354}\label{group__SYSCFG__Exported__Macros_ga0a96bfcb32921f2819cd40b2acd8c354}} 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_ga0a96bfcb32921f2819cd40b2acd8c354}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+REMAPMEMORY\+\_\+\+QUADSPI}}()~MODIFY\+\_\+\+REG(SYSCFG-\/$>$MEMRMP, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga3c05039ec67573c00da29f58b914f258}{SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE}}, (\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga42eb2e54640311449d074871dc352819}{SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+2}}$\vert$\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gab5d76e8b4d801b35c31ef352b33407be}{SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE\+\_\+1}}))
+\begin{DoxyCompactList}\small\item\em QUADSPI mapped at 0x00000000. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_ga0e71eb2b553f1a7b8172710184a89caa}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+GET\+\_\+\+BOOT\+\_\+\+MODE}}()~READ\+\_\+\+BIT(SYSCFG-\/$>$MEMRMP, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga3c05039ec67573c00da29f58b914f258}{SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE}})
+\begin{DoxyCompactList}\small\item\em Return the boot mode as configured by user. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_ga129e5247d26f46eba8fc7be41cd1d087}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+SRAM2\+\_\+\+WRP\+\_\+1\+\_\+31\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+SRAM2\+WRP\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em SRAM2 page 0 to 31 write protection enable macro. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_gab381eee41325e7d983bd18101d06b443}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+SRAM2\+\_\+\+WRP\+\_\+\+UNLOCK}}()
+\begin{DoxyCompactList}\small\item\em SRAM2 page write protection unlock prior to erase. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_ga11762a9476301c5e2623053aba3acbb8}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+SRAM2\+\_\+\+ERASE}}()~SET\+\_\+\+BIT(SYSCFG-\/$>$SCSR, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gad2980c87d46dca95c2670581abee8e3c}{SYSCFG\+\_\+\+SCSR\+\_\+\+SRAM2\+ER}})
+\begin{DoxyCompactList}\small\item\em SRAM2 erase. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_ga5eb3af3fdab913ed132afd9db241e6b9}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+FPU\+\_\+\+INTERRUPT\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Floating Point Unit interrupt enable/disable macros. \end{DoxyCompactList}\item 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+FPU\+\_\+\+INTERRUPT\+\_\+\+DISABLE}(\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+)
+\item 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_gab24317e13f473c7c93771ac11ad893c3}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+BREAK\+\_\+\+ECC\+\_\+\+LOCK}}()~SET\+\_\+\+BIT(SYSCFG-\/$>$CFGR2, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gae75e85c4c032560b4db88cd8fcb3aaf9}{SYSCFG\+\_\+\+CFGR2\+\_\+\+ECCL}})
+\begin{DoxyCompactList}\small\item\em SYSCFG Break ECC lock. Enable and lock the connection of Flash ECC error connection to TIM1/8/15/16/17 Break input. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_gaf8339b79c4009bcc95d2582b990d56ec}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+BREAK\+\_\+\+LOCKUP\+\_\+\+LOCK}}()~SET\+\_\+\+BIT(SYSCFG-\/$>$CFGR2, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga37867c85a6455883bf60424879a281f4}{SYSCFG\+\_\+\+CFGR2\+\_\+\+CLL}})
+\begin{DoxyCompactList}\small\item\em SYSCFG Break Cortex-\/\+M4 Lockup lock. Enable and lock the connection of Cortex-\/\+M4 LOCKUP (Hardfault) output to TIM1/8/15/16/17 Break input. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_gadfaca1cb2ee6df46e27aead12fe01e0c}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+BREAK\+\_\+\+PVD\+\_\+\+LOCK}}()~SET\+\_\+\+BIT(SYSCFG-\/$>$CFGR2, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gac8ca8fa7bb3ae856eb5fc3102cc0ff21}{SYSCFG\+\_\+\+CFGR2\+\_\+\+PVDL}})
+\begin{DoxyCompactList}\small\item\em SYSCFG Break PVD lock. Enable and lock the PVD connection to Timer1/8/15/16/17 Break input, as well as the PVDE and PLS\mbox{[}2\+:0\mbox{]} in the PWR\+\_\+\+CR2 register. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_ga39c538c18927e8123f43301cae843f3a}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+BREAK\+\_\+\+SRAM2\+PARITY\+\_\+\+LOCK}}()~SET\+\_\+\+BIT(SYSCFG-\/$>$CFGR2, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gacbf387c6e12d90c012dd85636c5dc31b}{SYSCFG\+\_\+\+CFGR2\+\_\+\+SPL}})
+\begin{DoxyCompactList}\small\item\em SYSCFG Break SRAM2 parity lock. Enable and lock the SRAM2 parity error signal connection to TIM1/8/15/16/17 Break input. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_ga558077cbd3fbb7ed10ff16f58eaebf77}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+GET\+\_\+\+FLAG}}(\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+)~((((((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) == \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga8e9f5f6472989faf6dc577b801caadbf}{SYSCFG\+\_\+\+SCSR\+\_\+\+SRAM2\+BSY}})? SYSCFG-\/$>$SCSR \+: SYSCFG-\/$>$CFGR2) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))!= 0U) ? 1U \+: 0U)
+\begin{DoxyCompactList}\small\item\em Check SYSCFG flag is set or not. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga78c5423e17aa4c8cda0872ca3003e71c}\label{group__SYSCFG__Exported__Macros_ga78c5423e17aa4c8cda0872ca3003e71c}} 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_ga78c5423e17aa4c8cda0872ca3003e71c}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+CLEAR\+\_\+\+FLAG}}()~SET\+\_\+\+BIT(SYSCFG-\/$>$CFGR2, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga155014fba33b6dc281892ec1ff27e4da}{SYSCFG\+\_\+\+CFGR2\+\_\+\+SPF}})
+\begin{DoxyCompactList}\small\item\em Set the SPF bit to clear the SRAM Parity Error Flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__SYSCFG__Exported__Macros_ga61181f4b4955f17858475485f8cd366c}{\+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+FASTMODEPLUS\+\_\+\+ENABLE}}(\+\_\+\+\_\+\+FASTMODEPLUS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Fast-\/mode Plus driving capability enable/disable macros. \end{DoxyCompactList}\item 
+\#define {\bfseries \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+FASTMODEPLUS\+\_\+\+DISABLE}(\+\_\+\+\_\+\+FASTMODEPLUS\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_gab24317e13f473c7c93771ac11ad893c3}\label{group__SYSCFG__Exported__Macros_gab24317e13f473c7c93771ac11ad893c3}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_BREAK\_ECC\_LOCK@{\_\_HAL\_SYSCFG\_BREAK\_ECC\_LOCK}}
+\index{\_\_HAL\_SYSCFG\_BREAK\_ECC\_LOCK@{\_\_HAL\_SYSCFG\_BREAK\_ECC\_LOCK}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_BREAK\_ECC\_LOCK}{\_\_HAL\_SYSCFG\_BREAK\_ECC\_LOCK}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+BREAK\+\_\+\+ECC\+\_\+\+LOCK(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(SYSCFG-\/$>$CFGR2, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gae75e85c4c032560b4db88cd8fcb3aaf9}{SYSCFG\+\_\+\+CFGR2\+\_\+\+ECCL}})}
+
+
+
+SYSCFG Break ECC lock. Enable and lock the connection of Flash ECC error connection to TIM1/8/15/16/17 Break input. 
+
+\begin{DoxyNote}{Note}
+The selected configuration is locked and can be unlocked only by system reset. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_gaf8339b79c4009bcc95d2582b990d56ec}\label{group__SYSCFG__Exported__Macros_gaf8339b79c4009bcc95d2582b990d56ec}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_BREAK\_LOCKUP\_LOCK@{\_\_HAL\_SYSCFG\_BREAK\_LOCKUP\_LOCK}}
+\index{\_\_HAL\_SYSCFG\_BREAK\_LOCKUP\_LOCK@{\_\_HAL\_SYSCFG\_BREAK\_LOCKUP\_LOCK}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_BREAK\_LOCKUP\_LOCK}{\_\_HAL\_SYSCFG\_BREAK\_LOCKUP\_LOCK}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+BREAK\+\_\+\+LOCKUP\+\_\+\+LOCK(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(SYSCFG-\/$>$CFGR2, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga37867c85a6455883bf60424879a281f4}{SYSCFG\+\_\+\+CFGR2\+\_\+\+CLL}})}
+
+
+
+SYSCFG Break Cortex-\/\+M4 Lockup lock. Enable and lock the connection of Cortex-\/\+M4 LOCKUP (Hardfault) output to TIM1/8/15/16/17 Break input. 
+
+\begin{DoxyNote}{Note}
+The selected configuration is locked and can be unlocked only by system reset. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_gadfaca1cb2ee6df46e27aead12fe01e0c}\label{group__SYSCFG__Exported__Macros_gadfaca1cb2ee6df46e27aead12fe01e0c}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_BREAK\_PVD\_LOCK@{\_\_HAL\_SYSCFG\_BREAK\_PVD\_LOCK}}
+\index{\_\_HAL\_SYSCFG\_BREAK\_PVD\_LOCK@{\_\_HAL\_SYSCFG\_BREAK\_PVD\_LOCK}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_BREAK\_PVD\_LOCK}{\_\_HAL\_SYSCFG\_BREAK\_PVD\_LOCK}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+BREAK\+\_\+\+PVD\+\_\+\+LOCK(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(SYSCFG-\/$>$CFGR2, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gac8ca8fa7bb3ae856eb5fc3102cc0ff21}{SYSCFG\+\_\+\+CFGR2\+\_\+\+PVDL}})}
+
+
+
+SYSCFG Break PVD lock. Enable and lock the PVD connection to Timer1/8/15/16/17 Break input, as well as the PVDE and PLS\mbox{[}2\+:0\mbox{]} in the PWR\+\_\+\+CR2 register. 
+
+\begin{DoxyNote}{Note}
+The selected configuration is locked and can be unlocked only by system reset. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga39c538c18927e8123f43301cae843f3a}\label{group__SYSCFG__Exported__Macros_ga39c538c18927e8123f43301cae843f3a}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_BREAK\_SRAM2PARITY\_LOCK@{\_\_HAL\_SYSCFG\_BREAK\_SRAM2PARITY\_LOCK}}
+\index{\_\_HAL\_SYSCFG\_BREAK\_SRAM2PARITY\_LOCK@{\_\_HAL\_SYSCFG\_BREAK\_SRAM2PARITY\_LOCK}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_BREAK\_SRAM2PARITY\_LOCK}{\_\_HAL\_SYSCFG\_BREAK\_SRAM2PARITY\_LOCK}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+BREAK\+\_\+\+SRAM2\+PARITY\+\_\+\+LOCK(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(SYSCFG-\/$>$CFGR2, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gacbf387c6e12d90c012dd85636c5dc31b}{SYSCFG\+\_\+\+CFGR2\+\_\+\+SPL}})}
+
+
+
+SYSCFG Break SRAM2 parity lock. Enable and lock the SRAM2 parity error signal connection to TIM1/8/15/16/17 Break input. 
+
+\begin{DoxyNote}{Note}
+The selected configuration is locked and can be unlocked by system reset. 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga5f20cbc8ad78101d527209003dc014f2}\label{group__SYSCFG__Exported__Macros_ga5f20cbc8ad78101d527209003dc014f2}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_FASTMODEPLUS\_DISABLE@{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_DISABLE}}
+\index{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_DISABLE@{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_DISABLE}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_DISABLE}{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+FASTMODEPLUS\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+FASTMODEPLUS\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                \textcolor{keywordflow}{do} \{\mbox{\hyperlink{stm32l4xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_SYSCFG\_FASTMODEPLUS((\_\_FASTMODEPLUS\_\_)));\(\backslash\)}
+\DoxyCodeLine{                                                                CLEAR\_BIT(SYSCFG-\/>CFGR1, (\_\_FASTMODEPLUS\_\_));\(\backslash\)}
+\DoxyCodeLine{                                                               \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga61181f4b4955f17858475485f8cd366c}\label{group__SYSCFG__Exported__Macros_ga61181f4b4955f17858475485f8cd366c}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_FASTMODEPLUS\_ENABLE@{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_ENABLE}}
+\index{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_ENABLE@{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_ENABLE}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_ENABLE}{\_\_HAL\_SYSCFG\_FASTMODEPLUS\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+FASTMODEPLUS\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+FASTMODEPLUS\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                \textcolor{keywordflow}{do} \{\mbox{\hyperlink{stm32l4xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_SYSCFG\_FASTMODEPLUS((\_\_FASTMODEPLUS\_\_)));\(\backslash\)}
+\DoxyCodeLine{                                                                SET\_BIT(SYSCFG-\/>CFGR1, (\_\_FASTMODEPLUS\_\_));\(\backslash\)}
+\DoxyCodeLine{                                                               \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Fast-\/mode Plus driving capability enable/disable macros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+FASTMODEPLUS$<$/strong$>$} & This parameter can be a value of \+: \begin{DoxyItemize}
+\item \mbox{\hyperlink{group__SYSCFG__FastModePlus__GPIO_ga1f9beaf68b00ae5598cb8d930da05704}{SYSCFG\+\_\+\+FASTMODEPLUS\+\_\+\+PB6}} Fast-\/mode Plus driving capability activation on PB6 \item \mbox{\hyperlink{group__SYSCFG__FastModePlus__GPIO_ga4b939ef5ec69e81277ef2323d5917eb5}{SYSCFG\+\_\+\+FASTMODEPLUS\+\_\+\+PB7}} Fast-\/mode Plus driving capability activation on PB7 \item SYSCFG\+\_\+\+FASTMODEPLUS\+\_\+\+PB8 Fast-\/mode Plus driving capability activation on PB8 \item SYSCFG\+\_\+\+FASTMODEPLUS\+\_\+\+PB9 Fast-\/mode Plus driving capability activation on PB9 \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga324c2649ac0c3758a4d037546da558ab}\label{group__SYSCFG__Exported__Macros_ga324c2649ac0c3758a4d037546da558ab}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_FPU\_INTERRUPT\_DISABLE@{\_\_HAL\_SYSCFG\_FPU\_INTERRUPT\_DISABLE}}
+\index{\_\_HAL\_SYSCFG\_FPU\_INTERRUPT\_DISABLE@{\_\_HAL\_SYSCFG\_FPU\_INTERRUPT\_DISABLE}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_FPU\_INTERRUPT\_DISABLE}{\_\_HAL\_SYSCFG\_FPU\_INTERRUPT\_DISABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+FPU\+\_\+\+INTERRUPT\+\_\+\+DISABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                \textcolor{keywordflow}{do} \{\mbox{\hyperlink{stm32l4xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_SYSCFG\_FPU\_INTERRUPT((\_\_INTERRUPT\_\_)));\(\backslash\)}
+\DoxyCodeLine{                                                                CLEAR\_BIT(SYSCFG-\/>CFGR1, (\_\_INTERRUPT\_\_));\(\backslash\)}
+\DoxyCodeLine{                                                            \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga5eb3af3fdab913ed132afd9db241e6b9}\label{group__SYSCFG__Exported__Macros_ga5eb3af3fdab913ed132afd9db241e6b9}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_FPU\_INTERRUPT\_ENABLE@{\_\_HAL\_SYSCFG\_FPU\_INTERRUPT\_ENABLE}}
+\index{\_\_HAL\_SYSCFG\_FPU\_INTERRUPT\_ENABLE@{\_\_HAL\_SYSCFG\_FPU\_INTERRUPT\_ENABLE}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_FPU\_INTERRUPT\_ENABLE}{\_\_HAL\_SYSCFG\_FPU\_INTERRUPT\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+FPU\+\_\+\+INTERRUPT\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+INTERRUPT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                \textcolor{keywordflow}{do} \{\mbox{\hyperlink{stm32l4xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_SYSCFG\_FPU\_INTERRUPT((\_\_INTERRUPT\_\_)));\(\backslash\)}
+\DoxyCodeLine{                                                                SET\_BIT(SYSCFG-\/>CFGR1, (\_\_INTERRUPT\_\_));\(\backslash\)}
+\DoxyCodeLine{                                                            \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Floating Point Unit interrupt enable/disable macros. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+INTERRUPT$<$/strong$>$} & This parameter can be a value of \mbox{\hyperlink{group__SYSCFG__FPU__Interrupts}{FPU Interrupts}} \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga0e71eb2b553f1a7b8172710184a89caa}\label{group__SYSCFG__Exported__Macros_ga0e71eb2b553f1a7b8172710184a89caa}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_GET\_BOOT\_MODE@{\_\_HAL\_SYSCFG\_GET\_BOOT\_MODE}}
+\index{\_\_HAL\_SYSCFG\_GET\_BOOT\_MODE@{\_\_HAL\_SYSCFG\_GET\_BOOT\_MODE}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_GET\_BOOT\_MODE}{\_\_HAL\_SYSCFG\_GET\_BOOT\_MODE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+GET\+\_\+\+BOOT\+\_\+\+MODE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~READ\+\_\+\+BIT(SYSCFG-\/$>$MEMRMP, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga3c05039ec67573c00da29f58b914f258}{SYSCFG\+\_\+\+MEMRMP\+\_\+\+MEM\+\_\+\+MODE}})}
+
+
+
+Return the boot mode as configured by user. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & boot mode as configured by user. The returned value can be one of the following values\+: \begin{DoxyItemize}
+\item SYSCFG\+\_\+\+BOOT\+\_\+\+MAINFLASH \item SYSCFG\+\_\+\+BOOT\+\_\+\+SYSTEMFLASH \item SYSCFG\+\_\+\+BOOT\+\_\+\+SRAM \end{DoxyItemize}
+\\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga558077cbd3fbb7ed10ff16f58eaebf77}\label{group__SYSCFG__Exported__Macros_ga558077cbd3fbb7ed10ff16f58eaebf77}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_GET\_FLAG@{\_\_HAL\_SYSCFG\_GET\_FLAG}}
+\index{\_\_HAL\_SYSCFG\_GET\_FLAG@{\_\_HAL\_SYSCFG\_GET\_FLAG}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_GET\_FLAG}{\_\_HAL\_SYSCFG\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+ }\end{DoxyParamCaption})~((((((\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+) == \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga8e9f5f6472989faf6dc577b801caadbf}{SYSCFG\+\_\+\+SCSR\+\_\+\+SRAM2\+BSY}})? SYSCFG-\/$>$SCSR \+: SYSCFG-\/$>$CFGR2) \& (\+\_\+\+\_\+\+FLAG\+\_\+\+\_\+))!= 0U) ? 1U \+: 0U)}
+
+
+
+Check SYSCFG flag is set or not. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+FLAG$<$/strong$>$} & specifies the flag to check. This parameter can be one of the following values\+: \begin{DoxyItemize}
+\item \mbox{\hyperlink{group__SYSCFG__flags__definition_ga3a2f0d6e19b37bbddaaf9d1ac478f8e2}{SYSCFG\+\_\+\+FLAG\+\_\+\+SRAM2\+\_\+\+PE}} SRAM2 Parity Error Flag \item \mbox{\hyperlink{group__SYSCFG__flags__definition_gab050de5b3d4ada293e70d19414183b04}{SYSCFG\+\_\+\+FLAG\+\_\+\+SRAM2\+\_\+\+BUSY}} SRAM2 Erase Ongoing \end{DoxyItemize}
+\\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em The} & new state of {\bfseries{FLAG}} (TRUE or FALSE). \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga11762a9476301c5e2623053aba3acbb8}\label{group__SYSCFG__Exported__Macros_ga11762a9476301c5e2623053aba3acbb8}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_SRAM2\_ERASE@{\_\_HAL\_SYSCFG\_SRAM2\_ERASE}}
+\index{\_\_HAL\_SYSCFG\_SRAM2\_ERASE@{\_\_HAL\_SYSCFG\_SRAM2\_ERASE}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_SRAM2\_ERASE}{\_\_HAL\_SYSCFG\_SRAM2\_ERASE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+SRAM2\+\_\+\+ERASE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(SYSCFG-\/$>$SCSR, \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gad2980c87d46dca95c2670581abee8e3c}{SYSCFG\+\_\+\+SCSR\+\_\+\+SRAM2\+ER}})}
+
+
+
+SRAM2 erase. 
+
+\begin{DoxyNote}{Note}
+\+\_\+\+\_\+\+SYSCFG\+\_\+\+GET\+\_\+\+FLAG(\+SYSCFG\+\_\+\+FLAG\+\_\+\+SRAM2\+\_\+\+BUSY) may be used to check end of erase 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_ga129e5247d26f46eba8fc7be41cd1d087}\label{group__SYSCFG__Exported__Macros_ga129e5247d26f46eba8fc7be41cd1d087}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_SRAM2\_WRP\_1\_31\_ENABLE@{\_\_HAL\_SYSCFG\_SRAM2\_WRP\_1\_31\_ENABLE}}
+\index{\_\_HAL\_SYSCFG\_SRAM2\_WRP\_1\_31\_ENABLE@{\_\_HAL\_SYSCFG\_SRAM2\_WRP\_1\_31\_ENABLE}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_SRAM2\_WRP\_1\_31\_ENABLE}{\_\_HAL\_SYSCFG\_SRAM2\_WRP\_1\_31\_ENABLE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+SRAM2\+\_\+\+WRP\+\_\+1\+\_\+31\+\_\+\+ENABLE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+SRAM2\+WRP\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                                \textcolor{keywordflow}{do} \{\mbox{\hyperlink{stm32l4xx__hal__conf_8h_a631dea7b230e600555f979c62af1de21}{assert\_param}}(IS\_SYSCFG\_SRAM2WRP\_PAGE((\_\_SRAM2WRP\_\_)));\(\backslash\)}
+\DoxyCodeLine{                                                                SET\_BIT(SYSCFG-\/>SWPR, (\_\_SRAM2WRP\_\_));\(\backslash\)}
+\DoxyCodeLine{                                                            \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+SRAM2 page 0 to 31 write protection enable macro. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+SRAM2\+WRP$<$/strong$>$} & This parameter can be a combination of values of \mbox{\hyperlink{group__SYSCFG__SRAM2WRP}{SRAM2 Page Write protection (0 to 31)}} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyNote}{Note}
+Write protection can only be disabled by a system reset 
+\end{DoxyNote}
+\mbox{\Hypertarget{group__SYSCFG__Exported__Macros_gab381eee41325e7d983bd18101d06b443}\label{group__SYSCFG__Exported__Macros_gab381eee41325e7d983bd18101d06b443}} 
+\index{SYSCFG Exported Macros@{SYSCFG Exported Macros}!\_\_HAL\_SYSCFG\_SRAM2\_WRP\_UNLOCK@{\_\_HAL\_SYSCFG\_SRAM2\_WRP\_UNLOCK}}
+\index{\_\_HAL\_SYSCFG\_SRAM2\_WRP\_UNLOCK@{\_\_HAL\_SYSCFG\_SRAM2\_WRP\_UNLOCK}!SYSCFG Exported Macros@{SYSCFG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_SYSCFG\_SRAM2\_WRP\_UNLOCK}{\_\_HAL\_SYSCFG\_SRAM2\_WRP\_UNLOCK}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+SYSCFG\+\_\+\+SRAM2\+\_\+\+WRP\+\_\+\+UNLOCK(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                 \textcolor{keywordflow}{do} \{SYSCFG-\/>SKR = 0xCA;\(\backslash\)}
+\DoxyCodeLine{                                                 SYSCFG-\/>SKR = 0x53;\(\backslash\)}
+\DoxyCodeLine{                                                \}\textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+SRAM2 page write protection unlock prior to erase. 
+
+\begin{DoxyNote}{Note}
+Writing a wrong key reactivates the write protection 
+\end{DoxyNote}

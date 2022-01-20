@@ -1,0 +1,103 @@
+\hypertarget{group__USBD__CDC__IF}{}\doxysection{USBD\+\_\+\+CDC\+\_\+\+IF}
+\label{group__USBD__CDC__IF}\index{USBD\_CDC\_IF@{USBD\_CDC\_IF}}
+
+
+Usb VCP device module.  
+
+
+Collaboration diagram for USBD\+\_\+\+CDC\+\_\+\+IF\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__USBD__CDC__IF}
+\end{center}
+\end{figure}
+\doxysubsection*{Modules}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{group__USBD__CDC__IF__Private__TypesDefinitions}{USBD\+\_\+\+CDC\+\_\+\+IF\+\_\+\+Private\+\_\+\+Types\+Definitions}}
+\begin{DoxyCompactList}\small\item\em Private types. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__USBD__CDC__IF__Private__Defines}{USBD\+\_\+\+CDC\+\_\+\+IF\+\_\+\+Private\+\_\+\+Defines}}
+\begin{DoxyCompactList}\small\item\em Private defines. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__USBD__CDC__IF__Private__Macros}{USBD\+\_\+\+CDC\+\_\+\+IF\+\_\+\+Private\+\_\+\+Macros}}
+\begin{DoxyCompactList}\small\item\em Private macros. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__USBD__CDC__IF__Private__Variables}{USBD\+\_\+\+CDC\+\_\+\+IF\+\_\+\+Private\+\_\+\+Variables}}
+\begin{DoxyCompactList}\small\item\em Private variables. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__USBD__CDC__IF__Exported__Variables}{USBD\+\_\+\+CDC\+\_\+\+IF\+\_\+\+Exported\+\_\+\+Variables}}
+\begin{DoxyCompactList}\small\item\em Public variables. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__USBD__CDC__IF__Private__FunctionPrototypes}{USBD\+\_\+\+CDC\+\_\+\+IF\+\_\+\+Private\+\_\+\+Function\+Prototypes}}
+\begin{DoxyCompactList}\small\item\em Private functions declaration. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__USBD__CDC__IF__Exported__Defines}{USBD\+\_\+\+CDC\+\_\+\+IF\+\_\+\+Exported\+\_\+\+Defines}}
+\begin{DoxyCompactList}\small\item\em Defines. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__USBD__CDC__IF__Exported__Types}{USBD\+\_\+\+CDC\+\_\+\+IF\+\_\+\+Exported\+\_\+\+Types}}
+\begin{DoxyCompactList}\small\item\em Types. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__USBD__CDC__IF__Exported__Macros}{USBD\+\_\+\+CDC\+\_\+\+IF\+\_\+\+Exported\+\_\+\+Macros}}
+\begin{DoxyCompactList}\small\item\em Aliases. \end{DoxyCompactList}\item 
+\mbox{\hyperlink{group__USBD__CDC__IF__Exported__FunctionsPrototype}{USBD\+\_\+\+CDC\+\_\+\+IF\+\_\+\+Exported\+\_\+\+Functions\+Prototype}}
+\begin{DoxyCompactList}\small\item\em Public functions declaration. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USBD__CDC__IF_ga5137d6201dbdef2bf351c5b4941c24f4}{CDC\+\_\+\+Transmit\+\_\+\+FS}} (uint8\+\_\+t $\ast$Buf, uint16\+\_\+t Len)
+\begin{DoxyCompactList}\small\item\em CDC\+\_\+\+Transmit\+\_\+\+FS Data to send over USB IN endpoint are sent over CDC interface through this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct__USBD__CDC__Itf}{USBD\+\_\+\+CDC\+\_\+\+Itf\+Type\+Def}} \mbox{\hyperlink{group__USBD__CDC__IF_ga99394ed19b774f171df96c2848c411ed}{USBD\+\_\+\+Interface\+\_\+fops\+\_\+\+FS}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Usb VCP device module. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__USBD__CDC__IF_ga5137d6201dbdef2bf351c5b4941c24f4}\label{group__USBD__CDC__IF_ga5137d6201dbdef2bf351c5b4941c24f4}} 
+\index{USBD\_CDC\_IF@{USBD\_CDC\_IF}!CDC\_Transmit\_FS@{CDC\_Transmit\_FS}}
+\index{CDC\_Transmit\_FS@{CDC\_Transmit\_FS}!USBD\_CDC\_IF@{USBD\_CDC\_IF}}
+\doxysubsubsection{\texorpdfstring{CDC\_Transmit\_FS()}{CDC\_Transmit\_FS()}}
+{\footnotesize\ttfamily uint8\+\_\+t CDC\+\_\+\+Transmit\+\_\+\+FS (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{Buf,  }\item[{uint16\+\_\+t}]{Len }\end{DoxyParamCaption})}
+
+
+
+CDC\+\_\+\+Transmit\+\_\+\+FS Data to send over USB IN endpoint are sent over CDC interface through this function. 
+
+\begin{DoxyNote}{Note}
+
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em Buf} & Buffer of data to be sent \\
+\hline
+{\em Len} & Number of data to be sent (in bytes) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD\+\_\+\+OK} & if all operations are OK else USBD\+\_\+\+FAIL or USBD\+\_\+\+BUSY \\
+\hline
+\end{DoxyRetVals}
+
+
+\doxysubsection{Variable Documentation}
+\mbox{\Hypertarget{group__USBD__CDC__IF_ga99394ed19b774f171df96c2848c411ed}\label{group__USBD__CDC__IF_ga99394ed19b774f171df96c2848c411ed}} 
+\index{USBD\_CDC\_IF@{USBD\_CDC\_IF}!USBD\_Interface\_fops\_FS@{USBD\_Interface\_fops\_FS}}
+\index{USBD\_Interface\_fops\_FS@{USBD\_Interface\_fops\_FS}!USBD\_CDC\_IF@{USBD\_CDC\_IF}}
+\doxysubsubsection{\texorpdfstring{USBD\_Interface\_fops\_FS}{USBD\_Interface\_fops\_FS}}
+{\footnotesize\ttfamily \mbox{\hyperlink{struct__USBD__CDC__Itf}{USBD\+\_\+\+CDC\+\_\+\+Itf\+Type\+Def}} USBD\+\_\+\+Interface\+\_\+fops\+\_\+\+FS}
+
+{\bfseries Initial value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{=}
+\DoxyCodeLine{\{}
+\DoxyCodeLine{  CDC\_Init\_FS,}
+\DoxyCodeLine{  CDC\_DeInit\_FS,}
+\DoxyCodeLine{  CDC\_Control\_FS,}
+\DoxyCodeLine{  CDC\_Receive\_FS,}
+\DoxyCodeLine{  CDC\_TransmitCplt\_FS}
+\DoxyCodeLine{\}}
+
+\end{DoxyCode}
+CDC Interface callback. 

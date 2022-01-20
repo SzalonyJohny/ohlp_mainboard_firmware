@@ -1,0 +1,53 @@
+\hypertarget{atomic_8h}{}\doxysection{Middlewares/\+Third\+\_\+\+Party/\+Free\+RTOS/\+Source/include/atomic.h File Reference}
+\label{atomic_8h}\index{Middlewares/Third\_Party/FreeRTOS/Source/include/atomic.h@{Middlewares/Third\_Party/FreeRTOS/Source/include/atomic.h}}
+
+
+Free\+RTOS atomic operation support.  
+
+
+{\ttfamily \#include $<$stdint.\+h$>$}\newline
+Include dependency graph for atomic.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=221pt]{atomic_8h__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{atomic_8h_a155d89b2444fe81cbc8d051f0fd849c9}\label{atomic_8h_a155d89b2444fe81cbc8d051f0fd849c9}} 
+\#define {\bfseries ATOMIC\+\_\+\+ENTER\+\_\+\+CRITICAL}()~port\+ENTER\+\_\+\+CRITICAL()
+\item 
+\mbox{\Hypertarget{atomic_8h_a1aab48db50f9e59e44032386aa3eb5b8}\label{atomic_8h_a1aab48db50f9e59e44032386aa3eb5b8}} 
+\#define {\bfseries ATOMIC\+\_\+\+EXIT\+\_\+\+CRITICAL}()~port\+EXIT\+\_\+\+CRITICAL()
+\item 
+\mbox{\Hypertarget{atomic_8h_aaa356ca7932487d20a42d6839842d308}\label{atomic_8h_aaa356ca7932487d20a42d6839842d308}} 
+\#define {\bfseries port\+FORCE\+\_\+\+INLINE}
+\item 
+\#define \mbox{\hyperlink{atomic_8h_a2d30f083e50b866caf8822ec31a75969}{ATOMIC\+\_\+\+COMPARE\+\_\+\+AND\+\_\+\+SWAP\+\_\+\+SUCCESS}}~0x1U
+\item 
+\#define \mbox{\hyperlink{atomic_8h_ab374919fbdbc585c3436a94f5bad31b6}{ATOMIC\+\_\+\+COMPARE\+\_\+\+AND\+\_\+\+SWAP\+\_\+\+FAILURE}}~0x0U
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Free\+RTOS atomic operation support. 
+
+This file implements atomic functions by disabling interrupts globally. Implementations with architecture specific atomic instructions can be provided under each compiler directory. 
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{atomic_8h_ab374919fbdbc585c3436a94f5bad31b6}\label{atomic_8h_ab374919fbdbc585c3436a94f5bad31b6}} 
+\index{atomic.h@{atomic.h}!ATOMIC\_COMPARE\_AND\_SWAP\_FAILURE@{ATOMIC\_COMPARE\_AND\_SWAP\_FAILURE}}
+\index{ATOMIC\_COMPARE\_AND\_SWAP\_FAILURE@{ATOMIC\_COMPARE\_AND\_SWAP\_FAILURE}!atomic.h@{atomic.h}}
+\doxysubsubsection{\texorpdfstring{ATOMIC\_COMPARE\_AND\_SWAP\_FAILURE}{ATOMIC\_COMPARE\_AND\_SWAP\_FAILURE}}
+{\footnotesize\ttfamily \#define ATOMIC\+\_\+\+COMPARE\+\_\+\+AND\+\_\+\+SWAP\+\_\+\+FAILURE~0x0U}
+
+Compare and swap failed, did not swap. \mbox{\Hypertarget{atomic_8h_a2d30f083e50b866caf8822ec31a75969}\label{atomic_8h_a2d30f083e50b866caf8822ec31a75969}} 
+\index{atomic.h@{atomic.h}!ATOMIC\_COMPARE\_AND\_SWAP\_SUCCESS@{ATOMIC\_COMPARE\_AND\_SWAP\_SUCCESS}}
+\index{ATOMIC\_COMPARE\_AND\_SWAP\_SUCCESS@{ATOMIC\_COMPARE\_AND\_SWAP\_SUCCESS}!atomic.h@{atomic.h}}
+\doxysubsubsection{\texorpdfstring{ATOMIC\_COMPARE\_AND\_SWAP\_SUCCESS}{ATOMIC\_COMPARE\_AND\_SWAP\_SUCCESS}}
+{\footnotesize\ttfamily \#define ATOMIC\+\_\+\+COMPARE\+\_\+\+AND\+\_\+\+SWAP\+\_\+\+SUCCESS~0x1U}
+
+Compare and swap succeeded, swapped. 

@@ -1,0 +1,413 @@
+\hypertarget{usbd__conf_8c}{}\doxysection{USB\+\_\+\+DEVICE/\+Target/usbd\+\_\+conf.c File Reference}
+\label{usbd__conf_8c}\index{USB\_DEVICE/Target/usbd\_conf.c@{USB\_DEVICE/Target/usbd\_conf.c}}
+
+
+\+: This file implements the board support package for the USB device library  
+
+
+{\ttfamily \#include \char`\"{}stm32l4xx.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32l4xx\+\_\+hal.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}usbd\+\_\+def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}usbd\+\_\+core.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}usbd\+\_\+cdc.\+h\char`\"{}}\newline
+Include dependency graph for usbd\+\_\+conf.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usbd__conf_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{usbd__conf_8c_a1730ffe1e560465665eb47d9264826f9}{Error\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function is executed in case of error occurrence. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{usbd__conf_8c_ab0d03e1da71d066d1115785c9cdbf9ef}\label{usbd__conf_8c_ab0d03e1da71d066d1115785c9cdbf9ef}} 
+USBD\+\_\+\+Status\+Type\+Def {\bfseries USBD\+\_\+\+LL\+\_\+\+Battery\+Charging} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\item 
+void \mbox{\hyperlink{usbd__conf_8c_a70af21c671abfcc773614a9a4f63d920}{System\+Clock\+\_\+\+Config}} (void)
+\begin{DoxyCompactList}\small\item\em System Clock Configuration. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{usbd__conf_8c_ab88e6d72062dc5d478ab12b435695ccb}{HAL\+\_\+\+PCD\+\_\+\+Msp\+Init}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$pcd\+Handle)
+\item 
+void \mbox{\hyperlink{usbd__conf_8c_a0a53f3c7c744fcfa7bdba6e9badc70d4}{HAL\+\_\+\+PCD\+\_\+\+Msp\+De\+Init}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$pcd\+Handle)
+\item 
+void \mbox{\hyperlink{usbd__conf_8c_a9d72aa4d3d984b164047b081d4566f6d}{HAL\+\_\+\+PCD\+\_\+\+Setup\+Stage\+Callback}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$hpcd)
+\begin{DoxyCompactList}\small\item\em Setup stage callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{usbd__conf_8c_a2f1ac834d9677dcae7d8973828f81149}{HAL\+\_\+\+PCD\+\_\+\+Data\+Out\+Stage\+Callback}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$hpcd, uint8\+\_\+t epnum)
+\begin{DoxyCompactList}\small\item\em Data Out stage callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{usbd__conf_8c_a1679f5c50539a3dfca1391557e7a757b}{HAL\+\_\+\+PCD\+\_\+\+Data\+In\+Stage\+Callback}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$hpcd, uint8\+\_\+t epnum)
+\begin{DoxyCompactList}\small\item\em Data In stage callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{usbd__conf_8c_a85c99eeb4aa17d8ff5298efff92ac28e}{HAL\+\_\+\+PCD\+\_\+\+SOFCallback}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$hpcd)
+\begin{DoxyCompactList}\small\item\em SOF callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{usbd__conf_8c_af4fbef977092aa525c6b1668ffbec77b}{HAL\+\_\+\+PCD\+\_\+\+Reset\+Callback}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$hpcd)
+\begin{DoxyCompactList}\small\item\em Reset callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{usbd__conf_8c_a0e14acd4564979743bc0a89aa5f15428}{HAL\+\_\+\+PCD\+\_\+\+Suspend\+Callback}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$hpcd)
+\begin{DoxyCompactList}\small\item\em Suspend callback. When Low power mode is enabled the debug cannot be used (IAR, Keil doesn\textquotesingle{}t support it) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{usbd__conf_8c_a0386a36b921cd51dd6e50103c3cd33b1}{HAL\+\_\+\+PCD\+\_\+\+Resume\+Callback}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$hpcd)
+\begin{DoxyCompactList}\small\item\em Resume callback. When Low power mode is enabled the debug cannot be used (IAR, Keil doesn\textquotesingle{}t support it) \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{usbd__conf_8c_a4274f129d782f0a3c9a10b5bbe022cd4}{HAL\+\_\+\+PCD\+\_\+\+ISOOUTIncomplete\+Callback}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$hpcd, uint8\+\_\+t epnum)
+\begin{DoxyCompactList}\small\item\em ISOOUTIncomplete callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{usbd__conf_8c_a8f4041d553ef2fb326c6e483797f99a8}{HAL\+\_\+\+PCD\+\_\+\+ISOINIncomplete\+Callback}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$hpcd, uint8\+\_\+t epnum)
+\begin{DoxyCompactList}\small\item\em ISOINIncomplete callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{usbd__conf_8c_a0c449541523759cf62be9c9d47540c5d}{HAL\+\_\+\+PCD\+\_\+\+Connect\+Callback}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$hpcd)
+\begin{DoxyCompactList}\small\item\em Connect callback. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{usbd__conf_8c_a25f930b5fe696224f8e71dacf5f324b4}{HAL\+\_\+\+PCD\+\_\+\+Disconnect\+Callback}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$hpcd)
+\begin{DoxyCompactList}\small\item\em Disconnect callback. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga24b61e95db7e4c7ad30a835e8d905943}{USBD\+\_\+\+LL\+\_\+\+Init}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em Initializes the low level portion of the device driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gaae9bfb6a27b11f232fc55a1d1b28be24}{USBD\+\_\+\+LL\+\_\+\+De\+Init}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em De-\/\+Initializes the low level portion of the device driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga43e53e424e9850d8261e1f9a1be53348}{USBD\+\_\+\+LL\+\_\+\+Start}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em Starts the low level portion of the device driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gac522b28139c1868a2e24d044fc8288fd}{USBD\+\_\+\+LL\+\_\+\+Stop}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em Stops the low level portion of the device driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gad96254d74d95496ffb5f6f2248585cb0}{USBD\+\_\+\+LL\+\_\+\+Open\+EP}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr, uint8\+\_\+t ep\+\_\+type, uint16\+\_\+t ep\+\_\+mps)
+\begin{DoxyCompactList}\small\item\em Opens an endpoint of the low level driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gae12e7de3c398d5663976bf11faa63572}{USBD\+\_\+\+LL\+\_\+\+Close\+EP}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Closes an endpoint of the low level driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga10080ed9555110afba809de968314985}{USBD\+\_\+\+LL\+\_\+\+Flush\+EP}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Flushes an endpoint of the Low Level Driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gabc2b4a7c8307e04955b015fd32057ec7}{USBD\+\_\+\+LL\+\_\+\+Stall\+EP}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Sets a Stall condition on an endpoint of the Low Level Driver. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gad4fa6f2eeefe95d07148c6c53d111eae}{USBD\+\_\+\+LL\+\_\+\+Clear\+Stall\+EP}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Clears a Stall condition on an endpoint of the Low Level Driver. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga2a0f10f93cc4246272b63661051a64b7}{USBD\+\_\+\+LL\+\_\+\+Is\+Stall\+EP}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Returns Stall condition. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gad3674ea3c4a9c4bbe7c73192727f922f}{USBD\+\_\+\+LL\+\_\+\+Set\+USBAddress}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t dev\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Assigns a USB address to the device. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga0388dbff915f441dd990896e28509dd9}{USBD\+\_\+\+LL\+\_\+\+Transmit}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr, uint8\+\_\+t $\ast$pbuf, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Transmits data over an endpoint. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga7018483ecc085a931fd7bf5353030b99}{USBD\+\_\+\+LL\+\_\+\+Prepare\+Receive}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr, uint8\+\_\+t $\ast$pbuf, uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Prepares an endpoint for reception. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_gaeb80f50482e04c046ba41f5ea58a1b2b}{USBD\+\_\+\+LL\+\_\+\+Get\+Rx\+Data\+Size}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em Returns the last transferred packet size. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{usbd__conf_8c_aedfa3f41ed63ea8c934e211448c61443}{HAL\+\_\+\+PCDEx\+\_\+\+LPM\+\_\+\+Callback}} (PCD\+\_\+\+Handle\+Type\+Def $\ast$hpcd, PCD\+\_\+\+LPM\+\_\+\+Msg\+Type\+Def msg)
+\begin{DoxyCompactList}\small\item\em Send LPM message to user layer. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__USBD__CORE__Exported__FunctionsPrototype_ga383d9a41089cf426cdc61b5b24e2ca0a}{USBD\+\_\+\+LL\+\_\+\+Delay}} (uint32\+\_\+t Delay)
+\begin{DoxyCompactList}\small\item\em Delays routine for the USB Device Library. \end{DoxyCompactList}\item 
+void $\ast$ \mbox{\hyperlink{group__USBD__CONF__Exported__FunctionsPrototype_ga2df01b9aae6026e9f6b55da3b1e72aee}{USBD\+\_\+static\+\_\+malloc}} (uint32\+\_\+t size)
+\begin{DoxyCompactList}\small\item\em Static single allocation. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{group__USBD__CONF__Exported__FunctionsPrototype_ga92ed1214efe53f54b3586a6233cfa5a6}{USBD\+\_\+static\+\_\+free}} (void $\ast$p)
+\begin{DoxyCompactList}\small\item\em Dummy memory free. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{usbd__conf_8c_afabb8e1d05154a3b694f4f4d150b194f}\label{usbd__conf_8c_afabb8e1d05154a3b694f4f4d150b194f}} 
+PCD\+\_\+\+Handle\+Type\+Def {\bfseries hpcd\+\_\+\+USB\+\_\+\+FS}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: This file implements the board support package for the USB device library 
+
+\begin{DoxyVersion}{Version}
+\+: v2.\+0\+\_\+\+Cube
+\end{DoxyVersion}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2021 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under Ultimate Liberty license SLA0044, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: www.\+st.\+com/\+SLA0044 
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{usbd__conf_8c_a1730ffe1e560465665eb47d9264826f9}\label{usbd__conf_8c_a1730ffe1e560465665eb47d9264826f9}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!Error\_Handler@{Error\_Handler}}
+\index{Error\_Handler@{Error\_Handler}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{Error\_Handler()}{Error\_Handler()}}
+{\footnotesize\ttfamily void Error\+\_\+\+Handler (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+This function is executed in case of error occurrence. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_a0c449541523759cf62be9c9d47540c5d}\label{usbd__conf_8c_a0c449541523759cf62be9c9d47540c5d}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_ConnectCallback@{HAL\_PCD\_ConnectCallback}}
+\index{HAL\_PCD\_ConnectCallback@{HAL\_PCD\_ConnectCallback}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_ConnectCallback()}{HAL\_PCD\_ConnectCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+Connect\+Callback (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{hpcd }\end{DoxyParamCaption})}
+
+
+
+Connect callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpcd} & PCD handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_a1679f5c50539a3dfca1391557e7a757b}\label{usbd__conf_8c_a1679f5c50539a3dfca1391557e7a757b}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_DataInStageCallback@{HAL\_PCD\_DataInStageCallback}}
+\index{HAL\_PCD\_DataInStageCallback@{HAL\_PCD\_DataInStageCallback}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_DataInStageCallback()}{HAL\_PCD\_DataInStageCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+Data\+In\+Stage\+Callback (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{hpcd,  }\item[{uint8\+\_\+t}]{epnum }\end{DoxyParamCaption})}
+
+
+
+Data In stage callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpcd} & PCD handle \\
+\hline
+{\em epnum} & Endpoint number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_a2f1ac834d9677dcae7d8973828f81149}\label{usbd__conf_8c_a2f1ac834d9677dcae7d8973828f81149}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_DataOutStageCallback@{HAL\_PCD\_DataOutStageCallback}}
+\index{HAL\_PCD\_DataOutStageCallback@{HAL\_PCD\_DataOutStageCallback}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_DataOutStageCallback()}{HAL\_PCD\_DataOutStageCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+Data\+Out\+Stage\+Callback (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{hpcd,  }\item[{uint8\+\_\+t}]{epnum }\end{DoxyParamCaption})}
+
+
+
+Data Out stage callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpcd} & PCD handle \\
+\hline
+{\em epnum} & Endpoint number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_a25f930b5fe696224f8e71dacf5f324b4}\label{usbd__conf_8c_a25f930b5fe696224f8e71dacf5f324b4}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_DisconnectCallback@{HAL\_PCD\_DisconnectCallback}}
+\index{HAL\_PCD\_DisconnectCallback@{HAL\_PCD\_DisconnectCallback}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_DisconnectCallback()}{HAL\_PCD\_DisconnectCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+Disconnect\+Callback (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{hpcd }\end{DoxyParamCaption})}
+
+
+
+Disconnect callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpcd} & PCD handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_a8f4041d553ef2fb326c6e483797f99a8}\label{usbd__conf_8c_a8f4041d553ef2fb326c6e483797f99a8}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_ISOINIncompleteCallback@{HAL\_PCD\_ISOINIncompleteCallback}}
+\index{HAL\_PCD\_ISOINIncompleteCallback@{HAL\_PCD\_ISOINIncompleteCallback}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_ISOINIncompleteCallback()}{HAL\_PCD\_ISOINIncompleteCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+ISOINIncomplete\+Callback (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{hpcd,  }\item[{uint8\+\_\+t}]{epnum }\end{DoxyParamCaption})}
+
+
+
+ISOINIncomplete callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpcd} & PCD handle \\
+\hline
+{\em epnum} & Endpoint number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_a4274f129d782f0a3c9a10b5bbe022cd4}\label{usbd__conf_8c_a4274f129d782f0a3c9a10b5bbe022cd4}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_ISOOUTIncompleteCallback@{HAL\_PCD\_ISOOUTIncompleteCallback}}
+\index{HAL\_PCD\_ISOOUTIncompleteCallback@{HAL\_PCD\_ISOOUTIncompleteCallback}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_ISOOUTIncompleteCallback()}{HAL\_PCD\_ISOOUTIncompleteCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+ISOOUTIncomplete\+Callback (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{hpcd,  }\item[{uint8\+\_\+t}]{epnum }\end{DoxyParamCaption})}
+
+
+
+ISOOUTIncomplete callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpcd} & PCD handle \\
+\hline
+{\em epnum} & Endpoint number \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_a0a53f3c7c744fcfa7bdba6e9badc70d4}\label{usbd__conf_8c_a0a53f3c7c744fcfa7bdba6e9badc70d4}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_MspDeInit@{HAL\_PCD\_MspDeInit}}
+\index{HAL\_PCD\_MspDeInit@{HAL\_PCD\_MspDeInit}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_MspDeInit()}{HAL\_PCD\_MspDeInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+Msp\+De\+Init (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{pcd\+Handle }\end{DoxyParamCaption})}
+
+USB GPIO Configuration PA11 -\/-\/-\/---$>$ USB\+\_\+\+DM PA12 -\/-\/-\/---$>$ USB\+\_\+\+DP\mbox{\Hypertarget{usbd__conf_8c_ab88e6d72062dc5d478ab12b435695ccb}\label{usbd__conf_8c_ab88e6d72062dc5d478ab12b435695ccb}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_MspInit@{HAL\_PCD\_MspInit}}
+\index{HAL\_PCD\_MspInit@{HAL\_PCD\_MspInit}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_MspInit()}{HAL\_PCD\_MspInit()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+Msp\+Init (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{pcd\+Handle }\end{DoxyParamCaption})}
+
+Initializes the peripherals clock
+
+USB GPIO Configuration PA11 -\/-\/-\/---$>$ USB\+\_\+\+DM PA12 -\/-\/-\/---$>$ USB\+\_\+\+DP\mbox{\Hypertarget{usbd__conf_8c_af4fbef977092aa525c6b1668ffbec77b}\label{usbd__conf_8c_af4fbef977092aa525c6b1668ffbec77b}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_ResetCallback@{HAL\_PCD\_ResetCallback}}
+\index{HAL\_PCD\_ResetCallback@{HAL\_PCD\_ResetCallback}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_ResetCallback()}{HAL\_PCD\_ResetCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+Reset\+Callback (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{hpcd }\end{DoxyParamCaption})}
+
+
+
+Reset callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpcd} & PCD handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_a0386a36b921cd51dd6e50103c3cd33b1}\label{usbd__conf_8c_a0386a36b921cd51dd6e50103c3cd33b1}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_ResumeCallback@{HAL\_PCD\_ResumeCallback}}
+\index{HAL\_PCD\_ResumeCallback@{HAL\_PCD\_ResumeCallback}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_ResumeCallback()}{HAL\_PCD\_ResumeCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+Resume\+Callback (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{hpcd }\end{DoxyParamCaption})}
+
+
+
+Resume callback. When Low power mode is enabled the debug cannot be used (IAR, Keil doesn\textquotesingle{}t support it) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpcd} & PCD handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_a9d72aa4d3d984b164047b081d4566f6d}\label{usbd__conf_8c_a9d72aa4d3d984b164047b081d4566f6d}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_SetupStageCallback@{HAL\_PCD\_SetupStageCallback}}
+\index{HAL\_PCD\_SetupStageCallback@{HAL\_PCD\_SetupStageCallback}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_SetupStageCallback()}{HAL\_PCD\_SetupStageCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+Setup\+Stage\+Callback (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{hpcd }\end{DoxyParamCaption})}
+
+
+
+Setup stage callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpcd} & PCD handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_a85c99eeb4aa17d8ff5298efff92ac28e}\label{usbd__conf_8c_a85c99eeb4aa17d8ff5298efff92ac28e}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_SOFCallback@{HAL\_PCD\_SOFCallback}}
+\index{HAL\_PCD\_SOFCallback@{HAL\_PCD\_SOFCallback}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_SOFCallback()}{HAL\_PCD\_SOFCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+SOFCallback (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{hpcd }\end{DoxyParamCaption})}
+
+
+
+SOF callback. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpcd} & PCD handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_a0e14acd4564979743bc0a89aa5f15428}\label{usbd__conf_8c_a0e14acd4564979743bc0a89aa5f15428}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCD\_SuspendCallback@{HAL\_PCD\_SuspendCallback}}
+\index{HAL\_PCD\_SuspendCallback@{HAL\_PCD\_SuspendCallback}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCD\_SuspendCallback()}{HAL\_PCD\_SuspendCallback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCD\+\_\+\+Suspend\+Callback (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{hpcd }\end{DoxyParamCaption})}
+
+
+
+Suspend callback. When Low power mode is enabled the debug cannot be used (IAR, Keil doesn\textquotesingle{}t support it) 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpcd} & PCD handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_aedfa3f41ed63ea8c934e211448c61443}\label{usbd__conf_8c_aedfa3f41ed63ea8c934e211448c61443}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!HAL\_PCDEx\_LPM\_Callback@{HAL\_PCDEx\_LPM\_Callback}}
+\index{HAL\_PCDEx\_LPM\_Callback@{HAL\_PCDEx\_LPM\_Callback}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{HAL\_PCDEx\_LPM\_Callback()}{HAL\_PCDEx\_LPM\_Callback()}}
+{\footnotesize\ttfamily void HAL\+\_\+\+PCDEx\+\_\+\+LPM\+\_\+\+Callback (\begin{DoxyParamCaption}\item[{PCD\+\_\+\+Handle\+Type\+Def $\ast$}]{hpcd,  }\item[{PCD\+\_\+\+LPM\+\_\+\+Msg\+Type\+Def}]{msg }\end{DoxyParamCaption})}
+
+
+
+Send LPM message to user layer. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em hpcd} & PCD handle \\
+\hline
+{\em msg} & LPM message \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{usbd__conf_8c_a70af21c671abfcc773614a9a4f63d920}\label{usbd__conf_8c_a70af21c671abfcc773614a9a4f63d920}} 
+\index{usbd\_conf.c@{usbd\_conf.c}!SystemClock\_Config@{SystemClock\_Config}}
+\index{SystemClock\_Config@{SystemClock\_Config}!usbd\_conf.c@{usbd\_conf.c}}
+\doxysubsubsection{\texorpdfstring{SystemClock\_Config()}{SystemClock\_Config()}}
+{\footnotesize\ttfamily void System\+Clock\+\_\+\+Config (\begin{DoxyParamCaption}\item[{void}]{ }\end{DoxyParamCaption})}
+
+
+
+System Clock Configuration. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+Configure the main internal regulator output voltage
+
+Initializes the RCC Oscillators according to the specified parameters in the \mbox{\hyperlink{structRCC__OscInitTypeDef}{RCC\+\_\+\+Osc\+Init\+Type\+Def}} structure.
+
+Initializes the CPU, AHB and APB buses clocks

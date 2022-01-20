@@ -1,0 +1,84 @@
+\hypertarget{usbd__cdc_8c}{}\doxysection{Middlewares/\+ST/\+STM32\+\_\+\+USB\+\_\+\+Device\+\_\+\+Library/\+Class/\+CDC/\+Src/usbd\+\_\+cdc.c File Reference}
+\label{usbd__cdc_8c}\index{Middlewares/ST/STM32\_USB\_Device\_Library/Class/CDC/Src/usbd\_cdc.c@{Middlewares/ST/STM32\_USB\_Device\_Library/Class/CDC/Src/usbd\_cdc.c}}
+
+
+This file provides the high layer firmware functions to manage the following functionalities of the USB CDC Class\+:  
+
+
+{\ttfamily \#include \char`\"{}usbd\+\_\+cdc.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}usbd\+\_\+ctlreq.\+h\char`\"{}}\newline
+Include dependency graph for usbd\+\_\+cdc.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usbd__cdc_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t $\ast$ \mbox{\hyperlink{group__USBD__CDC__Private__Functions_gadeffb3571641e96051930f66a43607a8}{USBD\+\_\+\+CDC\+\_\+\+Get\+Device\+Qualifier\+Descriptor}} (uint16\+\_\+t $\ast$length)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+CDC\+\_\+\+Get\+Device\+Qualifier\+Descriptor return Device Qualifier descriptor. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USBD__CDC__Private__Functions_ga41e2c9c5138449916310eb508a500752}{USBD\+\_\+\+CDC\+\_\+\+Register\+Interface}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, \mbox{\hyperlink{struct__USBD__CDC__Itf}{USBD\+\_\+\+CDC\+\_\+\+Itf\+Type\+Def}} $\ast$fops)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+CDC\+\_\+\+Register\+Interface. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USBD__CDC__Private__Functions_gaf46c49badb29233fb92d3ebd5bb618f4}{USBD\+\_\+\+CDC\+\_\+\+Set\+Tx\+Buffer}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t $\ast$pbuff, uint32\+\_\+t length)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+CDC\+\_\+\+Set\+Tx\+Buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USBD__CDC__Private__Functions_gaa8539af2ff78ce9a464def5de05726c3}{USBD\+\_\+\+CDC\+\_\+\+Set\+Rx\+Buffer}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t $\ast$pbuff)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+CDC\+\_\+\+Set\+Rx\+Buffer. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USBD__CDC__Private__Functions_gac6132b25e4ac00c4d918d3d73a3be5c7}{USBD\+\_\+\+CDC\+\_\+\+Transmit\+Packet}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+CDC\+\_\+\+Transmit\+Packet Transmit packet on IN endpoint. \end{DoxyCompactList}\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USBD__CDC__Private__Functions_ga55dff87863e1c76fd1139016da75903c}{USBD\+\_\+\+CDC\+\_\+\+Receive\+Packet}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+CDC\+\_\+\+Receive\+Packet prepare OUT Endpoint for reception. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{struct__Device__cb}{USBD\+\_\+\+Class\+Type\+Def}} {\bfseries USBD\+\_\+\+CDC}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+This file provides the high layer firmware functions to manage the following functionalities of the USB CDC Class\+: 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team
+\begin{DoxyItemize}
+\item Initialization and Configuration of high and low layer
+\item Enumeration as CDC Device (and enumeration for each implemented memory interface)
+\item OUT/\+IN data transfer
+\item Command IN transfer (class requests management)
+\item Error management
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyVerb}*
+*          ===================================================================
+*                                CDC Class Driver Description
+*          ===================================================================
+*           This driver manages the "Universal Serial Bus Class Definitions for Communications Devices
+*           Revision 1.2 November 16, 2007" and the sub-protocol specification of "Universal Serial Bus
+*           Communications Class Subclass Specification for PSTN Devices Revision 1.2 February 9, 2007"
+*           This driver implements the following aspects of the specification:
+*             - Device descriptor management
+*             - Configuration descriptor management
+*             - Enumeration as CDC device with 2 data endpoints (IN and OUT) and 1 command endpoint (IN)
+*             - Requests management (as described in section 6.2 in specification)
+*             - Abstract Control Model compliant
+*             - Union Functional collection (using 1 IN endpoint for control)
+*             - Data interface class
+*
+*           These aspects may be enriched or modified for a specific user application.
+*
+*            This driver doesn't implement the following aspects of the specification
+*            (but it is possible to manage these features with some modifications on this driver):
+*             - Any class-specific aspect relative to communication classes should be managed by user application.
+*             - All communication classes other than PSTN are not managed
+*
+*  \end{DoxyVerb}
+
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2015 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under Ultimate Liberty license SLA0044, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: www.\+st.\+com/\+SLA0044 

@@ -1,0 +1,85 @@
+\hypertarget{group__TIMEx__Remap}{}\doxysection{TIM Extended Remapping}
+\label{group__TIMEx__Remap}\index{TIM Extended Remapping@{TIM Extended Remapping}}
+Collaboration diagram for TIM Extended Remapping\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__TIMEx__Remap}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_gae75587fbc90e0c2b17273d0a9f2ad05c}\label{group__TIMEx__Remap_gae75587fbc90e0c2b17273d0a9f2ad05c}} 
+\#define {\bfseries TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+NONE}~0x00000000U                                           /$\ast$ !$<$ TIM1\+\_\+\+ETR is not connected to any AWD (analog watchdog)$\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_gaa5a7accd83b70cbaf790bd26fd8e4538}\label{group__TIMEx__Remap_gaa5a7accd83b70cbaf790bd26fd8e4538}} 
+\#define {\bfseries TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+AWD1}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gabb672043f414e3b80af53f6e695d8a8f}{TIM1\+\_\+\+OR1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+RMP\+\_\+0}}                               /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to ADC1 AWD1 $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga4ee5007933efeaae07c745062ffc2776}\label{group__TIMEx__Remap_ga4ee5007933efeaae07c745062ffc2776}} 
+\#define {\bfseries TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+AWD2}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gad8a0005b6512395f886a266b9c44f644}{TIM1\+\_\+\+OR1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+RMP\+\_\+1}}                               /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to ADC1 AWD2 $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga6a448a71300d1f8f81e6eb0dcc31f15a}\label{group__TIMEx__Remap_ga6a448a71300d1f8f81e6eb0dcc31f15a}} 
+\#define {\bfseries TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+AWD3}~(\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gad8a0005b6512395f886a266b9c44f644}{TIM1\+\_\+\+OR1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+RMP\+\_\+1}} $\vert$ \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gabb672043f414e3b80af53f6e695d8a8f}{TIM1\+\_\+\+OR1\+\_\+\+ETR\+\_\+\+ADC1\+\_\+\+RMP\+\_\+0}})   /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to ADC1 AWD3 $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga4d3d7a7e977f98110d2833d2feb7236a}\label{group__TIMEx__Remap_ga4d3d7a7e977f98110d2833d2feb7236a}} 
+\#define {\bfseries TIM\+\_\+\+TIM1\+\_\+\+TI1\+\_\+\+GPIO}~0x00000000U                                           /$\ast$ !$<$ TIM1 TI1 is connected to GPIO $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_gabba4a562a6e0f83acf57807e50de0de4}\label{group__TIMEx__Remap_gabba4a562a6e0f83acf57807e50de0de4}} 
+\#define {\bfseries TIM\+\_\+\+TIM1\+\_\+\+TI1\+\_\+\+COMP1}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga001fc39f08ec583f846e9d2c43ccad24}{TIM1\+\_\+\+OR1\+\_\+\+TI1\+\_\+\+RMP}}                                      /$\ast$ !$<$ TIM1 TI1 is connected to COMP1 $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga5156e463b51b1a7d92e6d87c2be4563a}\label{group__TIMEx__Remap_ga5156e463b51b1a7d92e6d87c2be4563a}} 
+\#define {\bfseries TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+GPIO}~0x00000000U                                           /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to GPIO $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga2e3eb3f4f99db6c14b3ce91bebfe8d07}\label{group__TIMEx__Remap_ga2e3eb3f4f99db6c14b3ce91bebfe8d07}} 
+\#define {\bfseries TIM\+\_\+\+TIM1\+\_\+\+ETR\+\_\+\+COMP1}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gaca3e052514c680e12126447d91e19545}{TIM1\+\_\+\+OR2\+\_\+\+ETRSEL\+\_\+0}}                                     /$\ast$ !$<$ TIM1\+\_\+\+ETR is connected to COMP1 output $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga47b5879b01ba620291663c931486d40c}\label{group__TIMEx__Remap_ga47b5879b01ba620291663c931486d40c}} 
+\#define {\bfseries TIM\+\_\+\+TIM2\+\_\+\+ITR1\+\_\+\+NONE}~0x00000000U                                           /$\ast$ !$<$ No internal trigger on TIM2\+\_\+\+ITR1 $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga8fccb3e45c4107118ec4bd8ae45bd42f}\label{group__TIMEx__Remap_ga8fccb3e45c4107118ec4bd8ae45bd42f}} 
+\#define {\bfseries TIM\+\_\+\+TIM2\+\_\+\+ITR1\+\_\+\+USB\+\_\+\+SOF}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga93ad5a77c7014fe88ebfc4a69d8ebbac}{TIM2\+\_\+\+OR1\+\_\+\+ITR1\+\_\+\+RMP}}                                     /$\ast$ !$<$ TIM2\+\_\+\+ITR1 is connected to USB SOF $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga05e1c800a3f8e7eb60b50f446cf321f7}\label{group__TIMEx__Remap_ga05e1c800a3f8e7eb60b50f446cf321f7}} 
+\#define {\bfseries TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+GPIO}~0x00000000U                                           /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to GPIO $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga906f5f281fa8283e5574b5ec7cb95b62}\label{group__TIMEx__Remap_ga906f5f281fa8283e5574b5ec7cb95b62}} 
+\#define {\bfseries TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+LSE}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga47e58f8120c28e0008b40fc2d19ebf2f}{TIM2\+\_\+\+OR1\+\_\+\+ETR1\+\_\+\+RMP}}                                     /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to LSE $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga79a125bc7559dc01f8de056e19f11972}\label{group__TIMEx__Remap_ga79a125bc7559dc01f8de056e19f11972}} 
+\#define {\bfseries TIM\+\_\+\+TIM2\+\_\+\+ETR\+\_\+\+COMP1}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga1c7ea71dea5786423b7988f01826f63a}{TIM2\+\_\+\+OR2\+\_\+\+ETRSEL\+\_\+0}}                                     /$\ast$ !$<$ TIM2\+\_\+\+ETR is connected to COMP1 output $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga11cd0b8d94b5ab46488aa3f2c3769d1f}\label{group__TIMEx__Remap_ga11cd0b8d94b5ab46488aa3f2c3769d1f}} 
+\#define {\bfseries TIM\+\_\+\+TIM2\+\_\+\+TI4\+\_\+\+GPIO}~0x00000000U                                           /$\ast$ !$<$ TIM2 TI4 is connected to GPIO $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga10665a31da680e9c23ff66b4e9f85b1e}\label{group__TIMEx__Remap_ga10665a31da680e9c23ff66b4e9f85b1e}} 
+\#define {\bfseries TIM\+\_\+\+TIM2\+\_\+\+TI4\+\_\+\+COMP1}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga7588d98b96a166d39ea3af92e1946719}{TIM2\+\_\+\+OR1\+\_\+\+TI4\+\_\+\+RMP\+\_\+0}}                                    /$\ast$ !$<$ TIM2 TI4 is connected to COMP1 output $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga203fd51591dbc76d09a12d1ca4e539a1}\label{group__TIMEx__Remap_ga203fd51591dbc76d09a12d1ca4e539a1}} 
+\#define {\bfseries TIM\+\_\+\+TIM15\+\_\+\+TI1\+\_\+\+GPIO}~0x00000000U                                           /$\ast$ !$<$ TIM15 TI1 is connected to GPIO $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_gaa4c2e53cddd14314fdebbd630ce8298d}\label{group__TIMEx__Remap_gaa4c2e53cddd14314fdebbd630ce8298d}} 
+\#define {\bfseries TIM\+\_\+\+TIM15\+\_\+\+TI1\+\_\+\+LSE}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_gaa76bfd8c341575564a9dbf80be11b818}{TIM15\+\_\+\+OR1\+\_\+\+TI1\+\_\+\+RMP}}                                     /$\ast$ !$<$ TIM15 TI1 is connected to LSE $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga28e4df243cb5161ef41577b1e4eda287}\label{group__TIMEx__Remap_ga28e4df243cb5161ef41577b1e4eda287}} 
+\#define {\bfseries TIM\+\_\+\+TIM15\+\_\+\+ENCODERMODE\+\_\+\+NONE}~0x00000000U                                           /$\ast$ !$<$ No redirection $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_gaa0cd332dff3d142d4c8e99ce5051cfc8}\label{group__TIMEx__Remap_gaa0cd332dff3d142d4c8e99ce5051cfc8}} 
+\#define {\bfseries TIM\+\_\+\+TIM15\+\_\+\+ENCODERMODE\+\_\+\+TIM2}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga1926214375f168b36bed2031900c55d0}{TIM15\+\_\+\+OR1\+\_\+\+ENCODER\+\_\+\+MODE\+\_\+0}}                              /$\ast$ !$<$ TIM2 IC1 and TIM2 IC2 are connected to TIM15 IC1 and TIM15 IC2 respectively $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_gaf4435f9a5d0eb16d1b2b1192ad004392}\label{group__TIMEx__Remap_gaf4435f9a5d0eb16d1b2b1192ad004392}} 
+\#define {\bfseries TIM\+\_\+\+TIM16\+\_\+\+TI1\+\_\+\+GPIO}~0x00000000U                                           /$\ast$ !$<$ TIM16 TI1 is connected to GPIO $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga671abe85f9feb1fcee7c2bf05e9245cd}\label{group__TIMEx__Remap_ga671abe85f9feb1fcee7c2bf05e9245cd}} 
+\#define {\bfseries TIM\+\_\+\+TIM16\+\_\+\+TI1\+\_\+\+LSI}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga7594e3dcaf59a34b5c6fdac1518a425e}{TIM16\+\_\+\+OR1\+\_\+\+TI1\+\_\+\+RMP\+\_\+0}}                                   /$\ast$ !$<$ TIM16 TI1 is connected to LSI $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_gabff23fbb0cd0a7f09de517b0469038b0}\label{group__TIMEx__Remap_gabff23fbb0cd0a7f09de517b0469038b0}} 
+\#define {\bfseries TIM\+\_\+\+TIM16\+\_\+\+TI1\+\_\+\+LSE}~\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga20ec6a97a69d7492a26cc6240d2d9f8f}{TIM16\+\_\+\+OR1\+\_\+\+TI1\+\_\+\+RMP\+\_\+1}}                                   /$\ast$ !$<$ TIM16 TI1 is connected to LSE $\ast$/
+\item 
+\mbox{\Hypertarget{group__TIMEx__Remap_ga23533444072953152f7e9600db5437a6}\label{group__TIMEx__Remap_ga23533444072953152f7e9600db5437a6}} 
+\#define {\bfseries TIM\+\_\+\+TIM16\+\_\+\+TI1\+\_\+\+RTC}~(\mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga20ec6a97a69d7492a26cc6240d2d9f8f}{TIM16\+\_\+\+OR1\+\_\+\+TI1\+\_\+\+RMP\+\_\+1}} $\vert$ \mbox{\hyperlink{group__Peripheral__Registers__Bits__Definition_ga7594e3dcaf59a34b5c6fdac1518a425e}{TIM16\+\_\+\+OR1\+\_\+\+TI1\+\_\+\+RMP\+\_\+0}})           /$\ast$ !$<$ TIM16 TI1 is connected to RTC wakeup interrupt $\ast$/
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}

@@ -1,0 +1,63 @@
+\hypertarget{group__IWDG__Exported__Macros}{}\doxysection{IWDG Exported Macros}
+\label{group__IWDG__Exported__Macros}\index{IWDG Exported Macros@{IWDG Exported Macros}}
+Collaboration diagram for IWDG Exported Macros\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=289pt]{group__IWDG__Exported__Macros}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__IWDG__Exported__Macros_ga5914aff5b85e3151bb75377a32d83d6a}{\+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+START}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR, \mbox{\hyperlink{group__IWDG__Private__Constants_ga493295d56bb62752982234755612386f}{IWDG\+\_\+\+KEY\+\_\+\+ENABLE}})
+\begin{DoxyCompactList}\small\item\em Enable the IWDG peripheral. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__IWDG__Exported__Macros_gac0eaf381e60a654d6b51c43f645e088f}{\+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+RELOAD\+\_\+\+COUNTER}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)~WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR, \mbox{\hyperlink{group__IWDG__Private__Constants_ga33abf7b7c76dfda6b6380448a1d28966}{IWDG\+\_\+\+KEY\+\_\+\+RELOAD}})
+\begin{DoxyCompactList}\small\item\em Reload IWDG counter with value defined in the reload register (write access to IWDG\+\_\+\+PR, IWDG\+\_\+\+RLR and IWDG\+\_\+\+WINR registers disabled). \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__IWDG__Exported__Macros_gac0eaf381e60a654d6b51c43f645e088f}\label{group__IWDG__Exported__Macros_gac0eaf381e60a654d6b51c43f645e088f}} 
+\index{IWDG Exported Macros@{IWDG Exported Macros}!\_\_HAL\_IWDG\_RELOAD\_COUNTER@{\_\_HAL\_IWDG\_RELOAD\_COUNTER}}
+\index{\_\_HAL\_IWDG\_RELOAD\_COUNTER@{\_\_HAL\_IWDG\_RELOAD\_COUNTER}!IWDG Exported Macros@{IWDG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_IWDG\_RELOAD\_COUNTER}{\_\_HAL\_IWDG\_RELOAD\_COUNTER}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+RELOAD\+\_\+\+COUNTER(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR, \mbox{\hyperlink{group__IWDG__Private__Constants_ga33abf7b7c76dfda6b6380448a1d28966}{IWDG\+\_\+\+KEY\+\_\+\+RELOAD}})}
+
+
+
+Reload IWDG counter with value defined in the reload register (write access to IWDG\+\_\+\+PR, IWDG\+\_\+\+RLR and IWDG\+\_\+\+WINR registers disabled). 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & IWDG handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__IWDG__Exported__Macros_ga5914aff5b85e3151bb75377a32d83d6a}\label{group__IWDG__Exported__Macros_ga5914aff5b85e3151bb75377a32d83d6a}} 
+\index{IWDG Exported Macros@{IWDG Exported Macros}!\_\_HAL\_IWDG\_START@{\_\_HAL\_IWDG\_START}}
+\index{\_\_HAL\_IWDG\_START@{\_\_HAL\_IWDG\_START}!IWDG Exported Macros@{IWDG Exported Macros}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_IWDG\_START}{\_\_HAL\_IWDG\_START}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+IWDG\+\_\+\+START(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})~WRITE\+\_\+\+REG((\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)-\/$>$Instance-\/$>$KR, \mbox{\hyperlink{group__IWDG__Private__Constants_ga493295d56bb62752982234755612386f}{IWDG\+\_\+\+KEY\+\_\+\+ENABLE}})}
+
+
+
+Enable the IWDG peripheral. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & IWDG handle \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}

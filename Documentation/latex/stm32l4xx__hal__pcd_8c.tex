@@ -1,0 +1,64 @@
+\hypertarget{stm32l4xx__hal__pcd_8c}{}\doxysection{Drivers/\+STM32\+L4xx\+\_\+\+HAL\+\_\+\+Driver/\+Src/stm32l4xx\+\_\+hal\+\_\+pcd.c File Reference}
+\label{stm32l4xx__hal__pcd_8c}\index{Drivers/STM32L4xx\_HAL\_Driver/Src/stm32l4xx\_hal\_pcd.c@{Drivers/STM32L4xx\_HAL\_Driver/Src/stm32l4xx\_hal\_pcd.c}}
+
+
+PCD HAL module driver. This file provides firmware functions to manage the following functionalities of the USB Peripheral Controller\+:  
+
+
+{\ttfamily \#include \char`\"{}stm32l4xx\+\_\+hal.\+h\char`\"{}}\newline
+Include dependency graph for stm32l4xx\+\_\+hal\+\_\+pcd.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32l4xx__hal__pcd_8c__incl}
+\end{center}
+\end{figure}
+
+
+\doxysubsection{Detailed Description}
+PCD HAL module driver. This file provides firmware functions to manage the following functionalities of the USB Peripheral Controller\+: 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team
+\begin{DoxyItemize}
+\item Initialization and de-\/initialization functions
+\item IO operation functions
+\item Peripheral Control functions
+\item Peripheral State functions
+\end{DoxyItemize}
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+Copyright (c) 2017 STMicroelectronics. All rights reserved.
+
+This software is licensed under terms that can be found in the LICENSE file in the root directory of this software component. If no LICENSE file comes with this software, it is provided AS-\/\+IS.
+
+\begin{DoxyVerb}==============================================================================
+                  ##### How to use this driver #####
+==============================================================================
+  [..]
+    The PCD HAL driver can be used as follows:
+
+   (#) Declare a PCD_HandleTypeDef handle structure, for example:
+       PCD_HandleTypeDef  hpcd;
+
+   (#) Fill parameters of Init structure in HCD handle
+
+   (#) Call HAL_PCD_Init() API to initialize the PCD peripheral (Core, Device core, ...)
+
+   (#) Initialize the PCD low level resources through the HAL_PCD_MspInit() API:
+       (##) Enable the PCD/USB Low Level interface clock using
+            (+++) __HAL_RCC_USB_CLK_ENABLE(); For USB Device only FS peripheral
+
+       (##) Initialize the related GPIO clocks
+       (##) Configure PCD pin-out
+       (##) Configure PCD NVIC interrupt
+
+   (#)Associate the Upper USB device stack to the HAL PCD Driver:
+       (##) hpcd.pData = pdev;
+
+   (#)Enable PCD transmission and reception:
+       (##) HAL_PCD_Start();\end{DoxyVerb}
+ 

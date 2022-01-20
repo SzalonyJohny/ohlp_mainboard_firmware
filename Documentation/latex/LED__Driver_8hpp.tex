@@ -1,0 +1,83 @@
+\hypertarget{LED__Driver_8hpp}{}\doxysection{Core/\+Inc/\+LED\+\_\+\+Driver.hpp File Reference}
+\label{LED__Driver_8hpp}\index{Core/Inc/LED\_Driver.hpp@{Core/Inc/LED\_Driver.hpp}}
+{\ttfamily \#include \char`\"{}BQ25895.\+hpp\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}Common\+\_\+struct.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$array$>$}\newline
+Include dependency graph for LED\+\_\+\+Driver.\+hpp\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{LED__Driver_8hpp__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=214pt]{LED__Driver_8hpp__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSMPS_1_1pid__const__s}{SMPS\+::pid\+\_\+const\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em PID CONST struct. \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structSMPS_1_1pid__data__s}{SMPS\+::pid\+\_\+data\+\_\+s$<$ Type $>$}}
+\begin{DoxyCompactList}\small\item\em template for testing with volatile. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSMPS_1_1SBC__c}{SMPS\+::\+SBC\+\_\+c}}
+\item 
+class \mbox{\hyperlink{classSMPS_1_1led__drivers__c}{SMPS\+::led\+\_\+drivers\+\_\+c}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}\label{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}} 
+enum {\bfseries ADC\+\_\+\+RANK\+\_\+\+DMA} \+: uint8\+\_\+t \{ \newline
+{\bfseries ADC\+\_\+\+RANK\+\_\+0}
+, {\bfseries ADC\+\_\+\+RANK\+\_\+1}
+, {\bfseries ADC\+\_\+\+RANK\+\_\+2}
+, {\bfseries ADC\+\_\+\+RANK\+\_\+3}
+, \newline
+{\bfseries ADC\+\_\+\+RANK\+\_\+4}
+, {\bfseries ADC\+\_\+\+RANK\+\_\+5}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{LED__Driver_8hpp_af2101c1162259e3ee34c7445950ab6e8}\label{LED__Driver_8hpp_af2101c1162259e3ee34c7445950ab6e8}} 
+const uint16\+\_\+t {\bfseries SMPS\+::\+MAX\+\_\+\+PWM\+\_\+\+TIM1} = 200
+\item 
+\mbox{\Hypertarget{LED__Driver_8hpp_a041c787f640651b1fac4c873d430dc5a}\label{LED__Driver_8hpp_a041c787f640651b1fac4c873d430dc5a}} 
+const uint16\+\_\+t {\bfseries SMPS\+::\+ADC\+\_\+\+REFF\+\_\+mV} = 2810
+\item 
+\mbox{\Hypertarget{LED__Driver_8hpp_ae4081ef1726c27d9852212fe031634ba}\label{LED__Driver_8hpp_ae4081ef1726c27d9852212fe031634ba}} 
+const uint16\+\_\+t \mbox{\hyperlink{LED__Driver_8hpp_ae4081ef1726c27d9852212fe031634ba}{SMPS\+::\+ADC\+\_\+\+MAX\+\_\+\+COUNT}} = 16384
+\begin{DoxyCompactList}\small\item\em oversampling x4 and 1 bit shift \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{LED__Driver_8hpp_a2c3ef48de9a7e69185b956ba48ce0d15}\label{LED__Driver_8hpp_a2c3ef48de9a7e69185b956ba48ce0d15}} 
+const uint16\+\_\+t \mbox{\hyperlink{LED__Driver_8hpp_a2c3ef48de9a7e69185b956ba48ce0d15}{SMPS\+::\+MAX\+\_\+\+VOLTAGE\+\_\+m\+V\+\_\+\+DISCONNECT\+\_\+\+PROTECTION}} = 3500
+\begin{DoxyCompactList}\small\item\em \mbox{[}mV\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{LED__Driver_8hpp_a983aaae9ad9df605b409d5e7d85e1af8}\label{LED__Driver_8hpp_a983aaae9ad9df605b409d5e7d85e1af8}} 
+const uint16\+\_\+t \mbox{\hyperlink{LED__Driver_8hpp_a983aaae9ad9df605b409d5e7d85e1af8}{SMPS\+::\+MAX\+\_\+\+BATTERY\+\_\+\+VOLTAGE\+\_\+m\+V\+\_\+\+FOR\+\_\+\+DISCONNECT\+\_\+\+PROTECTION}} = 4200
+\begin{DoxyCompactList}\small\item\em \mbox{[}mV\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{LED__Driver_8hpp_a419b28db1331b1838f24911f238b4e9c}\label{LED__Driver_8hpp_a419b28db1331b1838f24911f238b4e9c}} 
+const uint16\+\_\+t \mbox{\hyperlink{LED__Driver_8hpp_a419b28db1331b1838f24911f238b4e9c}{SMPS\+::\+D1\+\_\+\+D2\+\_\+max\+\_\+current}} = 3500
+\begin{DoxyCompactList}\small\item\em \mbox{[}mA\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{LED__Driver_8hpp_ae76c2acd61bfbb1385b86bb04e67259e}\label{LED__Driver_8hpp_ae76c2acd61bfbb1385b86bb04e67259e}} 
+const uint16\+\_\+t \mbox{\hyperlink{LED__Driver_8hpp_ae76c2acd61bfbb1385b86bb04e67259e}{SMPS\+::\+D3\+\_\+max\+\_\+current}} = 1200
+\begin{DoxyCompactList}\small\item\em \mbox{[}mA\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{LED__Driver_8hpp_af320ea3564ac511db3d0b2900a28ca8e}\label{LED__Driver_8hpp_af320ea3564ac511db3d0b2900a28ca8e}} 
+const uint32\+\_\+t {\bfseries SMPS\+::\+FB\+\_\+\+VOLTAGE\+\_\+\+RESISTOR\+\_\+\+DIVIDER\+\_\+\+UP} = 7500
+\item 
+\mbox{\Hypertarget{LED__Driver_8hpp_a13b99b0bbec7d0c1d2544aaaa5de5579}\label{LED__Driver_8hpp_a13b99b0bbec7d0c1d2544aaaa5de5579}} 
+const uint32\+\_\+t {\bfseries SMPS\+::\+FB\+\_\+\+VOLTAGE\+\_\+\+RESISTOR\+\_\+\+DIVIDER\+\_\+\+DOWN} = 15000
+\item 
+\mbox{\Hypertarget{LED__Driver_8hpp_a7eb3cd16fc230242bfe92ec70fdd6ce2}\label{LED__Driver_8hpp_a7eb3cd16fc230242bfe92ec70fdd6ce2}} 
+const pid\+\_\+const\+\_\+s {\bfseries SMPS\+::pid\+\_\+const}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Single header liblary for parsing serial command. ~\newline
+Parser is using virtual function call. No heap usage guarantee. 

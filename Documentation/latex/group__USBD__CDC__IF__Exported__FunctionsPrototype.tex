@@ -1,0 +1,53 @@
+\hypertarget{group__USBD__CDC__IF__Exported__FunctionsPrototype}{}\doxysection{USBD\+\_\+\+CDC\+\_\+\+IF\+\_\+\+Exported\+\_\+\+Functions\+Prototype}
+\label{group__USBD__CDC__IF__Exported__FunctionsPrototype}\index{USBD\_CDC\_IF\_Exported\_FunctionsPrototype@{USBD\_CDC\_IF\_Exported\_FunctionsPrototype}}
+
+
+Public functions declaration.  
+
+
+Collaboration diagram for USBD\+\_\+\+CDC\+\_\+\+IF\+\_\+\+Exported\+\_\+\+Functions\+Prototype\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=335pt]{group__USBD__CDC__IF__Exported__FunctionsPrototype}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USBD__CDC__IF__Exported__FunctionsPrototype_ga5137d6201dbdef2bf351c5b4941c24f4}{CDC\+\_\+\+Transmit\+\_\+\+FS}} (uint8\+\_\+t $\ast$Buf, uint16\+\_\+t Len)
+\begin{DoxyCompactList}\small\item\em CDC\+\_\+\+Transmit\+\_\+\+FS Data to send over USB IN endpoint are sent over CDC interface through this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Public functions declaration. 
+
+
+
+\doxysubsection{Function Documentation}
+\mbox{\Hypertarget{group__USBD__CDC__IF__Exported__FunctionsPrototype_ga5137d6201dbdef2bf351c5b4941c24f4}\label{group__USBD__CDC__IF__Exported__FunctionsPrototype_ga5137d6201dbdef2bf351c5b4941c24f4}} 
+\index{USBD\_CDC\_IF\_Exported\_FunctionsPrototype@{USBD\_CDC\_IF\_Exported\_FunctionsPrototype}!CDC\_Transmit\_FS@{CDC\_Transmit\_FS}}
+\index{CDC\_Transmit\_FS@{CDC\_Transmit\_FS}!USBD\_CDC\_IF\_Exported\_FunctionsPrototype@{USBD\_CDC\_IF\_Exported\_FunctionsPrototype}}
+\doxysubsubsection{\texorpdfstring{CDC\_Transmit\_FS()}{CDC\_Transmit\_FS()}}
+{\footnotesize\ttfamily uint8\+\_\+t CDC\+\_\+\+Transmit\+\_\+\+FS (\begin{DoxyParamCaption}\item[{uint8\+\_\+t $\ast$}]{Buf,  }\item[{uint16\+\_\+t}]{Len }\end{DoxyParamCaption})}
+
+
+
+CDC\+\_\+\+Transmit\+\_\+\+FS Data to send over USB IN endpoint are sent over CDC interface through this function. 
+
+\begin{DoxyNote}{Note}
+
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em Buf} & Buffer of data to be sent \\
+\hline
+{\em Len} & Number of data to be sent (in bytes) \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em USBD\+\_\+\+OK} & if all operations are OK else USBD\+\_\+\+FAIL or USBD\+\_\+\+BUSY \\
+\hline
+\end{DoxyRetVals}

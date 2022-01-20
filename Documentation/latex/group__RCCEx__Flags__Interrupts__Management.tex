@@ -1,0 +1,263 @@
+\hypertarget{group__RCCEx__Flags__Interrupts__Management}{}\doxysection{Flags Interrupts Management}
+\label{group__RCCEx__Flags__Interrupts__Management}\index{Flags Interrupts Management@{Flags Interrupts Management}}
+
+
+macros to manage the specified RCC Flags and interrupts.  
+
+
+Collaboration diagram for Flags Interrupts Management\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{group__RCCEx__Flags__Interrupts__Management}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_gafca78bb6fbfed8a31ef7ee030d424b50}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+IT}}()~SET\+\_\+\+BIT(EXTI-\/$>$IMR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})
+\begin{DoxyCompactList}\small\item\em Enable the RCC LSE CSS Extended Interrupt Line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_gaa5c2a31f367b8085be517e315b8c0196}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+IT}}()~CLEAR\+\_\+\+BIT(EXTI-\/$>$IMR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})
+\begin{DoxyCompactList}\small\item\em Disable the RCC LSE CSS Extended Interrupt Line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_gad5f8173d2752512c30375c9ca7890fbc}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+EVENT}}()~SET\+\_\+\+BIT(EXTI-\/$>$EMR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})
+\begin{DoxyCompactList}\small\item\em Enable the RCC LSE CSS Event Line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_ga20711e52b237c9c598c87d5329a9700f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+EVENT}}()~CLEAR\+\_\+\+BIT(EXTI-\/$>$EMR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})
+\begin{DoxyCompactList}\small\item\em Disable the RCC LSE CSS Event Line. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_ga45a0bf105427b24b377125346b2e597d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+FALLING\+\_\+\+EDGE}}()~SET\+\_\+\+BIT(EXTI-\/$>$FTSR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})
+\begin{DoxyCompactList}\small\item\em Enable the RCC LSE CSS Extended Interrupt Falling Trigger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_ga5b8a28d3896b67495b996d001084885e}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+FALLING\+\_\+\+EDGE}}()~CLEAR\+\_\+\+BIT(EXTI-\/$>$FTSR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})
+\begin{DoxyCompactList}\small\item\em Disable the RCC LSE CSS Extended Interrupt Falling Trigger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_ga14487ed9c109cb494cae4a9762b7c294}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+RISING\+\_\+\+EDGE}}()~SET\+\_\+\+BIT(EXTI-\/$>$RTSR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})
+\begin{DoxyCompactList}\small\item\em Enable the RCC LSE CSS Extended Interrupt Rising Trigger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_ga2746b06cbf0f080a600f3f895c95f3fb}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+RISING\+\_\+\+EDGE}}()~CLEAR\+\_\+\+BIT(EXTI-\/$>$RTSR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})
+\begin{DoxyCompactList}\small\item\em Disable the RCC LSE CSS Extended Interrupt Rising Trigger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_ga075e9194bfc08b5da32af130a74e7cb4}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+RISING\+\_\+\+FALLING\+\_\+\+EDGE}}()
+\begin{DoxyCompactList}\small\item\em Enable the RCC LSE CSS Extended Interrupt Rising \& Falling Trigger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_gacea34070069d535080039e3067aba82d}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+RISING\+\_\+\+FALLING\+\_\+\+EDGE}}()
+\begin{DoxyCompactList}\small\item\em Disable the RCC LSE CSS Extended Interrupt Rising \& Falling Trigger. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_ga65fa248e1dd8c7258a50ba03c4e2ff85}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+GET\+\_\+\+FLAG}}()~(READ\+\_\+\+BIT(EXTI-\/$>$PR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}}) == \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})
+\begin{DoxyCompactList}\small\item\em Check whether the specified RCC LSE CSS EXTI interrupt flag is set or not. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_ga6171e2da4b75a993142330025862864f}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+CLEAR\+\_\+\+FLAG}}()~WRITE\+\_\+\+REG(EXTI-\/$>$PR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})
+\begin{DoxyCompactList}\small\item\em Clear the RCC LSE CSS EXTI flag. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__RCCEx__Flags__Interrupts__Management_gac5a7ed26daae142eb6cce551728ee88c}{\+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+GENERATE\+\_\+\+SWIT}}()~SET\+\_\+\+BIT(EXTI-\/$>$SWIER1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})
+\begin{DoxyCompactList}\small\item\em Generate a Software interrupt on the RCC LSE CSS EXTI line. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+macros to manage the specified RCC Flags and interrupts. 
+
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_ga6171e2da4b75a993142330025862864f}\label{group__RCCEx__Flags__Interrupts__Management_ga6171e2da4b75a993142330025862864f}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_CLEAR\_FLAG@{\_\_HAL\_RCC\_LSECSS\_EXTI\_CLEAR\_FLAG}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_CLEAR\_FLAG@{\_\_HAL\_RCC\_LSECSS\_EXTI\_CLEAR\_FLAG}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_CLEAR\_FLAG}{\_\_HAL\_RCC\_LSECSS\_EXTI\_CLEAR\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+CLEAR\+\_\+\+FLAG(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~WRITE\+\_\+\+REG(EXTI-\/$>$PR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})}
+
+
+
+Clear the RCC LSE CSS EXTI flag. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_ga20711e52b237c9c598c87d5329a9700f}\label{group__RCCEx__Flags__Interrupts__Management_ga20711e52b237c9c598c87d5329a9700f}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_EVENT@{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_EVENT}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_EVENT@{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_EVENT}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_EVENT}{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_EVENT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+EVENT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT(EXTI-\/$>$EMR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})}
+
+
+
+Disable the RCC LSE CSS Event Line. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_ga5b8a28d3896b67495b996d001084885e}\label{group__RCCEx__Flags__Interrupts__Management_ga5b8a28d3896b67495b996d001084885e}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_FALLING\_EDGE@{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_FALLING\_EDGE}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_FALLING\_EDGE@{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_FALLING\_EDGE}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_FALLING\_EDGE}{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_FALLING\_EDGE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+FALLING\+\_\+\+EDGE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT(EXTI-\/$>$FTSR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})}
+
+
+
+Disable the RCC LSE CSS Extended Interrupt Falling Trigger. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_gaa5c2a31f367b8085be517e315b8c0196}\label{group__RCCEx__Flags__Interrupts__Management_gaa5c2a31f367b8085be517e315b8c0196}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_IT@{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_IT}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_IT@{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_IT}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_IT}{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+IT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT(EXTI-\/$>$IMR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})}
+
+
+
+Disable the RCC LSE CSS Extended Interrupt Line. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_ga2746b06cbf0f080a600f3f895c95f3fb}\label{group__RCCEx__Flags__Interrupts__Management_ga2746b06cbf0f080a600f3f895c95f3fb}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_EDGE@{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_EDGE}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_EDGE@{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_EDGE}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_EDGE}{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_EDGE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+RISING\+\_\+\+EDGE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~CLEAR\+\_\+\+BIT(EXTI-\/$>$RTSR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})}
+
+
+
+Disable the RCC LSE CSS Extended Interrupt Rising Trigger. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_gacea34070069d535080039e3067aba82d}\label{group__RCCEx__Flags__Interrupts__Management_gacea34070069d535080039e3067aba82d}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_FALLING\_EDGE@{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_FALLING\_EDGE}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_FALLING\_EDGE@{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_FALLING\_EDGE}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_FALLING\_EDGE}{\_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_FALLING\_EDGE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+DISABLE\+\_\+\+RISING\+\_\+\+FALLING\+\_\+\+EDGE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{do} \{                                                       \(\backslash\)}
+\DoxyCodeLine{    \_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_RISING\_EDGE();             \(\backslash\)}
+\DoxyCodeLine{    \_\_HAL\_RCC\_LSECSS\_EXTI\_DISABLE\_FALLING\_EDGE();            \(\backslash\)}
+\DoxyCodeLine{  \} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Disable the RCC LSE CSS Extended Interrupt Rising \& Falling Trigger. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_gad5f8173d2752512c30375c9ca7890fbc}\label{group__RCCEx__Flags__Interrupts__Management_gad5f8173d2752512c30375c9ca7890fbc}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_EVENT@{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_EVENT}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_EVENT@{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_EVENT}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_EVENT}{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_EVENT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+EVENT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(EXTI-\/$>$EMR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})}
+
+
+
+Enable the RCC LSE CSS Event Line. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_ga45a0bf105427b24b377125346b2e597d}\label{group__RCCEx__Flags__Interrupts__Management_ga45a0bf105427b24b377125346b2e597d}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_FALLING\_EDGE@{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_FALLING\_EDGE}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_FALLING\_EDGE@{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_FALLING\_EDGE}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_FALLING\_EDGE}{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_FALLING\_EDGE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+FALLING\+\_\+\+EDGE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(EXTI-\/$>$FTSR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})}
+
+
+
+Enable the RCC LSE CSS Extended Interrupt Falling Trigger. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_gafca78bb6fbfed8a31ef7ee030d424b50}\label{group__RCCEx__Flags__Interrupts__Management_gafca78bb6fbfed8a31ef7ee030d424b50}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_IT@{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_IT}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_IT@{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_IT}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_IT}{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_IT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+IT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(EXTI-\/$>$IMR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})}
+
+
+
+Enable the RCC LSE CSS Extended Interrupt Line. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_ga14487ed9c109cb494cae4a9762b7c294}\label{group__RCCEx__Flags__Interrupts__Management_ga14487ed9c109cb494cae4a9762b7c294}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_EDGE@{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_EDGE}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_EDGE@{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_EDGE}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_EDGE}{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_EDGE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+RISING\+\_\+\+EDGE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(EXTI-\/$>$RTSR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})}
+
+
+
+Enable the RCC LSE CSS Extended Interrupt Rising Trigger. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_ga075e9194bfc08b5da32af130a74e7cb4}\label{group__RCCEx__Flags__Interrupts__Management_ga075e9194bfc08b5da32af130a74e7cb4}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_FALLING\_EDGE@{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_FALLING\_EDGE}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_FALLING\_EDGE@{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_FALLING\_EDGE}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_FALLING\_EDGE}{\_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_FALLING\_EDGE}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+ENABLE\+\_\+\+RISING\+\_\+\+FALLING\+\_\+\+EDGE(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{  \textcolor{keywordflow}{do} \{                                                      \(\backslash\)}
+\DoxyCodeLine{    \_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_RISING\_EDGE();             \(\backslash\)}
+\DoxyCodeLine{    \_\_HAL\_RCC\_LSECSS\_EXTI\_ENABLE\_FALLING\_EDGE();            \(\backslash\)}
+\DoxyCodeLine{  \} \textcolor{keywordflow}{while}(0)}
+
+\end{DoxyCode}
+
+
+Enable the RCC LSE CSS Extended Interrupt Rising \& Falling Trigger. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_gac5a7ed26daae142eb6cce551728ee88c}\label{group__RCCEx__Flags__Interrupts__Management_gac5a7ed26daae142eb6cce551728ee88c}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_GENERATE\_SWIT@{\_\_HAL\_RCC\_LSECSS\_EXTI\_GENERATE\_SWIT}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_GENERATE\_SWIT@{\_\_HAL\_RCC\_LSECSS\_EXTI\_GENERATE\_SWIT}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_GENERATE\_SWIT}{\_\_HAL\_RCC\_LSECSS\_EXTI\_GENERATE\_SWIT}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+GENERATE\+\_\+\+SWIT(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~SET\+\_\+\+BIT(EXTI-\/$>$SWIER1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})}
+
+
+
+Generate a Software interrupt on the RCC LSE CSS EXTI line. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em None.} & \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__RCCEx__Flags__Interrupts__Management_ga65fa248e1dd8c7258a50ba03c4e2ff85}\label{group__RCCEx__Flags__Interrupts__Management_ga65fa248e1dd8c7258a50ba03c4e2ff85}} 
+\index{Flags Interrupts Management@{Flags Interrupts Management}!\_\_HAL\_RCC\_LSECSS\_EXTI\_GET\_FLAG@{\_\_HAL\_RCC\_LSECSS\_EXTI\_GET\_FLAG}}
+\index{\_\_HAL\_RCC\_LSECSS\_EXTI\_GET\_FLAG@{\_\_HAL\_RCC\_LSECSS\_EXTI\_GET\_FLAG}!Flags Interrupts Management@{Flags Interrupts Management}}
+\doxysubsubsection{\texorpdfstring{\_\_HAL\_RCC\_LSECSS\_EXTI\_GET\_FLAG}{\_\_HAL\_RCC\_LSECSS\_EXTI\_GET\_FLAG}}
+{\footnotesize\ttfamily \#define \+\_\+\+\_\+\+HAL\+\_\+\+RCC\+\_\+\+LSECSS\+\_\+\+EXTI\+\_\+\+GET\+\_\+\+FLAG(\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})~(READ\+\_\+\+BIT(EXTI-\/$>$PR1, \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}}) == \mbox{\hyperlink{group__RCCEx__EXTI__LINE__LSECSS_ga9b28da23df63fe2a235536edd669d8e9}{RCC\+\_\+\+EXTI\+\_\+\+LINE\+\_\+\+LSECSS}})}
+
+
+
+Check whether the specified RCC LSE CSS EXTI interrupt flag is set or not. 
+
+
+\begin{DoxyRetVals}{Return values}
+{\em EXTI} & RCC LSE CSS Line Status. \\
+\hline
+\end{DoxyRetVals}

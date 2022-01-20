@@ -22,20 +22,14 @@ void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
 	/* init */
 	IMU_Init();
 
-
-	/* USB Init */
-	//MX_USB_DEVICE_Init();
-
 	const uint32_t data_buff_size = 64;
 	char data_buffer_usb[data_buff_size];
 
 
-	// FIXME normal operation 240Hz
-	const float send_rate = 0.1f;
+	const float send_rate = 100.0f;
 	const float os_daley_time = floor(1000.0f/send_rate);
 
 	for(;;){
-
 
 		osDelay((uint32_t)os_daley_time);
 
@@ -45,19 +39,14 @@ void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
 		MPU6050_GetGyroscopeRAW(&gyr_x, &gyr_y,	 &gyr_z);
 
 		snprintf( data_buffer_usb, data_buff_size, "%d,%d,%d,%d,%d,%d \n", acc_x, acc_y, acc_z, gyr_x, gyr_y, gyr_z);
-		/*
+
 		auto status = CDC_Transmit_FS( (uint8_t*)data_buffer_usb, (uint16_t)strlen(data_buffer_usb) );
 
 		if(USBD_OK != status){
 			snprintf( data_buffer_usb, data_buff_size, "error");
 			CDC_Transmit_FS( (uint8_t*)data_buffer_usb, (uint16_t)strlen(data_buffer_usb) );
 		}
-
-		*/
-
 	}
-
-
 }
 
 

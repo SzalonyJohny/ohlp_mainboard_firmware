@@ -1,0 +1,101 @@
+\hypertarget{stm32l4xx__it_8c}{}\doxysection{Core/\+Src/stm32l4xx\+\_\+it.c File Reference}
+\label{stm32l4xx__it_8c}\index{Core/Src/stm32l4xx\_it.c@{Core/Src/stm32l4xx\_it.c}}
+
+
+Interrupt Service Routines.  
+
+
+{\ttfamily \#include \char`\"{}main.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}stm32l4xx\+\_\+it.\+h\char`\"{}}\newline
+{\ttfamily \#include $<$cmsis\+\_\+os.\+h$>$}\newline
+Include dependency graph for stm32l4xx\+\_\+it.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{stm32l4xx__it_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a6ad7a5e3ee69cb6db6a6b9111ba898bc}\label{stm32l4xx__it_8c_a6ad7a5e3ee69cb6db6a6b9111ba898bc}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_a6ad7a5e3ee69cb6db6a6b9111ba898bc}{NMI\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Non maskable interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a2bffc10d5bd4106753b7c30e86903bea}\label{stm32l4xx__it_8c_a2bffc10d5bd4106753b7c30e86903bea}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_a2bffc10d5bd4106753b7c30e86903bea}{Hard\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Hard fault interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a3150f74512510287a942624aa9b44cc5}\label{stm32l4xx__it_8c_a3150f74512510287a942624aa9b44cc5}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_a3150f74512510287a942624aa9b44cc5}{Mem\+Manage\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Memory management fault. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a850cefb17a977292ae5eb4cafa9976c3}\label{stm32l4xx__it_8c_a850cefb17a977292ae5eb4cafa9976c3}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_a850cefb17a977292ae5eb4cafa9976c3}{Bus\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Prefetch fault, memory access fault. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a1d98923de2ed6b7309b66f9ba2971647}\label{stm32l4xx__it_8c_a1d98923de2ed6b7309b66f9ba2971647}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_a1d98923de2ed6b7309b66f9ba2971647}{Usage\+Fault\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Undefined instruction or illegal state. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_adbdfb05858cc36fc520974df37ec3cb0}\label{stm32l4xx__it_8c_adbdfb05858cc36fc520974df37ec3cb0}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_adbdfb05858cc36fc520974df37ec3cb0}{Debug\+Mon\+\_\+\+Handler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles Debug monitor. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_ab5a1d9e9c8ef50e0cb9ddb5745a20a14}\label{stm32l4xx__it_8c_ab5a1d9e9c8ef50e0cb9ddb5745a20a14}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_ab5a1d9e9c8ef50e0cb9ddb5745a20a14}{EXTI2\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles EXTI line2 interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a7b6fac3d670a4860ebec8a961d5c4a73}\label{stm32l4xx__it_8c_a7b6fac3d670a4860ebec8a961d5c4a73}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_a7b6fac3d670a4860ebec8a961d5c4a73}{DMA1\+\_\+\+Channel1\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles DMA1 channel1 global interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_aadb8937353693c94b0d8e32fc6f18fc2}\label{stm32l4xx__it_8c_aadb8937353693c94b0d8e32fc6f18fc2}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_aadb8937353693c94b0d8e32fc6f18fc2}{DMA1\+\_\+\+Channel3\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles DMA1 channel3 global interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_ab19e96bc9fe4483b9fdf25047c61238e}\label{stm32l4xx__it_8c_ab19e96bc9fe4483b9fdf25047c61238e}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_ab19e96bc9fe4483b9fdf25047c61238e}{TIM1\+\_\+\+UP\+\_\+\+TIM16\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles TIM1 update interrupt and TIM16 global interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a0d108a3468b2051548183ee5ca2158a0}\label{stm32l4xx__it_8c_a0d108a3468b2051548183ee5ca2158a0}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_a0d108a3468b2051548183ee5ca2158a0}{USART3\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles USART3 global interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a738473a5b43f6c92b80ce1d3d6f77ed9}\label{stm32l4xx__it_8c_a738473a5b43f6c92b80ce1d3d6f77ed9}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_a738473a5b43f6c92b80ce1d3d6f77ed9}{EXTI15\+\_\+10\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles EXTI line\mbox{[}15\+:10\mbox{]} interrupts. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a9cf33be80dab6b6bcaa67ab256a463e9}\label{stm32l4xx__it_8c_a9cf33be80dab6b6bcaa67ab256a463e9}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_a9cf33be80dab6b6bcaa67ab256a463e9}{DMA2\+\_\+\+Channel4\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles DMA2 channel4 global interrupt. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a0fbd54f7ff4b48c5b9a900421adf3702}\label{stm32l4xx__it_8c_a0fbd54f7ff4b48c5b9a900421adf3702}} 
+void \mbox{\hyperlink{stm32l4xx__it_8c_a0fbd54f7ff4b48c5b9a900421adf3702}{USB\+\_\+\+IRQHandler}} (void)
+\begin{DoxyCompactList}\small\item\em This function handles USB event interrupt through EXTI line 17. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_af5da23bc2665a4a45ea2114bd70f41a9}\label{stm32l4xx__it_8c_af5da23bc2665a4a45ea2114bd70f41a9}} 
+\mbox{\hyperlink{structQueueDefinition}{os\+Semaphore\+Id}} {\bfseries x\+Button\+Semaphore\+Handle}
+\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_afabb8e1d05154a3b694f4f4d150b194f}\label{stm32l4xx__it_8c_afabb8e1d05154a3b694f4f4d150b194f}} 
+PCD\+\_\+\+Handle\+Type\+Def {\bfseries hpcd\+\_\+\+USB\+\_\+\+FS}
+\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a1c126854bb1813d31ab4776b21dcc51f}\label{stm32l4xx__it_8c_a1c126854bb1813d31ab4776b21dcc51f}} 
+\mbox{\hyperlink{group__DMA__Exported__Types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} {\bfseries hdma\+\_\+adc1}
+\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_ad99dd74cc50b61cf07680c1adaf80337}\label{stm32l4xx__it_8c_ad99dd74cc50b61cf07680c1adaf80337}} 
+\mbox{\hyperlink{group__DMA__Exported__Types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} {\bfseries hdma\+\_\+adc2}
+\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a25fc663547539bc49fecc0011bd76ab5}\label{stm32l4xx__it_8c_a25fc663547539bc49fecc0011bd76ab5}} 
+\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} {\bfseries htim1}
+\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_a418ff7f6b595dcf41b10de1083e62340}\label{stm32l4xx__it_8c_a418ff7f6b595dcf41b10de1083e62340}} 
+\mbox{\hyperlink{group__DMA__Exported__Types_ga41b754a906b86bce54dc79938970138b}{DMA\+\_\+\+Handle\+Type\+Def}} {\bfseries hdma\+\_\+usart3\+\_\+rx}
+\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_ab7c63c1b0f65db92b6a4ea19edf957e1}\label{stm32l4xx__it_8c_ab7c63c1b0f65db92b6a4ea19edf957e1}} 
+\mbox{\hyperlink{group__UART__Exported__Types_ga5de4a49eb132735325e706f406c69d6e}{UART\+\_\+\+Handle\+Type\+Def}} {\bfseries huart3}
+\item 
+\mbox{\Hypertarget{stm32l4xx__it_8c_af0bea8d8759a0d7e0e296edc9f5d6936}\label{stm32l4xx__it_8c_af0bea8d8759a0d7e0e296edc9f5d6936}} 
+\mbox{\hyperlink{structTIM__HandleTypeDef}{TIM\+\_\+\+Handle\+Type\+Def}} {\bfseries htim16}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Interrupt Service Routines. 
+
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2020 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under BSD 3-\/Clause license, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: opensource.\+org/licenses/\+BSD-\/3-\/\+Clause 

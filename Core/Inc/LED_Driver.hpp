@@ -8,31 +8,37 @@
 #ifndef INC_LED_DRIVER_HPP_
 #define INC_LED_DRIVER_HPP_
 
+
 #include "BQ25895.hpp"
 #include "Common_struct.h"
 #include <array>
 
+
+/**
+* @file LED_Driver.hpp
+* Single header liblary for parsing serial command. \n
+* Parser is using virtual function call.
+* No heap usage guarantee.
+*/
+
+
 namespace SMPS{
 
 
-//TODO test __attribute__((flatten)) to hot code section in fast controller loop
-
 const uint16_t MAX_PWM_TIM1 = 200;
 const uint16_t ADC_REFF_mV = 2810;
-const uint16_t ADC_MAX_COUNT = 16384; // oversampling x4 and 1 bit shift
+const uint16_t ADC_MAX_COUNT = 16384; ///< oversampling x4 and 1 bit shift
 
-const uint16_t MAX_VOLTAGE_mV_DISCONNECT_PROTECTION = 3500; // [mV]
-const uint16_t MAX_BATTERY_VOLTAGE_mV_FOR_DISCONNECT_PROTECTION = 4200; // [mV]
+const uint16_t MAX_VOLTAGE_mV_DISCONNECT_PROTECTION = 3500; ///< [mV]
+const uint16_t MAX_BATTERY_VOLTAGE_mV_FOR_DISCONNECT_PROTECTION = 4200; ///< [mV]
 
-const uint16_t D1_D2_max_current = 3500;	// [mA]
-const uint16_t D3_max_current = 1200; 		// [mA]
+const uint16_t D1_D2_max_current = 3500;	///< [mA]
+const uint16_t D3_max_current = 1200; 		///< [mA]
 
 const uint32_t FB_VOLTAGE_RESISTOR_DIVIDER_UP = 7500;		// [Ohms]
 const uint32_t FB_VOLTAGE_RESISTOR_DIVIDER_DOWN = 15000;	// [Ohms]
 
-//////////////////////////////////////
-//			  PID Constants 		//
-//////////////////////////////////////
+/// PID CONST struct
 struct pid_const_s{
 
 	const float Kp = 0.01f;
@@ -76,7 +82,7 @@ enum ADC_RANK_DMA: uint8_t{
 
 
 
-// template for testing with volatile and interrupt: pid_data_s<volatile float> foo;
+///template for testing with volatile.
 template <typename Type>
 struct pid_data_s{
 	Type integrator = 0;
@@ -112,7 +118,7 @@ public:
 	{
 	};
 
-	// non construction-copyable & non copyable
+	/// non construction-copyable & non copyable
 	SBC_c(const SBC_c&) = delete;
 	SBC_c & operator= ( const SBC_c&) = delete;
 
@@ -153,14 +159,14 @@ public:
 	{
 	}
 
-	// non construction-copyable & non copyable
+	/// non construction-copyable & non copyable
 	led_drivers_c(const led_drivers_c&) = delete;
 	led_drivers_c & operator= ( const led_drivers_c&) = delete;
 
 
-	// TODO implement
+	/// TODO implement
 	void set_boost_enable(const bool &enable);
-	// TODO implement
+	/// TODO implement
 	void set_smps_enable_pin(const bool &enable);
 
 	void set_all_currents(const set_current_item *data)__attribute__((flatten));

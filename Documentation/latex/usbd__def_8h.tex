@@ -1,0 +1,256 @@
+\hypertarget{usbd__def_8h}{}\doxysection{Middlewares/\+ST/\+STM32\+\_\+\+USB\+\_\+\+Device\+\_\+\+Library/\+Core/\+Inc/usbd\+\_\+def.h File Reference}
+\label{usbd__def_8h}\index{Middlewares/ST/STM32\_USB\_Device\_Library/Core/Inc/usbd\_def.h@{Middlewares/ST/STM32\_USB\_Device\_Library/Core/Inc/usbd\_def.h}}
+
+
+General defines for the usb device library.  
+
+
+{\ttfamily \#include \char`\"{}usbd\+\_\+conf.\+h\char`\"{}}\newline
+Include dependency graph for usbd\+\_\+def.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usbd__def_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usbd__def_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structusb__setup__req}{usb\+\_\+setup\+\_\+req}}
+\item 
+struct \mbox{\hyperlink{structUSBD__ConfigDescTypedef}{USBD\+\_\+\+Config\+Desc\+Typedef}}
+\item 
+struct \mbox{\hyperlink{structUSBD__BosDescTypedef}{USBD\+\_\+\+Bos\+Desc\+Typedef}}
+\item 
+struct \mbox{\hyperlink{structUSBD__EpDescTypedef}{USBD\+\_\+\+Ep\+Desc\+Typedef}}
+\item 
+struct \mbox{\hyperlink{struct__Device__cb}{\+\_\+\+Device\+\_\+cb}}
+\item 
+struct \mbox{\hyperlink{structUSBD__DescriptorsTypeDef}{USBD\+\_\+\+Descriptors\+Type\+Def}}
+\item 
+struct \mbox{\hyperlink{structUSBD__EndpointTypeDef}{USBD\+\_\+\+Endpoint\+Type\+Def}}
+\item 
+struct \mbox{\hyperlink{struct__USBD__HandleTypeDef}{\+\_\+\+USBD\+\_\+\+Handle\+Type\+Def}}
+\end{DoxyCompactItemize}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries NULL}~0U
+\item 
+\#define {\bfseries USBD\+\_\+\+MAX\+\_\+\+NUM\+\_\+\+INTERFACES}~1U
+\item 
+\#define {\bfseries USBD\+\_\+\+MAX\+\_\+\+NUM\+\_\+\+CONFIGURATION}~1U
+\item 
+\#define {\bfseries USBD\+\_\+\+LPM\+\_\+\+ENABLED}~0U
+\item 
+\#define {\bfseries USBD\+\_\+\+SELF\+\_\+\+POWERED}~1U
+\item 
+\#define {\bfseries USBD\+\_\+\+MAX\+\_\+\+POWER}~0x32U /$\ast$ 100 mA $\ast$/
+\item 
+\#define {\bfseries USBD\+\_\+\+SUPPORT\+\_\+\+USER\+\_\+\+STRING\+\_\+\+DESC}~0U
+\item 
+\#define {\bfseries USBD\+\_\+\+CLASS\+\_\+\+USER\+\_\+\+STRING\+\_\+\+DESC}~0U
+\item 
+\#define {\bfseries USB\+\_\+\+LEN\+\_\+\+DEV\+\_\+\+QUALIFIER\+\_\+\+DESC}~0x0\+AU
+\item 
+\#define {\bfseries USB\+\_\+\+LEN\+\_\+\+DEV\+\_\+\+DESC}~0x12U
+\item 
+\#define {\bfseries USB\+\_\+\+LEN\+\_\+\+CFG\+\_\+\+DESC}~0x09U
+\item 
+\#define {\bfseries USB\+\_\+\+LEN\+\_\+\+IF\+\_\+\+DESC}~0x09U
+\item 
+\#define {\bfseries USB\+\_\+\+LEN\+\_\+\+EP\+\_\+\+DESC}~0x07U
+\item 
+\#define {\bfseries USB\+\_\+\+LEN\+\_\+\+OTG\+\_\+\+DESC}~0x03U
+\item 
+\#define {\bfseries USB\+\_\+\+LEN\+\_\+\+LANGID\+\_\+\+STR\+\_\+\+DESC}~0x04U
+\item 
+\#define {\bfseries USB\+\_\+\+LEN\+\_\+\+OTHER\+\_\+\+SPEED\+\_\+\+DESC\+\_\+\+SIZ}~0x09U
+\item 
+\#define {\bfseries USBD\+\_\+\+IDX\+\_\+\+LANGID\+\_\+\+STR}~0x00U
+\item 
+\#define {\bfseries USBD\+\_\+\+IDX\+\_\+\+MFC\+\_\+\+STR}~0x01U
+\item 
+\#define {\bfseries USBD\+\_\+\+IDX\+\_\+\+PRODUCT\+\_\+\+STR}~0x02U
+\item 
+\#define {\bfseries USBD\+\_\+\+IDX\+\_\+\+SERIAL\+\_\+\+STR}~0x03U
+\item 
+\#define {\bfseries USBD\+\_\+\+IDX\+\_\+\+CONFIG\+\_\+\+STR}~0x04U
+\item 
+\#define {\bfseries USBD\+\_\+\+IDX\+\_\+\+INTERFACE\+\_\+\+STR}~0x05U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+TYPE\+\_\+\+STANDARD}~0x00U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+TYPE\+\_\+\+CLASS}~0x20U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+TYPE\+\_\+\+VENDOR}~0x40U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+TYPE\+\_\+\+MASK}~0x60U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+RECIPIENT\+\_\+\+DEVICE}~0x00U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+RECIPIENT\+\_\+\+INTERFACE}~0x01U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+RECIPIENT\+\_\+\+ENDPOINT}~0x02U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+RECIPIENT\+\_\+\+MASK}~0x03U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+GET\+\_\+\+STATUS}~0x00U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+CLEAR\+\_\+\+FEATURE}~0x01U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+SET\+\_\+\+FEATURE}~0x03U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+SET\+\_\+\+ADDRESS}~0x05U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+GET\+\_\+\+DESCRIPTOR}~0x06U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+SET\+\_\+\+DESCRIPTOR}~0x07U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+GET\+\_\+\+CONFIGURATION}~0x08U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+SET\+\_\+\+CONFIGURATION}~0x09U
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+GET\+\_\+\+INTERFACE}~0x0\+AU
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+SET\+\_\+\+INTERFACE}~0x0\+BU
+\item 
+\#define {\bfseries USB\+\_\+\+REQ\+\_\+\+SYNCH\+\_\+\+FRAME}~0x0\+CU
+\item 
+\#define {\bfseries USB\+\_\+\+DESC\+\_\+\+TYPE\+\_\+\+DEVICE}~0x01U
+\item 
+\#define {\bfseries USB\+\_\+\+DESC\+\_\+\+TYPE\+\_\+\+CONFIGURATION}~0x02U
+\item 
+\#define {\bfseries USB\+\_\+\+DESC\+\_\+\+TYPE\+\_\+\+STRING}~0x03U
+\item 
+\#define {\bfseries USB\+\_\+\+DESC\+\_\+\+TYPE\+\_\+\+INTERFACE}~0x04U
+\item 
+\#define {\bfseries USB\+\_\+\+DESC\+\_\+\+TYPE\+\_\+\+ENDPOINT}~0x05U
+\item 
+\#define {\bfseries USB\+\_\+\+DESC\+\_\+\+TYPE\+\_\+\+DEVICE\+\_\+\+QUALIFIER}~0x06U
+\item 
+\#define {\bfseries USB\+\_\+\+DESC\+\_\+\+TYPE\+\_\+\+OTHER\+\_\+\+SPEED\+\_\+\+CONFIGURATION}~0x07U
+\item 
+\#define {\bfseries USB\+\_\+\+DESC\+\_\+\+TYPE\+\_\+\+IAD}~0x0\+BU
+\item 
+\#define {\bfseries USB\+\_\+\+DESC\+\_\+\+TYPE\+\_\+\+BOS}~0x0\+FU
+\item 
+\#define {\bfseries USB\+\_\+\+CONFIG\+\_\+\+REMOTE\+\_\+\+WAKEUP}~0x02U
+\item 
+\#define {\bfseries USB\+\_\+\+CONFIG\+\_\+\+SELF\+\_\+\+POWERED}~0x01U
+\item 
+\#define {\bfseries USB\+\_\+\+FEATURE\+\_\+\+EP\+\_\+\+HALT}~0x00U
+\item 
+\#define {\bfseries USB\+\_\+\+FEATURE\+\_\+\+REMOTE\+\_\+\+WAKEUP}~0x01U
+\item 
+\#define {\bfseries USB\+\_\+\+FEATURE\+\_\+\+TEST\+\_\+\+MODE}~0x02U
+\item 
+\#define {\bfseries USB\+\_\+\+DEVICE\+\_\+\+CAPABITY\+\_\+\+TYPE}~0x10U
+\item 
+\#define {\bfseries USB\+\_\+\+CONF\+\_\+\+DESC\+\_\+\+SIZE}~0x09U
+\item 
+\#define {\bfseries USB\+\_\+\+IF\+\_\+\+DESC\+\_\+\+SIZE}~0x09U
+\item 
+\#define {\bfseries USB\+\_\+\+EP\+\_\+\+DESC\+\_\+\+SIZE}~0x07U
+\item 
+\#define {\bfseries USB\+\_\+\+IAD\+\_\+\+DESC\+\_\+\+SIZE}~0x08U
+\item 
+\#define {\bfseries USB\+\_\+\+HS\+\_\+\+MAX\+\_\+\+PACKET\+\_\+\+SIZE}~512U
+\item 
+\#define {\bfseries USB\+\_\+\+FS\+\_\+\+MAX\+\_\+\+PACKET\+\_\+\+SIZE}~64U
+\item 
+\#define {\bfseries USB\+\_\+\+MAX\+\_\+\+EP0\+\_\+\+SIZE}~64U
+\item 
+\#define {\bfseries USBD\+\_\+\+STATE\+\_\+\+DEFAULT}~0x01U
+\item 
+\#define {\bfseries USBD\+\_\+\+STATE\+\_\+\+ADDRESSED}~0x02U
+\item 
+\#define {\bfseries USBD\+\_\+\+STATE\+\_\+\+CONFIGURED}~0x03U
+\item 
+\#define {\bfseries USBD\+\_\+\+STATE\+\_\+\+SUSPENDED}~0x04U
+\item 
+\#define {\bfseries USBD\+\_\+\+EP0\+\_\+\+IDLE}~0x00U
+\item 
+\#define {\bfseries USBD\+\_\+\+EP0\+\_\+\+SETUP}~0x01U
+\item 
+\#define {\bfseries USBD\+\_\+\+EP0\+\_\+\+DATA\+\_\+\+IN}~0x02U
+\item 
+\#define {\bfseries USBD\+\_\+\+EP0\+\_\+\+DATA\+\_\+\+OUT}~0x03U
+\item 
+\#define {\bfseries USBD\+\_\+\+EP0\+\_\+\+STATUS\+\_\+\+IN}~0x04U
+\item 
+\#define {\bfseries USBD\+\_\+\+EP0\+\_\+\+STATUS\+\_\+\+OUT}~0x05U
+\item 
+\#define {\bfseries USBD\+\_\+\+EP0\+\_\+\+STALL}~0x06U
+\item 
+\#define {\bfseries USBD\+\_\+\+EP\+\_\+\+TYPE\+\_\+\+CTRL}~0x00U
+\item 
+\#define {\bfseries USBD\+\_\+\+EP\+\_\+\+TYPE\+\_\+\+ISOC}~0x01U
+\item 
+\#define {\bfseries USBD\+\_\+\+EP\+\_\+\+TYPE\+\_\+\+BULK}~0x02U
+\item 
+\#define {\bfseries USBD\+\_\+\+EP\+\_\+\+TYPE\+\_\+\+INTR}~0x03U
+\item 
+\#define {\bfseries LOBYTE}(x)~((uint8\+\_\+t)((x) \& 0x00\+FFU))
+\item 
+\#define {\bfseries HIBYTE}(x)~((uint8\+\_\+t)(((x) \& 0x\+FF00U) $>$$>$ 8U))
+\item 
+\#define {\bfseries MIN}(a,  b)~(((a) $<$ (b)) ? (a) \+: (b))
+\item 
+\#define {\bfseries MAX}(a,  b)~(((a) $>$ (b)) ? (a) \+: (b))
+\item 
+\#define {\bfseries \+\_\+\+\_\+\+ALIGN\+\_\+\+END}
+\end{DoxyCompactItemize}
+\doxysubsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+typedef struct \mbox{\hyperlink{structusb__setup__req}{usb\+\_\+setup\+\_\+req}} {\bfseries USBD\+\_\+\+Setup\+Req\+Typedef}
+\item 
+typedef struct \mbox{\hyperlink{struct__Device__cb}{\+\_\+\+Device\+\_\+cb}} {\bfseries USBD\+\_\+\+Class\+Type\+Def}
+\item 
+typedef struct \mbox{\hyperlink{struct__USBD__HandleTypeDef}{\+\_\+\+USBD\+\_\+\+Handle\+Type\+Def}} {\bfseries USBD\+\_\+\+Handle\+Type\+Def}
+\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__USBD__DEF__Exported__TypesDefinitions_gaa62cd3d2fb69a537ae7a5a94bdd6ae93}\label{group__USBD__DEF__Exported__TypesDefinitions_gaa62cd3d2fb69a537ae7a5a94bdd6ae93}} 
+enum {\bfseries USBD\+\_\+\+Speed\+Type\+Def} \{ {\bfseries USBD\+\_\+\+SPEED\+\_\+\+HIGH} = 0U
+, {\bfseries USBD\+\_\+\+SPEED\+\_\+\+FULL} = 1U
+, {\bfseries USBD\+\_\+\+SPEED\+\_\+\+LOW} = 2U
+ \}
+\item 
+\mbox{\Hypertarget{group__USBD__DEF__Exported__TypesDefinitions_gaebc658c200e50399361e7901f0a57e95}\label{group__USBD__DEF__Exported__TypesDefinitions_gaebc658c200e50399361e7901f0a57e95}} 
+enum {\bfseries USBD\+\_\+\+Status\+Type\+Def} \{ {\bfseries USBD\+\_\+\+OK} = 0U
+, {\bfseries USBD\+\_\+\+BUSY}
+, {\bfseries USBD\+\_\+\+EMEM}
+, {\bfseries USBD\+\_\+\+FAIL}
+ \}
+\end{DoxyCompactItemize}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+\+\_\+\+\_\+\+STATIC\+\_\+\+INLINE uint16\+\_\+t {\bfseries SWAPBYTE} (uint8\+\_\+t $\ast$addr)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+General defines for the usb device library. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2015 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under Ultimate Liberty license SLA0044, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: www.\+st.\+com/\+SLA0044 

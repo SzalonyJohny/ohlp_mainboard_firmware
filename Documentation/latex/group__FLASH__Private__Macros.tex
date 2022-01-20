@@ -1,0 +1,181 @@
+\hypertarget{group__FLASH__Private__Macros}{}\doxysection{FLASH Private Macros}
+\label{group__FLASH__Private__Macros}\index{FLASH Private Macros@{FLASH Private Macros}}
+Collaboration diagram for FLASH Private Macros\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=290pt]{group__FLASH__Private__Macros}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define {\bfseries IS\+\_\+\+FLASH\+\_\+\+TYPEERASE}(VALUE)
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga13845f67e09ef81901c6fa683f13f086}\label{group__FLASH__Private__Macros_ga13845f67e09ef81901c6fa683f13f086}} 
+\#define {\bfseries IS\+\_\+\+FLASH\+\_\+\+BANK}(BANK)~((BANK) == \mbox{\hyperlink{group__FLASH__Banks_ga8ac3f24496e5de6a2f6bd3ff77f0ca53}{FLASH\+\_\+\+BANK\+\_\+1}})
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_gaba3dd4579560b3724bfd5f6a76260dc1}\label{group__FLASH__Private__Macros_gaba3dd4579560b3724bfd5f6a76260dc1}} 
+\#define {\bfseries IS\+\_\+\+FLASH\+\_\+\+BANK\+\_\+\+EXCLUSIVE}(BANK)~((BANK) == \mbox{\hyperlink{group__FLASH__Banks_ga8ac3f24496e5de6a2f6bd3ff77f0ca53}{FLASH\+\_\+\+BANK\+\_\+1}})
+\item 
+\#define {\bfseries IS\+\_\+\+FLASH\+\_\+\+TYPEPROGRAM}(VALUE)
+\item 
+\#define {\bfseries IS\+\_\+\+FLASH\+\_\+\+MAIN\+\_\+\+MEM\+\_\+\+ADDRESS}(ADDRESS)
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_gad0e1a0babb45691ab1b6807cbefee4ef}\label{group__FLASH__Private__Macros_gad0e1a0babb45691ab1b6807cbefee4ef}} 
+\#define {\bfseries IS\+\_\+\+FLASH\+\_\+\+OTP\+\_\+\+ADDRESS}(ADDRESS)~(((ADDRESS) $>$= 0x1\+FFF7000U) \&\& ((ADDRESS) $<$= 0x1\+FFF73\+FFU))
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga90c8441d56b937cea616856695a8a20a}\label{group__FLASH__Private__Macros_ga90c8441d56b937cea616856695a8a20a}} 
+\#define {\bfseries IS\+\_\+\+FLASH\+\_\+\+PROGRAM\+\_\+\+ADDRESS}(ADDRESS)~((IS\+\_\+\+FLASH\+\_\+\+MAIN\+\_\+\+MEM\+\_\+\+ADDRESS(ADDRESS)) $\vert$$\vert$ (IS\+\_\+\+FLASH\+\_\+\+OTP\+\_\+\+ADDRESS(ADDRESS)))
+\item 
+\#define {\bfseries IS\+\_\+\+FLASH\+\_\+\+PAGE}(PAGE)
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga87cd48c2373f47668470a38892ed07e3}\label{group__FLASH__Private__Macros_ga87cd48c2373f47668470a38892ed07e3}} 
+\#define {\bfseries IS\+\_\+\+OPTIONBYTE}(VALUE)~(((VALUE) $<$= (\mbox{\hyperlink{group__FLASH__OB__Type_ga48712a166ea192ddcda0f2653679f9ec}{OPTIONBYTE\+\_\+\+WRP}} $\vert$ \mbox{\hyperlink{group__FLASH__OB__Type_ga8f0bdb21ef13bae39d5d8b6619e2df06}{OPTIONBYTE\+\_\+\+RDP}} $\vert$ \mbox{\hyperlink{group__FLASH__OB__Type_gac7d843e666e15c79688a1914e8ffe7a5}{OPTIONBYTE\+\_\+\+USER}} $\vert$ \mbox{\hyperlink{group__FLASH__OB__Type_gade16326e09bd923b54f1ec8622a7bc4b}{OPTIONBYTE\+\_\+\+PCROP}})))
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_gaf358d23c24d72f69f5e5008a6d5c2f0a}\label{group__FLASH__Private__Macros_gaf358d23c24d72f69f5e5008a6d5c2f0a}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+WRPAREA}(VALUE)~(((VALUE) == \mbox{\hyperlink{group__FLASH__OB__WRP__Area_gaafeefc14205e2819477a720c372c6b91}{OB\+\_\+\+WRPAREA\+\_\+\+BANK1\+\_\+\+AREAA}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group__FLASH__OB__WRP__Area_ga03abdb9bf97227b9e4ea570d6e658aca}{OB\+\_\+\+WRPAREA\+\_\+\+BANK1\+\_\+\+AREAB}}))
+\item 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+RDP\+\_\+\+LEVEL}(LEVEL)
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga68ff0f976e73a1a0f2b5474fd5973d2d}\label{group__FLASH__Private__Macros_ga68ff0f976e73a1a0f2b5474fd5973d2d}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+TYPE}(TYPE)~(((TYPE) $<$= (uint32\+\_\+t)0x7\+E7\+FU) \&\& ((TYPE) != 0U) \&\& (((TYPE)\&0x0180U) == 0U))
+\item 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+BOR\+\_\+\+LEVEL}(LEVEL)
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga2a10e357b6e2b8cc27d0b9b627b628ec}\label{group__FLASH__Private__Macros_ga2a10e357b6e2b8cc27d0b9b627b628ec}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+STOP}(VALUE)~(((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__nRST__STOP_gaef92c03b1f279c532bfa13d3bb074b57}{OB\+\_\+\+STOP\+\_\+\+RST}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__nRST__STOP_gac440badc145bc62ab85e1cbca9483584}{OB\+\_\+\+STOP\+\_\+\+NORST}}))
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga0a3b7292b2258a0cedb5c837d2eadd92}\label{group__FLASH__Private__Macros_ga0a3b7292b2258a0cedb5c837d2eadd92}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+STANDBY}(VALUE)~(((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__nRST__STANDBY_ga7e5c8a161424cc9ce917e0a97e7bc809}{OB\+\_\+\+STANDBY\+\_\+\+RST}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__nRST__STANDBY_ga5909d7b439118a4d5ae9fed62ff7b272}{OB\+\_\+\+STANDBY\+\_\+\+NORST}}))
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga693faf4798286929a5463e28ae94835e}\label{group__FLASH__Private__Macros_ga693faf4798286929a5463e28ae94835e}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+SHUTDOWN}(VALUE)~(((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__nRST__SHUTDOWN_gad16c5bc6433d84c3c138eb16144ed2cc}{OB\+\_\+\+SHUTDOWN\+\_\+\+RST}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__nRST__SHUTDOWN_gafd6dec6b1ab10bd65d9dcd16f6f34895}{OB\+\_\+\+SHUTDOWN\+\_\+\+NORST}}))
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga718cb70bbe79b8f418d51dd6b950c11e}\label{group__FLASH__Private__Macros_ga718cb70bbe79b8f418d51dd6b950c11e}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+IWDG}(VALUE)~(((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__IWDG__SW_gadfcbfa963d79c339ec8e2d5a7734e47a}{OB\+\_\+\+IWDG\+\_\+\+HW}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__IWDG__SW_ga5a357e232c955444c3f2ccb9a937ffce}{OB\+\_\+\+IWDG\+\_\+\+SW}}))
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga395a9bf65b7afd3d86179d7c12d79578}\label{group__FLASH__Private__Macros_ga395a9bf65b7afd3d86179d7c12d79578}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+IWDG\+\_\+\+STOP}(VALUE)~(((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__IWDG__STOP_gae0c882a6f14ebe5d1969b50d5a2dbb17}{OB\+\_\+\+IWDG\+\_\+\+STOP\+\_\+\+FREEZE}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__IWDG__STOP_ga987e1a1bee2772467b010a71888b0047}{OB\+\_\+\+IWDG\+\_\+\+STOP\+\_\+\+RUN}}))
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga14d8e49c2f7926e252617e51df838dfd}\label{group__FLASH__Private__Macros_ga14d8e49c2f7926e252617e51df838dfd}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+IWDG\+\_\+\+STDBY}(VALUE)~(((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__IWDG__STANDBY_ga2033b993c192a55757fc3fb0d8cfebc9}{OB\+\_\+\+IWDG\+\_\+\+STDBY\+\_\+\+FREEZE}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__IWDG__STANDBY_gaed53e663482a87712d6424ef921167cb}{OB\+\_\+\+IWDG\+\_\+\+STDBY\+\_\+\+RUN}}))
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga01d07cb2890645a371b4fa80aa1bfba6}\label{group__FLASH__Private__Macros_ga01d07cb2890645a371b4fa80aa1bfba6}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+WWDG}(VALUE)~(((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__WWDG__SW_ga32aa93fb6a71b73966b2bf934927835f}{OB\+\_\+\+WWDG\+\_\+\+HW}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__WWDG__SW_ga1e5f3b6d137856b1acc34e7dbc81ffd9}{OB\+\_\+\+WWDG\+\_\+\+SW}}))
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_gaa74b46d0126d15c800525e5c007199e4}\label{group__FLASH__Private__Macros_gaa74b46d0126d15c800525e5c007199e4}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+BOOT1}(VALUE)~(((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__nBOOT1_gab7a107055cc822c0dbd3f89d1aaf5033}{OB\+\_\+\+BOOT1\+\_\+\+SRAM}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__nBOOT1_ga700c5e9893e6f29f90dc3fd4ba1c4406}{OB\+\_\+\+BOOT1\+\_\+\+SYSTEM}}))
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga6c7b1cfc24ac87114196ec38e13c65ed}\label{group__FLASH__Private__Macros_ga6c7b1cfc24ac87114196ec38e13c65ed}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+SRAM2\+\_\+\+PARITY}(VALUE)~(((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__SRAM2__PE_gae38da2c33e7c1b90b2f8f24038d86660}{OB\+\_\+\+SRAM2\+\_\+\+PARITY\+\_\+\+ENABLE}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__SRAM2__PE_ga388861d528db5d266dab3d9bcae3a50f}{OB\+\_\+\+SRAM2\+\_\+\+PARITY\+\_\+\+DISABLE}}))
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga830889fa10f93042bccf842706f01cea}\label{group__FLASH__Private__Macros_ga830889fa10f93042bccf842706f01cea}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+SRAM2\+\_\+\+RST}(VALUE)~(((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__SRAM2__RST_gaf65832da6eefaa0b1430dcb650d368e5}{OB\+\_\+\+SRAM2\+\_\+\+RST\+\_\+\+ERASE}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group__FLASH__OB__USER__SRAM2__RST_gac206b0b8007e4442cd2887dbf328efd2}{OB\+\_\+\+SRAM2\+\_\+\+RST\+\_\+\+NOT\+\_\+\+ERASE}}))
+\item 
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga031212ce4339c93b7e74b97215e23322}\label{group__FLASH__Private__Macros_ga031212ce4339c93b7e74b97215e23322}} 
+\#define {\bfseries IS\+\_\+\+OB\+\_\+\+PCROP\+\_\+\+RDP}(VALUE)~(((VALUE) == \mbox{\hyperlink{group__FLASH__OB__PCROP__RDP_gaa64bfd8f4fa303d49e40d21a865bfe4b}{OB\+\_\+\+PCROP\+\_\+\+RDP\+\_\+\+NOT\+\_\+\+ERASE}}) $\vert$$\vert$ ((VALUE) == \mbox{\hyperlink{group__FLASH__OB__PCROP__RDP_gadc1d319505606fc82937702a2baf1bd3}{OB\+\_\+\+PCROP\+\_\+\+RDP\+\_\+\+ERASE}}))
+\item 
+\#define {\bfseries IS\+\_\+\+FLASH\+\_\+\+LATENCY}(LATENCY)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__FLASH__Private__Macros_gafcbd098d482318a622a58bf168547389}\label{group__FLASH__Private__Macros_gafcbd098d482318a622a58bf168547389}} 
+\index{FLASH Private Macros@{FLASH Private Macros}!IS\_FLASH\_LATENCY@{IS\_FLASH\_LATENCY}}
+\index{IS\_FLASH\_LATENCY@{IS\_FLASH\_LATENCY}!FLASH Private Macros@{FLASH Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_FLASH\_LATENCY}{IS\_FLASH\_LATENCY}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+LATENCY(\begin{DoxyParamCaption}\item[{}]{LATENCY }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                            (((LATENCY) == \mbox{\hyperlink{group__FLASH__Latency_ga1276f51e97dc9857ca261fae4eb890f3}{FLASH\_LATENCY\_0}}) || \(\backslash\)}
+\DoxyCodeLine{                                            ((LATENCY) == \mbox{\hyperlink{group__FLASH__Latency_ga28c611f2cb4a3772ab37c538357fd5f6}{FLASH\_LATENCY\_1}}) || \(\backslash\)}
+\DoxyCodeLine{                                            ((LATENCY) == \mbox{\hyperlink{group__FLASH__Latency_ga69d209f9cb4f625010d72555c8dceb03}{FLASH\_LATENCY\_2}}) || \(\backslash\)}
+\DoxyCodeLine{                                            ((LATENCY) == \mbox{\hyperlink{group__FLASH__Latency_ga2f607c9fa7bdcd53df0e98a7b1e67496}{FLASH\_LATENCY\_3}}) || \(\backslash\)}
+\DoxyCodeLine{                                            ((LATENCY) == \mbox{\hyperlink{group__FLASH__Latency_ga65fe32d2c25a3d5ee3dce89dee459fa5}{FLASH\_LATENCY\_4}}))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga470a6a3ed3dcd1469fd7fab546b80cc0}\label{group__FLASH__Private__Macros_ga470a6a3ed3dcd1469fd7fab546b80cc0}} 
+\index{FLASH Private Macros@{FLASH Private Macros}!IS\_FLASH\_MAIN\_MEM\_ADDRESS@{IS\_FLASH\_MAIN\_MEM\_ADDRESS}}
+\index{IS\_FLASH\_MAIN\_MEM\_ADDRESS@{IS\_FLASH\_MAIN\_MEM\_ADDRESS}!FLASH Private Macros@{FLASH Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_FLASH\_MAIN\_MEM\_ADDRESS}{IS\_FLASH\_MAIN\_MEM\_ADDRESS}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+MAIN\+\_\+\+MEM\+\_\+\+ADDRESS(\begin{DoxyParamCaption}\item[{}]{ADDRESS }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                            (((ADDRESS) >= (\mbox{\hyperlink{group__Peripheral__memory__map_ga23a9099a5f8fc9c6e253c0eecb2be8db}{FLASH\_BASE}}))         \&\& ((((*((uint16\_t *)FLASH\_SIZE\_DATA\_REGISTER)) \& (0x0FFFU)) == 0x400U) ? \(\backslash\)}
+\DoxyCodeLine{                                            ((ADDRESS) <= (\mbox{\hyperlink{group__Peripheral__memory__map_ga23a9099a5f8fc9c6e253c0eecb2be8db}{FLASH\_BASE}}+0xFFFFFU)) : ((((*((uint16\_t *)FLASH\_SIZE\_DATA\_REGISTER)) \& (0x0FFFU)) == 0x200U) ? \(\backslash\)}
+\DoxyCodeLine{                                            ((ADDRESS) <= (\mbox{\hyperlink{group__Peripheral__memory__map_ga23a9099a5f8fc9c6e253c0eecb2be8db}{FLASH\_BASE}}+0x7FFFFU)) : ((((*((uint16\_t *)FLASH\_SIZE\_DATA\_REGISTER)) \& (0x0FFFU)) == 0x100U) ? \(\backslash\)}
+\DoxyCodeLine{                                            ((ADDRESS) <= (\mbox{\hyperlink{group__Peripheral__memory__map_ga23a9099a5f8fc9c6e253c0eecb2be8db}{FLASH\_BASE}}+0x3FFFFU)) : ((((*((uint16\_t *)FLASH\_SIZE\_DATA\_REGISTER)) \& (0x0FFFU)) == 0x80U) ? \(\backslash\)}
+\DoxyCodeLine{                                            ((ADDRESS) <= (\mbox{\hyperlink{group__Peripheral__memory__map_ga23a9099a5f8fc9c6e253c0eecb2be8db}{FLASH\_BASE}}+0x1FFFFU)) : ((ADDRESS) <= (\mbox{\hyperlink{group__Peripheral__memory__map_ga23a9099a5f8fc9c6e253c0eecb2be8db}{FLASH\_BASE}}+0xFFFFFU)))))))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga045f51aaa6427e1a4055b0f2a455c0af}\label{group__FLASH__Private__Macros_ga045f51aaa6427e1a4055b0f2a455c0af}} 
+\index{FLASH Private Macros@{FLASH Private Macros}!IS\_FLASH\_PAGE@{IS\_FLASH\_PAGE}}
+\index{IS\_FLASH\_PAGE@{IS\_FLASH\_PAGE}!FLASH Private Macros@{FLASH Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_FLASH\_PAGE}{IS\_FLASH\_PAGE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+PAGE(\begin{DoxyParamCaption}\item[{}]{PAGE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                            (((((*((uint16\_t *)FLASH\_SIZE\_DATA\_REGISTER)) \& (0x0FFFU)) == 0x100U) ? ((PAGE) < 128U) : \(\backslash\)}
+\DoxyCodeLine{                                            ((((*((uint16\_t *)FLASH\_SIZE\_DATA\_REGISTER)) \& (0x0FFFU)) == 0x80U)  ? ((PAGE) < 64U)  : \(\backslash\)}
+\DoxyCodeLine{                                            ((PAGE) < 128U))))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__FLASH__Private__Macros_gaf15a6822d2421a33b6857059348ab476}\label{group__FLASH__Private__Macros_gaf15a6822d2421a33b6857059348ab476}} 
+\index{FLASH Private Macros@{FLASH Private Macros}!IS\_FLASH\_TYPEERASE@{IS\_FLASH\_TYPEERASE}}
+\index{IS\_FLASH\_TYPEERASE@{IS\_FLASH\_TYPEERASE}!FLASH Private Macros@{FLASH Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_FLASH\_TYPEERASE}{IS\_FLASH\_TYPEERASE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+TYPEERASE(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                            (((VALUE) == \mbox{\hyperlink{group__FLASH__Type__Erase_ga3664ce55155ec4990873c51737d787ce}{FLASH\_TYPEERASE\_PAGES}}) || \(\backslash\)}
+\DoxyCodeLine{                                            ((VALUE) == \mbox{\hyperlink{group__FLASH__Type__Erase_ga9bc03534e69c625e1b4f0f05c3852243}{FLASH\_TYPEERASE\_MASSERASE}}))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__FLASH__Private__Macros_gaa189973d36fcbbaf7f758c682247ad39}\label{group__FLASH__Private__Macros_gaa189973d36fcbbaf7f758c682247ad39}} 
+\index{FLASH Private Macros@{FLASH Private Macros}!IS\_FLASH\_TYPEPROGRAM@{IS\_FLASH\_TYPEPROGRAM}}
+\index{IS\_FLASH\_TYPEPROGRAM@{IS\_FLASH\_TYPEPROGRAM}!FLASH Private Macros@{FLASH Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_FLASH\_TYPEPROGRAM}{IS\_FLASH\_TYPEPROGRAM}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+FLASH\+\_\+\+TYPEPROGRAM(\begin{DoxyParamCaption}\item[{}]{VALUE }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                            (((VALUE) == \mbox{\hyperlink{group__FLASH__Type__Program_gabdc2b0b4d2e66c2be90fafbfbf1e225f}{FLASH\_TYPEPROGRAM\_DOUBLEWORD}}) || \(\backslash\)}
+\DoxyCodeLine{                                            ((VALUE) == \mbox{\hyperlink{group__FLASH__Type__Program_gae2edb2ca56dde4aba97c77502c580d81}{FLASH\_TYPEPROGRAM\_FAST}}) || \(\backslash\)}
+\DoxyCodeLine{                                            ((VALUE) == \mbox{\hyperlink{group__FLASH__Type__Program_ga7f725945110d22fdd2e01b8105ceac58}{FLASH\_TYPEPROGRAM\_FAST\_AND\_LAST}}))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__FLASH__Private__Macros_ga8d602a97cd688390b3d1956d9970e712}\label{group__FLASH__Private__Macros_ga8d602a97cd688390b3d1956d9970e712}} 
+\index{FLASH Private Macros@{FLASH Private Macros}!IS\_OB\_RDP\_LEVEL@{IS\_OB\_RDP\_LEVEL}}
+\index{IS\_OB\_RDP\_LEVEL@{IS\_OB\_RDP\_LEVEL}!FLASH Private Macros@{FLASH Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_OB\_RDP\_LEVEL}{IS\_OB\_RDP\_LEVEL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+RDP\+\_\+\+LEVEL(\begin{DoxyParamCaption}\item[{}]{LEVEL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                            (((LEVEL) == OB\_RDP\_LEVEL\_0)   ||\(\backslash\)}
+\DoxyCodeLine{                                            ((LEVEL) == OB\_RDP\_LEVEL\_1)\textcolor{comment}{/* ||\(\backslash\)}}
+\DoxyCodeLine{\textcolor{comment}{                                            ((LEVEL) == OB\_RDP\_LEVEL\_2)*/})}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__FLASH__Private__Macros_gacbb7278fa411dc2a5d814ebb9f8da532}\label{group__FLASH__Private__Macros_gacbb7278fa411dc2a5d814ebb9f8da532}} 
+\index{FLASH Private Macros@{FLASH Private Macros}!IS\_OB\_USER\_BOR\_LEVEL@{IS\_OB\_USER\_BOR\_LEVEL}}
+\index{IS\_OB\_USER\_BOR\_LEVEL@{IS\_OB\_USER\_BOR\_LEVEL}!FLASH Private Macros@{FLASH Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_OB\_USER\_BOR\_LEVEL}{IS\_OB\_USER\_BOR\_LEVEL}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+OB\+\_\+\+USER\+\_\+\+BOR\+\_\+\+LEVEL(\begin{DoxyParamCaption}\item[{}]{LEVEL }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                            (((LEVEL) == \mbox{\hyperlink{group__FLASH__OB__USER__BOR__LEVEL_ga5c53aae131ee67d58ed63b104758c23e}{OB\_BOR\_LEVEL\_0}}) || ((LEVEL) == \mbox{\hyperlink{group__FLASH__OB__USER__BOR__LEVEL_ga1ba8f79464d15e3a70367bcdec8c192c}{OB\_BOR\_LEVEL\_1}}) || \(\backslash\)}
+\DoxyCodeLine{                                            ((LEVEL) == \mbox{\hyperlink{group__FLASH__OB__USER__BOR__LEVEL_gaa11a6dc81e575c99d60f18d78c4c2a28}{OB\_BOR\_LEVEL\_2}}) || ((LEVEL) == \mbox{\hyperlink{group__FLASH__OB__USER__BOR__LEVEL_gaca4220c096c1c217e070d1dba7fee72f}{OB\_BOR\_LEVEL\_3}}) || \(\backslash\)}
+\DoxyCodeLine{                                            ((LEVEL) == \mbox{\hyperlink{group__FLASH__OB__USER__BOR__LEVEL_gaa4b60691eb133ef36d3882d935158d36}{OB\_BOR\_LEVEL\_4}}))}
+
+\end{DoxyCode}

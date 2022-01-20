@@ -1,0 +1,26 @@
+\hypertarget{group__xEventGroupGetBitsFromISR}{}\doxysection{x\+Event\+Group\+Get\+Bits\+From\+ISR}
+\label{group__xEventGroupGetBitsFromISR}\index{xEventGroupGetBitsFromISR@{xEventGroupGetBitsFromISR}}
+Collaboration diagram for x\+Event\+Group\+Get\+Bits\+From\+ISR\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=346pt]{group__xEventGroupGetBitsFromISR}
+\end{center}
+\end{figure}
+\mbox{\hyperlink{event__groups_8h_source}{event\+\_\+groups.\+h}} 
+\begin{DoxyPre}
+   EventBits\_t xEventGroupGetBitsFromISR( EventGroupHandle\_t xEventGroup );
+\end{DoxyPre}
+
+
+A version of x\+Event\+Group\+Get\+Bits() that can be called from an ISR.
+
+
+\begin{DoxyParams}{Parameters}
+{\em x\+Event\+Group} & The event group being queried.\\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+The event group bits at the time x\+Event\+Group\+Get\+Bits\+From\+ISR() was called. 
+\end{DoxyReturn}

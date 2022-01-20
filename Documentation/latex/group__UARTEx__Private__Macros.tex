@@ -1,0 +1,113 @@
+\hypertarget{group__UARTEx__Private__Macros}{}\doxysection{UARTEx Private Macros}
+\label{group__UARTEx__Private__Macros}\index{UARTEx Private Macros@{UARTEx Private Macros}}
+Collaboration diagram for UARTEx Private Macros\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=303pt]{group__UARTEx__Private__Macros}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\#define \mbox{\hyperlink{group__UARTEx__Private__Macros_gad9330184a8bd9399a36bcc93215a50d1}{UART\+\_\+\+MASK\+\_\+\+COMPUTATION}}(\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Report the UART clock source. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__UARTEx__Private__Macros_gaf856254e5a61d2ee81086918bffabde5}{IS\+\_\+\+UART\+\_\+\+WORD\+\_\+\+LENGTH}}(\+\_\+\+\_\+\+LENGTH\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Ensure that UART frame length is valid. \end{DoxyCompactList}\item 
+\#define \mbox{\hyperlink{group__UARTEx__Private__Macros_gaa4cf2a15ad7ae46e2905debeef35a908}{IS\+\_\+\+UART\+\_\+\+ADDRESSLENGTH\+\_\+\+DETECT}}(\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+)
+\begin{DoxyCompactList}\small\item\em Ensure that UART wake-\/up address length is valid. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__UARTEx__Private__Macros_gaa4cf2a15ad7ae46e2905debeef35a908}\label{group__UARTEx__Private__Macros_gaa4cf2a15ad7ae46e2905debeef35a908}} 
+\index{UARTEx Private Macros@{UARTEx Private Macros}!IS\_UART\_ADDRESSLENGTH\_DETECT@{IS\_UART\_ADDRESSLENGTH\_DETECT}}
+\index{IS\_UART\_ADDRESSLENGTH\_DETECT@{IS\_UART\_ADDRESSLENGTH\_DETECT}!UARTEx Private Macros@{UARTEx Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_UART\_ADDRESSLENGTH\_DETECT}{IS\_UART\_ADDRESSLENGTH\_DETECT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+UART\+\_\+\+ADDRESSLENGTH\+\_\+\+DETECT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+ADDRESS\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                   (((\_\_ADDRESS\_\_) == \mbox{\hyperlink{group__UARTEx__WakeUp__Address__Length_ga6599292020c484faeea894307d9dc6d5}{UART\_ADDRESS\_DETECT\_4B}}) || \(\backslash\)}
+\DoxyCodeLine{                                                   ((\_\_ADDRESS\_\_) == \mbox{\hyperlink{group__UARTEx__WakeUp__Address__Length_ga4dbd5995e0e4998cb1a312c183d7cbb0}{UART\_ADDRESS\_DETECT\_7B}}))}
+
+\end{DoxyCode}
+
+
+Ensure that UART wake-\/up address length is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+ADDRESS$<$/strong$>$} & UART wake-\/up address length. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SET} & ({\bfseries{ADDRESS}} is valid) or RESET ({\bfseries{ADDRESS}} is invalid) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__UARTEx__Private__Macros_gaf856254e5a61d2ee81086918bffabde5}\label{group__UARTEx__Private__Macros_gaf856254e5a61d2ee81086918bffabde5}} 
+\index{UARTEx Private Macros@{UARTEx Private Macros}!IS\_UART\_WORD\_LENGTH@{IS\_UART\_WORD\_LENGTH}}
+\index{IS\_UART\_WORD\_LENGTH@{IS\_UART\_WORD\_LENGTH}!UARTEx Private Macros@{UARTEx Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_UART\_WORD\_LENGTH}{IS\_UART\_WORD\_LENGTH}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+UART\+\_\+\+WORD\+\_\+\+LENGTH(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+LENGTH\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                         (((\_\_LENGTH\_\_) == \mbox{\hyperlink{group__UARTEx__Word__Length_gadaec9a23646032a333a5327d66aae4fe}{UART\_WORDLENGTH\_7B}}) || \(\backslash\)}
+\DoxyCodeLine{                                         ((\_\_LENGTH\_\_) == \mbox{\hyperlink{group__UARTEx__Word__Length_gaf394e9abaf17932ee89591f990fe6407}{UART\_WORDLENGTH\_8B}}) || \(\backslash\)}
+\DoxyCodeLine{                                         ((\_\_LENGTH\_\_) == \mbox{\hyperlink{group__UARTEx__Word__Length_gaf867be43de35fd3c32fe0b4dd4058f7e}{UART\_WORDLENGTH\_9B}}))}
+
+\end{DoxyCode}
+
+
+Ensure that UART frame length is valid. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+LENGTH$<$/strong$>$} & UART frame length. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em SET} & ({\bfseries{LENGTH}} is valid) or RESET ({\bfseries{LENGTH}} is invalid) \\
+\hline
+\end{DoxyRetVals}
+\mbox{\Hypertarget{group__UARTEx__Private__Macros_gad9330184a8bd9399a36bcc93215a50d1}\label{group__UARTEx__Private__Macros_gad9330184a8bd9399a36bcc93215a50d1}} 
+\index{UARTEx Private Macros@{UARTEx Private Macros}!UART\_MASK\_COMPUTATION@{UART\_MASK\_COMPUTATION}}
+\index{UART\_MASK\_COMPUTATION@{UART\_MASK\_COMPUTATION}!UARTEx Private Macros@{UARTEx Private Macros}}
+\doxysubsubsection{\texorpdfstring{UART\_MASK\_COMPUTATION}{UART\_MASK\_COMPUTATION}}
+{\footnotesize\ttfamily \#define UART\+\_\+\+MASK\+\_\+\+COMPUTATION(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+HANDLE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+
+
+Report the UART clock source. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the UART Handle. \\
+\hline
+{\em $<$strong$>$\+CLOCKSOURCE$<$/strong$>$} & output variable. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em UART} & clocking source, written in {\bfseries{CLOCKSOURCE}}.\\
+\hline
+\end{DoxyRetVals}
+Report the UART mask to apply to retrieve the received data according to the word length and to the parity bits activation. \begin{DoxyNote}{Note}
+If PCE = 1, the parity bit is not included in the data extracted by the reception API(). This masking operation is not carried out in the case of DMA transfers. 
+\end{DoxyNote}
+
+\begin{DoxyParams}{Parameters}
+{\em $<$strong$>$\+HANDLE$<$/strong$>$} & specifies the UART Handle. \\
+\hline
+\end{DoxyParams}
+
+\begin{DoxyRetVals}{Return values}
+{\em None,the} & mask to apply to UART RDR register is stored in ({\bfseries{HANDLE}})-\/$>$Mask field. \\
+\hline
+\end{DoxyRetVals}

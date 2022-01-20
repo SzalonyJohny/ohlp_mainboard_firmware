@@ -1,0 +1,43 @@
+\hypertarget{structPWR__PVMTypeDef}{}\doxysection{PWR\+\_\+\+PVMType\+Def Struct Reference}
+\label{structPWR__PVMTypeDef}\index{PWR\_PVMTypeDef@{PWR\_PVMTypeDef}}
+
+
+PWR PVM configuration structure definition.  
+
+
+
+
+{\ttfamily \#include $<$stm32l4xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h$>$}
+
+\doxysubsection*{Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structPWR__PVMTypeDef_a98d709038c4fc3d39818980d2acecc3f}{PVMType}}
+\item 
+uint32\+\_\+t \mbox{\hyperlink{structPWR__PVMTypeDef_aba69d24ee12884f6826495260928e1bc}{Mode}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+PWR PVM configuration structure definition. 
+
+\doxysubsection{Member Data Documentation}
+\mbox{\Hypertarget{structPWR__PVMTypeDef_aba69d24ee12884f6826495260928e1bc}\label{structPWR__PVMTypeDef_aba69d24ee12884f6826495260928e1bc}} 
+\index{PWR\_PVMTypeDef@{PWR\_PVMTypeDef}!Mode@{Mode}}
+\index{Mode@{Mode}!PWR\_PVMTypeDef@{PWR\_PVMTypeDef}}
+\doxysubsubsection{\texorpdfstring{Mode}{Mode}}
+{\footnotesize\ttfamily uint32\+\_\+t PWR\+\_\+\+PVMType\+Def\+::\+Mode}
+
+Mode\+: Specifies the operating mode for the selected pins. This parameter can be a value of \mbox{\hyperlink{group__PWREx__PVM__Mode}{PWR PVM interrupt and event mode}}. \mbox{\Hypertarget{structPWR__PVMTypeDef_a98d709038c4fc3d39818980d2acecc3f}\label{structPWR__PVMTypeDef_a98d709038c4fc3d39818980d2acecc3f}} 
+\index{PWR\_PVMTypeDef@{PWR\_PVMTypeDef}!PVMType@{PVMType}}
+\index{PVMType@{PVMType}!PWR\_PVMTypeDef@{PWR\_PVMTypeDef}}
+\doxysubsubsection{\texorpdfstring{PVMType}{PVMType}}
+{\footnotesize\ttfamily uint32\+\_\+t PWR\+\_\+\+PVMType\+Def\+::\+PVMType}
+
+PVMType\+: Specifies which voltage is monitored and against which threshold. This parameter can be a value of \mbox{\hyperlink{group__PWREx__PVM__Type}{Peripheral Voltage Monitoring type}}. \begin{DoxyItemize}
+\item PWR\+\_\+\+PVM\+\_\+1 Peripheral Voltage Monitoring 1 enable\+: VDDUSB versus 1.\+2 V (applicable when USB feature is supported). \item \mbox{\hyperlink{group__PWREx__PVM__Type_ga9690d421376ae26081cb09a9cca14d29}{PWR\+\_\+\+PVM\+\_\+3}} Peripheral Voltage Monitoring 3 enable\+: VDDA versus 1.\+62 V. \item \mbox{\hyperlink{group__PWREx__PVM__Type_gae463ebfbf26b923dab5599424adefd87}{PWR\+\_\+\+PVM\+\_\+4}} Peripheral Voltage Monitoring 4 enable\+: VDDA versus 2.\+2 V. \end{DoxyItemize}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Drivers/\+STM32\+L4xx\+\_\+\+HAL\+\_\+\+Driver/\+Inc/\mbox{\hyperlink{stm32l4xx__hal__pwr__ex_8h}{stm32l4xx\+\_\+hal\+\_\+pwr\+\_\+ex.\+h}}\end{DoxyCompactItemize}

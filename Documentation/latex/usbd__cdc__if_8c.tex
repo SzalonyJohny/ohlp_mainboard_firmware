@@ -1,0 +1,50 @@
+\hypertarget{usbd__cdc__if_8c}{}\doxysection{USB\+\_\+\+DEVICE/\+App/usbd\+\_\+cdc\+\_\+if.c File Reference}
+\label{usbd__cdc__if_8c}\index{USB\_DEVICE/App/usbd\_cdc\_if.c@{USB\_DEVICE/App/usbd\_cdc\_if.c}}
+
+
+\+: Usb device for Virtual Com Port.  
+
+
+{\ttfamily \#include \char`\"{}usbd\+\_\+cdc\+\_\+if.\+h\char`\"{}}\newline
+Include dependency graph for usbd\+\_\+cdc\+\_\+if.\+c\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usbd__cdc__if_8c__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USBD__CDC__IF_ga5137d6201dbdef2bf351c5b4941c24f4}{CDC\+\_\+\+Transmit\+\_\+\+FS}} (uint8\+\_\+t $\ast$Buf, uint16\+\_\+t Len)
+\begin{DoxyCompactList}\small\item\em CDC\+\_\+\+Transmit\+\_\+\+FS Data to send over USB IN endpoint are sent over CDC interface through this function. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USBD__CDC__IF__Private__Variables_ga1e37e6616e6affe5acf9c0befd063f6a}{User\+Rx\+Buffer\+FS}} \mbox{[}APP\+\_\+\+RX\+\_\+\+DATA\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t \mbox{\hyperlink{group__USBD__CDC__IF__Private__Variables_gad48fea85cdb7aed49bf62140a52f23e0}{User\+Tx\+Buffer\+FS}} \mbox{[}APP\+\_\+\+TX\+\_\+\+DATA\+\_\+\+SIZE\mbox{]}
+\item 
+uint8\+\_\+t {\bfseries data\+\_\+usb\+\_\+ready}
+\item 
+uint8\+\_\+t {\bfseries USB\+\_\+\+CDC\+\_\+\+RX\+\_\+\+BUFFER} \mbox{[}64\mbox{]}
+\item 
+\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} {\bfseries h\+Usb\+Device\+FS}
+\item 
+\mbox{\hyperlink{struct__USBD__CDC__Itf}{USBD\+\_\+\+CDC\+\_\+\+Itf\+Type\+Def}} \mbox{\hyperlink{group__USBD__CDC__IF_ga99394ed19b774f171df96c2848c411ed}{USBD\+\_\+\+Interface\+\_\+fops\+\_\+\+FS}}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\+: Usb device for Virtual Com Port. 
+
+\begin{DoxyVersion}{Version}
+\+: v2.\+0\+\_\+\+Cube
+\end{DoxyVersion}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2021 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under Ultimate Liberty license SLA0044, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: www.\+st.\+com/\+SLA0044 

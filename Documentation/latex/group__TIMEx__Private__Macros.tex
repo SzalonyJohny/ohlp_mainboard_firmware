@@ -1,0 +1,79 @@
+\hypertarget{group__TIMEx__Private__Macros}{}\doxysection{TIM Extended Private Macros}
+\label{group__TIMEx__Private__Macros}\index{TIM Extended Private Macros@{TIM Extended Private Macros}}
+Collaboration diagram for TIM Extended Private Macros\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=284pt]{group__TIMEx__Private__Macros}
+\end{center}
+\end{figure}
+\doxysubsection*{Macros}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{group__TIMEx__Private__Macros_ga272fd7c1bd226d1b6eb26bd21b0fc5d5}\label{group__TIMEx__Private__Macros_ga272fd7c1bd226d1b6eb26bd21b0fc5d5}} 
+\#define {\bfseries IS\+\_\+\+TIM\+\_\+\+REMAP}(\+\_\+\+\_\+\+REMAP\+\_\+\+\_\+)~(((\+\_\+\+\_\+\+REMAP\+\_\+\+\_\+) $<$= (uint32\+\_\+t)0x0001\+C01F))
+\item 
+\#define {\bfseries IS\+\_\+\+TIM\+\_\+\+BREAKINPUT}(\+\_\+\+\_\+\+BREAKINPUT\+\_\+\+\_\+)
+\item 
+\#define {\bfseries IS\+\_\+\+TIM\+\_\+\+BREAKINPUTSOURCE}(\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+)
+\item 
+\#define {\bfseries IS\+\_\+\+TIM\+\_\+\+BREAKINPUTSOURCE\+\_\+\+STATE}(\+\_\+\+\_\+\+STATE\+\_\+\+\_\+)
+\item 
+\#define {\bfseries IS\+\_\+\+TIM\+\_\+\+BREAKINPUTSOURCE\+\_\+\+POLARITY}(\+\_\+\+\_\+\+POLARITY\+\_\+\+\_\+)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+
+
+\doxysubsection{Macro Definition Documentation}
+\mbox{\Hypertarget{group__TIMEx__Private__Macros_gac11038f927b530ed9ff66cbf88b5fe48}\label{group__TIMEx__Private__Macros_gac11038f927b530ed9ff66cbf88b5fe48}} 
+\index{TIM Extended Private Macros@{TIM Extended Private Macros}!IS\_TIM\_BREAKINPUT@{IS\_TIM\_BREAKINPUT}}
+\index{IS\_TIM\_BREAKINPUT@{IS\_TIM\_BREAKINPUT}!TIM Extended Private Macros@{TIM Extended Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_TIM\_BREAKINPUT}{IS\_TIM\_BREAKINPUT}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+TIM\+\_\+\+BREAKINPUT(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+BREAKINPUT\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                            (((\_\_BREAKINPUT\_\_) == \mbox{\hyperlink{group__TIMEx__Break__Input_ga729a1c5fd937111405416cb6dc216162}{TIM\_BREAKINPUT\_BRK}})  || \(\backslash\)}
+\DoxyCodeLine{                                            ((\_\_BREAKINPUT\_\_) == \mbox{\hyperlink{group__TIMEx__Break__Input_ga2473abcbfc87ad498da670688ae3573d}{TIM\_BREAKINPUT\_BRK2}}))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__TIMEx__Private__Macros_ga8206e59b599377ce8abb3d806ffcf5a1}\label{group__TIMEx__Private__Macros_ga8206e59b599377ce8abb3d806ffcf5a1}} 
+\index{TIM Extended Private Macros@{TIM Extended Private Macros}!IS\_TIM\_BREAKINPUTSOURCE@{IS\_TIM\_BREAKINPUTSOURCE}}
+\index{IS\_TIM\_BREAKINPUTSOURCE@{IS\_TIM\_BREAKINPUTSOURCE}!TIM Extended Private Macros@{TIM Extended Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_TIM\_BREAKINPUTSOURCE}{IS\_TIM\_BREAKINPUTSOURCE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+TIM\+\_\+\+BREAKINPUTSOURCE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+SOURCE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                              (((\_\_SOURCE\_\_) == TIM\_BREAKINPUTSOURCE\_BKIN)  || \(\backslash\)}
+\DoxyCodeLine{                                              ((\_\_SOURCE\_\_) == TIM\_BREAKINPUTSOURCE\_COMP1) || \(\backslash\)}
+\DoxyCodeLine{                                              ((\_\_SOURCE\_\_) == TIM\_BREAKINPUTSOURCE\_COMP2))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__TIMEx__Private__Macros_ga350bdeccbe405fde9ab61b83a53321ea}\label{group__TIMEx__Private__Macros_ga350bdeccbe405fde9ab61b83a53321ea}} 
+\index{TIM Extended Private Macros@{TIM Extended Private Macros}!IS\_TIM\_BREAKINPUTSOURCE\_POLARITY@{IS\_TIM\_BREAKINPUTSOURCE\_POLARITY}}
+\index{IS\_TIM\_BREAKINPUTSOURCE\_POLARITY@{IS\_TIM\_BREAKINPUTSOURCE\_POLARITY}!TIM Extended Private Macros@{TIM Extended Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_TIM\_BREAKINPUTSOURCE\_POLARITY}{IS\_TIM\_BREAKINPUTSOURCE\_POLARITY}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+TIM\+\_\+\+BREAKINPUTSOURCE\+\_\+\+POLARITY(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+POLARITY\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                         (((\_\_POLARITY\_\_) == \mbox{\hyperlink{group__TIMEx__Break__Input__Source__Polarity_ga74e8fc7221fa7e194acb39794b803334}{TIM\_BREAKINPUTSOURCE\_POLARITY\_LOW}})  || \(\backslash\)}
+\DoxyCodeLine{                                                         ((\_\_POLARITY\_\_) == \mbox{\hyperlink{group__TIMEx__Break__Input__Source__Polarity_ga0157e9dfd27513767399b58ec78e0693}{TIM\_BREAKINPUTSOURCE\_POLARITY\_HIGH}}))}
+
+\end{DoxyCode}
+\mbox{\Hypertarget{group__TIMEx__Private__Macros_gafea36303ed2332cea12b392d987649e3}\label{group__TIMEx__Private__Macros_gafea36303ed2332cea12b392d987649e3}} 
+\index{TIM Extended Private Macros@{TIM Extended Private Macros}!IS\_TIM\_BREAKINPUTSOURCE\_STATE@{IS\_TIM\_BREAKINPUTSOURCE\_STATE}}
+\index{IS\_TIM\_BREAKINPUTSOURCE\_STATE@{IS\_TIM\_BREAKINPUTSOURCE\_STATE}!TIM Extended Private Macros@{TIM Extended Private Macros}}
+\doxysubsubsection{\texorpdfstring{IS\_TIM\_BREAKINPUTSOURCE\_STATE}{IS\_TIM\_BREAKINPUTSOURCE\_STATE}}
+{\footnotesize\ttfamily \#define IS\+\_\+\+TIM\+\_\+\+BREAKINPUTSOURCE\+\_\+\+STATE(\begin{DoxyParamCaption}\item[{}]{\+\_\+\+\_\+\+STATE\+\_\+\+\_\+ }\end{DoxyParamCaption})}
+
+{\bfseries Value\+:}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{                                                   (((\_\_STATE\_\_) == \mbox{\hyperlink{group__TIMEx__Break__Input__Source__Enable_gaa95a5b76d66c123e6234803f73dcafdb}{TIM\_BREAKINPUTSOURCE\_DISABLE}})  || \(\backslash\)}
+\DoxyCodeLine{                                                   ((\_\_STATE\_\_) == \mbox{\hyperlink{group__TIMEx__Break__Input__Source__Enable_gaf955feb94df5918b6392c0b0a5dbfc45}{TIM\_BREAKINPUTSOURCE\_ENABLE}}))}
+
+\end{DoxyCode}

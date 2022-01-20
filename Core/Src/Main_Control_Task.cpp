@@ -72,7 +72,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	BMS.init_BQ(&hi2c1);
 	BMS.set_boost_mode(true);
 	BMS.set_battcharge(true);
-	uint16_t status_charging_iter = 0;
+
 
 	const auto os_delay_time = 20ms; // 50Hz
 	const uint32_t milliseconds_to_delay = (uint32_t)std::chrono::duration_cast<milliseconds>(os_delay_time).count();
@@ -93,10 +93,10 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 			}
 		}
 	});
-	scp::option o3("-p", [&](const char *x){
+	scp::option o3("-p", [&]( [[maybe_unused]] const char *x){
 		const std::size_t buff_size = 64;
 		char buff[buff_size];
-		int s = snprintf( buff, buff_size, "%d,%d,%d,%d,%d,%d \n",
+		uint16_t s = (uint16_t)snprintf( buff, buff_size, "%lu, %lu, %lu, %lu, %lu, %lu \n",
 				led_current_voltage_look_up[0],
 				led_current_voltage_look_up[1],
 				led_current_voltage_look_up[2],

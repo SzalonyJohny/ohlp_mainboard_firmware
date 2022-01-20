@@ -1,0 +1,56 @@
+\hypertarget{usbd__ioreq_8h}{}\doxysection{Middlewares/\+ST/\+STM32\+\_\+\+USB\+\_\+\+Device\+\_\+\+Library/\+Core/\+Inc/usbd\+\_\+ioreq.h File Reference}
+\label{usbd__ioreq_8h}\index{Middlewares/ST/STM32\_USB\_Device\_Library/Core/Inc/usbd\_ioreq.h@{Middlewares/ST/STM32\_USB\_Device\_Library/Core/Inc/usbd\_ioreq.h}}
+
+
+Header file for the \mbox{\hyperlink{usbd__ioreq_8c}{usbd\+\_\+ioreq.\+c}} file.  
+
+
+{\ttfamily \#include \char`\"{}usbd\+\_\+def.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}usbd\+\_\+core.\+h\char`\"{}}\newline
+Include dependency graph for usbd\+\_\+ioreq.\+h\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usbd__ioreq_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{usbd__ioreq_8h__dep__incl}
+\end{center}
+\end{figure}
+\doxysubsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__IOREQ__Exported__FunctionsPrototype_gae6c6e880d1802b9415147135d431ae10}{USBD\+\_\+\+Ctl\+Send\+Data}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t $\ast$pbuf, uint32\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Ctl\+Send\+Data send data on the ctl pipe. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__IOREQ__Exported__FunctionsPrototype_ga366c4d7f3e4c3f6011564131cc44b8e2}{USBD\+\_\+\+Ctl\+Continue\+Send\+Data}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t $\ast$pbuf, uint32\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Ctl\+Continue\+Send\+Data continue sending data on the ctl pipe. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__IOREQ__Exported__FunctionsPrototype_gaf6dfc45f93835ee2f2b49dbd18b123cc}{USBD\+\_\+\+Ctl\+Prepare\+Rx}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t $\ast$pbuf, uint32\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Ctl\+Prepare\+Rx receive data on the ctl pipe. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__IOREQ__Exported__FunctionsPrototype_ga7a4099056d182f80c67cd92f63322e55}{USBD\+\_\+\+Ctl\+Continue\+Rx}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t $\ast$pbuf, uint32\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Ctl\+Continue\+Rx continue receive data on the ctl pipe. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__IOREQ__Exported__FunctionsPrototype_ga19e53947fc912c43bcee2c7d7429e8ee}{USBD\+\_\+\+Ctl\+Send\+Status}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Ctl\+Send\+Status send zero lzngth packet on the ctl pipe. \end{DoxyCompactList}\item 
+USBD\+\_\+\+Status\+Type\+Def \mbox{\hyperlink{group__USBD__IOREQ__Exported__FunctionsPrototype_gad5e847f89ca67a6b2154a72d0aa25e9a}{USBD\+\_\+\+Ctl\+Receive\+Status}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Ctl\+Receive\+Status receive zero lzngth packet on the ctl pipe. \end{DoxyCompactList}\item 
+uint32\+\_\+t \mbox{\hyperlink{group__USBD__IOREQ__Exported__FunctionsPrototype_ga1ea167471f0e91676934feb76f67b1c2}{USBD\+\_\+\+Get\+Rx\+Count}} (\mbox{\hyperlink{struct__USBD__HandleTypeDef}{USBD\+\_\+\+Handle\+Type\+Def}} $\ast$pdev, uint8\+\_\+t ep\+\_\+addr)
+\begin{DoxyCompactList}\small\item\em USBD\+\_\+\+Get\+Rx\+Count returns the received data length. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Header file for the \mbox{\hyperlink{usbd__ioreq_8c}{usbd\+\_\+ioreq.\+c}} file. 
+
+\begin{DoxyAuthor}{Author}
+MCD Application Team
+\end{DoxyAuthor}
+\begin{DoxyAttention}{Attention}
+
+\end{DoxyAttention}
+\doxysubsubsection*{\begin{center}\copyright{} Copyright (c) 2015 STMicroelectronics. All rights reserved.\end{center} }
+
+This software component is licensed by ST under Ultimate Liberty license SLA0044, the \char`\"{}\+License\char`\"{}; You may not use this file except in compliance with the License. You may obtain a copy of the License at\+: www.\+st.\+com/\+SLA0044 
