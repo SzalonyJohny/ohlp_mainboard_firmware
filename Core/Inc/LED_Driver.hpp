@@ -38,8 +38,8 @@ const uint16_t D3_max_current = 1200; 		///< [mA]
 const uint32_t FB_VOLTAGE_RESISTOR_DIVIDER_UP = 7500;		// [Ohms]
 const uint32_t FB_VOLTAGE_RESISTOR_DIVIDER_DOWN = 15000;	// [Ohms]
 
-/// Struct with all constants for PID regulator
-struct pid_const_s{
+/// struct with all constants for PID regulator
+const struct pid_const_s{
 
 	const float Kp = 0.01f;
 	const float Ki = 0.005f;
@@ -62,11 +62,8 @@ struct pid_const_s{
 
 	/* Sample time (in seconds) */
 	const float Ts = 1 / 1000;
-};
-//////////////////////////////////////
-//////////////////////////////////////
+}pid_const;
 
-const pid_const_s pid_const;
 
 
 /// Enum for ADC data form DMA
@@ -82,7 +79,7 @@ enum ADC_RANK_DMA: uint8_t{
 
 
 
-///template for testing with volatile.
+/// Template for testing with volatile.
 template <typename Type>
 struct pid_data_s{
 	Type integrator = 0;
@@ -122,39 +119,42 @@ public:
 	 * @param[in] voltage_channel index of adc1_data_ptr
 	 * @param[in] current_channel index of adc1_data_ptr
 	 */
-	constexpr SBC_c(const TIM_HandleTypeDef *const htim, uint32_t tim_channel, const uint32_t * adc1_data_ptr,
-			ADC_RANK_DMA voltage_channel, ADC_RANK_DMA current_channel):
-			_htim{htim}, _adc1_data_ptr{adc1_data_ptr}, _tim_channel{tim_channel}, _voltage_channel  {voltage_channel},
-			_current_channel {current_channel} , _set_current_mA {0} , _now_pwm_val{0}
-			{
-			};
+	constexpr SBC_c(const TIM_HandleTypeDef *const htim, uint32_t tim_channel, const uint32_t * adc1_data_ptr,ADC_RANK_DMA voltage_channel, ADC_RANK_DMA current_channel):
+	_htim{htim}, _adc1_data_ptr{adc1_data_ptr}, _tim_channel{tim_channel}, _voltage_channel  {voltage_channel},
+	_current_channel {current_channel} , _set_current_mA {0} , _now_pwm_val{0}
+	{};
 
-			/// non construction-copyable
-			SBC_c(const SBC_c&) = delete;
-			/// non copy-able
-			SBC_c & operator= ( const SBC_c&) = delete;
+	/// non construction-copyable
+	SBC_c(const SBC_c&) = delete;
+	/// non copy-able
+	SBC_c & operator= ( const SBC_c&) = delete;
 
-			/** Function get current
-			 * @ret LED current in mA
-			 */
-			inline uint32_t get_current_mA() const;
+	/** Function get current
+	 * @ret LED current in mA
+	 */
+	inline uint32_t get_current_mA() const;
 
-			/** Function get voltage
-			 * @ret LED voltage in mV
-			 */
-			inline uint32_t get_voltage_mV() const;
+	/** Function get voltage
+	 * @ret LED voltage in mV
+	 */
+	inline uint32_t get_voltage_mV() const;
 
-			/**
-			 * Setting LED set_current value
-			 * @pre Function do not check for max current value!
-			 */
-			void set_current(const uint32_t &current_mA);
+	/**
+	 * Setting LED set_current value
+	 * @pre Function do not check for max current value!
+	 */
+	void set_current(const uint32_t &current_mA);
 
-			/**
-			 * Control Loop
-			 * PID with antiwind-up by inegral clamping and
-			 */
-			void set_update_pid() __attribute__((flatten));
+	/**
+	 * Control Loop
+	 * PID with antiwind-up by inegral clamping and
+	 */
+	void set_update_pid() __attribute__((flatten));
+
+	/**
+	 * Returning active PWM duty cycle
+	 */
+	float get_pwm_value();
 
 };
 
@@ -184,8 +184,7 @@ public:
 		SBC_c(htim2, tim_channel2, adc1_data_ptr2, voltage_channel2, current_channel2),
 		SBC_c(htim3, tim_channel3, adc1_data_ptr3, voltage_channel3, current_channel3)
 	}
-	{
-	}
+	{}
 
 	/// non construction-copyable
 	led_drivers_c(const led_drivers_c&) = delete;

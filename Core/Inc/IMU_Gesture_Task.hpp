@@ -14,7 +14,6 @@
 
 
 
-
 void Start_IMU_Gesture_Task(void const * argument);
 
 void IMU_Init();

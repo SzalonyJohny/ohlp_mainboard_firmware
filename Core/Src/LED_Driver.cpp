@@ -11,8 +11,8 @@
 #include "main.h"
 #include "math.h"
 
-
-uint32_t led_current_voltage_look_up[6];
+// Current 1:3, Voltage 1:3, Duty 1:3
+uint32_t led_current_voltage_look_up[9];
 
 
 inline void SMPS::SBC_c::set_pwm(const uint16_t &pwm){
@@ -91,6 +91,10 @@ void SMPS::SBC_c::set_update_pid(){
 
 }
 
+float SMPS::SBC_c::get_pwm_value(){
+	return _now_pwm_val;
+}
+
 
 void SMPS::led_drivers_c::set_update_all_pid(){
 	for(auto &converter : _SBC){
@@ -116,6 +120,10 @@ void SMPS::led_drivers_c::get_current_voltage(){
 	led_current_voltage_look_up[3] = _SBC[D1].get_voltage_mV();
 	led_current_voltage_look_up[4] = _SBC[D2].get_voltage_mV();
 	led_current_voltage_look_up[5] = _SBC[D3].get_voltage_mV();
+
+	led_current_voltage_look_up[6] = (uint32_t)((_SBC[D1].get_pwm_value() / 200.0f ) * 1000.0f);
+	led_current_voltage_look_up[7] = (uint32_t)((_SBC[D2].get_pwm_value() / 200.0f ) * 1000.0f);
+	led_current_voltage_look_up[8] = (uint32_t)((_SBC[D3].get_pwm_value() / 200.0f ) * 1000.0f);
 }
 
 

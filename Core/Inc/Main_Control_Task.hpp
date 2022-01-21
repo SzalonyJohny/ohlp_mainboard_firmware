@@ -24,5 +24,6 @@
 
 void Start_Main_Control_Task(void const * argument);
 
+void send_reg_data();
 
 #endif /* INC_MAIN_CONTROL_TASK_HPP_ */
