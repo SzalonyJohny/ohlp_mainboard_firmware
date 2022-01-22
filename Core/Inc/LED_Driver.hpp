@@ -21,7 +21,7 @@
  * No heap usage guarantee.
  */
 
-
+/// Switch Mode Power Supply namespace
 namespace SMPS{
 
 
@@ -135,7 +135,7 @@ public:
 	inline uint32_t get_current_mA() const;
 
 	/** Function get voltage
-	 * @ret LED voltage in mV
+	 * @return LED voltage in mV
 	 */
 	inline uint32_t get_voltage_mV() const;
 
@@ -152,7 +152,8 @@ public:
 	void set_update_pid() __attribute__((flatten));
 
 	/**
-	 * Returning active PWM duty cycle
+	 * Tracking control signal
+	 * @return active PWM duty cycle
 	 */
 	float get_pwm_value();
 
@@ -193,9 +194,9 @@ public:
 
 
 	/// TODO implement
-	void set_boost_enable(const bool &enable);
+	void set_boost_enable(bool enable);
 	/// TODO implement
-	void set_smps_enable_pin(const bool &enable);
+	void set_smps_enable_pin(bool enable);
 
 	/** Setting all 3 current converter
 	 * All current are clamped to max safe their max current:

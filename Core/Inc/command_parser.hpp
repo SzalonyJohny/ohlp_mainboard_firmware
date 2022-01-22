@@ -9,13 +9,14 @@
  * No heap usage guarantee.
  */
 
+/// Serial command interface parser
 namespace scp{
 
 /// Common type to store all command option in array
-struct option_base {
+class option_base {
+public:
 	/// virtual function call to parse command
 	virtual bool parse(const char *buffor)const = 0;
-
 protected:
 	virtual ~ option_base() = default;
 };
@@ -23,17 +24,20 @@ protected:
 
 ///  Option structure Using templated structure to avoid std::function and function pointers.
 template <typename Functor>
-struct option : public option_base {
+class option : public option_base {
 	const Functor _function; ///< Deducted type of function to be executed if command match
 	const char *const _argument; ///< Argument stored as a pointer to string literal
 	const std::size_t _arg_size; ///< String lenght of _argument
+
+
+public:
 	/**
 	 *
 	 * Constructor for option type. For example: \n
 	 * option f1("-c", set_current); \n
 	 * Make sure that you compiler support template argument deduction.
 	 * @pre argument life time is longer than object itself.
-	 * @param[in] argument string literal! eg. "-m". Object stores only pointer to argument.
+	 * @param[in] argument string literal! eg. "-m". Object stores only pointer to argument. C++ standard: "String literals have static storage duration, and thus exist in memory for the life of the program."
 	 * @param[in] functor function to be executed if command is correct.
 	 * Function must have const char * as argument. \n
 	 * If command is matched parser will pass pointer to value after command. \n
@@ -41,7 +45,7 @@ struct option : public option_base {
 	 *
 	 */
 	constexpr option(const char *argument, Functor functor)
-	: _function{functor}, _arg_size{(strlen(argument))}, _argument{argument} {
+	:  _arg_size{(strlen(argument))}, _argument{argument},_function{functor} {
 	}
 
 

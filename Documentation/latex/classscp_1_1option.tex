@@ -1,0 +1,95 @@
+\hypertarget{classscp_1_1option}{}\doxysection{scp\+::option$<$ Functor $>$ Class Template Reference}
+\label{classscp_1_1option}\index{scp::option$<$ Functor $>$@{scp::option$<$ Functor $>$}}
+
+
+Option structure Using templated structure to avoid std\+::function and function pointers.  
+
+
+
+
+{\ttfamily \#include $<$command\+\_\+parser.\+hpp$>$}
+
+
+
+Inheritance diagram for scp\+::option$<$ Functor $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classscp_1_1option__inherit__graph}
+\end{center}
+\end{figure}
+
+
+Collaboration diagram for scp\+::option$<$ Functor $>$\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=208pt]{classscp_1_1option__coll__graph}
+\end{center}
+\end{figure}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+constexpr \mbox{\hyperlink{classscp_1_1option_a794000cbaed8d3667728b871f44f163c}{option}} (const char $\ast$argument, Functor functor)
+\item 
+constexpr bool \mbox{\hyperlink{classscp_1_1option_a00d7eb6cfb8de404b179399a4235a81b}{parse}} (const char $\ast$buff) const override
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+\subsubsection*{template$<$typename Functor$>$\newline
+class scp\+::option$<$ Functor $>$}
+
+Option structure Using templated structure to avoid std\+::function and function pointers. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classscp_1_1option_a794000cbaed8d3667728b871f44f163c}\label{classscp_1_1option_a794000cbaed8d3667728b871f44f163c}} 
+\index{scp::option$<$ Functor $>$@{scp::option$<$ Functor $>$}!option@{option}}
+\index{option@{option}!scp::option$<$ Functor $>$@{scp::option$<$ Functor $>$}}
+\doxysubsubsection{\texorpdfstring{option()}{option()}}
+{\footnotesize\ttfamily template$<$typename Functor $>$ \\
+constexpr \mbox{\hyperlink{classscp_1_1option}{scp\+::option}}$<$ Functor $>$\+::\mbox{\hyperlink{classscp_1_1option}{option}} (\begin{DoxyParamCaption}\item[{const char $\ast$}]{argument,  }\item[{Functor}]{functor }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+
+Constructor for option type. For example\+: ~\newline
+option f1(\char`\"{}-\/c\char`\"{}, set\+\_\+current); ~\newline
+Make sure that you compiler support template argument deduction. \begin{DoxyPrecond}{Precondition}
+argument life time is longer than object itself. 
+\end{DoxyPrecond}
+
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em argument} & string literal! eg. \char`\"{}-\/m\char`\"{}. Object stores only pointer to argument. C++ standard\+: \char`\"{}\+String literals have static storage duration, and thus exist in memory for the life of the program.\char`\"{} \\
+\hline
+\mbox{\texttt{ in}}  & {\em functor} & function to be executed if command is correct. Function must have const char $\ast$ as argument. ~\newline
+If command is matched parser will pass pointer to value after command. ~\newline
+Lambda type functions are suported. \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classscp_1_1option_a00d7eb6cfb8de404b179399a4235a81b}\label{classscp_1_1option_a00d7eb6cfb8de404b179399a4235a81b}} 
+\index{scp::option$<$ Functor $>$@{scp::option$<$ Functor $>$}!parse@{parse}}
+\index{parse@{parse}!scp::option$<$ Functor $>$@{scp::option$<$ Functor $>$}}
+\doxysubsubsection{\texorpdfstring{parse()}{parse()}}
+{\footnotesize\ttfamily template$<$typename Functor $>$ \\
+constexpr bool \mbox{\hyperlink{classscp_1_1option}{scp\+::option}}$<$ Functor $>$\+::parse (\begin{DoxyParamCaption}\item[{const char $\ast$}]{buff }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}, {\ttfamily [override]}, {\ttfamily [virtual]}}
+
+Method for parsing string 
+\begin{DoxyParams}[1]{Parameters}
+\mbox{\texttt{ in}}  & {\em buff} & pointer to char buffer with command to parse \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+true if command is correct 
+\end{DoxyReturn}
+
+
+Implements \mbox{\hyperlink{classscp_1_1option__base_a422bf9f1bd25bf13501e102fa79fb507}{scp\+::option\+\_\+base}}.
+
+
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+Core/\+Inc/\mbox{\hyperlink{command__parser_8hpp}{command\+\_\+parser.\+hpp}}\end{DoxyCompactItemize}

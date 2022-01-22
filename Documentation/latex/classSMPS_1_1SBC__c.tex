@@ -12,7 +12,7 @@ Synchronous Buck Converter Controller Class.
 \doxysubsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-constexpr \mbox{\hyperlink{classSMPS_1_1SBC__c_a3852f345d3f5fbfbdb1cfe6399d65fa0}{SBC\+\_\+c}} (const TIM\+\_\+\+Handle\+Type\+Def $\ast$const htim, uint32\+\_\+t tim\+\_\+channel, const uint32\+\_\+t $\ast$adc1\+\_\+data\+\_\+ptr, \mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}} voltage\+\_\+channel, \mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}} current\+\_\+channel)
+constexpr \mbox{\hyperlink{classSMPS_1_1SBC__c_a3852f345d3f5fbfbdb1cfe6399d65fa0}{SBC\+\_\+c}} (const TIM\+\_\+\+Handle\+Type\+Def $\ast$const htim, uint32\+\_\+t tim\+\_\+channel, const uint32\+\_\+t $\ast$adc1\+\_\+data\+\_\+ptr, \mbox{\hyperlink{namespaceSMPS_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}} voltage\+\_\+channel, \mbox{\hyperlink{namespaceSMPS_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}} current\+\_\+channel)
 \item 
 \mbox{\Hypertarget{classSMPS_1_1SBC__c_a18408b2210b72272487a20f81aef03ec}\label{classSMPS_1_1SBC__c_a18408b2210b72272487a20f81aef03ec}} 
 \mbox{\hyperlink{classSMPS_1_1SBC__c_a18408b2210b72272487a20f81aef03ec}{SBC\+\_\+c}} (const \mbox{\hyperlink{classSMPS_1_1SBC__c}{SBC\+\_\+c}} \&)=delete
@@ -27,6 +27,8 @@ uint32\+\_\+t \mbox{\hyperlink{classSMPS_1_1SBC__c_adf7156ba8f7b12547bfb890ce237
 void \mbox{\hyperlink{classSMPS_1_1SBC__c_aa9550a5529a721576c00f437532da912}{set\+\_\+current}} (const uint32\+\_\+t \&current\+\_\+mA)
 \item 
 void \mbox{\hyperlink{classSMPS_1_1SBC__c_ab92c0d696792f919f08e2e120cc108ec}{set\+\_\+update\+\_\+pid}} () \+\_\+\+\_\+attribute\+\_\+\+\_\+((flatten))
+\item 
+float \mbox{\hyperlink{classSMPS_1_1SBC__c_ab3c3418e9022bedb164f13bc92eb12ed}{get\+\_\+pwm\+\_\+value}} ()
 \end{DoxyCompactItemize}
 
 
@@ -38,7 +40,7 @@ Synchronous Buck Converter Controller Class.
 \index{SMPS::SBC\_c@{SMPS::SBC\_c}!SBC\_c@{SBC\_c}}
 \index{SBC\_c@{SBC\_c}!SMPS::SBC\_c@{SMPS::SBC\_c}}
 \doxysubsubsection{\texorpdfstring{SBC\_c()}{SBC\_c()}}
-{\footnotesize\ttfamily constexpr SMPS\+::\+SBC\+\_\+c\+::\+SBC\+\_\+c (\begin{DoxyParamCaption}\item[{const TIM\+\_\+\+Handle\+Type\+Def $\ast$const}]{htim,  }\item[{uint32\+\_\+t}]{tim\+\_\+channel,  }\item[{const uint32\+\_\+t $\ast$}]{adc1\+\_\+data\+\_\+ptr,  }\item[{\mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}}}]{voltage\+\_\+channel,  }\item[{\mbox{\hyperlink{LED__Driver_8hpp_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}}}]{current\+\_\+channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
+{\footnotesize\ttfamily constexpr SMPS\+::\+SBC\+\_\+c\+::\+SBC\+\_\+c (\begin{DoxyParamCaption}\item[{const TIM\+\_\+\+Handle\+Type\+Def $\ast$const}]{htim,  }\item[{uint32\+\_\+t}]{tim\+\_\+channel,  }\item[{const uint32\+\_\+t $\ast$}]{adc1\+\_\+data\+\_\+ptr,  }\item[{\mbox{\hyperlink{namespaceSMPS_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}}}]{voltage\+\_\+channel,  }\item[{\mbox{\hyperlink{namespaceSMPS_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}}}]{current\+\_\+channel }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [constexpr]}}
 
 Compile time constructor to save all possible variable in const private member variable 
 \begin{DoxyParams}[1]{Parameters}
@@ -62,13 +64,25 @@ Compile time constructor to save all possible variable in const private member v
 \doxysubsubsection{\texorpdfstring{get\_current\_mA()}{get\_current\_mA()}}
 {\footnotesize\ttfamily uint32\+\_\+t SMPS\+::\+SBC\+\_\+c\+::get\+\_\+current\+\_\+mA (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Function get current @ret LED current in mA \mbox{\Hypertarget{classSMPS_1_1SBC__c_adf7156ba8f7b12547bfb890ce2370f11}\label{classSMPS_1_1SBC__c_adf7156ba8f7b12547bfb890ce2370f11}} 
+Function get current @ret LED current in mA \mbox{\Hypertarget{classSMPS_1_1SBC__c_ab3c3418e9022bedb164f13bc92eb12ed}\label{classSMPS_1_1SBC__c_ab3c3418e9022bedb164f13bc92eb12ed}} 
+\index{SMPS::SBC\_c@{SMPS::SBC\_c}!get\_pwm\_value@{get\_pwm\_value}}
+\index{get\_pwm\_value@{get\_pwm\_value}!SMPS::SBC\_c@{SMPS::SBC\_c}}
+\doxysubsubsection{\texorpdfstring{get\_pwm\_value()}{get\_pwm\_value()}}
+{\footnotesize\ttfamily float SMPS\+::\+SBC\+\_\+c\+::get\+\_\+pwm\+\_\+value (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})}
+
+Tracking control signal \begin{DoxyReturn}{Returns}
+active PWM duty cycle 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSMPS_1_1SBC__c_adf7156ba8f7b12547bfb890ce2370f11}\label{classSMPS_1_1SBC__c_adf7156ba8f7b12547bfb890ce2370f11}} 
 \index{SMPS::SBC\_c@{SMPS::SBC\_c}!get\_voltage\_mV@{get\_voltage\_mV}}
 \index{get\_voltage\_mV@{get\_voltage\_mV}!SMPS::SBC\_c@{SMPS::SBC\_c}}
 \doxysubsubsection{\texorpdfstring{get\_voltage\_mV()}{get\_voltage\_mV()}}
 {\footnotesize\ttfamily uint32\+\_\+t SMPS\+::\+SBC\+\_\+c\+::get\+\_\+voltage\+\_\+mV (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-Function get voltage @ret LED voltage in mV \mbox{\Hypertarget{classSMPS_1_1SBC__c_aa9550a5529a721576c00f437532da912}\label{classSMPS_1_1SBC__c_aa9550a5529a721576c00f437532da912}} 
+Function get voltage \begin{DoxyReturn}{Returns}
+LED voltage in mV 
+\end{DoxyReturn}
+\mbox{\Hypertarget{classSMPS_1_1SBC__c_aa9550a5529a721576c00f437532da912}\label{classSMPS_1_1SBC__c_aa9550a5529a721576c00f437532da912}} 
 \index{SMPS::SBC\_c@{SMPS::SBC\_c}!set\_current@{set\_current}}
 \index{set\_current@{set\_current}!SMPS::SBC\_c@{SMPS::SBC\_c}}
 \doxysubsubsection{\texorpdfstring{set\_current()}{set\_current()}}

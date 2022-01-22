@@ -16,7 +16,7 @@ int16_t gyr_x;
 int16_t gyr_y;
 int16_t gyr_z;
 
-bool sending_imu_data = false;
+bool sending_imu_data_flag = false;
 
 
 void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
@@ -34,7 +34,7 @@ void Start_IMU_Gesture_Task([[maybe_unused]] void const * argument){
 
 	for(;;){
 
-		if(sending_imu_data){
+		if(sending_imu_data_flag){
 
 			osDelay((uint32_t)os_delay_time);
 			HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);

@@ -1,0 +1,69 @@
+\hypertarget{namespaceSMPS}{}\doxysection{SMPS Namespace Reference}
+\label{namespaceSMPS}\index{SMPS@{SMPS}}
+
+
+Switch Mode Power Supply namespace.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \mbox{\hyperlink{structSMPS_1_1pid__const__s}{pid\+\_\+const\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em struct with all constants for PID regulator \end{DoxyCompactList}\item 
+struct \mbox{\hyperlink{structSMPS_1_1pid__data__s}{pid\+\_\+data\+\_\+s}}
+\begin{DoxyCompactList}\small\item\em Template for testing with volatile. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSMPS_1_1SBC__c}{SBC\+\_\+c}}
+\begin{DoxyCompactList}\small\item\em Synchronous Buck Converter Controller Class. \end{DoxyCompactList}\item 
+class \mbox{\hyperlink{classSMPS_1_1led__drivers__c}{led\+\_\+drivers\+\_\+c}}
+\begin{DoxyCompactList}\small\item\em LED drivers class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceSMPS_a0f84e175294eb97b8a9297a67e401ed1}\label{namespaceSMPS_a0f84e175294eb97b8a9297a67e401ed1}} 
+enum \mbox{\hyperlink{namespaceSMPS_a0f84e175294eb97b8a9297a67e401ed1}{ADC\+\_\+\+RANK\+\_\+\+DMA}} \+: uint8\+\_\+t \{ \newline
+{\bfseries ADC\+\_\+\+RANK\+\_\+0}
+, {\bfseries ADC\+\_\+\+RANK\+\_\+1}
+, {\bfseries ADC\+\_\+\+RANK\+\_\+2}
+, {\bfseries ADC\+\_\+\+RANK\+\_\+3}
+, \newline
+{\bfseries ADC\+\_\+\+RANK\+\_\+4}
+, {\bfseries ADC\+\_\+\+RANK\+\_\+5}
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for ADC data form DMA. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceSMPS_af2101c1162259e3ee34c7445950ab6e8}\label{namespaceSMPS_af2101c1162259e3ee34c7445950ab6e8}} 
+const uint16\+\_\+t {\bfseries MAX\+\_\+\+PWM\+\_\+\+TIM1} = 200
+\item 
+\mbox{\Hypertarget{namespaceSMPS_a041c787f640651b1fac4c873d430dc5a}\label{namespaceSMPS_a041c787f640651b1fac4c873d430dc5a}} 
+const uint16\+\_\+t {\bfseries ADC\+\_\+\+REFF\+\_\+mV} = 2810
+\item 
+\mbox{\Hypertarget{namespaceSMPS_ae4081ef1726c27d9852212fe031634ba}\label{namespaceSMPS_ae4081ef1726c27d9852212fe031634ba}} 
+const uint16\+\_\+t \mbox{\hyperlink{namespaceSMPS_ae4081ef1726c27d9852212fe031634ba}{ADC\+\_\+\+MAX\+\_\+\+COUNT}} = 16384
+\begin{DoxyCompactList}\small\item\em oversampling x4 and 1 bit shift \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceSMPS_a2c3ef48de9a7e69185b956ba48ce0d15}\label{namespaceSMPS_a2c3ef48de9a7e69185b956ba48ce0d15}} 
+const uint16\+\_\+t \mbox{\hyperlink{namespaceSMPS_a2c3ef48de9a7e69185b956ba48ce0d15}{MAX\+\_\+\+VOLTAGE\+\_\+m\+V\+\_\+\+DISCONNECT\+\_\+\+PROTECTION}} = 3500
+\begin{DoxyCompactList}\small\item\em \mbox{[}mV\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceSMPS_a983aaae9ad9df605b409d5e7d85e1af8}\label{namespaceSMPS_a983aaae9ad9df605b409d5e7d85e1af8}} 
+const uint16\+\_\+t \mbox{\hyperlink{namespaceSMPS_a983aaae9ad9df605b409d5e7d85e1af8}{MAX\+\_\+\+BATTERY\+\_\+\+VOLTAGE\+\_\+m\+V\+\_\+\+FOR\+\_\+\+DISCONNECT\+\_\+\+PROTECTION}} = 4200
+\begin{DoxyCompactList}\small\item\em \mbox{[}mV\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceSMPS_a419b28db1331b1838f24911f238b4e9c}\label{namespaceSMPS_a419b28db1331b1838f24911f238b4e9c}} 
+const uint16\+\_\+t \mbox{\hyperlink{namespaceSMPS_a419b28db1331b1838f24911f238b4e9c}{D1\+\_\+\+D2\+\_\+max\+\_\+current}} = 3500
+\begin{DoxyCompactList}\small\item\em \mbox{[}mA\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceSMPS_ae76c2acd61bfbb1385b86bb04e67259e}\label{namespaceSMPS_ae76c2acd61bfbb1385b86bb04e67259e}} 
+const uint16\+\_\+t \mbox{\hyperlink{namespaceSMPS_ae76c2acd61bfbb1385b86bb04e67259e}{D3\+\_\+max\+\_\+current}} = 1200
+\begin{DoxyCompactList}\small\item\em \mbox{[}mA\mbox{]} \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceSMPS_af320ea3564ac511db3d0b2900a28ca8e}\label{namespaceSMPS_af320ea3564ac511db3d0b2900a28ca8e}} 
+const uint32\+\_\+t {\bfseries FB\+\_\+\+VOLTAGE\+\_\+\+RESISTOR\+\_\+\+DIVIDER\+\_\+\+UP} = 7500
+\item 
+\mbox{\Hypertarget{namespaceSMPS_a13b99b0bbec7d0c1d2544aaaa5de5579}\label{namespaceSMPS_a13b99b0bbec7d0c1d2544aaaa5de5579}} 
+const uint32\+\_\+t {\bfseries FB\+\_\+\+VOLTAGE\+\_\+\+RESISTOR\+\_\+\+DIVIDER\+\_\+\+DOWN} = 15000
+\item 
+\mbox{\Hypertarget{namespaceSMPS_a28cd1f0d66ea9b95a847ce973cec23d7}\label{namespaceSMPS_a28cd1f0d66ea9b95a847ce973cec23d7}} 
+const struct \mbox{\hyperlink{structSMPS_1_1pid__const__s}{SMPS\+::pid\+\_\+const\+\_\+s}} {\bfseries pid\+\_\+const}
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Switch Mode Power Supply namespace. 

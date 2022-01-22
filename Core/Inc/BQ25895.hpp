@@ -18,6 +18,8 @@
 
 #define BQaddress 0x6A<<1
 
+
+/// Integrated BMS IC namespace
 namespace BMS_BQ25895{
 
 /// Input current limiting
@@ -146,6 +148,11 @@ private:
 
 
 public:
+
+
+
+
+
 
 	cBQ();
 	~cBQ();

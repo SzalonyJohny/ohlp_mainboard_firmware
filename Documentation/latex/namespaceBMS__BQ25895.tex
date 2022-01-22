@@ -1,0 +1,114 @@
+\hypertarget{namespaceBMS__BQ25895}{}\doxysection{BMS\+\_\+\+BQ25895 Namespace Reference}
+\label{namespaceBMS__BQ25895}\index{BMS\_BQ25895@{BMS\_BQ25895}}
+
+
+Integrated BMS IC namespace.  
+
+
+\doxysubsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+class \mbox{\hyperlink{classBMS__BQ25895_1_1cBQ}{c\+BQ}}
+\begin{DoxyCompactList}\small\item\em Interface class for communication with battery management IC. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Enumerations}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{namespaceBMS__BQ25895_a9b6087c7e21ffe1d38131e759ac29d26}\label{namespaceBMS__BQ25895_a9b6087c7e21ffe1d38131e759ac29d26}} 
+enum \mbox{\hyperlink{namespaceBMS__BQ25895_a9b6087c7e21ffe1d38131e759ac29d26}{inc}} \{ \newline
+{\bfseries inc\+\_\+50mA} =1
+, {\bfseries inc\+\_\+100mA} =2
+, {\bfseries inc\+\_\+200mA} =4
+, {\bfseries inc\+\_\+400mA} =8
+, \newline
+{\bfseries inc\+\_\+800mA} =16
+, {\bfseries inc\+\_\+1600mA} =32
+ \}
+\begin{DoxyCompactList}\small\item\em Input current limiting. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceBMS__BQ25895_a18ca17c15e95afb51d8c8fe0574fca61}\label{namespaceBMS__BQ25895_a18ca17c15e95afb51d8c8fe0574fca61}} 
+enum {\bfseries ivlo} \{ \newline
+{\bfseries ivlo\+\_\+100mV} =1
+, {\bfseries ivlo\+\_\+200mV} =2
+, {\bfseries ivlo\+\_\+400mV} =4
+, {\bfseries ivlo\+\_\+800mV} =8
+, \newline
+{\bfseries ivlo\+\_\+1600mV} =16
+ \}
+\item 
+\mbox{\Hypertarget{namespaceBMS__BQ25895_afe25788f696b1027f23a7e3e1090db6c}\label{namespaceBMS__BQ25895_afe25788f696b1027f23a7e3e1090db6c}} 
+enum \mbox{\hyperlink{namespaceBMS__BQ25895_afe25788f696b1027f23a7e3e1090db6c}{sysmin}} \{ {\bfseries sysmin\+\_\+3000mV} =0
+, {\bfseries sysmin\+\_\+100mV} =2
+, {\bfseries sysmin\+\_\+200mV} =4
+, {\bfseries sysmin\+\_\+400mV} =8
+ \}
+\begin{DoxyCompactList}\small\item\em Minimum system voltage threshold. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceBMS__BQ25895_a34d2c0abb7c5b044069a66cb3c24bb15}\label{namespaceBMS__BQ25895_a34d2c0abb7c5b044069a66cb3c24bb15}} 
+enum \mbox{\hyperlink{namespaceBMS__BQ25895_a34d2c0abb7c5b044069a66cb3c24bb15}{ichg}} \{ \newline
+{\bfseries ichg\+\_\+64mA} =1
+, {\bfseries ichg\+\_\+128mA} =2
+, {\bfseries ichg\+\_\+256mA} =4
+, {\bfseries ichg\+\_\+512mA} =8
+, \newline
+{\bfseries ichg\+\_\+1024mA} =16
+, {\bfseries ichg\+\_\+2048mA} =32
+, {\bfseries ichg\+\_\+4096mA} =64
+ \}
+\begin{DoxyCompactList}\small\item\em Constat current charge current. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceBMS__BQ25895_a8e9cb1a1aa03ab2b75a6c6eb80518a60}\label{namespaceBMS__BQ25895_a8e9cb1a1aa03ab2b75a6c6eb80518a60}} 
+enum \mbox{\hyperlink{namespaceBMS__BQ25895_a8e9cb1a1aa03ab2b75a6c6eb80518a60}{bmvr}} \{ \newline
+{\bfseries bmvr\+\_\+4550mV} = 0
+, {\bfseries bmvr\+\_\+64mV} = 16
+, {\bfseries bmvr\+\_\+128mV} = 32
+, {\bfseries bmvr\+\_\+256mV} = 64
+, \newline
+{\bfseries bmvr\+\_\+512mV} = 128
+ \}
+\begin{DoxyCompactList}\small\item\em Boost voltage enum to set MOSFET gate swing voltage. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceBMS__BQ25895_a3a84fc2c0e0f07a9ab4cacb90d18d607}\label{namespaceBMS__BQ25895_a3a84fc2c0e0f07a9ab4cacb90d18d607}} 
+enum \mbox{\hyperlink{namespaceBMS__BQ25895_a3a84fc2c0e0f07a9ab4cacb90d18d607}{uchg}} \{ \newline
+{\bfseries uchg\+\_\+3840mV} = 0
+, {\bfseries uchg\+\_\+512mV} = 128
+, {\bfseries uchg\+\_\+256mV} = 64
+, {\bfseries uchg\+\_\+128mV} = 32
+, \newline
+{\bfseries uchg\+\_\+64mV} = 16
+, {\bfseries uchg\+\_\+32mV} = 8
+, {\bfseries uchg\+\_\+16mV} = 4
+ \}
+\begin{DoxyCompactList}\small\item\em Constant Voltage charge voltage. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceBMS__BQ25895_a4104846a580778503cc18397607e39d2}\label{namespaceBMS__BQ25895_a4104846a580778503cc18397607e39d2}} 
+enum \mbox{\hyperlink{namespaceBMS__BQ25895_a4104846a580778503cc18397607e39d2}{vinpm}} \{ \newline
+{\bfseries vinpm\+\_\+6400mV} = 1$<$$<$6
+, {\bfseries vinpm\+\_\+3200mV} = 1$<$$<$5
+, {\bfseries vinpm\+\_\+1600mV} = 1$<$$<$4
+, {\bfseries vinpm\+\_\+800mV} = 1$<$$<$3
+, \newline
+{\bfseries vinpm\+\_\+400mV} = 1$<$$<$2
+, {\bfseries vinpm\+\_\+200mV} = 1$<$$<$1
+, {\bfseries vinpm\+\_\+100mV} = 1$<$$<$0
+, {\bfseries vinpm\+\_\+offset\+\_\+2600mV} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Enum for use with set\+\_\+input\+\_\+voltage\+\_\+limit function. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceBMS__BQ25895_a10d7c0566544684eda6ddd32bff1705c}\label{namespaceBMS__BQ25895_a10d7c0566544684eda6ddd32bff1705c}} 
+enum \mbox{\hyperlink{namespaceBMS__BQ25895_a10d7c0566544684eda6ddd32bff1705c}{iterm}} \{ \newline
+{\bfseries iterm\+\_\+512mA} = 1$<$$<$4
+, {\bfseries iterm\+\_\+256mA} = 1$<$$<$3
+, {\bfseries iterm\+\_\+128mA} = 1$<$$<$2
+, {\bfseries iterm\+\_\+64mA} = 1$<$$<$1
+, \newline
+{\bfseries iterm\+\_\+offset\+\_\+64mA} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Terminaton current -\/ cutoff current. \end{DoxyCompactList}\item 
+\mbox{\Hypertarget{namespaceBMS__BQ25895_a13b4de93992563cb9cef2be9593e6900}\label{namespaceBMS__BQ25895_a13b4de93992563cb9cef2be9593e6900}} 
+enum \mbox{\hyperlink{namespaceBMS__BQ25895_a13b4de93992563cb9cef2be9593e6900}{iprechg}} \{ \newline
+{\bfseries iprechg\+\_\+512mA} = 1$<$$<$7
+, {\bfseries iprechg\+\_\+256mA} = 1$<$$<$6
+, {\bfseries iprechg\+\_\+128mA} = 1$<$$<$5
+, {\bfseries iprechg\+\_\+64mA} = 1$<$$<$4
+, \newline
+{\bfseries Iprechg\+\_\+offset\+\_\+64mA} = 0
+ \}
+\begin{DoxyCompactList}\small\item\em Precharge current if Vbatt. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Integrated BMS IC namespace. 

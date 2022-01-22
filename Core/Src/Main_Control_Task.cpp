@@ -36,10 +36,12 @@ uint8_t USB_CDC_RX_BUFFER[64];
 
 // LED current and voltage look up
 extern uint32_t led_current_voltage_look_up[6];
-bool send_regulation_data = false;
 
-// IMU sending data Task
-extern bool sending_imu_data;
+// SMPS regulation data loook up flag
+bool sending_regulation_data_flag = false;
+
+// IMU sending data Task flag
+extern bool sending_imu_data_flag;
 
 
 
@@ -69,7 +71,6 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 	/* Set profile Initialization */
 	uint8_t profile = 0;
 	uint8_t profile_last = 5;
-	uint16_t current_als = 2000;
 
 	/* Battery Management System Initialization*/
 	BMS_BQ25895::cBQ BMS;
@@ -84,36 +85,47 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 	/// Serial command interface
 	const scp::option o1("-set_profile", [&](const char* x){
-		if(profile >= 0 && profile < 5){
-			profile = (uint8_t)atoi(x);
+		int32_t profile_new = atoi(x);
+		if(profile_new >= 0 && profile_new < 5){
+			profile = (uint8_t)profile_new;
 		}
-	});
-	const scp::option o2("-set_current", [&](const char* x){
-		int D = atoi(x);
-		if(D>0 && D<4){
-			int current = atoi(x+2);
-			if(current >=0 && current < 3000){
-				set_current_data.set_current[D] = (uint16_t)current;
-			}
-			else{
-				const char error_code[] = "Incorect ";
-				CDC_Transmit_FS( (uint8_t*)error_code,(uint16_t)strlen(error_code));
-			}
-		}
-	});
-	const scp::option o3("-imu", [&]( [[maybe_unused]] const char *x){
-		sending_imu_data = !sending_imu_data;
 	});
 
-	const scp::option o4("-test", [&](const char *x){
+	const scp::option o2("-sc", [&](const char *x){
+		int32_t LED = atoi(x) - 1;
+		if(LED==D1 || LED==D2) {
+			int32_t current = atoi(x + 2);
+			if (current >= 0 && current < 2000){
+				set_current_data.set_current[LED] = (uint16_t)current;
+				profile = 5;
+				return;
+			}
+		}
+		else if(LED==D3){
+			int32_t current = atoi(x + 2);
+			if (current >= 0 && current < 500) {
+				set_current_data.set_current[LED] = (uint16_t)current;
+				profile = 5;
+				return;
+			}
+		}
+		const char error_code[] = "Incorect command";
+		CDC_Transmit_FS( (uint8_t*)error_code,(uint16_t)strlen(error_code));
+	});
+
+	const scp::option o3("-print_imu", [&]( [[maybe_unused]] auto _){
+		sending_imu_data_flag = !sending_imu_data_flag;
+	});
+
+	const scp::option o4("-test", [&]( [[maybe_unused]] auto _){
 		HAL_GPIO_TogglePin(LED1_GPIO_Port, LED1_Pin);
 		HAL_GPIO_TogglePin(LED2_GPIO_Port, LED2_Pin);
 		HAL_GPIO_TogglePin(LED3_GPIO_Port, LED3_Pin);
 		HAL_GPIO_TogglePin(LED4_GPIO_Port, LED4_Pin);
 	});
 
-	const scp::option o5("-disp_reg", [&](const char *x){
-		send_regulation_data = !send_regulation_data;
+	const scp::option o5("-print_reg", [&]( [[maybe_unused]] auto _){
+		sending_regulation_data_flag = !sending_regulation_data_flag;
 	});
 
 	const std::array<const scp::option_base*, 5> options = {&o1, &o2, &o3, &o4, &o5};
@@ -127,16 +139,19 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 
 
 		/* Battery Management */
-		BMS.update_VBUS(true,500); // TODO add BQ int flag
+		BMS.update_VBUS(true,500); // TODO add BQ INT flag
 
 		// FIXME for live expression (debug)
 		b_voltage_debug =  BMS.get_battvoltage();
 		HB_data_debug = hb.get_data();
 
+
 		/* Head Board - Over Temperature Protection */
+		static_assert(80'00 == 8000); // 80 deg C
 		for(const auto & temperature_in_100x_degC : hb.get_data().TEMP){
 			if(temperature_in_100x_degC > 80'00) profile = 0;
 		}
+
 
 		/* User Button Interface */
 		if ( xQueueReceive( Button_state_QueueHandle, &button_state, 0) == pdPASS ){
@@ -202,13 +217,14 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 		}
 
 		// Sending regulation data;
-		if(send_regulation_data){
+		if(sending_regulation_data_flag){
 			send_reg_data();
 		}
 
 		// USB command receiver
 		if(data_usb_ready){
 			bool no_command = true;
+
 			for(const auto &option : options){
 				if(option->parse((const char *)USB_CDC_RX_BUFFER)){
 					no_command = false;
@@ -216,7 +232,7 @@ void Start_Main_Control_Task([[maybe_unused]] void const * argument)
 				}
 			}
 			if(no_command){
-				CDC_Transmit_FS( (uint8_t*)"Nierozpoznana komenda",24);
+				CDC_Transmit_FS((uint8_t*)"Unknown command",strlen("Unknown command"));
 			}
 			data_usb_ready = false;
 		}

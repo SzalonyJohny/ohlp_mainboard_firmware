@@ -8,9 +8,16 @@
 #ifndef INC_DATA_FORM_HB_HPP_
 #define INC_DATA_FORM_HB_HPP_
 
+/**
+* @file Data_form_HB.hpp
+* Mini library to interface with HeadBoard over serial
+*/
+
+
 #include <array>
 #include "Common_struct.h"
 
+/// HeadBoard communication namespace
 namespace HB{
 
 /// Data received from Headboard
@@ -26,10 +33,10 @@ const std::size_t headboard_uart_data_length = 10;
 class mainboard_form_hb{
 
 private:
-	const uint8_t *_recive_data_ptr;
+	volatile const uint8_t *_recive_data_ptr;
 	data_from_hb _data;
 
-	/// Function procesing all data from DMA array to member variable
+	/// Function processing all data from DMA array to member variable
 	void update();
 
 
@@ -44,7 +51,7 @@ public:
 
 	/**
 	 * Geting result form HeadBoard after updating data form DMA array.
-	 * @ret data_from_hb struct
+	 * @return data_from_hb struct
 	 */
 	[[nodiscard]] data_from_hb get_data();
 

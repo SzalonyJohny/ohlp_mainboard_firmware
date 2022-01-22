@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['adc_5fmax_5fcount_99',['ADC_MAX_COUNT',['../LED__Driver_8hpp.html#ae4081ef1726c27d9852212fe031634ba',1,'SMPS']]],
-  ['als_100',['ALS',['../structHB_1_1data__from__hb.html#aad0552df0a32581868de214d70bb6f8b',1,'HB::data_from_hb']]]
+  ['d1_5fd2_5fmax_5fcurrent_107',['D1_D2_max_current',['../namespaceSMPS.html#a419b28db1331b1838f24911f238b4e9c',1,'SMPS']]],
+  ['d3_5fmax_5fcurrent_108',['D3_max_current',['../namespaceSMPS.html#ae76c2acd61bfbb1385b86bb04e67259e',1,'SMPS']]]
 ];
